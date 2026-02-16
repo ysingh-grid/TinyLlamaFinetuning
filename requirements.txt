@@ -1,0 +1,4 @@
+mlx-lm==0.29.1
+mlx==0.29.3
+datasets==4.5.0
+streamlit==1.50.0
