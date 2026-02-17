@@ -145,17 +145,6 @@ with st.sidebar:
         st.subheader("Model B")
         selection_b = st.selectbox("Select Right Model", options=version_keys, index=min(1, len(version_keys)-1), key="model_b")
         
-        if st.button("Load Both Models"):
-            # Load Model A
-            load_model_cached(selection_a, versions[selection_a])
-            # We need to handle two models in memory. 
-            # Current load_model_cached assumes single model in session_state.
-            # We will patch this below in valid python logic, but for simplicity in this specific app structure:
-            # We will toggle 'current_model' reference when generating.
-            # This is tricky with single GPU memory. MLX shares memory well, but let's see.
-            # actually, for a smooth comparison, we might need to load/unload or hold both if valid.
-            # For 1.1B models, holding 2 in memory (approx 4-5GB total) is fine on most Macs (8GB+).
-            st.toast("Comparison Ready (Loading happens on generation if needed)", icon="⚔️")
     else:
         selection_name = st.selectbox(
             "Select Model Version",
@@ -171,9 +160,6 @@ with st.sidebar:
     max_tokens = st.slider("Max Tokens", 64, 512, 256)
 
 # --- Logic for Comparison ---
-# To keep it simple and stable, we will modify load_model_cached to store models in a dictionary if in compare mode,
-# or just manage the single global one. 
-# actually, let's just make 'generate_response' function handles loading if the requested model isn't the active one.
 
 def ensure_model_loaded(model_name, version_data):
     """Ensure the specific model is loaded in session_state.current_model_name"""
@@ -193,8 +179,6 @@ def format_prompt(user_prompt, tokenizer):
     if safety_mode:
         messages.append({"role": "system", "content": SAFETY_PROMPT})
     
-    # Add history? For comparison simplicity, let's stick to single turn or simplified history
-    # Adding simplified history from session state if needed, but let's do single turn for cleaner comparison
     messages.append({"role": "user", "content": user_prompt})
     
     if hasattr(tokenizer, "apply_chat_template"):

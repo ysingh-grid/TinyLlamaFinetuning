@@ -17,7 +17,7 @@ seed: 0
 batch_size: 1
 
 # Iterations to train for.
-iters: 1000
+iters: 1200
 
 # Number of validation batches, -1 uses the entire validation set.
 val_batches: 25
