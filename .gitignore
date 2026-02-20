@@ -3,6 +3,16 @@ __pycache__/
 *.py[codz]
 *$py.class
 
+# Large artifacts / ML outputs
+models/
+adapters/
+mlx_sweep_runs/
+mlx_sweep_runs_smoke/
+mlx_best_models/
+mlx_best_models_smoke/
+logs/
+*.safetensors
+
 # C extensions
 *.so
 
@@ -205,3 +215,11 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# MLX / Large Model Files
+models/
+adapters/
+*.safetensors
+*.bin
+*.pth
+*.index.json

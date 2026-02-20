@@ -5,7 +5,7 @@ data: "./data"
 seed: 0
 lora_layers: 16
 batch_size: 1
-iters: 1200 # Shorter for experiments
+iters: 4000 # Shorter for experiments
 val_batches: 25
 learning_rate: 1e-5
 steps_per_report: 10
