@@ -20,6 +20,7 @@ DEFAULT_BEST_DIR = "./mlx_best_models"
 DEFAULT_KEYS = "self_attn.q_proj,self_attn.k_proj,self_attn.v_proj,self_attn.o_proj"
 
 # Focused "likely-good" defaults for TinyLlama 1.1B tuning.
+FULL_LRS = [2e-5, 5e-5]
 RANKS = [16, 32]
 ALPHAS = [32, 64]
 LRS = [1e-4, 2e-4]
@@ -269,7 +270,7 @@ def build_gpu_only_cmd(config_path: Path) -> List[str]:
 
 def build_grid(technique: str) -> List[Tuple]:
     if technique == "full":
-        return list(itertools.product(LRS, EPOCHS, BATCH_SIZES, GRAD_ACCUMS))
+        return list(itertools.product(FULL_LRS, EPOCHS, BATCH_SIZES, GRAD_ACCUMS))
     return list(itertools.product(RANKS, ALPHAS, LRS, EPOCHS, BATCH_SIZES, GRAD_ACCUMS))
 
 
@@ -463,7 +464,7 @@ def limit_grid(grid: List[Tuple], limit: int) -> Iterable[Tuple]:
 def suggest_params_for_tpe(trial, technique: str) -> Tuple:
     if technique == "full":
         return (
-            trial.suggest_categorical("learning_rate", LRS),
+            trial.suggest_categorical("learning_rate", FULL_LRS),
             trial.suggest_categorical("epochs", EPOCHS),
             trial.suggest_categorical("batch_size", BATCH_SIZES),
             trial.suggest_categorical("grad_accumulation_steps", GRAD_ACCUMS),

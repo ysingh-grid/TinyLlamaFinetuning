@@ -1,0 +1,17 @@
+model: "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
+train: true
+data: "./data"
+fine_tune_type: full
+seed: 0
+batch_size: 1
+iters: 1200
+val_batches: 25
+learning_rate: 3e-5
+steps_per_report: 10
+steps_per_eval: 100
+adapter_path: "./mlx_best_models/full_retrain"
+save_every: 200
+test: true
+test_batches: 100
+max_seq_length: 512
+grad_checkpoint: true
