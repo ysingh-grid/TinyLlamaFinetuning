@@ -1,15 +1,174 @@
-# TinyLlama Finetuning + Evaluation Loop
+# TinyLlama Finetuning Product (MLX)
 
-This repository contains TinyLlama fine-tuning workflows (LoRA, QLoRA, full FT), a reproducible pairwise evaluation pipeline, and a Streamlit app for interactive model comparison.
+End-to-end project to fine-tune TinyLlama on Alpaca-style data, compare training strategies (`full`, `lora`, `qlora`), evaluate with blind pairwise win-rate metrics, and ship a validated demo experience in Streamlit.
 
-## Goal
-Run a disciplined loop:
-1. Train models
-2. Evaluate on fixed prompts with pairwise win-rate metrics
-3. Iterate training until win-rate targets are met
-4. Move to Streamlit UI only after targets are satisfied
+## Product Goal
 
-## Current Model Set
+Build a locally reproducible pipeline on Apple Silicon that moves from raw dataset to a demo-ready assistant.
+
+Definition of done:
+- At least one fine-tuned model beats the base model on the frozen eval set.
+- Win-rate gates are met on the 500-prompt evaluation run.
+- The promoted model passes qualitative checks in the Streamlit UI.
+
+Suggested release gates:
+- `effective_win_rate > 0.55`
+- `ci95_low > 0.50`
+
+## End-to-End Flow
+
+1. Prepare dataset splits.
+2. Train model variants (`lora`, `qlora`, `full`).
+3. If full FT degrades, run safe-retrain recovery + smoke gate.
+4. Run fixed-parameter 6-model pairwise evaluation.
+5. Judge and score outputs.
+6. Promote winning model(s) and validate in Streamlit.
+
+## Repository Map
+
+Core files:
+- `prepare_dataset.py`: create `data/train.jsonl`, `data/valid.jsonl`, `data/test.jsonl`
+- `run_train.sh`: LoRA training (`lora_config.yaml`)
+- `run_qlora.sh`: QLoRA training (`qlora_config.yaml`)
+- `run_full.sh`: full fine-tuning (`full_config.yaml`)
+- `run_experiments.sh`: rank experiments (`experiments/rank8.yaml`, `rank16.yaml`, `rank32.yaml`)
+- `sweep_mlx_lora.py`: scripted sweep search
+- `app.py`: Streamlit product UI
+
+Evaluation:
+- `evaluation/run_eval_6models.sh`: one-command fixed pipeline wrapper
+- `evaluation/run_pipeline.py`: generation -> pairing -> judging -> scoring
+- `evaluation/models.json`: model registry for eval runs
+- `evaluation/eval_prompts.jsonl`: frozen 500-prompt eval set
+- `evaluation/score_judgments.py`: win rates + confidence intervals + report
+
+Recovery tools (full FT):
+- `run_full_retrain_safe.sh`
+- `run_full_smoke_eval.sh`
+- `experiments/full_safe_sanity.yaml`
+- `experiments/full_safe_scale.yaml`
+- `experiments/full_safe_epoch1.yaml`
+
+## 1) Environment Setup
+
+Prerequisites:
+- macOS on Apple Silicon (MLX/Metal)
+- Python 3.10+
+
+Create and activate virtual environment:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+Install dependencies:
+
+```bash
+.venv/bin/pip install -r requirements.txt
+```
+
+Optional for TPE sweeps:
+
+```bash
+.venv/bin/pip install optuna
+```
+
+## 2) Data Preparation
+
+Build local train/valid/test from the first 10k Alpaca train examples:
+
+```bash
+.venv/bin/python prepare_dataset.py
+```
+
+Expected outputs:
+- `data/train.jsonl` (~8000)
+- `data/valid.jsonl` (~1000)
+- `data/test.jsonl` (~1000)
+
+## 3) Train Candidate Models
+
+Run all three strategies so they can be compared fairly.
+
+LoRA:
+
+```bash
+./run_train.sh
+```
+
+QLoRA:
+
+```bash
+./run_qlora.sh
+```
+
+Full FT:
+
+```bash
+./run_full.sh
+```
+
+Important:
+- The shell scripts invoke `python3`, so run them from an activated `.venv`.
+- Default output paths in configs:
+  - `lora_config.yaml` -> `./adapters/tinyllama-lora-alpaca`
+  - `qlora_config.yaml` -> `./adapters/tinyllama-qlora-alpaca`
+  - `full_config.yaml` -> `./models/tinyllama-full-alpaca`
+
+## 4) Optional: Rank Experiments and Sweeps
+
+Rank experiments:
+
+```bash
+./run_experiments.sh
+```
+
+Programmatic sweep (grid):
+
+```bash
+.venv/bin/python sweep_mlx_lora.py --technique all --search grid
+```
+
+TPE example:
+
+```bash
+.venv/bin/python sweep_mlx_lora.py --technique lora --search tpe --n-trials 20
+```
+
+## 5) Full FT Recovery Path (If Quality Collapses)
+
+If full FT starts producing gibberish or unstable outputs, use this path before full eval:
+
+1. Sanity retrain:
+
+```bash
+./run_full_retrain_safe.sh sanity
+```
+
+2. 20-prompt smoke generation + quality gate:
+
+```bash
+./run_full_smoke_eval.sh
+```
+
+3. Scale retrain:
+
+```bash
+./run_full_retrain_safe.sh scale
+```
+
+4. One-epoch retrain:
+
+```bash
+./run_full_retrain_safe.sh epoch1
+```
+
+Smoke gate checks `./mlx_best_models/full_retrain` and fails fast if bad-response rate is too high.
+
+## 6) Standardized Evaluation (500 Prompt Frozen Set)
+
+Use the fixed 6-model setup in `evaluation/models.json`:
 - `full_ft`
 - `lora_ft`
 - `qlora_ft`
@@ -17,93 +176,38 @@ Run a disciplined loop:
 - `qwen_1.8b`
 - `phi_2`
 
-Configured in: `evaluation/models.json`.
+Run end-to-end evaluation wrapper:
 
-## Environment Setup
-```bash
-source .venv/bin/activate
-```
-
-If dependencies are missing:
-```bash
-.venv/bin/pip install -r requirements.txt
-```
-
-## Data
-- Training split: `data/train.jsonl` (4000 rows)
-- Validation split: `data/valid.jsonl` (500 rows)
-- Test split: `data/test.jsonl` (500 rows)
-- Frozen eval set: `evaluation/eval_prompts.jsonl` (500 prompts)
-- Frozen references: `evaluation/eval_references.jsonl`
-
-Eval set source is documented in `evaluation/README.md` and `evaluation/UPDATE_2026-02-23.md`.
-
-## Checkpoints (Execution Plan)
-
-### Checkpoint 1: Baseline Setup
-- [x] Freeze evaluation prompts and references
-- [x] Define 6-model evaluation config
-- [x] Fix generation params for fair comparison (`temperature=0.2`, `top_p=0.9`, same `max_tokens`)
-- [x] Set explicit seed in eval wrapper (`SEED`, default `42`)
-
-### Checkpoint 2: Safe Full-FT Recovery Path
-- [x] Add safe full-FT configs:
-  - `experiments/full_safe_sanity.yaml`
-  - `experiments/full_safe_scale.yaml`
-  - `experiments/full_safe_epoch1.yaml`
-- [x] Add safe retrain runner: `run_full_retrain_safe.sh`
-- [x] Add 20-prompt smoke gate: `run_full_smoke_eval.sh`
-- [x] Add response quality guard: `evaluation/check_response_quality.py`
-
-### Checkpoint 3: Evaluation Pipeline
-- [x] Generate responses for all configured models
-- [x] Build blind pairwise tasks (9 required pairs)
-- [x] Score win-rate metrics with bootstrap CI
-- [x] Add per-model generation progress logging (`--progress-every`)
-
-### Checkpoint 4: Iterative Train-Eval Loop
-- [ ] Run full retrain sanity pass
-- [ ] Pass smoke gate for retrained full model
-- [ ] Run scaled/full epoch retrain
-- [ ] Re-run full 500-prompt evaluation
-- [ ] Hit win-rate target criteria
-
-### Checkpoint 5: Streamlit UI
-- [ ] Promote winning model set to UI comparison
-- [ ] Validate response quality in manual interactive checks
-- [ ] Finalize demo/release
-
-## Train -> Eval Loop (Repeat Until Satisfied)
-
-### Step A: Retrain (safe full-FT path)
-```bash
-./run_full_retrain_safe.sh sanity
-./run_full_smoke_eval.sh
-./run_full_retrain_safe.sh scale
-./run_full_retrain_safe.sh epoch1
-```
-
-### Step B: Run 6-model evaluation
 ```bash
 SEED=42 ./evaluation/run_eval_6models.sh --judge-mode manual --progress-every 20
 ```
 
-### Step C: Manual judging
+What this does:
+- Generates responses for all models with fixed params (`temperature=0.2`, `top_p=0.9`, `max_tokens=256`).
+- Builds blind pairs for 9 required comparisons.
+- Stops in manual mode after creating judging tasks.
+
+Run outputs are stored under:
+- `evaluation/runs/<run_id>/responses`
+- `evaluation/runs/<run_id>/pairing`
+- `evaluation/runs/<run_id>/scoring` (after scoring)
+
+## 7) Manual Judging and Scoring
+
 Use generated tasks:
 - `evaluation/runs/<run_id>/pairing/judging_tasks.jsonl`
 
-Create judgments file:
+Create manual judgments file:
 - `evaluation/runs/<run_id>/pairing/judgments_manual.jsonl`
 
-Accepted labels:
-- `A` / `B` / `Tie` (normalized by scorer)
+Each JSONL line:
 
-Rubric (strict):
-- instruction-following
-- correctness
-- relevance/helpfulness
+```json
+{"item_id":"...","winner":"left|right|tie|invalid"}
+```
 
-### Step D: Score metrics
+Score results:
+
 ```bash
 .venv/bin/python evaluation/score_judgments.py \
   --key evaluation/runs/<run_id>/pairing/judging_key.jsonl \
@@ -112,42 +216,61 @@ Rubric (strict):
   --seed 42
 ```
 
-### Step E: Decide pass/fail
-Per pair, track:
-- win rate
-- effective win rate (no ties)
-- tie rate
-- 95% bootstrap CI
+Scoring outputs:
+- `pair_metrics.json`
+- `pair_metrics.csv`
+- `model_rollup.json`
+- `model_rollup.csv`
+- `report.md`
 
-Suggested gate:
-- `effective_win_rate > 0.55`
-- `ci95_low > 0.50`
+## 8) Decision: Promote or Iterate
 
-If not met, tune/retrain and repeat from Step A.
+If gates are met:
+- Promote the winning adapter/model into the active eval registry and demo flow.
+- Run final qualitative checks in Streamlit.
 
-## When to Move to Streamlit UI
-Move only after Checkpoint 4 passes (target win-rates achieved).
+If gates are not met:
+1. Adjust configs (rank, LR, iterations, batch/grad accumulation).
+2. Retrain candidate(s).
+3. Re-run the same fixed eval pipeline.
 
-Run app:
+## 9) Product Validation in Streamlit
+
+Start UI:
+
 ```bash
 .venv/bin/streamlit run app.py
 ```
 
-Use UI for:
-- side-by-side qualitative checks
-- safety prompt behavior checks
-- regression sanity before finalizing
+Validate:
+- Single-model quality on common user tasks
+- Side-by-side comparison mode
+- Safety mode behavior and refusals
+- Latency/usability for demo readiness
 
-## Important Notes
-- Keep seeds fixed for reproducibility.
-- Do not evaluate with changing prompt set mid-loop.
-- Exclude large artifacts from Git pushes (models/checkpoints/runs).
-- If `full_ft` outputs collapse (gibberish), use the safe retrain sequence and smoke gate before full eval.
+## 10) Reproducibility Checklist
 
-## Key Files
-- Training/sweep: `sweep_mlx_lora.py`
-- Safe full retrain: `run_full_retrain_safe.sh`
-- Smoke eval: `run_full_smoke_eval.sh`
-- Eval wrapper (fixed params): `evaluation/run_eval_6models.sh`
-- Eval docs: `evaluation/README.md`
-- Dated change log: `evaluation/UPDATE_2026-02-23.md`
+- Keep eval prompt set fixed (`evaluation/eval_prompts.jsonl`).
+- Keep model list fixed for a given comparison run (`evaluation/models.json`).
+- Keep generation parameters fixed across compared models.
+- Record seed and `run_id`.
+- Track config files used for each trained adapter/model.
+
+## 11) Common Issues
+
+`TokenizersBackend does not exist`
+- Compatibility shim is already handled in the evaluation pipeline.
+
+`No safetensors found` for Phi-2
+- Confirm `evaluation/models.json` points to `./models/phi-2-hf-4bit-mlx`.
+
+Full FT outputs are incoherent
+- Run the safe retrain workflow and pass smoke gate before 500-prompt eval.
+
+Eval looks stalled
+- Use `--progress-every` (for example `--progress-every 20`).
+
+## 12) Additional Documentation
+
+- `evaluation/README.md`: deeper evaluation details
+- `evaluation/UPDATE_2026-02-23.md`: latest evaluation changes

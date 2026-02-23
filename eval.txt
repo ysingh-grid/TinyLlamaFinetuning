@@ -1,0 +1,61 @@
+Use a two-phase approach so you finish quickly and still get credible results.
+Phase 1: Ship a solid first result (1-2 days)
+1.
+Freeze eval set: create eval_prompts.jsonl with 200 prompts (same domain as your training use-case).
+2.
+Define models once:
+•
+full_ft, lora_ft, qlora_ft, base, qwen_1.8b, phi_2
+3.
+Fix generation params for all models:
+•
+temperature=0.2, top_p=0.9, max_tokens same for all.
+4.
+Run only the 9 required pairs (fine-tuned vs 3 baselines).
+5.
+Collect blind pairwise judgments (A, B, Tie) with a strict rubric:
+•
+instruction-following
+•
+correctness
+•
+relevance/helpfulness
+6.
+Compute per-pair:
+•
+win rate
+•
+effective win rate (no ties)
+•
+tie rate
+•
+95% bootstrap CI
+
+
+
+Phase 2: Make it publication-quality (optional)
+1.
+Add second judge pass on 20% sample for agreement.
+2.
+Add Bradley-Terry ranking across all judgments.
+3.
+Report per-category win rates (reasoning, factual QA, formatting, etc.).
+Practical structure
+•
+eval/eval_prompts.jsonl
+•
+eval/responses/<model>.jsonl
+•
+eval/pairs/*.jsonl
+•
+eval/judgments/*.jsonl
+•
+eval/results/win_rates.csv
+Minimum decision rule
+•
+Claim improvement only if:
+1.
+effective_win_rate > 0.55, and
+2.
+95% CI lower bound > 0.50.
+If you want, I can implement the full evaluation pipeline in this repo next (generation + pairing + scoring + report) so you just run one command.
