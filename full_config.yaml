@@ -13,7 +13,7 @@ fine_tune_type: full
 # The PRNG seed
 seed: 0
 
-# Minibatch size.
+# Minibatch size. #10000 do it
 batch_size: 1
 
 # Iterations to train for.

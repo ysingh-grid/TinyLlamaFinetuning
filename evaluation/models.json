@@ -6,12 +6,12 @@
   },
   {
     "name": "lora_ft",
-    "model": "./models/tinyllama-4bit-base",
+    "model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
     "adapter_path": "./mlx_best_models/lora"
   },
   {
     "name": "qlora_ft",
-    "model": "./models/tinyllama-4bit-base",
+    "model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
     "adapter_path": "./mlx_best_models/qlora"
   },
   {

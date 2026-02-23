@@ -192,6 +192,59 @@ Run outputs are stored under:
 - `evaluation/runs/<run_id>/pairing`
 - `evaluation/runs/<run_id>/scoring` (after scoring)
 
+### 6A) How to Run Commands Like This
+
+Example command:
+
+```bash
+SEED=42 MAX_PROMPTS=10 ./evaluation/run_eval_6models.sh --judge-mode manual --progress-every 5
+```
+
+Breakdown:
+- `SEED=42`: fixed random seed for reproducible generations.
+- `MAX_PROMPTS=10`: temporary prompt cap for faster testing.
+- `./evaluation/run_eval_6models.sh`: wrapper for fixed 6-model evaluation settings.
+- `--judge-mode manual`: stop after building blind tasks and wait for human judgments.
+- `--progress-every 5`: print generation progress every 5 prompts per model.
+
+What is fixed by the wrapper:
+- model list from `evaluation/models.json`
+- pair list (9 required fine-tune vs baseline comparisons)
+- generation params: `temperature=0.2`, `top_p=0.9`, `max_tokens=256`
+
+Useful variants:
+
+Quick smoke test:
+
+```bash
+SEED=42 MAX_PROMPTS=10 ./evaluation/run_eval_6models.sh --judge-mode manual --progress-every 5
+```
+
+Medium test:
+
+```bash
+SEED=42 MAX_PROMPTS=50 ./evaluation/run_eval_6models.sh --judge-mode manual --progress-every 10
+```
+
+Full run (frozen 500 prompts):
+
+```bash
+SEED=42 MAX_PROMPTS=500 ./evaluation/run_eval_6models.sh --judge-mode manual --progress-every 20
+```
+
+Model-judge run (automatic judging):
+
+```bash
+SEED=42 MAX_PROMPTS=50 ./evaluation/run_eval_6models.sh \
+  --judge-mode model \
+  --judge-model "Qwen/Qwen2.5-3B-Instruct" \
+  --progress-every 10
+```
+
+Notes:
+- A new output folder is created on each run under `evaluation/runs/<timestamp>/`.
+- `--overwrite` is only needed when intentionally reusing an existing run directory.
+
 ## 7) Manual Judging and Scoring
 
 Use generated tasks:

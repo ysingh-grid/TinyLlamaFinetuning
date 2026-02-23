@@ -11,6 +11,8 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Dict, Iterable, List, Optional, Sequence, Tuple
 
+ROOT = Path(__file__).resolve().parents[1]
+
 
 @dataclass(frozen=True)
 class ModelSpec:
@@ -103,12 +105,22 @@ def load_models_config(path: Path) -> List[ModelSpec]:
         models.append(
             ModelSpec(
                 name=name,
-                model=model,
-                adapter_path=str(adapter_path) if adapter_path else None,
+                model=_resolve_local_path(model) or model,
+                adapter_path=_resolve_local_path(str(adapter_path)) if adapter_path else None,
                 system_prompt=str(system_prompt) if system_prompt else None,
             )
         )
     return models
+
+
+def _resolve_local_path(value: Optional[str]) -> Optional[str]:
+    if not value:
+        return None
+    # Resolve explicit filesystem paths relative to repo root so commands
+    # work from either project root or subdirectories (e.g. evaluation/).
+    if value.startswith(".") or value.startswith("/"):
+        return str((ROOT / value).resolve()) if value.startswith(".") else str(Path(value).resolve())
+    return value
 
 
 def load_prompts(path: Path) -> List[Dict]:
@@ -142,7 +154,12 @@ def _format_prompt_for_model(tokenizer, prompt: str, system_prompt: Optional[str
     messages.append({"role": "user", "content": prompt})
 
     if hasattr(tokenizer, "apply_chat_template"):
-        return tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
+        try:
+            return tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
+        except Exception:
+            # Some tokenizers expose apply_chat_template but do not define
+            # tokenizer.chat_template (e.g. certain Phi conversions).
+            pass
     if system_prompt:
         return f"System: {system_prompt}\nUser: {prompt}\nAssistant:"
     return f"User: {prompt}\nAssistant:"
@@ -189,7 +206,7 @@ def run_generation(
         rows: List[Dict] = []
         total_prompts = len(prompts)
         for index, prompt_row in enumerate(prompts):
-            mx.random.seed(seed + index)
+            mx.random.seed(seed)
             formatted = _format_prompt_for_model(tokenizer, prompt_row["prompt"], model_spec.system_prompt)
             sampler = make_sampler(temp=temperature, top_p=top_p)
             response = generate(
@@ -209,7 +226,7 @@ def run_generation(
                     "temperature": temperature,
                     "top_p": top_p,
                     "max_tokens": max_tokens,
-                    "seed": seed + index,
+                    "seed": seed,
                 }
             )
             if progress_every > 0:

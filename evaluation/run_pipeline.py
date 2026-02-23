@@ -24,6 +24,12 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Run full evaluation pipeline: generation -> pairing -> judging -> scoring.")
     parser.add_argument("--models-config", type=Path, required=True)
     parser.add_argument("--prompts", type=Path, required=True)
+    parser.add_argument(
+        "--max-prompts",
+        type=int,
+        default=0,
+        help="Limit total prompts used for generation (0 = use all).",
+    )
     parser.add_argument("--out-root", type=Path, default=Path("evaluation/runs"))
     parser.add_argument(
         "--pairs",
@@ -66,6 +72,8 @@ def main() -> None:
 
     models = load_models_config(args.models_config)
     prompts = load_prompts(args.prompts)
+    if args.max_prompts > 0:
+        prompts = prompts[: args.max_prompts]
 
     print(f"Run dir: {run_dir}")
     run_generation(

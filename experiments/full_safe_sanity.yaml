@@ -9,7 +9,7 @@ val_batches: 25
 learning_rate: 2e-5
 steps_per_report: 10
 steps_per_eval: 50
-adapter_path: "./mlx_best_models/full_retrain"
+adapter_path: "./mlx_best_models/full"
 save_every: 100
 test: true
 test_batches: 50

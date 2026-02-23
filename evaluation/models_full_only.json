@@ -1,0 +1,7 @@
+[
+  {
+    "name": "full_ft",
+    "model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+    "adapter_path": "./mlx_best_models/full"
+  }
+]
