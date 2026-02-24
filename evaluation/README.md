@@ -115,6 +115,15 @@ Aliases like `a`, `b`, `draw`, `skip` are normalized.
 Outputs:
 - `judging_tasks.jsonl` (blind left/right responses)
 - `judging_key.jsonl` (left/right -> model mapping for scoring)
+- `pairing_summary.json` (audit of per-pair left/right balance + randomization settings)
+
+Pairing defaults:
+- Left/right placement is counterbalanced per pair (difference at most 1 item).
+- Final judging task order is shuffled across pairs/prompts.
+
+Optional flags:
+- `--no-counterbalance-sides`
+- `--no-shuffle-tasks`
 
 ### 3A) Manual judging
 

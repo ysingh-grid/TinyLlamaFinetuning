@@ -186,6 +186,7 @@ What this does:
 - Generates responses for all models with fixed params (`temperature=0.2`, `top_p=0.9`, `max_tokens=256`).
 - Builds blind pairs for 9 required comparisons.
 - Stops in manual mode after creating judging tasks.
+- Counterbalances left/right per pair and shuffles final task order (seeded, reproducible).
 
 Run outputs are stored under:
 - `evaluation/runs/<run_id>/responses`
@@ -249,6 +250,7 @@ Notes:
 
 Use generated tasks:
 - `evaluation/runs/<run_id>/pairing/judging_tasks.jsonl`
+- `evaluation/runs/<run_id>/pairing/pairing_summary.json` (verify left/right balance before judging)
 
 Create manual judgments file:
 - `evaluation/runs/<run_id>/pairing/judgments_manual.jsonl`
@@ -327,3 +329,47 @@ Eval looks stalled
 
 - `evaluation/README.md`: deeper evaluation details
 - `evaluation/UPDATE_2026-02-23.md`: latest evaluation changes
+
+## 13) Eval Existing Generated Runs (LM Studio OSS20B)
+
+Use this flow when `evaluation/runs/<run_id>/responses/*.jsonl` already exists and you want to finish judging + scoring.
+
+```bash
+# 0) From repo root
+cd /Users/ysingh/PyCharmMiscProject
+source .venv/bin/activate
+
+# 1) Pick the run to evaluate
+RUN_ID=20260224_103910
+RUN_DIR="evaluation/runs/${RUN_ID}"
+
+# 2) (If not already done) build blind pair tasks
+PAIRS="full_ft:base,full_ft:qwen_1.8b,full_ft:phi_2,lora_ft:base,lora_ft:qwen_1.8b,lora_ft:phi_2,qlora_ft:base,qlora_ft:qwen_1.8b,qlora_ft:phi_2"
+.venv/bin/python evaluation/make_pairs.py \
+  --responses-dir "${RUN_DIR}/responses" \
+  --out-dir "${RUN_DIR}/pairing" \
+  --pairs "${PAIRS}" \
+  --seed 42
+
+# 3) Start LM Studio server (UI), load OSS20B, then verify API
+curl -s http://127.0.0.1:1234/v1/models
+
+# 4) Judge with local OSS20B through LM Studio
+.venv/bin/python evaluation/judge_with_lmstudio.py \
+  --tasks "${RUN_DIR}/pairing/judging_tasks.jsonl" \
+  --out "${RUN_DIR}/pairing/judgments_oss20b.jsonl" \
+  --model "gpt-oss-20b" \
+  --base-url "http://127.0.0.1:1234/v1" \
+  --progress-every 100
+
+# 5) Score + report
+.venv/bin/python evaluation/score_judgments.py \
+  --key "${RUN_DIR}/pairing/judging_key.jsonl" \
+  --judgments "${RUN_DIR}/pairing/judgments_oss20b.jsonl" \
+  --out-dir "${RUN_DIR}/scoring" \
+  --seed 42
+
+# 6) View outputs
+ls -lh "${RUN_DIR}/scoring"
+cat "${RUN_DIR}/scoring/report.md"
+```

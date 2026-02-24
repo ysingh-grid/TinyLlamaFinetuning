@@ -23,6 +23,32 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--max-prompts-per-pair", type=int, default=0)
+    parser.add_argument(
+        "--counterbalance-sides",
+        dest="counterbalance_sides",
+        action="store_true",
+        default=True,
+        help="Balance model_1 left/right assignment per pair (default: enabled).",
+    )
+    parser.add_argument(
+        "--no-counterbalance-sides",
+        dest="counterbalance_sides",
+        action="store_false",
+        help="Disable balanced side assignment and use independent random left/right choices.",
+    )
+    parser.add_argument(
+        "--shuffle-tasks",
+        dest="shuffle_tasks",
+        action="store_true",
+        default=True,
+        help="Shuffle final judging task order across pairs/prompts (default: enabled).",
+    )
+    parser.add_argument(
+        "--no-shuffle-tasks",
+        dest="shuffle_tasks",
+        action="store_false",
+        help="Keep judging tasks grouped by pair then prompt_id.",
+    )
     return parser.parse_args()
 
 
@@ -34,9 +60,12 @@ def main() -> None:
         raw_pairs=args.pairs,
         seed=args.seed,
         max_prompts_per_pair=args.max_prompts_per_pair,
+        counterbalance_sides=args.counterbalance_sides,
+        shuffle_tasks=args.shuffle_tasks,
     )
     print(f"Wrote judging tasks: {tasks_path}")
     print(f"Wrote judging key: {key_path}")
+    print(f"Wrote pairing summary: {args.out_dir / 'pairing_summary.json'}")
 
 
 if __name__ == "__main__":

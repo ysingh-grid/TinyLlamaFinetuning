@@ -37,6 +37,32 @@ def parse_args() -> argparse.Namespace:
         help="Comma-separated list: modelA:modelB,modelC:modelD. Omit for all combinations.",
     )
     parser.add_argument("--max-prompts-per-pair", type=int, default=0)
+    parser.add_argument(
+        "--counterbalance-sides",
+        dest="counterbalance_sides",
+        action="store_true",
+        default=True,
+        help="Balance model_1 left/right assignment per pair (default: enabled).",
+    )
+    parser.add_argument(
+        "--no-counterbalance-sides",
+        dest="counterbalance_sides",
+        action="store_false",
+        help="Disable balanced side assignment and use independent random left/right choices.",
+    )
+    parser.add_argument(
+        "--shuffle-tasks",
+        dest="shuffle_tasks",
+        action="store_true",
+        default=True,
+        help="Shuffle final judging task order across pairs/prompts (default: enabled).",
+    )
+    parser.add_argument(
+        "--no-shuffle-tasks",
+        dest="shuffle_tasks",
+        action="store_false",
+        help="Keep judging tasks grouped by pair then prompt_id.",
+    )
     parser.add_argument("--temperature", type=float, default=0.2)
     parser.add_argument("--top-p", type=float, default=0.9)
     parser.add_argument("--max-tokens", type=int, default=256)
@@ -94,12 +120,15 @@ def main() -> None:
         raw_pairs=args.pairs,
         seed=args.seed,
         max_prompts_per_pair=args.max_prompts_per_pair,
+        counterbalance_sides=args.counterbalance_sides,
+        shuffle_tasks=args.shuffle_tasks,
     )
 
     if args.judge_mode == "manual":
         if args.judgments is None:
             print("Manual judging mode selected.")
             print(f"Use tasks file: {tasks_path}")
+            print(f"Check pairing summary: {pairing_dir / 'pairing_summary.json'}")
             print("Create judgments JSONL with fields: item_id, winner (left|right|tie|invalid)")
             print("Then run evaluation/score_judgments.py with the key + your judgments file.")
             return

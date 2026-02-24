@@ -280,16 +280,90 @@ def _pair_slug(model_1: str, model_2: str) -> str:
     return f"{model_1}__vs__{model_2}"
 
 
+def _assign_left_side_by_prompt(
+    prompt_ids: Sequence[str],
+    rng: random.Random,
+    counterbalance_sides: bool,
+) -> Dict[str, bool]:
+    if not prompt_ids:
+        return {}
+
+    if not counterbalance_sides:
+        return {prompt_id: bool(rng.getrandbits(1)) for prompt_id in prompt_ids}
+
+    shuffled_ids = list(prompt_ids)
+    rng.shuffle(shuffled_ids)
+
+    # Guarantee near-perfect side balance for each pair to reduce position bias.
+    model_1_left_count = len(shuffled_ids) // 2
+    if len(shuffled_ids) % 2 == 1:
+        model_1_left_count += int(rng.getrandbits(1))
+
+    model_1_left_ids = set(shuffled_ids[:model_1_left_count])
+    return {prompt_id: (prompt_id in model_1_left_ids) for prompt_id in prompt_ids}
+
+
+def _build_pairing_summary(
+    key_rows: Sequence[Dict],
+    seed: int,
+    counterbalance_sides: bool,
+    shuffle_tasks: bool,
+) -> Dict:
+    by_pair: Dict[str, Dict] = {}
+    for row in key_rows:
+        pair = str(row["pair"])
+        stats = by_pair.setdefault(
+            pair,
+            {
+                "pair": pair,
+                "model_1": row["model_1"],
+                "model_2": row["model_2"],
+                "total_items": 0,
+                "model_1_left": 0,
+                "model_1_right": 0,
+            },
+        )
+        stats["total_items"] += 1
+        if row["left_model"] == row["model_1"]:
+            stats["model_1_left"] += 1
+        else:
+            stats["model_1_right"] += 1
+
+    pair_rows: List[Dict] = []
+    total_items = 0
+    max_abs_imbalance = 0
+    for pair in sorted(by_pair.keys()):
+        stats = by_pair[pair]
+        total = int(stats["total_items"])
+        imbalance = abs(int(stats["model_1_left"]) - int(stats["model_1_right"]))
+        stats["abs_left_right_imbalance_model_1"] = imbalance
+        stats["left_right_imbalance_ratio_model_1"] = (imbalance / total) if total else 0.0
+        pair_rows.append(stats)
+        total_items += total
+        max_abs_imbalance = max(max_abs_imbalance, imbalance)
+
+    return {
+        "seed": seed,
+        "counterbalance_sides": counterbalance_sides,
+        "shuffle_tasks": shuffle_tasks,
+        "pair_count": len(pair_rows),
+        "total_items": total_items,
+        "max_abs_left_right_imbalance_model_1": max_abs_imbalance,
+        "pairs": pair_rows,
+    }
+
+
 def build_judging_tasks(
     responses_by_model: Dict[str, Dict[str, Dict]],
     pairs: Sequence[PairSpec],
     seed: int,
     max_prompts_per_pair: int,
+    counterbalance_sides: bool = True,
+    shuffle_tasks: bool = True,
 ) -> Tuple[List[Dict], List[Dict]]:
     rng = random.Random(seed)
 
-    tasks: List[Dict] = []
-    key_rows: List[Dict] = []
+    task_and_key_rows: List[Tuple[Dict, Dict]] = []
 
     for pair in pairs:
         if pair.model_1 not in responses_by_model:
@@ -307,11 +381,16 @@ def build_judging_tasks(
             prompt_ids = sorted(rng.sample(prompt_ids, max_prompts_per_pair))
 
         pair_slug = _pair_slug(pair.model_1, pair.model_2)
+        model_1_left_by_prompt = _assign_left_side_by_prompt(
+            prompt_ids=prompt_ids,
+            rng=rng,
+            counterbalance_sides=counterbalance_sides,
+        )
 
         for prompt_id in prompt_ids:
             row_1 = rows_1[prompt_id]
             row_2 = rows_2[prompt_id]
-            left_is_model_1 = bool(rng.getrandbits(1))
+            left_is_model_1 = model_1_left_by_prompt[prompt_id]
 
             left_model = pair.model_1 if left_is_model_1 else pair.model_2
             right_model = pair.model_2 if left_is_model_1 else pair.model_1
@@ -319,28 +398,30 @@ def build_judging_tasks(
             right_text = row_2["response"] if left_is_model_1 else row_1["response"]
 
             item_id = f"{pair_slug}__{prompt_id}"
-            tasks.append(
-                {
-                    "item_id": item_id,
-                    "pair": pair_slug,
-                    "prompt_id": prompt_id,
-                    "prompt": row_1.get("prompt", row_2.get("prompt", "")),
-                    "left_response": left_text,
-                    "right_response": right_text,
-                }
-            )
-            key_rows.append(
-                {
-                    "item_id": item_id,
-                    "pair": pair_slug,
-                    "prompt_id": prompt_id,
-                    "model_1": pair.model_1,
-                    "model_2": pair.model_2,
-                    "left_model": left_model,
-                    "right_model": right_model,
-                }
-            )
+            task = {
+                "item_id": item_id,
+                "pair": pair_slug,
+                "prompt_id": prompt_id,
+                "prompt": row_1.get("prompt", row_2.get("prompt", "")),
+                "left_response": left_text,
+                "right_response": right_text,
+            }
+            key = {
+                "item_id": item_id,
+                "pair": pair_slug,
+                "prompt_id": prompt_id,
+                "model_1": pair.model_1,
+                "model_2": pair.model_2,
+                "left_model": left_model,
+                "right_model": right_model,
+            }
+            task_and_key_rows.append((task, key))
 
+    if shuffle_tasks:
+        rng.shuffle(task_and_key_rows)
+
+    tasks = [task for task, _ in task_and_key_rows]
+    key_rows = [key for _, key in task_and_key_rows]
     return tasks, key_rows
 
 
@@ -350,6 +431,8 @@ def run_pairing(
     raw_pairs: Optional[str],
     seed: int,
     max_prompts_per_pair: int,
+    counterbalance_sides: bool = True,
+    shuffle_tasks: bool = True,
 ) -> Tuple[Path, Path]:
     responses = load_responses_from_dir(responses_dir)
     models = sorted(responses.keys())
@@ -360,13 +443,23 @@ def run_pairing(
         pairs=pairs,
         seed=seed,
         max_prompts_per_pair=max_prompts_per_pair,
+        counterbalance_sides=counterbalance_sides,
+        shuffle_tasks=shuffle_tasks,
     )
 
     out_dir.mkdir(parents=True, exist_ok=True)
     tasks_path = out_dir / "judging_tasks.jsonl"
     key_path = out_dir / "judging_key.jsonl"
+    summary_path = out_dir / "pairing_summary.json"
     write_jsonl(tasks_path, tasks)
     write_jsonl(key_path, key_rows)
+    summary = _build_pairing_summary(
+        key_rows=key_rows,
+        seed=seed,
+        counterbalance_sides=counterbalance_sides,
+        shuffle_tasks=shuffle_tasks,
+    )
+    summary_path.write_text(json.dumps(summary, indent=2), encoding="utf-8")
     return tasks_path, key_path
 
 
