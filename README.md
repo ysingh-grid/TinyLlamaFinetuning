@@ -1,4 +1,4 @@
-<![CDATA[# 🦙 TinyLlama-1.1B Instruction Tuning Pipeline (MLX on Apple Silicon)
+# 🦙 TinyLlama-1.1B Instruction Tuning Pipeline (MLX on Apple Silicon)
 
 > **End-to-end project:** raw dataset → three fine-tuning strategies → automated hyperparameter sweep → blind pairwise evaluation → validated Streamlit demo — all running **100% locally on your Mac** using Apple's MLX framework (Metal GPU).
 
@@ -1132,4 +1132,3 @@ The automated regression guard (`validate_training_setup.py`) prevents these iss
 ## License
 
 This project is for educational and research purposes. The Alpaca dataset is subject to its own license terms. TinyLlama is released under the Apache 2.0 license.
-]]>
