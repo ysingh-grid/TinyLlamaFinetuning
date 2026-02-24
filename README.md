@@ -330,9 +330,10 @@ Eval looks stalled
 - `evaluation/README.md`: deeper evaluation details
 - `evaluation/UPDATE_2026-02-23.md`: latest evaluation changes
 
-## 13) Eval Existing Generated Runs (LM Studio OSS20B)
+## 13) Eval Existing Generated Runs (LM Studio Minstral 3 14B)
 
 Use this flow when `evaluation/runs/<run_id>/responses/*.jsonl` already exists and you want to finish judging + scoring.
+For this machine, `gpt-oss-20b` did not fit memory in LM Studio, so the judge model is `ministral-3-14b-reasoning`.
 
 ```bash
 # 0) From repo root
@@ -351,14 +352,14 @@ PAIRS="full_ft:base,full_ft:qwen_1.8b,full_ft:phi_2,lora_ft:base,lora_ft:qwen_1.
   --pairs "${PAIRS}" \
   --seed 42
 
-# 3) Start LM Studio server (UI), load OSS20B, then verify API
+# 3) Start LM Studio server (UI), load Minstral 3 14B Reasoning, then verify API
 curl -s http://127.0.0.1:1234/v1/models
 
-# 4) Judge with local OSS20B through LM Studio
+# 4) Judge with local Minstral 3 14B Reasoning through LM Studio
 .venv/bin/python evaluation/judge_with_lmstudio.py \
   --tasks "${RUN_DIR}/pairing/judging_tasks.jsonl" \
   --out "${RUN_DIR}/pairing/judgments_oss20b.jsonl" \
-  --model "gpt-oss-20b" \
+  --model "ministral-3-14b-reasoning" \
   --base-url "http://127.0.0.1:1234/v1" \
   --progress-every 100
 
@@ -372,4 +373,29 @@ curl -s http://127.0.0.1:1234/v1/models
 # 6) View outputs
 ls -lh "${RUN_DIR}/scoring"
 cat "${RUN_DIR}/scoring/report.md"
+```
+
+## 14) Next Steps After Failed Eval Run
+
+Use this sequence when FT variants underperform baselines (as in run `20260223_143739`):
+
+1. Freeze this run as failed and do not promote any FT checkpoint.
+2. Inspect scored artifacts:
+   - `evaluation/runs/20260223_143739/scoring/report.md`
+   - `evaluation/runs/20260223_143739/scoring/analysis.md`
+3. Re-run safe full-FT recovery:
+```bash
+./run_full_retrain_safe.sh sanity
+./run_full_smoke_eval.sh
+./run_full_retrain_safe.sh scale
+./run_full_retrain_safe.sh epoch1
+```
+4. Re-train LoRA/QLoRA with conservative settings (lower LR, fewer simultaneous changes).
+5. Re-run the fixed evaluation pipeline with same prompts/pairs/seed.
+6. Only promote if effective win rate clears `0.55` and CI lower bound clears `0.50`.
+
+Quick rerun command set:
+
+```bash
+SEED=42 ./evaluation/run_eval_6models.sh --judge-mode manual --progress-every 20
 ```
