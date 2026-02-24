@@ -9,7 +9,7 @@ TEMPERATURE="${TEMPERATURE:-0.2}"
 TOP_P="${TOP_P:-0.9}"
 MAX_TOKENS="${MAX_TOKENS:-256}"
 SEED="${SEED:-42}"
-MAX_PROMPTS="${MAX_PROMPTS:-50}"
+MAX_PROMPTS="${MAX_PROMPTS:-200}"
 
 .venv/bin/python evaluation/run_pipeline.py \
   --models-config evaluation/models.json \

@@ -11,7 +11,7 @@
   },
   {
     "name": "qlora_ft",
-    "model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+    "model": "./models/tinyllama-4bit-base",
     "adapter_path": "./mlx_best_models/qlora"
   },
   {

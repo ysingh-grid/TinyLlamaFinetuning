@@ -34,15 +34,46 @@ def write_jsonl(path: Path, rows: Iterable[Dict]) -> None:
 
 
 def _parse_winner(text: str) -> str:
+    """Parse winner from judge output, avoiding order-dependent substring bias.
+
+    Strategy:
+    1. Check if the first token is an unambiguous verdict (LEFT/RIGHT/TIE/A/B).
+    2. If the output is verbose, count keyword occurrences and only assign
+       when a single verdict keyword dominates.
+    3. Otherwise return "invalid".
+    """
+    import re
+
     normalized = text.strip().lower()
-    if "left" in normalized:
-        return "left"
-    if "right" in normalized:
-        return "right"
-    if "tie" in normalized or "draw" in normalized or "equal" in normalized:
-        return "tie"
-    if normalized in {"a", "b"}:
-        return "left" if normalized == "a" else "right"
+    if not normalized:
+        return "invalid"
+
+    # 1. Check the first substantive word (most reliable signal).
+    first_word = re.split(r"[\s:.,;!]+", normalized)[0]
+    first_word_map = {
+        "left": "left",
+        "right": "right",
+        "tie": "tie",
+        "draw": "tie",
+        "equal": "tie",
+        "a": "left",
+        "b": "right",
+    }
+    if first_word in first_word_map:
+        return first_word_map[first_word]
+
+    # 2. Count keyword occurrences — only assign if one side dominates.
+    left_count = len(re.findall(r"\bleft\b", normalized)) + len(re.findall(r"\bresponse a\b", normalized))
+    right_count = len(re.findall(r"\bright\b", normalized)) + len(re.findall(r"\bresponse b\b", normalized))
+    tie_count = len(re.findall(r"\btie\b", normalized)) + len(re.findall(r"\bdraw\b", normalized)) + len(re.findall(r"\bequal\b", normalized))
+
+    counts = {"left": left_count, "right": right_count, "tie": tie_count}
+    non_zero = {k: v for k, v in counts.items() if v > 0}
+
+    if len(non_zero) == 1:
+        return next(iter(non_zero))
+
+    # Ambiguous or no verdict keywords found.
     return "invalid"
 
 

@@ -206,7 +206,10 @@ def run_generation(
         rows: List[Dict] = []
         total_prompts = len(prompts)
         for index, prompt_row in enumerate(prompts):
-            mx.random.seed(seed)
+            # Seed once per model, not per prompt, to allow realistic sampling
+            # variation across prompts (audit #8).
+            if index == 0:
+                mx.random.seed(seed)
             formatted = _format_prompt_for_model(tokenizer, prompt_row["prompt"], model_spec.system_prompt)
             sampler = make_sampler(temp=temperature, top_p=top_p)
             response = generate(
@@ -686,6 +689,25 @@ def run_scoring(
             }
         )
 
+    # Coverage guard: warn and assert if many judgments had no matching key.
+    matched_count = len(merged)
+    total_judgments = len(judgments)
+    if total_judgments > 0:
+        coverage = matched_count / total_judgments
+        if coverage < 1.0:
+            import sys
+            print(
+                f"WARNING: judgment coverage is {coverage:.1%} ({matched_count}/{total_judgments}). "
+                f"{total_judgments - matched_count} judgments had no matching item_id in the key.",
+                file=sys.stderr,
+            )
+        if coverage < 0.9:
+            raise ValueError(
+                f"Judgment coverage too low: {coverage:.1%}. "
+                f"Only {matched_count}/{total_judgments} judgments matched an item_id in the key. "
+                f"This likely indicates a pairing/judging mismatch."
+            )
+
     grouped: Dict[str, List[Dict]] = {}
     for row in merged:
         grouped.setdefault(row["pair"], []).append(row)
@@ -779,7 +801,7 @@ def run_scoring(
         "",
         "## Pairwise Metrics",
         "",
-        "| Pair | Model 1 | Model 2 | Win Rate (M1) | Effective Win Rate (M1) | Tie Rate | 95% CI |",
+        "| Pair | Model 1 | Model 2 | Win Rate (M1) | Effective Win Rate (M1) | Tie Rate | 95% CI (Tie-Adj Score) |",
         "|---|---|---|---:|---:|---:|---:|",
     ]
     for row in pair_scores:

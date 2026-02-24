@@ -7,7 +7,7 @@ from pathlib import Path
 
 # Config
 DATASET_NAME = "tatsu-lab/alpaca"
-NUM_EXAMPLES = 10000
+NUM_EXAMPLES = 5000
 OUTPUT_DIR = Path("./data")
 TRAIN_SPLIT = 0.8
 VALID_SPLIT = 0.1

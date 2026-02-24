@@ -4,6 +4,9 @@ model: "./models/tinyllama-4bit-base"
 # Whether to train (boolean)
 train: true
 
+# QLoRA uses quantized base + LoRA adapters — distinct from plain LoRA.
+fine_tune_type: qlora
+
 # Directory with {train, valid, test}.jsonl files
 data: "./data"
 
@@ -51,6 +54,10 @@ max_seq_length: 512
 
 # Use gradient checkpointing to reduce memory use.
 grad_checkpoint: true
+
+# Mask the prompt tokens during training so the model only learns
+# to predict response tokens (recommended for instruction tuning).
+mask_prompt: true
 
 # LoRA parameters can only be specified in a config file
 lora_parameters:

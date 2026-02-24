@@ -153,19 +153,38 @@ def validate_model_sources(args: argparse.Namespace) -> None:
 def model_for_technique(args: argparse.Namespace, technique: str) -> str:
     if technique == "full":
         return args.full_model
+    if technique == "lora":
+        # LoRA uses full-precision base (same as standalone lora_config.yaml).
+        return args.full_model
+    # QLoRA uses 4-bit quantized base.
     return args.model
 
 
 def parse_loss(log_text: str) -> float:
-    patterns = [
-        r"test loss[^0-9]*([0-9]+(?:\.[0-9]+)?)",
-        r"val(?:idation)? loss[^0-9]*([0-9]+(?:\.[0-9]+)?)",
-        r"\bloss[^0-9]*([0-9]+(?:\.[0-9]+)?)",
-    ]
-    for pattern in patterns:
-        matches = re.findall(pattern, log_text, flags=re.IGNORECASE)
-        if matches:
-            return float(matches[-1])
+    """Extract the best validation loss from training logs.
+
+    Prefers test loss > validation loss > any loss mention.
+    For validation losses, returns the *minimum* across all checkpoints
+    rather than the last match, which gives a true best-checkpoint signal.
+    """
+    # 1. Prefer explicit test loss (single value at end of training).
+    test_pattern = r"test loss[^0-9]*([0-9]+(?:\.[0-9]+)?)"
+    test_matches = re.findall(test_pattern, log_text, flags=re.IGNORECASE)
+    if test_matches:
+        return float(test_matches[-1])
+
+    # 2. Best (minimum) validation loss across all checkpoints.
+    val_pattern = r"val(?:idation)? loss[^0-9]*([0-9]+(?:\.[0-9]+)?)"
+    val_matches = re.findall(val_pattern, log_text, flags=re.IGNORECASE)
+    if val_matches:
+        return min(float(v) for v in val_matches)
+
+    # 3. Fallback: any loss mention.
+    fallback_pattern = r"\bloss[^0-9]*([0-9]+(?:\.[0-9]+)?)"
+    fallback_matches = re.findall(fallback_pattern, log_text, flags=re.IGNORECASE)
+    if fallback_matches:
+        return float(fallback_matches[-1])
+
     return float("inf")
 
 
@@ -291,6 +310,9 @@ def build_config(
 
     steps_per_epoch = max(1, math.ceil(train_rows / batch_size))
     iters = steps_per_epoch * epochs
+    # Evaluate/save at least twice per epoch for better checkpoint selection.
+    eval_interval = max(1, steps_per_epoch // 2)
+    save_interval = max(1, steps_per_epoch // 2)
 
     config: Dict = {
         "model": model_for_technique(args, technique),
@@ -302,19 +324,30 @@ def build_config(
         "val_batches": args.val_batches,
         "learning_rate": learning_rate,
         "steps_per_report": args.steps_per_report,
-        "steps_per_eval": steps_per_epoch,
-        "save_every": steps_per_epoch,
+        "steps_per_eval": eval_interval,
+        "save_every": save_interval,
         "adapter_path": str(run_dir / "output"),
         "test": True,
         "test_batches": args.test_batches,
         "max_seq_length": args.max_seq_length,
         "grad_checkpoint": True,
         "grad_accumulation_steps": grad_accum_steps,
+        "mask_prompt": True,
     }
 
     if technique == "full":
         config["fine_tune_type"] = "full"
+    elif technique == "qlora":
+        config["fine_tune_type"] = "qlora"
+        config["lora_layers"] = args.lora_layers
+        config["lora_parameters"] = {
+            "keys": keys,
+            "rank": rank,
+            "scale": alpha / rank,
+            "dropout": args.dropout,
+        }
     else:
+        # technique == "lora"
         config["fine_tune_type"] = "lora"
         config["lora_layers"] = args.lora_layers
         config["lora_parameters"] = {
