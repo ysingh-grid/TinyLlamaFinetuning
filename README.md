@@ -122,7 +122,7 @@ source .venv/bin/activate
 # 5. Prepare the Alpaca dataset (downloads from HuggingFace, ~30 seconds)
 .venv/bin/python prepare_dataset.py
 
-# 6. Train your first LoRA adapter (~10-20 minutes on M1 Pro)
+# 6. Train your first LoRA adapter (~1 hour)
 ./run_train.sh
 
 # 7. Test it with a quick prompt
@@ -266,7 +266,7 @@ Instead of updating all 1.1B parameters, LoRA freezes the base model and injects
 
 ### Estimated Time
 
-~10-20 minutes on M1 Pro 16 GB.
+~1 hour (varies depending on dataset size and machine background load).
 
 ---
 
@@ -307,7 +307,7 @@ The **only** intended differences from LoRA are:
 
 ### Estimated Time
 
-~8-15 minutes on M1 Pro 16 GB (faster than LoRA due to quantized forward pass).
+~45-60 minutes (faster than LoRA due to quantized forward pass).
 
 ---
 
@@ -348,7 +348,7 @@ Full FT on TinyLlama-1.1B requires **~12-14 GB of unified memory**. If your Mac 
 
 ### Estimated Time
 
-~30-60 minutes on M1 Pro 16 GB.
+~2-3 hours.
 
 ---
 
@@ -544,7 +544,7 @@ For comparing different LoRA ranks in isolation, we provide standalone experimen
 ./run_experiments.sh
 ```
 
-This runs all three sequentially (~30-60 minutes total). Results are visible in the Streamlit app.
+This runs all three sequentially (~3-4 hours total). Results are visible in the Streamlit app.
 
 ---
 
@@ -991,23 +991,23 @@ source .venv/bin/activate
 ### Training
 
 ```bash
-# LoRA (~10-20 min)
+# LoRA (~1 hour)
 ./run_train.sh
 
-# QLoRA (~8-15 min)
+# QLoRA (~45-60 min)
 ./run_qlora.sh
 
-# Full Fine-Tuning (~30-60 min, needs 16 GB+)
+# Full Fine-Tuning (~2-3 hours, needs 16 GB+)
 ./run_full.sh
 
-# LoRA rank experiments (rank 8, 16, 32 — ~60 min total)
+# LoRA rank experiments (rank 8, 16, 32 — ~3-4 hours total)
 ./run_experiments.sh
 ```
 
 ### Hyperparameter Sweeps
 
 ```bash
-# Grid search — all techniques (~2-4 hours)
+# Grid search — all techniques (~10+ hours)
 .venv/bin/python sweep_mlx_lora.py --technique all --search grid
 
 # Grid search — single technique
