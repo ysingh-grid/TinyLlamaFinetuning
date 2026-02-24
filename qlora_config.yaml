@@ -5,7 +5,7 @@ model: "./models/tinyllama-4bit-base"
 train: true
 
 # QLoRA uses quantized base + LoRA adapters — distinct from plain LoRA.
-fine_tune_type: qlora
+fine_tune_type: lora
 
 # Directory with {train, valid, test}.jsonl files
 data: "./data"

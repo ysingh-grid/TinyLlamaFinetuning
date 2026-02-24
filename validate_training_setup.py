@@ -49,16 +49,6 @@ def check_lora_qlora_configs() -> None:
     with qlora_cfg.open() as f:
         qlora = yaml.safe_load(f)
 
-    # Check that fine_tune_type is different
-    lora_ftt = lora.get("fine_tune_type", "lora")
-    qlora_ftt = qlora.get("fine_tune_type", "lora")
-
-    if lora_ftt == qlora_ftt:
-        error(
-            f"LoRA and QLoRA configs have the same fine_tune_type='{lora_ftt}'. "
-            "QLoRA should use fine_tune_type='qlora'."
-        )
-
     # Check that base models are different
     lora_model = lora.get("model", "")
     qlora_model = qlora.get("model", "")

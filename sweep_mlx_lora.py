@@ -338,7 +338,7 @@ def build_config(
     if technique == "full":
         config["fine_tune_type"] = "full"
     elif technique == "qlora":
-        config["fine_tune_type"] = "qlora"
+        config["fine_tune_type"] = "lora"
         config["lora_layers"] = args.lora_layers
         config["lora_parameters"] = {
             "keys": keys,
@@ -576,7 +576,9 @@ def run_technique(
     technique_dir = args.out_dir / technique
     technique_dir.mkdir(parents=True, exist_ok=True)
     best_output_dir = args.best_dir / technique
-    if best_output_dir.exists():
+    if best_output_dir.is_symlink():
+        best_output_dir.unlink()
+    elif best_output_dir.exists():
         shutil.rmtree(best_output_dir)
 
     if args.search == "grid":
