@@ -10,6 +10,6 @@ fi
 echo "Starting TinyLlama QLoRA training (4-bit)..."
 echo "Config: qlora_config.yaml"
 
-.venv/bin/python -m mlx_lm.lora --config qlora_config.yaml
+.venv/bin/python smart_train.py --config qlora_config.yaml --patience 5
 
 echo "QLoRA Training complete! Adapter saved to ./adapters/tinyllama-qlora-alpaca"

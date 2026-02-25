@@ -10,6 +10,6 @@ fi
 echo "Starting TinyLlama LoRA training..."
 echo "Config: lora_config.yaml"
 
-.venv/bin/python -m mlx_lm.lora --config lora_config.yaml
+.venv/bin/python smart_train.py --config lora_config.yaml --patience 5
 
 echo "Training complete! Adapter saved to ./adapters/tinyllama-lora-alpaca"

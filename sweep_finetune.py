@@ -92,7 +92,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--early-stop-patience",
         type=int,
-        default=0,
+        default=5,
         help="Stop trial early after this many non-improving validation checks (0 disables).",
     )
     parser.add_argument(

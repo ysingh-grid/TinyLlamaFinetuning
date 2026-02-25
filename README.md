@@ -61,9 +61,9 @@
                               ▼
 ┌───────────────────────────────────────────────────────────────────┐
 │              HYPERPARAMETER SWEEP (optional)                      │
-│  sweep_mlx_lora.py  →  grid search or TPE (Optuna)              │
+│  sweep_finetune.py  →  grid search or TPE (Optuna)              │
 │  Tests: ranks, alphas, LRs, batch sizes, grad accumulations     │
-│  Selects: lowest validation loss checkpoint                      │
+│  Early stopping: aborts unpromising trials (patience=5)          │
 │  Copies best: mlx_best_models/{lora,qlora,full}                 │
 └─────────────────────────────┬─────────────────────────────────────┘
                               │
@@ -352,10 +352,10 @@ Full FT on TinyLlama-1.1B requires **~12-14 GB of unified memory**. If your Mac 
 
 ## 9. How Training Works Under the Hood
 
-All three training scripts call the same underlying command:
+All three standalone training scripts use our custom wrapper `smart_train.py`, which internally calls `mlx_lm.lora`:
 
 ```bash
-.venv/bin/python -m mlx_lm.lora --config <config>.yaml
+.venv/bin/python smart_train.py --config <config>.yaml --patience 5
 ```
 
 Here's what happens inside `mlx_lm.lora`:
@@ -372,6 +372,7 @@ Here's what happens inside `mlx_lm.lora`:
    - Every `steps_per_report` steps: print training loss
    - Every `steps_per_eval` steps: compute validation loss on `valid.jsonl`
    - Every `save_every` steps: save checkpoint to `adapter_path`
+6. **Early Stopping:** `smart_train.py` continuously monitors this output. If validation loss fails to improve for 5 consecutive evaluations (patience=5), it safely aborts the run and restores the checkpoint from the best iteration.
 5. **After training**: evaluate on `test.jsonl` and report test loss.
 
 ### What `mask_prompt: true` Does (Important!)
@@ -387,12 +388,12 @@ Without prompt masking, the model wastes capacity learning to predict the prompt
 
 ## 10. Hyperparameter Sweep System
 
-The sweep system (`sweep_mlx_lora.py`) automates finding the best hyperparameters for each training strategy.
+The sweep system (`sweep_finetune.py`) automates finding the best hyperparameters for each training strategy.
 
 ### How It Works
 
 ```
-sweep_mlx_lora.py
+sweep_finetune.py
     │
     ├── Generates hyperparameter combinations
     │   (grid search = all combos, TPE = smart sampling)
@@ -456,22 +457,22 @@ self_attn.o_proj    (output)
 
 **Grid search — all three techniques:**
 ```bash
-.venv/bin/python sweep_mlx_lora.py --technique all --search grid
+.venv/bin/python sweep_finetune.py --technique all --search grid
 ```
 
 **Grid search — LoRA only:**
 ```bash
-.venv/bin/python sweep_mlx_lora.py --technique lora --search grid
+.venv/bin/python sweep_finetune.py --technique lora --search grid
 ```
 
 **TPE (Bayesian) search — QLoRA, 20 trials:**
 ```bash
-.venv/bin/python sweep_mlx_lora.py --technique qlora --search tpe --n-trials 20
+.venv/bin/python sweep_finetune.py --technique qlora --search tpe --n-trials 20
 ```
 
 **Custom data directory:**
 ```bash
-.venv/bin/python sweep_mlx_lora.py --technique lora --data-dir ./data_custom
+.venv/bin/python sweep_finetune.py --technique lora --data-dir ./data_custom
 ```
 
 ### Output
@@ -919,8 +920,8 @@ PyCharmMiscProject/
 │   └── run_full_smoke_eval.sh       # 20-prompt smoke gate
 │
 ├── 🔍 HYPERPARAMETER SWEEP
-│   ├── sweep_mlx_lora.py            # Grid/TPE sweep runner
-│   ├── sweep_train.sh               # Manual rank × scale sweep (legacy)
+│   ├── sweep_finetune.py            # Grid/TPE sweep runner
+│   ├── smart_train.py               # Standalone training wrapper with early stopping
 │   ├── mlx_sweep_runs/              # All sweep run outputs
 │   └── mlx_best_models/             # Best model per technique
 │       ├── lora/
@@ -1006,13 +1007,13 @@ source .venv/bin/activate
 
 ```bash
 # Grid search — all techniques (~2-4 hours)
-.venv/bin/python sweep_mlx_lora.py --technique all --search grid
+.venv/bin/python sweep_finetune.py --technique all --search grid
 
 # Grid search — single technique
-.venv/bin/python sweep_mlx_lora.py --technique lora --search grid
+.venv/bin/python sweep_finetune.py --technique lora --search grid
 
 # TPE search — 20 trials
-.venv/bin/python sweep_mlx_lora.py --technique qlora --search tpe --n-trials 20
+.venv/bin/python sweep_finetune.py --technique qlora --search tpe --n-trials 20
 ```
 
 ### Full-FT Recovery
@@ -1116,7 +1117,7 @@ This codebase underwent a comprehensive audit (`deep_search_audit.md`) that iden
 | 2 | **Critical** | Eval loaded adapters on wrong base model | `models.json` now matches training base per technique |
 | 3 | **High** | Full retrain wrote to `full` but smoke eval expected `full_retrain` | All retrain configs → `./mlx_best_models/full_retrain` |
 | 4 | **High** | CI column labeled generically as `95% CI` | Now `95% CI (Tie-Adj Score)` |
-| 5 | **High** | Best model selection used last loss (not best) | Now uses minimum validation loss across checkpoints |
+| 5 | **High** | Best model selection used last loss / No early stopping | Sweep now parses best val loss; Standalone training wrapped with `smart_train.py` (patience=5) |
 | 6 | **Medium** | `mask_prompt: false` in trained adapters | Set `mask_prompt: true` everywhere |
 | 7 | **Medium** | Judge parser had order-dependent substring bias | Rewritten with first-word + keyword-counting approach |
 | 8 | **Medium** | RNG reseeded per prompt; only 50 eval prompts | Seed once per model; default 200 prompts |

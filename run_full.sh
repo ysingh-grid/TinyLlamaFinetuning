@@ -11,6 +11,6 @@ echo "Starting TinyLlama Full Fine-Tuning..."
 echo "Config: full_config.yaml"
 echo "WARNING: This requires significantly more VRAM than LoRA."
 
-.venv/bin/python -m mlx_lm.lora --config full_config.yaml
+.venv/bin/python smart_train.py --config full_config.yaml --patience 5
 
 echo "Full Fine-Tuning complete! Model saved to ./models/tinyllama-full-alpaca"
