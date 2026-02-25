@@ -281,15 +281,13 @@ Same concept as LoRA, but the **base model is loaded in 4-bit precision** (group
 | Parameter | Value | Difference from LoRA |
 |---|---|---|
 | `model` | `./models/tinyllama-4bit-base` | **4-bit quantized** local model |
-| `fine_tune_type` | `qlora` | Explicit QLoRA mode |
+| `fine_tune_type` | `lora` | Same as LoRA — QLoRA is achieved by using a 4-bit quantized base model |
 | `mask_prompt` | `true` | Same as LoRA |
 | All other params | Same as LoRA | Identical rank, LR, layers, etc. |
 
 ### Key Difference
 
-The **only** intended differences from LoRA are:
-1. Base model is 4-bit quantized (smaller memory footprint)
-2. `fine_tune_type` is `qlora` (tells MLX to handle quantized forward pass correctly)
+The **only** intended difference from LoRA is that the base model is 4-bit quantized (smaller memory footprint). `mlx-lm` handles the quantized forward pass automatically — no separate `fine_tune_type` is needed.
 
 ### Output
 
@@ -1114,7 +1112,7 @@ This codebase underwent a comprehensive audit (`deep_search_audit.md`) that iden
 
 | # | Severity | Issue | Fix Applied |
 |---|---|---|---|
-| 1 | **Critical** | LoRA and QLoRA used same base model + same `fine_tune_type` | LoRA → hub fp16, QLoRA → 4-bit local; `fine_tune_type: qlora` |
+| 1 | **Critical** | LoRA and QLoRA used same base model | LoRA → hub fp16, QLoRA → 4-bit local base model |
 | 2 | **Critical** | Eval loaded adapters on wrong base model | `models.json` now matches training base per technique |
 | 3 | **High** | Full retrain wrote to `full` but smoke eval expected `full_retrain` | All retrain configs → `./mlx_best_models/full_retrain` |
 | 4 | **High** | CI column labeled generically as `95% CI` | Now `95% CI (Tie-Adj Score)` |

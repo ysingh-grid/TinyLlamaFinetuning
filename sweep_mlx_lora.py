@@ -25,7 +25,7 @@ RANKS = [16, 32]
 ALPHAS = [32, 64]
 LRS = [1e-4, 2e-4]
 EPOCHS = [1]
-BATCH_SIZES = [2]
+BATCH_SIZES = [1]
 GRAD_ACCUMS = [4, 6]
 ANSI_ESCAPE_RE = re.compile(r"\x1B\[[0-?]*[ -/]*[@-~]")
 
@@ -402,6 +402,8 @@ def run_trial(
     keys: List[str],
 ) -> Dict:
     run_dir = args.out_dir / technique / f"trial_{trial_id:04d}"
+    if run_dir.exists():
+        shutil.rmtree(run_dir)
     run_dir.mkdir(parents=True, exist_ok=True)
     print(
         f"[{technique} {trial_id}/{total_trials}] starting {describe_params(technique, params)}",
