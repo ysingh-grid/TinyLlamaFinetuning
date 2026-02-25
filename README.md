@@ -1080,6 +1080,23 @@ RUN_ID=<timestamp>
   --adapter-path ./adapters/tinyllama-lora-alpaca \
   --prompt "Explain gradient descent in simple terms." \
   --max-tokens 256
+### Quick Evaluation (Mid-Training Sanity Check)
+
+If you want to quickly eyeball whether an adapter is significantly better/different than the base model (without running the full hour-long eval pipeline), run:
+
+```bash
+.venv/bin/python quick_eval.py \
+  --adapter ./adapters/tinyllama-lora-alpaca \
+  --n-prompts 10
+```
+This generates side-by-side terminal outputs and string length statistics in under 2 minutes.
+
+### Loss Curves
+
+You can plot ASCII loss curves directly in your terminal from any `smart_train.py` or `sweep_finetune.py` run:
+
+```bash
+.venv/bin/python plot_loss.py --log ./adapters/tinyllama-lora-alpaca/train.log
 ```
 
 ### Streamlit Demo
