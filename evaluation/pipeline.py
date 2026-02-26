@@ -185,6 +185,22 @@ def run_generation(
             "Generation requires mlx + mlx_lm. Install dependencies in your venv first."
         ) from exc
 
+    # Some quantized local models (e.g. tinyllama-4bit-base) have
+    # tokenizer_class=TokenizersBackend in their tokenizer_config.json.
+    # Transformers refuses to load them unless the class is registered.
+    # This shim mirrors the same patch used in sweep_finetune.py.
+    try:
+        import transformers
+        if not hasattr(transformers, "TokenizersBackend"):
+            from transformers import PreTrainedTokenizerFast
+
+            class TokenizersBackend(PreTrainedTokenizerFast):  # type: ignore
+                pass
+
+            transformers.TokenizersBackend = TokenizersBackend  # type: ignore
+    except Exception:
+        pass
+
     if max_tokens <= 0:
         raise ValueError("max_tokens must be > 0")
 
