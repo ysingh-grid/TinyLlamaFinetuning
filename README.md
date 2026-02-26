@@ -315,16 +315,11 @@ The **only** intended difference from LoRA is that the base model is 4-bit quant
 
 Updates **every single parameter** in the 1.1B model. This gives the most capacity for learning but requires significantly more memory and can be unstable.
 
-### Configuration: `full_config.yaml`
+### Configuration
 
-| Parameter | Value | Notes |
-|---|---|---|
-| `model` | `TinyLlama/TinyLlama-1.1B-Chat-v1.0` | Full-precision hub model |
-| `fine_tune_type` | `full` | Update all weights |
-| `learning_rate` | 1e-5 | Conservative — full FT is more sensitive to LR |
-| `batch_size` | 1 | Memory-limited on most Macs |
-| `iters` | 1200 | Total training steps |
-| `adapter_path` | `./models/tinyllama-full-alpaca` | Output path (MLX still calls it "adapter_path") |
+Full-FT configs are generated per trial by `sweep_finetune.py` under:
+
+`./mlx_sweep_runs/full/trial_XXXX/config.yaml`
 
 ### ⚠️ Memory Warning
 
@@ -341,7 +336,7 @@ Full FT on TinyLlama-1.1B requires **~12-14 GB of unified memory**. If your Mac 
 ### Command
 
 ```bash
-./run_full.sh
+.venv/bin/python smart_train.py --config /path/to/full_ft_config.yaml --patience 5 --min-delta 0.0
 ```
 
 ### Estimated Time
@@ -547,56 +542,19 @@ This runs all three sequentially (~30-60 minutes total). Results are visible in 
 
 ---
 
-## 13. Full-FT Recovery Path (Safe Retrain)
+## 13. Full-FT Recovery Path
 
-Full fine-tuning can sometimes produce gibberish or unstable outputs (especially with aggressive learning rates). The safe-retrain workflow provides a staged recovery:
-
-### Stage 1: Sanity Check (`experiments/full_safe_sanity.yaml`)
-
-| Setting | Value |
-|---|---|
-| Iterations | 200 (very short) |
-| Learning Rate | 2e-5 |
-| Batch Size | 1 |
-| Steps per Eval | 50 |
-| Output | `./mlx_best_models/full_retrain` |
+Manual full-FT wrappers/configs were removed. Use the sweep runner for full FT, which generates trial configs and already supports early stopping:
 
 ```bash
-./run_full_retrain_safe.sh sanity
+.venv/bin/python sweep_finetune.py --technique full --search grid --early-stop-patience 5 --early-stop-min-delta 0.0
 ```
 
-### Stage 2: Smoke Evaluation (20 prompts)
+To rerun a specific full trial with the smart wrapper:
 
 ```bash
-./run_full_smoke_eval.sh
+.venv/bin/python smart_train.py --config mlx_sweep_runs/full/trial_0001/config.yaml --patience 5 --min-delta 0.0
 ```
-
-This generates responses from the retrained model on 20 prompts and checks quality. If >20% of responses are "bad" (empty, repetitive, or incoherent), it fails fast.
-
-### Stage 3: Scale Up (`experiments/full_safe_scale.yaml`)
-
-| Setting | Value |
-|---|---|
-| Iterations | 1,200 |
-| Learning Rate | 3e-5 |
-
-```bash
-./run_full_retrain_safe.sh scale
-```
-
-### Stage 4: Full Epoch (`experiments/full_safe_epoch1.yaml`)
-
-| Setting | Value |
-|---|---|
-| Iterations | 4,000 |
-| Batch Size | 2 |
-| Grad Accumulation | 2 |
-
-```bash
-./run_full_retrain_safe.sh epoch1
-```
-
-All three stages write to the same output directory: `./mlx_best_models/full_retrain`. The smoke eval script checks this exact path.
 
 ---
 
@@ -899,25 +857,19 @@ PyCharmMiscProject/
 ├── 🏋️ TRAINING CONFIGS
 │   ├── lora_config.yaml             # LoRA: fp16 base + adapter [rank=16, scale=2.0]
 │   ├── qlora_config.yaml            # QLoRA: 4-bit base + adapter [rank=16, scale=2.0]
-│   └── full_config.yaml             # Full FT: all weights updated [lr=1e-5]
+│   └── mlx_sweep_runs/.../config.yaml # Sweep-generated per-trial configs
 │
 ├── 🚀 TRAINING SCRIPTS
 │   ├── run_train.sh                 # LoRA training launcher
 │   ├── run_qlora.sh                 # QLoRA training launcher
-│   ├── run_full.sh                  # Full FT training launcher
 │   └── test_model.sh               # Quick inference test
 │
 ├── 🔬 EXPERIMENTS
 │   ├── experiments/
 │   │   ├── rank8.yaml               # LoRA rank 8 experiment
 │   │   ├── rank16.yaml              # LoRA rank 16 experiment
-│   │   ├── rank32.yaml              # LoRA rank 32 experiment
-│   │   ├── full_safe_sanity.yaml    # Full FT recovery: sanity check
-│   │   ├── full_safe_scale.yaml     # Full FT recovery: scale up
-│   │   └── full_safe_epoch1.yaml    # Full FT recovery: full epoch
+│   │   └── rank32.yaml              # LoRA rank 32 experiment
 │   ├── run_experiments.sh           # Run all rank experiments
-│   ├── run_full_retrain_safe.sh     # Staged full FT recovery
-│   └── run_full_smoke_eval.sh       # 20-prompt smoke gate
 │
 ├── 🔍 HYPERPARAMETER SWEEP
 │   ├── sweep_finetune.py            # Grid/TPE sweep runner
@@ -926,8 +878,7 @@ PyCharmMiscProject/
 │   └── mlx_best_models/             # Best model per technique
 │       ├── lora/
 │       ├── qlora/
-│       ├── full/
-│       └── full_retrain/
+│       └── full/
 │
 ├── 📊 EVALUATION
 │   ├── evaluation/
@@ -996,8 +947,8 @@ source .venv/bin/activate
 # QLoRA (~8-15 min)
 ./run_qlora.sh
 
-# Full Fine-Tuning (~30-60 min, needs 16 GB+)
-./run_full.sh
+# Full Fine-Tuning with early stopping (~30-60 min, needs 16 GB+)
+.venv/bin/python smart_train.py --config /path/to/full_ft_config.yaml --patience 5 --min-delta 0.0
 
 # LoRA rank experiments (rank 8, 16, 32 — ~60 min total)
 ./run_experiments.sh
@@ -1019,10 +970,7 @@ source .venv/bin/activate
 ### Full-FT Recovery
 
 ```bash
-./run_full_retrain_safe.sh sanity    # Quick sanity check
-./run_full_smoke_eval.sh              # 20-prompt quality gate
-./run_full_retrain_safe.sh scale     # Scale up training
-./run_full_retrain_safe.sh epoch1    # Full epoch
+.venv/bin/python sweep_finetune.py --technique full --search grid --early-stop-patience 5 --early-stop-min-delta 0.0
 ```
 
 ### Evaluation

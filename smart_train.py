@@ -10,17 +10,18 @@ Works for LoRA, QLoRA, and Full Fine-Tuning configs.
 Usage:
     .venv/bin/python smart_train.py --config lora_config.yaml
     .venv/bin/python smart_train.py --config qlora_config.yaml --patience 3
-    .venv/bin/python smart_train.py --config full_config.yaml --patience 5 --min-delta 0.01
+    .venv/bin/python smart_train.py --config /path/to/full_ft_config.yaml --patience 5 --min-delta 0.01
 """
 from __future__ import annotations
 
 import argparse
+import math
 import re
 import shutil
 import subprocess
 import sys
 from pathlib import Path
-from typing import Optional
+from typing import Dict, Optional, Tuple
 
 ANSI_ESCAPE_RE = re.compile(r"\x1B\[[0-?]*[ -/]*[@-~]")
 
@@ -46,6 +47,15 @@ def parse_args() -> argparse.Namespace:
         type=float,
         default=0.0,
         help="Minimum improvement in val loss required to reset patience counter.",
+    )
+    parser.add_argument(
+        "--full-interval-divisor",
+        type=int,
+        default=10,
+        help=(
+            "For fine_tune_type=full, override steps_per_eval/save_every to "
+            "max(1, steps_per_epoch // divisor). Set 0 to disable."
+        ),
     )
     return parser.parse_args()
 
@@ -105,6 +115,71 @@ def find_best_checkpoint(adapter_dir: Path, best_iter: int) -> Optional[Path]:
     return best_ckpt
 
 
+def count_lines(path: Path) -> int:
+    with path.open("r", encoding="utf-8") as f:
+        return sum(1 for _ in f)
+
+
+def maybe_prepare_effective_config(
+    config_path: Path,
+    adapter_dir: Optional[Path],
+    full_interval_divisor: int,
+) -> Tuple[Path, Optional[Dict[str, int]]]:
+    """Build an effective config for full FT with derived eval/save intervals.
+
+    Returns (effective_config_path, interval_info). If no override was applied,
+    effective_config_path is the original config_path and interval_info is None.
+    """
+    if full_interval_divisor <= 0:
+        return config_path, None
+
+    try:
+        import yaml
+    except ImportError:
+        return config_path, None
+
+    with config_path.open("r", encoding="utf-8") as f:
+        cfg = yaml.safe_load(f) or {}
+
+    if cfg.get("fine_tune_type") != "full":
+        return config_path, None
+
+    batch_size = int(cfg.get("batch_size", 0) or 0)
+    if batch_size < 1:
+        return config_path, None
+
+    data_dir = cfg.get("data")
+    if not data_dir:
+        return config_path, None
+
+    data_dir_path = Path(data_dir)
+    if not data_dir_path.is_absolute():
+        data_dir_path = (config_path.parent / data_dir_path).resolve()
+    train_file = data_dir_path / "train.jsonl"
+    if not train_file.exists():
+        return config_path, None
+
+    train_rows = count_lines(train_file)
+    if train_rows <= 0:
+        return config_path, None
+
+    steps_per_epoch = max(1, math.ceil(train_rows / batch_size))
+    interval = max(1, steps_per_epoch // full_interval_divisor)
+    cfg["steps_per_eval"] = interval
+    cfg["save_every"] = interval
+
+    out_dir = adapter_dir if adapter_dir is not None else config_path.parent
+    out_dir.mkdir(parents=True, exist_ok=True)
+    effective_config = out_dir / "__smart_effective_config.yaml"
+    effective_config.write_text(yaml.safe_dump(cfg, sort_keys=False), encoding="utf-8")
+
+    return effective_config, {
+        "train_rows": train_rows,
+        "steps_per_epoch": steps_per_epoch,
+        "interval": interval,
+    }
+
+
 def main():
     args = parse_args()
 
@@ -113,6 +188,11 @@ def main():
         sys.exit(1)
 
     adapter_dir = extract_adapter_path(args.config)
+    effective_config_path, interval_info = maybe_prepare_effective_config(
+        config_path=args.config,
+        adapter_dir=adapter_dir,
+        full_interval_divisor=args.full_interval_divisor,
+    )
 
     log_file = None
     if adapter_dir:
@@ -128,14 +208,24 @@ def main():
     log_print(f"{'=' * 60}")
     log_print(f"  Smart Training Wrapper")
     log_print(f"  Config:    {args.config}")
+    if effective_config_path != args.config:
+        log_print(f"  Effective: {effective_config_path}")
     log_print(f"  Patience:  {args.patience} {'(disabled)' if args.patience == 0 else 'evals'}")
     log_print(f"  Min Delta: {args.min_delta}")
+    if interval_info is not None:
+        log_print(
+            "  Full FT intervals: "
+            f"steps_per_eval=save_every={interval_info['interval']} "
+            f"(train_rows={interval_info['train_rows']}, "
+            f"steps_per_epoch={interval_info['steps_per_epoch']}, "
+            f"divisor={args.full_interval_divisor})"
+        )
     if adapter_dir:
         log_print(f"  Adapter:   {adapter_dir}")
     log_print(f"{'=' * 60}\n")
 
     # Launch training
-    cmd = [sys.executable, "-m", "mlx_lm.lora", "--config", str(args.config)]
+    cmd = [sys.executable, "-m", "mlx_lm.lora", "--config", str(effective_config_path)]
     proc = subprocess.Popen(
         cmd,
         stdout=subprocess.PIPE,

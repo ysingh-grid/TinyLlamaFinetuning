@@ -187,33 +187,14 @@ Model-judge mode:
 
 ## Full FT Retrain Workflow
 
-When full FT quality collapses (gibberish generations), use this sequence:
-
-1. Short sanity retrain with safe LR:
+Manual full-FT retrain wrappers/config files were removed. Use sweep-generated full configs plus early stopping:
 
 ```bash
-./run_full_retrain_safe.sh sanity
+.venv/bin/python sweep_finetune.py --technique full --search grid --early-stop-patience 5 --early-stop-min-delta 0.0
 ```
 
-2. 20-prompt smoke eval gate:
+To rerun a specific full trial with the smart wrapper:
 
 ```bash
-./run_full_smoke_eval.sh
+.venv/bin/python smart_train.py --config mlx_sweep_runs/full/trial_0001/config.yaml --patience 5 --min-delta 0.0
 ```
-
-3. If smoke passes, scale retrain:
-
-```bash
-./run_full_retrain_safe.sh scale
-```
-
-4. Then run full 1-epoch retrain:
-
-```bash
-./run_full_retrain_safe.sh epoch1
-```
-
-Configs:
-- `experiments/full_safe_sanity.yaml`: `learning_rate=2e-5`, `iters=200`
-- `experiments/full_safe_scale.yaml`: `learning_rate=3e-5`, `iters=1200`
-- `experiments/full_safe_epoch1.yaml`: `learning_rate=3e-5`, `iters=4000`

@@ -25,7 +25,7 @@ RANKS = [16, 32]
 ALPHAS = [32, 64]
 LRS = [1e-4, 2e-4]
 EPOCHS = [1]
-BATCH_SIZES = [1]
+BATCH_SIZES = [4]
 GRAD_ACCUMS = [4, 6]
 ANSI_ESCAPE_RE = re.compile(r"\x1B\[[0-?]*[ -/]*[@-~]")
 
@@ -78,7 +78,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--keys", default=DEFAULT_KEYS)
     parser.add_argument("--dropout", type=float, default=0.05)
     parser.add_argument("--lora-layers", type=int, default=16)
-    parser.add_argument("--max-seq-length", type=int, default=512)
+    parser.add_argument("--max-seq-length", type=int, default=256)
     parser.add_argument("--seed", type=int, default=0)
     parser.add_argument("--steps-per-report", type=int, default=10)
     parser.add_argument("--val-batches", type=int, default=-1)
@@ -92,7 +92,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--early-stop-patience",
         type=int,
-        default=5,
+        default=2,
         help="Stop trial early after this many non-improving validation checks (0 disables).",
     )
     parser.add_argument(
@@ -310,9 +310,9 @@ def build_config(
 
     steps_per_epoch = max(1, math.ceil(train_rows / batch_size))
     iters = steps_per_epoch * epochs
-    # Evaluate/save at least twice per epoch for better checkpoint selection.
-    eval_interval = max(1, steps_per_epoch // 2)
-    save_interval = max(1, steps_per_epoch // 2)
+    # Run validation about 10 times per epoch (e.g., 100 when steps_per_epoch=1000).
+    eval_interval = max(1, steps_per_epoch // 10)
+    save_interval = max(1, steps_per_epoch // 10)
 
     config: Dict = {
         "model": model_for_technique(args, technique),

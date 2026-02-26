@@ -169,44 +169,10 @@ def check_eval_model_alignment() -> None:
 
 
 # ---------------------------------------------------------------------------
-# 4. Path contract: full retrain vs smoke eval
-# ---------------------------------------------------------------------------
-def check_retrain_path_contract() -> None:
-    smoke_script = ROOT / "run_full_smoke_eval.sh"
-    if not smoke_script.exists():
-        return
-
-    smoke_text = smoke_script.read_text()
-
-    retrain_configs = list((ROOT / "experiments").glob("full_safe_*.yaml"))
-    if not retrain_configs:
-        return
-
-    try:
-        import yaml
-    except ImportError:
-        warn("PyYAML not installed — skipping retrain path contract check.")
-        return
-
-    for cfg_path in retrain_configs:
-        with cfg_path.open() as f:
-            cfg = yaml.safe_load(f)
-        adapter_path = cfg.get("adapter_path", "")
-        # Normalize path
-        adapter_dir = Path(adapter_path).name if adapter_path else ""
-
-        if adapter_dir and adapter_dir not in smoke_text:
-            error(
-                f"Retrain config {cfg_path.name} writes to '{adapter_path}', "
-                f"but run_full_smoke_eval.sh does not reference '{adapter_dir}'."
-            )
-
-
-# ---------------------------------------------------------------------------
-# 5. Shell scripts use venv
+# 4. Shell scripts use venv
 # ---------------------------------------------------------------------------
 def check_venv_usage() -> None:
-    for script_name in ["run_train.sh", "run_qlora.sh", "run_full.sh"]:
+    for script_name in ["run_train.sh", "run_qlora.sh"]:
         script = ROOT / script_name
         if not script.exists():
             continue
@@ -222,7 +188,7 @@ def check_venv_usage() -> None:
 
 
 # ---------------------------------------------------------------------------
-# 6. Data count sanity
+# 5. Data count sanity
 # ---------------------------------------------------------------------------
 def check_data_counts() -> None:
     data_dir = ROOT / "data"
@@ -265,7 +231,6 @@ def main() -> None:
     check_lora_qlora_configs()
     check_adapter_distinctness()
     check_eval_model_alignment()
-    check_retrain_path_contract()
     check_venv_usage()
     check_data_counts()
 
