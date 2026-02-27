@@ -20,9 +20,9 @@ DEFAULT_BEST_DIR = "./mlx_best_models"
 DEFAULT_KEYS = "self_attn.q_proj,self_attn.k_proj,self_attn.v_proj,self_attn.o_proj"
 
 # Focused "likely-good" defaults for TinyLlama 1.1B tuning.
-FULL_LRS = [2e-5, 5e-5]
-RANKS = [16, 32]
-ALPHAS = [32, 64]
+# Alpha is always 2*rank (scale=2.0) — not a separate sweep dimension.
+FULL_LRS = [1e-5, 2e-5]   # 5e-5 caused repetition loops; stay conservative for full FT
+RANKS = [8, 16]      # dropped rank-32; scale fixed at 2.0 (alpha = 2*rank)
 LRS = [1e-4, 2e-4]
 EPOCHS = [1]
 BATCH_SIZES = [4]
@@ -290,7 +290,8 @@ def build_gpu_only_cmd(config_path: Path) -> List[str]:
 def build_grid(technique: str) -> List[Tuple]:
     if technique == "full":
         return list(itertools.product(FULL_LRS, EPOCHS, BATCH_SIZES, GRAD_ACCUMS))
-    return list(itertools.product(RANKS, ALPHAS, LRS, EPOCHS, BATCH_SIZES, GRAD_ACCUMS))
+    # Alpha is derived as 2*rank; not an independent axis.
+    return list(itertools.product(RANKS, LRS, EPOCHS, BATCH_SIZES, GRAD_ACCUMS))
 
 
 def build_config(
@@ -306,7 +307,8 @@ def build_config(
         rank = None
         alpha = None
     else:
-        rank, alpha, learning_rate, epochs, batch_size, grad_accum_steps = params
+        rank, learning_rate, epochs, batch_size, grad_accum_steps = params
+        alpha = rank * 2  # scale fixed at 2.0 throughout
 
     steps_per_epoch = max(1, math.ceil(train_rows / batch_size))
     iters = steps_per_epoch * epochs
@@ -365,9 +367,10 @@ def describe_params(technique: str, params: Tuple) -> str:
         lr, epochs, batch_size, grad_accum_steps = params
         return f"lr={lr} ep={epochs} bs={batch_size} ga={grad_accum_steps}"
 
-    rank, alpha, lr, epochs, batch_size, grad_accum_steps = params
+    rank, lr, epochs, batch_size, grad_accum_steps = params
+    alpha = rank * 2
     return (
-        f"rank={rank} alpha={alpha} lr={lr} "
+        f"rank={rank} alpha={alpha} scale=2.0 lr={lr} "
         f"ep={epochs} bs={batch_size} ga={grad_accum_steps}"
     )
 
@@ -382,9 +385,10 @@ def record_params(result: Dict, technique: str, params: Tuple) -> None:
         result["effective_batch_size"] = batch_size * grad_accum_steps
         return
 
-    rank, alpha, lr, epochs, batch_size, grad_accum_steps = params
+    rank, lr, epochs, batch_size, grad_accum_steps = params
     result["rank"] = rank
-    result["alpha"] = alpha
+    result["alpha"] = rank * 2  # always 2*rank
+    result["scale"] = 2.0
     result["learning_rate"] = lr
     result["epochs"] = epochs
     result["batch_size"] = batch_size
@@ -505,9 +509,9 @@ def suggest_params_for_tpe(trial, technique: str) -> Tuple:
             trial.suggest_categorical("grad_accumulation_steps", GRAD_ACCUMS),
         )
 
+    # alpha is always 2*rank — not a separate TPE dimension
     return (
         trial.suggest_categorical("rank", RANKS),
-        trial.suggest_categorical("alpha", ALPHAS),
         trial.suggest_categorical("learning_rate", LRS),
         trial.suggest_categorical("epochs", EPOCHS),
         trial.suggest_categorical("batch_size", BATCH_SIZES),

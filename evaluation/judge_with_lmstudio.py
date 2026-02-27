@@ -34,13 +34,11 @@ def write_jsonl(path: Path, rows: Iterable[Dict]) -> None:
 
 
 def _parse_winner(text: str) -> str:
-    """Parse winner from judge output, avoiding order-dependent substring bias.
+    """Parse winner from judge output, handling both direct and chain-of-thought outputs.
 
-    Strategy:
-    1. Check if the first token is an unambiguous verdict (LEFT/RIGHT/TIE/A/B).
-    2. If the output is verbose, count keyword occurrences and only assign
-       when a single verdict keyword dominates.
-    3. Otherwise return "invalid".
+    Reasoning models (e.g. ministral-3b-reasoning) emit a long thinking block
+    before the final verdict. We therefore scan the LAST 300 chars first for a
+    clean verdict before falling back to full-text keyword counting.
     """
     import re
 
@@ -48,55 +46,88 @@ def _parse_winner(text: str) -> str:
     if not normalized:
         return "invalid"
 
-    # 1. Check the first substantive word (most reliable signal).
-    first_word = re.split(r"[\s:.,;!]+", normalized)[0]
-    first_word_map = {
-        "left": "left",
-        "right": "right",
-        "tie": "tie",
-        "draw": "tie",
-        "equal": "tie",
-        "a": "left",
-        "b": "right",
+    verdict_map = {
+        "left": "left", "right": "right", "tie": "tie",
+        "draw": "tie", "equal": "tie", "a": "left", "b": "right",
     }
-    if first_word in first_word_map:
-        return first_word_map[first_word]
 
-    # 2. Count keyword occurrences — only assign if one side dominates.
-    left_count = len(re.findall(r"\bleft\b", normalized)) + len(re.findall(r"\bresponse a\b", normalized))
+    # 1. Check the last 300 chars — reasoning models put verdict at the end.
+    tail = normalized[-300:]
+    # Look for an explicit "verdict: X" or "winner: X" pattern first.
+    verdict_match = re.search(
+        r"(?:verdict|winner|answer)[\s:]*([\w]+)", tail
+    )
+    if verdict_match:
+        word = verdict_match.group(1).lower()
+        if word in verdict_map:
+            return verdict_map[word]
+
+    # 2. Check the last clear standalone word in the tail.
+    tail_words = re.split(r"[\s:.,;!\[\]()\"']+", tail.strip())
+    for word in reversed(tail_words):
+        if word in verdict_map:
+            return verdict_map[word]
+
+    # 3. Check the very first substantive word (direct / non-reasoning output).
+    first_word = re.split(r"[\s:.,;!]+", normalized)[0]
+    if first_word in verdict_map:
+        return verdict_map[first_word]
+
+    # 4. Keyword count over full text — only assign when one side dominates.
+    left_count  = len(re.findall(r"\bleft\b", normalized))  + len(re.findall(r"\bresponse a\b", normalized))
     right_count = len(re.findall(r"\bright\b", normalized)) + len(re.findall(r"\bresponse b\b", normalized))
-    tie_count = len(re.findall(r"\btie\b", normalized)) + len(re.findall(r"\bdraw\b", normalized)) + len(re.findall(r"\bequal\b", normalized))
+    tie_count   = (len(re.findall(r"\btie\b", normalized))
+                   + len(re.findall(r"\bdraw\b", normalized))
+                   + len(re.findall(r"\bequal\b", normalized)))
 
-    counts = {"left": left_count, "right": right_count, "tie": tie_count}
+    counts   = {"left": left_count, "right": right_count, "tie": tie_count}
     non_zero = {k: v for k, v in counts.items() if v > 0}
-
     if len(non_zero) == 1:
         return next(iter(non_zero))
+    if non_zero:
+        return max(non_zero, key=non_zero.get)  # majority vote
 
-    # Ambiguous or no verdict keywords found.
     return "invalid"
 
 
-def _judge_prompt(prompt: str, left: str, right: str) -> str:
+def _truncate(text: str, max_chars: int) -> str:
+    """Hard-truncate a response to max_chars, appending an ellipsis if cut."""
+    if len(text) <= max_chars:
+        return text
+    return text[:max_chars].rstrip() + " ...[truncated]"
+
+
+def _judge_prompt(prompt: str, left: str, right: str, max_response_chars: int = 800) -> str:
+    left  = _truncate(left,  max_response_chars)
+    right = _truncate(right, max_response_chars)
     return (
         "You are an impartial evaluator. Compare two responses to a user prompt. "
-        "Judge correctness, instruction-following, relevance/helpfulness, and safety. "
-        "Respond with exactly one token: LEFT, RIGHT, or TIE.\n\n"
+        "Judge correctness, instruction-following, relevance, and helpfulness. "
+        "Think step-by-step, then end with: Verdict: LEFT, Verdict: RIGHT, or Verdict: TIE.\n\n"
         f"Prompt:\n{prompt}\n\n"
         f"LEFT RESPONSE:\n{left}\n\n"
         f"RIGHT RESPONSE:\n{right}\n\n"
-        "Verdict (LEFT/RIGHT/TIE):"
+        "Your evaluation:"
     )
 
 
-def _chat_completion(base_url: str, model: str, user_prompt: str, timeout_s: int) -> str:
+def _chat_completion(
+    base_url: str,
+    model: str,
+    user_prompt: str,
+    timeout_s: int,
+    max_tokens: int = 1024,
+) -> str:
     url = f"{base_url.rstrip('/')}/chat/completions"
     payload = {
         "model": model,
         "messages": [
             {
                 "role": "system",
-                "content": "Return only LEFT, RIGHT, or TIE.",
+                "content": (
+                    "You are an impartial judge. Evaluate carefully, then end your response "
+                    "with exactly: Verdict: LEFT, Verdict: RIGHT, or Verdict: TIE."
+                ),
             },
             {
                 "role": "user",
@@ -104,7 +135,7 @@ def _chat_completion(base_url: str, model: str, user_prompt: str, timeout_s: int
             },
         ],
         "temperature": 0,
-        "max_tokens": 4,
+        "max_tokens": max_tokens,
         "stream": False,
     }
 
@@ -140,9 +171,17 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--out", type=Path, required=True)
     parser.add_argument("--model", default="gpt-oss-20b")
     parser.add_argument("--base-url", default="http://127.0.0.1:1234/v1")
-    parser.add_argument("--timeout-s", type=int, default=60)
+    parser.add_argument("--timeout-s", type=int, default=120)
     parser.add_argument("--sleep-ms", type=int, default=0)
     parser.add_argument("--progress-every", type=int, default=100)
+    parser.add_argument(
+        "--max-judge-tokens", type=int, default=1024,
+        help="Max tokens for judge completion (raise for reasoning models). Default: 1024"
+    )
+    parser.add_argument(
+        "--max-response-chars", type=int, default=800,
+        help="Truncate each response to this many chars before sending to judge. Default: 800"
+    )
     return parser.parse_args()
 
 
@@ -159,12 +198,14 @@ def main() -> None:
             prompt=str(task["prompt"]),
             left=str(task["left_response"]),
             right=str(task["right_response"]),
+            max_response_chars=args.max_response_chars,
         )
         raw = _chat_completion(
             base_url=args.base_url,
             model=args.model,
             user_prompt=prompt,
             timeout_s=args.timeout_s,
+            max_tokens=args.max_judge_tokens,
         )
         winner = _parse_winner(raw)
         rows.append(

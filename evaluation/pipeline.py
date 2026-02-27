@@ -20,6 +20,7 @@ class ModelSpec:
     model: str
     adapter_path: Optional[str] = None
     system_prompt: Optional[str] = None
+    min_tokens: int = 0  # 0 = no minimum; >0 suppresses EOS until this many tokens generated
 
 
 @dataclass(frozen=True)
@@ -95,6 +96,7 @@ def load_models_config(path: Path) -> List[ModelSpec]:
         model = str(item.get("model", "")).strip()
         adapter_path = item.get("adapter_path")
         system_prompt = item.get("system_prompt")
+        min_tokens = int(item.get("min_tokens", 0))
         if not name:
             raise ValueError(f"models[{idx}] missing non-empty 'name'")
         if not model:
@@ -108,6 +110,7 @@ def load_models_config(path: Path) -> List[ModelSpec]:
                 model=_resolve_local_path(model) or model,
                 adapter_path=_resolve_local_path(str(adapter_path)) if adapter_path else None,
                 system_prompt=str(system_prompt) if system_prompt else None,
+                min_tokens=min_tokens,
             )
         )
     return models
@@ -219,6 +222,21 @@ def run_generation(
         print(f"Loading model: {model_spec.name} ({model_spec.model})", flush=True)
         model, tokenizer = load(model_spec.model, **kwargs)
 
+        # EOS suppression via logits_processors for min_tokens enforcement.
+        # generate_step (via stream_generate) accepts logits_processors, not logit_bias.
+        # A stateful closure counts tokens generated and suppresses EOS ids until
+        # min_tokens threshold is reached, then becomes a no-op.
+        eos_ids: List[int] = []
+        if model_spec.min_tokens > 0:
+            try:
+                raw_eos = getattr(tokenizer, "eos_token_ids", None)
+                if raw_eos is None:
+                    eid = getattr(tokenizer, "eos_token_id", None)
+                    raw_eos = [eid] if eid is not None else []
+                eos_ids = [int(e) for e in raw_eos if e is not None]
+            except Exception:
+                eos_ids = []
+
         rows: List[Dict] = []
         total_prompts = len(prompts)
         for index, prompt_row in enumerate(prompts):
@@ -228,14 +246,48 @@ def run_generation(
                 mx.random.seed(seed)
             formatted = _format_prompt_for_model(tokenizer, prompt_row["prompt"], model_spec.system_prompt)
             sampler = make_sampler(temp=temperature, top_p=top_p)
-            response = generate(
-                model,
-                tokenizer,
-                prompt=formatted,
-                sampler=sampler,
-                max_tokens=max_tokens,
-                verbose=False,
-            )
+
+            if model_spec.min_tokens > 0 and eos_ids:
+                from mlx_lm import stream_generate  # type: ignore
+
+                def _make_suppress_processor(min_n: int, eos_set: List[int]):
+                    """Returns a logits_processor that suppresses EOS for first min_n tokens."""
+                    _n = [0]
+                    def _proc(tokens: mx.array, logits: mx.array) -> mx.array:
+                        if _n[0] < min_n:
+                            # Convert to Python list, zero-out EOS positions, convert back
+                            vals = logits.tolist()
+                            # logits may be shape [vocab] or [1, vocab]
+                            flat = vals[0] if isinstance(vals[0], list) else vals
+                            for eid in eos_set:
+                                if eid < len(flat):
+                                    flat[eid] = -1e9
+                            logits = mx.array([flat]) if isinstance(vals[0], list) else mx.array(flat)
+                        _n[0] += 1
+                        return logits
+                    return _proc
+
+                response_parts: List[str] = []
+                for chunk in stream_generate(
+                    model,
+                    tokenizer,
+                    prompt=formatted,
+                    max_tokens=max_tokens,
+                    sampler=sampler,
+                    logits_processors=[_make_suppress_processor(model_spec.min_tokens, eos_ids)],
+                ):
+                    response_parts.append(chunk.text)
+                response = "".join(response_parts)
+            else:
+                response = generate(
+                    model,
+                    tokenizer,
+                    prompt=formatted,
+                    sampler=sampler,
+                    max_tokens=max_tokens,
+                    verbose=False,
+                )
+
             rows.append(
                 {
                     "prompt_id": prompt_row["prompt_id"],
@@ -245,6 +297,7 @@ def run_generation(
                     "temperature": temperature,
                     "top_p": top_p,
                     "max_tokens": max_tokens,
+                    "min_tokens": model_spec.min_tokens,
                     "seed": seed,
                 }
             )

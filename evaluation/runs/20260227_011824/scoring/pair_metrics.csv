@@ -1,0 +1,10 @@
+pair,model_1,model_2,wins_model_1,wins_model_2,ties,invalid,total_scored,win_rate_model_1,effective_win_rate_model_1,tie_rate,ci95_low,ci95_high
+full_ft__vs__base,full_ft,base,20,27,3,0,50,0.4,0.425531914893617,0.06,0.29,0.57
+full_ft__vs__phi_2,full_ft,phi_2,15,30,5,0,50,0.3,0.3333333333333333,0.1,0.23,0.48
+full_ft__vs__qwen_1.8b,full_ft,qwen_1.8b,19,30,1,0,50,0.38,0.3877551020408163,0.02,0.26,0.53
+lora_ft__vs__base,lora_ft,base,22,18,10,0,50,0.44,0.55,0.2,0.41,0.66
+lora_ft__vs__phi_2,lora_ft,phi_2,19,24,7,0,50,0.38,0.4418604651162791,0.14,0.32,0.58
+lora_ft__vs__qwen_1.8b,lora_ft,qwen_1.8b,22,24,4,0,50,0.44,0.4782608695652174,0.08,0.34,0.61
+qlora_ft__vs__base,qlora_ft,base,16,28,6,0,50,0.32,0.36363636363636365,0.12,0.25,0.5
+qlora_ft__vs__phi_2,qlora_ft,phi_2,18,25,7,0,50,0.36,0.4186046511627907,0.14,0.3,0.56
+qlora_ft__vs__qwen_1.8b,qlora_ft,qwen_1.8b,16,29,5,0,50,0.32,0.35555555555555557,0.1,0.24,0.5
