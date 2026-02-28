@@ -255,9 +255,7 @@ def run_generation(
                     _n = [0]
                     def _proc(tokens: mx.array, logits: mx.array) -> mx.array:
                         if _n[0] < min_n:
-                            # Convert to Python list, zero-out EOS positions, convert back
                             vals = logits.tolist()
-                            # logits may be shape [vocab] or [1, vocab]
                             flat = vals[0] if isinstance(vals[0], list) else vals
                             for eid in eos_set:
                                 if eid < len(flat):
@@ -267,6 +265,33 @@ def run_generation(
                         return logits
                     return _proc
 
+                def _make_repetition_penalty_processor(penalty: float = 1.2):
+                    """Penalizes tokens that have already been generated.
+                    For logits > 0: divide by penalty. For logits < 0: multiply by penalty.
+                    This discourages repetition without completely blocking tokens."""
+                    _seen: List[int] = []
+                    def _proc(tokens: mx.array, logits: mx.array) -> mx.array:
+                        if tokens is not None and tokens.size > 0:
+                            _seen.extend(tokens.tolist() if hasattr(tokens, 'tolist') else [int(tokens)])
+                        if not _seen:
+                            return logits
+                        vals = logits.tolist()
+                        flat = vals[0] if isinstance(vals[0], list) else vals
+                        seen_set = set(_seen)
+                        for tid in seen_set:
+                            if tid < len(flat):
+                                if flat[tid] > 0:
+                                    flat[tid] = flat[tid] / penalty
+                                else:
+                                    flat[tid] = flat[tid] * penalty
+                        logits = mx.array([flat]) if isinstance(vals[0], list) else mx.array(flat)
+                        return logits
+                    return _proc
+
+                processors = [
+                    _make_suppress_processor(model_spec.min_tokens, eos_ids),
+                    _make_repetition_penalty_processor(1.2),
+                ]
                 response_parts: List[str] = []
                 for chunk in stream_generate(
                     model,
@@ -274,7 +299,7 @@ def run_generation(
                     prompt=formatted,
                     max_tokens=max_tokens,
                     sampler=sampler,
-                    logits_processors=[_make_suppress_processor(model_spec.min_tokens, eos_ids)],
+                    logits_processors=processors,
                 ):
                     response_parts.append(chunk.text)
                 response = "".join(response_parts)
@@ -698,6 +723,7 @@ def _score_pair(records: List[Dict], seed: int) -> Dict:
         win_rate = float("nan")
         tie_rate = float("nan")
         effective = float("nan")
+        net_margin = float("nan")
         ci_low = float("nan")
         ci_high = float("nan")
     else:
@@ -705,6 +731,7 @@ def _score_pair(records: List[Dict], seed: int) -> Dict:
         tie_rate = ties / total_scored
         decisive = wins_1 + wins_2
         effective = wins_1 / decisive if decisive else float("nan")
+        net_margin = (wins_1 - wins_2) / total_scored
         ci_low, ci_high = _bootstrap_ci(bootstrap_values, rng=random.Random(seed), n=1000)
 
     return {
@@ -718,6 +745,7 @@ def _score_pair(records: List[Dict], seed: int) -> Dict:
         "total_scored": total_scored,
         "win_rate_model_1": win_rate,
         "effective_win_rate_model_1": effective,
+        "net_margin_model_1": net_margin,
         "tie_rate": tie_rate,
         "ci95_low": ci_low,
         "ci95_high": ci_high,
@@ -812,10 +840,13 @@ def run_scoring(
                 "effective_win_rate": (
                     row["wins"] / (row["wins"] + row["losses"]) if (row["wins"] + row["losses"]) else float("nan")
                 ),
+                "net_margin": (
+                    (row["wins"] - row["losses"]) / row["matches"] if row["matches"] else float("nan")
+                ),
             }
             for row in model_rollup.values()
         ),
-        key=lambda item: (item["effective_win_rate"] if not math.isnan(item["effective_win_rate"]) else -1.0),
+        key=lambda item: (item["net_margin"] if not math.isnan(item["net_margin"]) else -999.0),
         reverse=True,
     )
 
@@ -841,6 +872,7 @@ def run_scoring(
             "total_scored",
             "win_rate_model_1",
             "effective_win_rate_model_1",
+            "net_margin_model_1",
             "tie_rate",
             "ci95_low",
             "ci95_high",
@@ -859,6 +891,7 @@ def run_scoring(
             "matches",
             "win_rate",
             "effective_win_rate",
+            "net_margin",
         ]
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
@@ -870,17 +903,18 @@ def run_scoring(
         "",
         "## Pairwise Metrics",
         "",
-        "| Pair | Model 1 | Model 2 | Win Rate (M1) | Effective Win Rate (M1) | Tie Rate | 95% CI (Tie-Adj Score) |",
-        "|---|---|---|---:|---:|---:|---:|",
+        "| Pair | Model 1 | Model 2 | Win Rate (M1) | Effective Win Rate (M1) | Net Margin (M1) | Tie Rate | 95% CI |",
+        "|---|---|---|---:|---:|---:|---:|---:|",
     ]
     for row in pair_scores:
         lines.append(
-            "| {pair} | {model_1} | {model_2} | {win:.3f} | {eff:.3f} | {tie:.3f} | [{low:.3f}, {high:.3f}] |".format(
+            "| {pair} | {model_1} | {model_2} | {win:.3f} | {eff:.3f} | {margin:+.1%} | {tie:.3f} | [{low:.3f}, {high:.3f}] |".format(
                 pair=row["pair"],
                 model_1=row["model_1"],
                 model_2=row["model_2"],
                 win=row["win_rate_model_1"],
                 eff=row["effective_win_rate_model_1"],
+                margin=row["net_margin_model_1"],
                 tie=row["tie_rate"],
                 low=row["ci95_low"],
                 high=row["ci95_high"],
@@ -892,13 +926,13 @@ def run_scoring(
             "",
             "## Model Rollup",
             "",
-            "| Model | Wins | Losses | Ties | Matches | Win Rate | Effective Win Rate |",
-            "|---|---:|---:|---:|---:|---:|---:|",
+            "| Model | Wins | Losses | Ties | Matches | Win Rate | Effective Win Rate | Net Margin |",
+            "|---|---:|---:|---:|---:|---:|---:|---:|",
         ]
     )
     for row in rollup_rows:
         lines.append(
-            "| {model} | {wins:.0f} | {losses:.0f} | {ties:.0f} | {matches:.0f} | {win:.3f} | {eff:.3f} |".format(
+            "| {model} | {wins:.0f} | {losses:.0f} | {ties:.0f} | {matches:.0f} | {win:.3f} | {eff:.3f} | {margin:+.1%} |".format(
                 model=row["model"],
                 wins=row["wins"],
                 losses=row["losses"],
@@ -906,6 +940,7 @@ def run_scoring(
                 matches=row["matches"],
                 win=row["win_rate"],
                 eff=row["effective_win_rate"],
+                margin=row["net_margin"],
             )
         )
 

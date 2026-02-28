@@ -78,7 +78,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--keys", default=DEFAULT_KEYS)
     parser.add_argument("--dropout", type=float, default=0.05)
     parser.add_argument("--lora-layers", type=int, default=16)
-    parser.add_argument("--max-seq-length", type=int, default=256)
+    parser.add_argument("--max-seq-length", type=int, default=512)
     parser.add_argument("--seed", type=int, default=0)
     parser.add_argument("--steps-per-report", type=int, default=10)
     parser.add_argument("--val-batches", type=int, default=-1)
@@ -98,7 +98,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--early-stop-min-delta",
         type=float,
-        default=0.0,
+        default=0.005,
         help="Minimum validation-loss improvement required to reset patience.",
     )
     parser.add_argument(

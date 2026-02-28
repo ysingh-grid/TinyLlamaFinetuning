@@ -3,36 +3,30 @@
     "name": "full_ft",
     "model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
     "adapter_path": "./mlx_best_models/full",
-    "system_prompt": "You are a helpful assistant. Always provide clear, thorough, and detailed explanations in your response.",
     "min_tokens": 50
   },
   {
     "name": "lora_ft",
     "model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
     "adapter_path": "./mlx_best_models/lora",
-    "system_prompt": "You are a helpful assistant. Always provide clear, thorough, and detailed explanations in your response.",
     "min_tokens": 50
   },
   {
     "name": "qlora_ft",
     "model": "./models/tinyllama-4bit-base",
     "adapter_path": "./mlx_best_models/qlora",
-    "system_prompt": "You are a helpful assistant. Always provide clear, thorough, and detailed explanations in your response.",
     "min_tokens": 50
   },
   {
     "name": "base",
-    "model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
-    "system_prompt": "You are a helpful assistant. Always provide clear, thorough, and detailed explanations in your response."
+    "model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
   },
   {
     "name": "qwen_1.8b",
-    "model": "./models/qwen1.5-1.8b-chat-4bit",
-    "system_prompt": "You are a helpful assistant. Always provide clear, thorough, and detailed explanations in your response."
+    "model": "./models/qwen1.5-1.8b-chat-4bit"
   },
   {
     "name": "phi_2",
-    "model": "./models/phi-2-hf-4bit-mlx",
-    "system_prompt": "You are a helpful assistant. Always provide clear, thorough, and detailed explanations in your response."
+    "model": "./models/phi-2-hf-4bit-mlx"
   }
 ]
