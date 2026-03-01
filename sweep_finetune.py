@@ -8,7 +8,7 @@ import shutil
 import subprocess
 import sys
 from pathlib import Path
-from typing import Dict, Iterable, List, Optional, Tuple
+from typing import Any, Dict, Iterable, List, Optional, Tuple
 
 import yaml
 
@@ -335,6 +335,12 @@ def build_config(
         "grad_checkpoint": True,
         "grad_accumulation_steps": grad_accum_steps,
         "mask_prompt": True,
+        "lr_schedule": {
+            "name": "cosine_decay",
+            "warmup": max(10, iters // 20),
+            "warmup_init": 1e-6,
+            "arguments": [1e-6, iters],  # [min_lr, step_count]
+        }
     }
 
     if technique == "full":
@@ -404,6 +410,7 @@ def run_trial(
     params: Tuple,
     train_rows: int,
     keys: List[str],
+    optuna_trial: Optional[Any] = None,
 ) -> Dict:
     run_dir = args.out_dir / technique / f"trial_{trial_id:04d}"
     if run_dir.exists():
@@ -428,8 +435,10 @@ def run_trial(
     )
     log_lines: List[str] = []
     early_stopped = False
+    pruned = False
     best_val: Optional[float] = None
     stale_evals = 0
+    val_step = 0
 
     if proc.stdout is None:
         raise RuntimeError("Failed to capture training output stream.")
@@ -440,7 +449,23 @@ def run_trial(
         if normalized and should_echo_line(normalized, args.status):
             print(f"[{technique} {trial_id}/{total_trials}] {normalized}", flush=True)
         val_loss = extract_val_loss(raw_line)
-        if val_loss is None or args.early_stop_patience <= 0 or early_stopped:
+
+        if val_loss is not None:
+            val_step += 1
+            if optuna_trial is not None:
+                optuna_trial.report(val_loss, val_step)
+                if optuna_trial.should_prune():
+                    pruned = True
+                    log_lines.append(f"PRUNED: val_loss={val_loss:.6f}\n")
+                    print(
+                        f"[{technique} {trial_id}/{total_trials}] "
+                        f"pruned by optuna at val_loss={val_loss:.6f}",
+                        flush=True,
+                    )
+                    proc.terminate()
+                    break
+
+        if val_loss is None or args.early_stop_patience <= 0 or early_stopped or pruned:
             continue
 
         improved = best_val is None or val_loss < (best_val - args.early_stop_min_delta)
@@ -475,7 +500,7 @@ def run_trial(
     (run_dir / "train.log").write_text(log_text, encoding="utf-8")
 
     loss = parse_loss(log_text)
-    ok = return_code == 0 or (early_stopped and loss != float("inf"))
+    ok = return_code == 0 or ((early_stopped or pruned) and loss != float("inf"))
 
     result = {
         "technique": technique,
@@ -483,6 +508,7 @@ def run_trial(
         "ok": ok,
         "loss": loss,
         "early_stopped": early_stopped,
+        "pruned": pruned,
         "config_path": str(config_path),
         "output_path": str(run_dir / "output"),
     }
@@ -528,6 +554,7 @@ def run_tpe_trials(
 ) -> List[Dict]:
     try:
         import optuna
+        from optuna.pruners import MedianPruner
     except Exception as exc:
         raise RuntimeError(
             "Optuna is required for --search tpe. Install with: pip install optuna"
@@ -535,7 +562,8 @@ def run_tpe_trials(
 
     optuna.logging.set_verbosity(optuna.logging.WARNING)
     sampler = optuna.samplers.TPESampler(seed=args.seed)
-    study = optuna.create_study(direction="minimize", sampler=sampler)
+    pruner = MedianPruner(n_startup_trials=5, n_warmup_steps=2, interval_steps=1)
+    study = optuna.create_study(direction="minimize", sampler=sampler, pruner=pruner)
     results: List[Dict] = []
 
     def objective(trial):
@@ -549,9 +577,14 @@ def run_tpe_trials(
             params=params,
             train_rows=train_rows,
             keys=keys,
+            optuna_trial=trial,
         )
         result["optuna_trial_number"] = trial.number
         results.append(result)
+        
+        if result.get("pruned"):
+            raise optuna.TrialPruned()
+            
         return result["loss"] if result["ok"] else float("inf")
 
     study.optimize(objective, n_trials=total_trials)
