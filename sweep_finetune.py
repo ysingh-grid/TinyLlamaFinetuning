@@ -21,12 +21,12 @@ DEFAULT_KEYS = "self_attn.q_proj,self_attn.k_proj,self_attn.v_proj,self_attn.o_p
 
 # Focused "likely-good" defaults for TinyLlama 1.1B tuning.
 # Alpha is always 2*rank (scale=2.0) — not a separate sweep dimension.
-FULL_LRS = [1e-5, 2e-5]   # 5e-5 caused repetition loops; stay conservative for full FT
-RANKS = [8, 16]      # dropped rank-32; scale fixed at 2.0 (alpha = 2*rank)
-LRS = [1e-4, 2e-4]
+FULL_LRS = [2e-5]   # Accelerated: Reduced search space
+RANKS = [16]        # Accelerated: Reduced search space
+LRS = [2e-4]        # Accelerated: Reduced search space
 EPOCHS = [1]
 BATCH_SIZES = [4]
-GRAD_ACCUMS = [4, 6]
+GRAD_ACCUMS = [2, 4] # Accelerated: Lowered for faster stepping
 ANSI_ESCAPE_RE = re.compile(r"\x1B\[[0-?]*[ -/]*[@-~]")
 
 
@@ -49,7 +49,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--n-trials",
         type=int,
-        default=50,
+        default=10,  # Accelerated: Reduced from 50 to 10
         help="Number of trials for --search tpe (capped by search space size).",
     )
     parser.add_argument("--data-dir", type=Path, default=Path(DEFAULT_DATA_DIR))
@@ -92,7 +92,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--early-stop-patience",
         type=int,
-        default=2,
+        default=1,  # Accelerated: Reduced from 2 to 1
         help="Stop trial early after this many non-improving validation checks (0 disables).",
     )
     parser.add_argument(
