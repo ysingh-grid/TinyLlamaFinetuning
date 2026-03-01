@@ -1,0 +1,100 @@
+{
+  "seed": 42,
+  "counterbalance_sides": true,
+  "shuffle_tasks": true,
+  "pair_count": 9,
+  "total_items": 450,
+  "max_abs_left_right_imbalance_model_1": 0,
+  "pairs": [
+    {
+      "pair": "full_ft__vs__base",
+      "model_1": "full_ft",
+      "model_2": "base",
+      "total_items": 50,
+      "model_1_left": 25,
+      "model_1_right": 25,
+      "abs_left_right_imbalance_model_1": 0,
+      "left_right_imbalance_ratio_model_1": 0.0
+    },
+    {
+      "pair": "full_ft__vs__phi_2",
+      "model_1": "full_ft",
+      "model_2": "phi_2",
+      "total_items": 50,
+      "model_1_left": 25,
+      "model_1_right": 25,
+      "abs_left_right_imbalance_model_1": 0,
+      "left_right_imbalance_ratio_model_1": 0.0
+    },
+    {
+      "pair": "full_ft__vs__qwen_1.8b",
+      "model_1": "full_ft",
+      "model_2": "qwen_1.8b",
+      "total_items": 50,
+      "model_1_left": 25,
+      "model_1_right": 25,
+      "abs_left_right_imbalance_model_1": 0,
+      "left_right_imbalance_ratio_model_1": 0.0
+    },
+    {
+      "pair": "lora_ft__vs__base",
+      "model_1": "lora_ft",
+      "model_2": "base",
+      "total_items": 50,
+      "model_1_left": 25,
+      "model_1_right": 25,
+      "abs_left_right_imbalance_model_1": 0,
+      "left_right_imbalance_ratio_model_1": 0.0
+    },
+    {
+      "pair": "lora_ft__vs__phi_2",
+      "model_1": "lora_ft",
+      "model_2": "phi_2",
+      "total_items": 50,
+      "model_1_left": 25,
+      "model_1_right": 25,
+      "abs_left_right_imbalance_model_1": 0,
+      "left_right_imbalance_ratio_model_1": 0.0
+    },
+    {
+      "pair": "lora_ft__vs__qwen_1.8b",
+      "model_1": "lora_ft",
+      "model_2": "qwen_1.8b",
+      "total_items": 50,
+      "model_1_left": 25,
+      "model_1_right": 25,
+      "abs_left_right_imbalance_model_1": 0,
+      "left_right_imbalance_ratio_model_1": 0.0
+    },
+    {
+      "pair": "qlora_ft__vs__base",
+      "model_1": "qlora_ft",
+      "model_2": "base",
+      "total_items": 50,
+      "model_1_left": 25,
+      "model_1_right": 25,
+      "abs_left_right_imbalance_model_1": 0,
+      "left_right_imbalance_ratio_model_1": 0.0
+    },
+    {
+      "pair": "qlora_ft__vs__phi_2",
+      "model_1": "qlora_ft",
+      "model_2": "phi_2",
+      "total_items": 50,
+      "model_1_left": 25,
+      "model_1_right": 25,
+      "abs_left_right_imbalance_model_1": 0,
+      "left_right_imbalance_ratio_model_1": 0.0
+    },
+    {
+      "pair": "qlora_ft__vs__qwen_1.8b",
+      "model_1": "qlora_ft",
+      "model_2": "qwen_1.8b",
+      "total_items": 50,
+      "model_1_left": 25,
+      "model_1_right": 25,
+      "abs_left_right_imbalance_model_1": 0,
+      "left_right_imbalance_ratio_model_1": 0.0
+    }
+  ]
+}
