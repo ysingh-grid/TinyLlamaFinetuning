@@ -1,0 +1,56 @@
+[
+  {
+    "model": "phi_2",
+    "wins": 94.0,
+    "losses": 55.0,
+    "ties": 1.0,
+    "matches": 150.0,
+    "win_rate": 0.6266666666666667,
+    "effective_win_rate": 0.6308724832214765
+  },
+  {
+    "model": "base",
+    "wins": 85.0,
+    "losses": 60.0,
+    "ties": 5.0,
+    "matches": 150.0,
+    "win_rate": 0.5666666666666667,
+    "effective_win_rate": 0.5862068965517241
+  },
+  {
+    "model": "qwen_1.8b",
+    "wins": 85.0,
+    "losses": 64.0,
+    "ties": 1.0,
+    "matches": 150.0,
+    "win_rate": 0.5666666666666667,
+    "effective_win_rate": 0.5704697986577181
+  },
+  {
+    "model": "lora_ft",
+    "wins": 66.0,
+    "losses": 82.0,
+    "ties": 2.0,
+    "matches": 150.0,
+    "win_rate": 0.44,
+    "effective_win_rate": 0.44594594594594594
+  },
+  {
+    "model": "full_ft",
+    "wins": 57.0,
+    "losses": 91.0,
+    "ties": 2.0,
+    "matches": 150.0,
+    "win_rate": 0.38,
+    "effective_win_rate": 0.38513513513513514
+  },
+  {
+    "model": "qlora_ft",
+    "wins": 56.0,
+    "losses": 91.0,
+    "ties": 3.0,
+    "matches": 150.0,
+    "win_rate": 0.37333333333333335,
+    "effective_win_rate": 0.38095238095238093
+  }
+]

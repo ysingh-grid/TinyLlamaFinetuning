@@ -35,10 +35,9 @@
 
 ```
 ┌───────────────────────────────────────────────────────────────────┐
-│                        PREPARE DATA                              │
-│  tatsu-lab/alpaca (HuggingFace) ──► prepare_dataset.py           │
-│  5,000 examples → 4,000 train / 500 valid / 500 test            │
-│  Format: MLX chat JSONL  {messages: [{role, content}, ...]}      │
+│  PREPARE DATA: Top 5,000 longest answers (min ~100 words)       │
+│  tatsu-lab/alpaca (HuggingFace) ──► prepare_dataset_v2.py       │
+│  Format: MLX chat JSONL  {messages: [{role, content}, ...]}     │
 └─────────────────────────────┬─────────────────────────────────────┘
                               │
                               ▼
@@ -63,7 +62,7 @@
 │              HYPERPARAMETER SWEEP (optional)                      │
 │  sweep_finetune.py  →  grid search or TPE (Optuna)              │
 │  Tests: ranks, alphas, LRs, batch sizes, grad accumulations     │
-│  Early stopping: aborts unpromising trials (patience=5)          │
+│  Early stopping & MedianPruner aborts unpromising trials        │
 │  Copies best: mlx_best_models/{lora,qlora,full}                 │
 └─────────────────────────────┬─────────────────────────────────────┘
                               │
@@ -73,7 +72,7 @@
 │  500 frozen prompts × 6 models × fixed generation params         │
 │  → Blind pairwise tasks (counterbalanced left/right)             │
 │  → Judge (human manual OR LM-as-judge via LM Studio)            │
-│  → Score: win rate, effective win rate, 95% bootstrap CI         │
+│  → Score: Net Margin ((Wins - Losses) / Matches) + 95% CI        │
 │  → Markdown report                                               │
 └─────────────────────────────┬─────────────────────────────────────┘
                               │
@@ -151,9 +150,10 @@ That's it. You have a working fine-tuned model with a chat interface. Read on fo
 
 ### How We Use It
 
-The script `prepare_dataset.py` does the following:
+The script `prepare_dataset_v2.py` does the following:
 
-1. **Downloads** the first 5,000 examples from the Alpaca `train` split via HuggingFace `datasets` library.
+1. **Downloads** the Alpaca `train` split via HuggingFace `datasets`.
+2. **Filters** out empty responses and selects the top 5,000 longest answers. This guarantees a minimum answer length of ~100 words and averts models from learning to be overly terse!
 2. **Converts** each example into MLX-LM's chat format:
    ```json
    {
@@ -236,10 +236,10 @@ Instead of updating all 1.1B parameters, LoRA freezes the base model and injects
 | `fine_tune_type` | `lora` (implicit default) | Standard LoRA — no quantization |
 | `lora_layers` | 16 | Apply LoRA to the last 16 transformer layers |
 | `rank` | 16 | Adapter matrix rank (controls capacity) |
-| `scale` | 2.0 | = alpha / rank = 32 / 16 (controls update magnitude) |
+| `scale` | 2.0 | ALWAY SET TO 2.0 (`alpha = 2 * rank`) for stable gradients |
 | `dropout` | 0.05 | Regularization on adapter weights |
 | `keys` | `["self_attn.q_proj", "self_attn.v_proj"]` | Which attention matrices get adapters |
-| `learning_rate` | 1e-5 | Adam optimizer learning rate |
+| `lr_schedule` | `cosine_decay` | Smoothly decays to 10% of base learning rate |
 | `batch_size` | 1 | Sequences per gradient step |
 | `iters` | 1200 | Total training steps |
 | `max_seq_length` | 512 | Maximum token sequence length |
@@ -394,8 +394,9 @@ sweep_finetune.py
     │   (grid search = all combos, TPE = smart sampling)
     │
     ├── For each combo:
-    │   ├── Writes a YAML config to a temp directory
+    │   ├── Writes a YAML config to a temp directory (with cosine decay)
     │   ├── Runs: .venv/bin/python -m mlx_lm.lora --config <temp>.yaml
+    │   ├── Dynamically prunes bad trials using Optuna's MedianPruner
     │   ├── Parses training logs for validation/test loss
     │   └── Records results
     │
@@ -745,10 +746,11 @@ For each pair (e.g., `lora_ft vs base`):
 
 | Metric | Formula | Meaning |
 |---|---|---|
+| **Net Margin** | (wins_model_1 - wins_model_2) / total_scored | Percentage-point advantage of Model 1 over Model 2 |
 | **Win Rate** | wins_model_1 / total_scored | Raw proportion of wins |
 | **Effective Win Rate** | wins_model_1 / (wins_model_1 + wins_model_2) | Ignoring ties |
 | **Tie Rate** | ties / total_scored | Proportion of ties |
-| **95% CI (Tie-Adj Score)** | Bootstrap CI on [win=1, tie=0.5, loss=0] | Confidence interval on tie-adjusted score |
+| **95% CI** | Bootstrap CI on [win=1, tie=0.5, loss=0] | Confidence interval on tie-adjusted score |
 
 ### Bootstrap CI Methodology
 
@@ -763,12 +765,14 @@ The CI column in the report is labeled `95% CI (Tie-Adj Score)` to clarify it's 
 
 The scoring step verifies that ≥90% of judgments match an `item_id` in the key. If coverage drops below 90%, it raises an error (preventing silent data drops). Between 90-100%, it prints a warning.
 
-### Release Gates
+### Release Gates & DPO Upgrade
 
 | Gate | Threshold | Meaning |
 |---|---|---|
-| Effective win rate | > 0.55 | Model wins more than 55% of decisive comparisons |
-| CI lower bound | > 0.50 | We're 97.5% confident the true score is above 0.50 |
+| Net Margin | > 0% (+ margin) | Model has mathematically beaten the base baseline |
+| CI lower bound | > 0.50 | We're 97.5% confident the true score is a net positive |
+
+**Critical Insight:** Standard Supervised Fine-Tuning (SFT) over an already RLHF-aligned model (like TinyLlama) often regresses its chat capabilities because mimicking Alpaca completions is "simpler" than the complex human preferences the base model was originally trained on. If you are consistently seeing a negative **Net Margin** against the base model, it's time to transition to **DPO (Direct Preference Optimization)** using a preference dataset like `Intel/orca_dpo_pairs`.
 
 ### Command
 
