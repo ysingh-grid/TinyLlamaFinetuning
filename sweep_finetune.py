@@ -337,9 +337,9 @@ def build_config(
         "mask_prompt": True,
         "lr_schedule": {
             "name": "cosine_decay",
-            "warmup": max(10, iters // 20),
-            "warmup_init": 1e-6,
-            "arguments": [1e-6, iters],  # [min_lr, step_count]
+            "warmup": max(10, iters // 10),
+            "warmup_init": 0.0,
+            "arguments": [learning_rate * 0.1, iters],  # [min_lr, step_count]
         }
     }
 
