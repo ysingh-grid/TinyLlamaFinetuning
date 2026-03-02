@@ -19,16 +19,17 @@ DEFAULT_OUT_DIR = "./mlx_sweep_runs"
 DEFAULT_BEST_DIR = "./mlx_best_models"
 DEFAULT_KEYS = "self_attn.q_proj,self_attn.k_proj,self_attn.v_proj,self_attn.o_proj"
 
-# Focused "likely-good" defaults for TinyLlama 1.1B tuning.
-# Alpha is always 2*rank (scale=2.0) — not a separate sweep dimension.
-FULL_LRS = [2e-5]   # Accelerated: Reduced search space
-RANKS = [16]        # Accelerated: Reduced search space
-LRS = [2e-4]        # Accelerated: Reduced search space
-EPOCHS = [1]
+# Based on previous sweep results:
+# Full FT best: lr=1e-5, ga=6
+# LoRA best: rank=16, lr=2e-4, ga=6
+# QLoRA best: rank=8, lr=2e-4, ga=4
+FULL_LRS = [1e-5]
+RANKS = [8, 16]
+LRS = [2e-4]
+EPOCHS = [2]
 BATCH_SIZES = [4]
-GRAD_ACCUMS = [2, 4] # Accelerated: Lowered for faster stepping
+GRAD_ACCUMS = [4, 6]
 ANSI_ESCAPE_RE = re.compile(r"\x1B\[[0-?]*[ -/]*[@-~]")
-
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
@@ -92,7 +93,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--early-stop-patience",
         type=int,
-        default=1,  # Accelerated: Reduced from 2 to 1
+        default=3,
         help="Stop trial early after this many non-improving validation checks (0 disables).",
     )
     parser.add_argument(
