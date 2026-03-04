@@ -1,0 +1,62 @@
+[
+  {
+    "model": "full_ft",
+    "wins": 45.0,
+    "losses": 25.0,
+    "ties": 5.0,
+    "matches": 75.0,
+    "win_rate": 0.6,
+    "effective_win_rate": 0.6428571428571429,
+    "net_margin": 0.26666666666666666
+  },
+  {
+    "model": "qlora_ft",
+    "wins": 51.0,
+    "losses": 34.0,
+    "ties": 5.0,
+    "matches": 90.0,
+    "win_rate": 0.5666666666666667,
+    "effective_win_rate": 0.6,
+    "net_margin": 0.18888888888888888
+  },
+  {
+    "model": "lora_ft",
+    "wins": 44.0,
+    "losses": 31.0,
+    "ties": 9.0,
+    "matches": 84.0,
+    "win_rate": 0.5238095238095238,
+    "effective_win_rate": 0.5866666666666667,
+    "net_margin": 0.15476190476190477
+  },
+  {
+    "model": "qwen_1.8b",
+    "wins": 31.0,
+    "losses": 35.0,
+    "ties": 4.0,
+    "matches": 70.0,
+    "win_rate": 0.44285714285714284,
+    "effective_win_rate": 0.4696969696969697,
+    "net_margin": -0.05714285714285714
+  },
+  {
+    "model": "base",
+    "wins": 35.0,
+    "losses": 40.0,
+    "ties": 5.0,
+    "matches": 80.0,
+    "win_rate": 0.4375,
+    "effective_win_rate": 0.4666666666666667,
+    "net_margin": -0.0625
+  },
+  {
+    "model": "phi_2",
+    "wins": 24.0,
+    "losses": 65.0,
+    "ties": 10.0,
+    "matches": 99.0,
+    "win_rate": 0.24242424242424243,
+    "effective_win_rate": 0.2696629213483146,
+    "net_margin": -0.41414141414141414
+  }
+]

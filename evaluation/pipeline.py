@@ -11,6 +11,8 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Dict, Iterable, List, Optional, Sequence, Tuple
 
+from tabulate import tabulate
+
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -981,51 +983,52 @@ def run_scoring(
         for row in rollup_rows:
             writer.writerow(row)
 
+    pair_headers = [
+        "Pair", "Model 1", "Model 2", "Win Rate (M1)", "Effective Win Rate (M1)",
+        "Net Margin (M1)", "Tie Rate", "95% CI",
+    ]
+    pair_table = [
+        [
+            row["pair"],
+            row["model_1"],
+            row["model_2"],
+            f"{row['win_rate_model_1']:.3f}",
+            f"{row['effective_win_rate_model_1']:.3f}",
+            f"{row['net_margin_model_1']:+.1%}",
+            f"{row['tie_rate']:.3f}",
+            f"[{row['ci95_low']:.3f}, {row['ci95_high']:.3f}]",
+        ]
+        for row in pair_scores
+    ]
+    rollup_headers = [
+        "Model", "Wins", "Losses", "Ties", "Matches",
+        "Win Rate", "Effective Win Rate", "Net Margin",
+    ]
+    rollup_table = [
+        [
+            row["model"],
+            int(row["wins"]),
+            int(row["losses"]),
+            int(row["ties"]),
+            int(row["matches"]),
+            f"{row['win_rate']:.3f}",
+            f"{row['effective_win_rate']:.3f}",
+            f"{row['net_margin']:+.1%}",
+        ]
+        for row in rollup_rows
+    ]
+
     lines = [
         "# Evaluation Report",
         "",
         "## Pairwise Metrics",
         "",
-        "| Pair | Model 1 | Model 2 | Win Rate (M1) | Effective Win Rate (M1) | Net Margin (M1) | Tie Rate | 95% CI |",
-        "|---|---|---|---:|---:|---:|---:|---:|",
+        tabulate(pair_table, headers=pair_headers, tablefmt="pipe"),
+        "",
+        "## Model Rollup",
+        "",
+        tabulate(rollup_table, headers=rollup_headers, tablefmt="pipe"),
+        "",
     ]
-    for row in pair_scores:
-        lines.append(
-            "| {pair} | {model_1} | {model_2} | {win:.3f} | {eff:.3f} | {margin:+.1%} | {tie:.3f} | [{low:.3f}, {high:.3f}] |".format(
-                pair=row["pair"],
-                model_1=row["model_1"],
-                model_2=row["model_2"],
-                win=row["win_rate_model_1"],
-                eff=row["effective_win_rate_model_1"],
-                margin=row["net_margin_model_1"],
-                tie=row["tie_rate"],
-                low=row["ci95_low"],
-                high=row["ci95_high"],
-            )
-        )
-
-    lines.extend(
-        [
-            "",
-            "## Model Rollup",
-            "",
-            "| Model | Wins | Losses | Ties | Matches | Win Rate | Effective Win Rate | Net Margin |",
-            "|---|---:|---:|---:|---:|---:|---:|---:|",
-        ]
-    )
-    for row in rollup_rows:
-        lines.append(
-            "| {model} | {wins:.0f} | {losses:.0f} | {ties:.0f} | {matches:.0f} | {win:.3f} | {eff:.3f} | {margin:+.1%} |".format(
-                model=row["model"],
-                wins=row["wins"],
-                losses=row["losses"],
-                ties=row["ties"],
-                matches=row["matches"],
-                win=row["win_rate"],
-                eff=row["effective_win_rate"],
-                margin=row["net_margin"],
-            )
-        )
-
     report_md.write_text("\n".join(lines) + "\n", encoding="utf-8")
     return pair_json, rollup_json, report_md

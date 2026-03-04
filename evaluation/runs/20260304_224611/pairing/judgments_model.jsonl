@@ -1,0 +1,900 @@
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10036", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10042", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10068", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10077", "winner": "tie", "raw_judge_output": "TIE\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10058", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10005", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10001", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10045", "winner": "invalid", "raw_judge_output": "The right answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10007", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10015", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10073", "winner": "invalid", "raw_judge_output": "\nCorrectness", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10069", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10071", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10046", "winner": "invalid", "raw_judge_output": "\nCorrectness", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10096", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10065", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10029", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10082", "winner": "invalid", "raw_judge_output": "The right response", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10071", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10010", "winner": "invalid", "raw_judge_output": "The album with", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10095", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10074", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10020", "winner": "invalid", "raw_judge_output": "\nCorrectness", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10005", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10043", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10037", "winner": "invalid", "raw_judge_output": "Both responses are", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10035", "winner": "right", "raw_judge_output": "Right\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10048", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10075", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10099", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10018", "winner": "invalid", "raw_judge_output": "The sentence \"", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10026", "winner": "invalid", "raw_judge_output": "The text \"", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10088", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10093", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10099", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10049", "winner": "invalid", "raw_judge_output": "The right response", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10069", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10024", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10044", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10068", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10052", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10092", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10052", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10015", "winner": "invalid", "raw_judge_output": "Both responses are", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10048", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10037", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10023", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10089", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10039", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10042", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10039", "winner": "invalid", "raw_judge_output": "The right answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10054", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10021", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10014", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10040", "winner": "invalid", "raw_judge_output": "The right answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10069", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10085", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10088", "winner": "invalid", "raw_judge_output": "Both responses are", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10008", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10061", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10064", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10061", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10081", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10049", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10035", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10100", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10055", "winner": "tie", "raw_judge_output": "TIE\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10085", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10013", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10085", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10010", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10043", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10007", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10092", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10056", "winner": "invalid", "raw_judge_output": "The Right response", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10073", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10099", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10023", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10038", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10086", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10028", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10022", "winner": "left", "raw_judge_output": "LEFT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10036", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10085", "winner": "left", "raw_judge_output": "LEFT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10070", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10017", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10044", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10079", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10076", "winner": "right", "raw_judge_output": "RIGHT\n\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10097", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10100", "winner": "invalid", "raw_judge_output": "The right response", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10041", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10089", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10005", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10024", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10051", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10038", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10098", "winner": "invalid", "raw_judge_output": "\nAnswer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10034", "winner": "left", "raw_judge_output": "LEFT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10041", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10025", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10083", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10070", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10023", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10026", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10016", "winner": "invalid", "raw_judge_output": "Both responses are", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10095", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10068", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10033", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10087", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10078", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10057", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10066", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10059", "winner": "left", "raw_judge_output": "LEFT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10034", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10062", "winner": "invalid", "raw_judge_output": "The correct word", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10035", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10014", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10080", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10070", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10045", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10088", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10080", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10059", "winner": "invalid", "raw_judge_output": "Correctness,", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10098", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10029", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10060", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10049", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10060", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10072", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10071", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10029", "winner": "right", "raw_judge_output": "\nRIGHT", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10043", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10026", "winner": "invalid", "raw_judge_output": "The text is", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10099", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10013", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10018", "winner": "invalid", "raw_judge_output": "The sentence \"", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10013", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10071", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10072", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10053", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10062", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10012", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10034", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10046", "winner": "invalid", "raw_judge_output": "The right response", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10001", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10040", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10090", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10051", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10045", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10098", "winner": "invalid", "raw_judge_output": "The Right\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10006", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10061", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10072", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10065", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10023", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10024", "winner": "invalid", "raw_judge_output": "The right response", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10048", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10054", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10033", "winner": "invalid", "raw_judge_output": "Correctness,", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10030", "winner": "left", "raw_judge_output": "\nLEFT", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10063", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10001", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10086", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10003", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10087", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10008", "winner": "left", "raw_judge_output": "LEFT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10002", "winner": "invalid", "raw_judge_output": "\nCorrectness", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10021", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10075", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10036", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10056", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10076", "winner": "left", "raw_judge_output": "LEFT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10050", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10028", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10031", "winner": "right", "raw_judge_output": "Right\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10089", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10051", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10077", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10024", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10040", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10092", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10002", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10006", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10008", "winner": "left", "raw_judge_output": "LEFT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10086", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10092", "winner": "tie", "raw_judge_output": "TIE\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10072", "winner": "invalid", "raw_judge_output": "The user's", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10064", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10013", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10004", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10011", "winner": "right", "raw_judge_output": "RIGHT\n\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10089", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10053", "winner": "invalid", "raw_judge_output": "The correct response", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10095", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10020", "winner": "invalid", "raw_judge_output": "\nCorrectness", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10045", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10005", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10079", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10092", "winner": "left", "raw_judge_output": "LEFT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10066", "winner": "invalid", "raw_judge_output": "The right response", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10034", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10019", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10076", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10072", "winner": "invalid", "raw_judge_output": "Both responses are", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10026", "winner": "invalid", "raw_judge_output": "The text is", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10065", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10003", "winner": "left", "raw_judge_output": "LEFT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10097", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10091", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10063", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10067", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10081", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10083", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10073", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10040", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10088", "winner": "invalid", "raw_judge_output": "Both responses are", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10064", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10091", "winner": "right", "raw_judge_output": "RIGHT is the", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10088", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10066", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10059", "winner": "invalid", "raw_judge_output": "\nCorrectness", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10100", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10097", "winner": "invalid", "raw_judge_output": "The correct response", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10055", "winner": "invalid", "raw_judge_output": "The RIGHT answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10043", "winner": "right", "raw_judge_output": "Right\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10056", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10029", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10087", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10054", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10098", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10082", "winner": "invalid", "raw_judge_output": "The right response", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10012", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10001", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10050", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10025", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10053", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10052", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10070", "winner": "left", "raw_judge_output": "LEFT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10046", "winner": "invalid", "raw_judge_output": "\nCorrectness", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10068", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10029", "winner": "left", "raw_judge_output": "LEFT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10053", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10089", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10032", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10032", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10090", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10042", "winner": "invalid", "raw_judge_output": "The right response", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10007", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10039", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10030", "winner": "invalid", "raw_judge_output": "\nCorrectness", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10075", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10048", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10098", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10048", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10023", "winner": "left", "raw_judge_output": "LEFT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10097", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10061", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10067", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10086", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10012", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10011", "winner": "left", "raw_judge_output": "LEFT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10027", "winner": "tie", "raw_judge_output": "TIE.", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10060", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10009", "winner": "invalid", "raw_judge_output": "\nCorrect,", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10045", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10016", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10018", "winner": "invalid", "raw_judge_output": "The sentence \"", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10057", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10048", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10063", "winner": "left", "raw_judge_output": "LEFT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10046", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10047", "winner": "right", "raw_judge_output": "RIGHT\n``", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10092", "winner": "invalid", "raw_judge_output": "\nCorrectness", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10001", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10070", "winner": "right", "raw_judge_output": "Right\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10026", "winner": "invalid", "raw_judge_output": "The text is", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10079", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10050", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10060", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10004", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10098", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10093", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10060", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10012", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10038", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10036", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10037", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10019", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10086", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10067", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10020", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10016", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10043", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10050", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10007", "winner": "invalid", "raw_judge_output": "\n\nThe", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10021", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10057", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10076", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10015", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10014", "winner": "right", "raw_judge_output": "RIGHT\n\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10093", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10056", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10060", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10083", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10054", "winner": "invalid", "raw_judge_output": "The right answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10081", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10060", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10008", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10062", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10040", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10094", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10082", "winner": "invalid", "raw_judge_output": "The Right response", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10011", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10069", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10034", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10018", "winner": "invalid", "raw_judge_output": "The sentence \"", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10088", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10075", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10031", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10002", "winner": "invalid", "raw_judge_output": "\nCorrect.", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10059", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10091", "winner": "left", "raw_judge_output": "LEFT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10028", "winner": "invalid", "raw_judge_output": "Both responses are", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10022", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10031", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10044", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10097", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10018", "winner": "invalid", "raw_judge_output": "The sentence \"", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10088", "winner": "invalid", "raw_judge_output": "Both books are", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10079", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10092", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10031", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10008", "winner": "left", "raw_judge_output": "LEFT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10005", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10085", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10049", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10091", "winner": "left", "raw_judge_output": "LEFT is", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10005", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10055", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10074", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10012", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10033", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10084", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10077", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10037", "winner": "right", "raw_judge_output": "RIGHT. The", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10010", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10034", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10090", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10002", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10080", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10021", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10007", "winner": "invalid", "raw_judge_output": "Both responses are", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10074", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10059", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10051", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10057", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10030", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10015", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10067", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10081", "winner": "left", "raw_judge_output": "LEFT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10100", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10049", "winner": "invalid", "raw_judge_output": "The right response", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10020", "winner": "right", "raw_judge_output": "RIGHT\n\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10070", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10081", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10077", "winner": "tie", "raw_judge_output": "TIE\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10032", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10096", "winner": "left", "raw_judge_output": "LEFT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10088", "winner": "invalid", "raw_judge_output": "The Right response", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10010", "winner": "invalid", "raw_judge_output": "\n1.", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10073", "winner": "invalid", "raw_judge_output": "\nCorrectness", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10063", "winner": "right", "raw_judge_output": "Right\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10065", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10052", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10065", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10072", "winner": "invalid", "raw_judge_output": "Both responses are", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10019", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10018", "winner": "invalid", "raw_judge_output": "The sentence \"", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10043", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10033", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10063", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10088", "winner": "invalid", "raw_judge_output": "Both options are", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10019", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10055", "winner": "invalid", "raw_judge_output": "The RIGHT response", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10067", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10087", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10048", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10082", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10046", "winner": "invalid", "raw_judge_output": "\nCorrectness", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10014", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10058", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10041", "winner": "invalid", "raw_judge_output": "Both responses are", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10064", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10004", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10063", "winner": "right", "raw_judge_output": "Right\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10066", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10030", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10044", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10033", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10082", "winner": "invalid", "raw_judge_output": "The Right response", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10059", "winner": "left", "raw_judge_output": "LEFT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10070", "winner": "right", "raw_judge_output": "Right\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10016", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10080", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10099", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10021", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10044", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10060", "winner": "invalid", "raw_judge_output": "The Right response", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10079", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10066", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10002", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10022", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10031", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10037", "winner": "left", "raw_judge_output": "LEFT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10013", "winner": "invalid", "raw_judge_output": "The Right response", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10008", "winner": "left", "raw_judge_output": "LEFT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10068", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10014", "winner": "invalid", "raw_judge_output": "Both responses are", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10039", "winner": "invalid", "raw_judge_output": "Both responses are", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10057", "winner": "right", "raw_judge_output": "RIGHT\n\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10090", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10009", "winner": "tie", "raw_judge_output": "TIE\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10029", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10098", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10067", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10075", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10064", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10069", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10099", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10004", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10100", "winner": "invalid", "raw_judge_output": "The right response", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10097", "winner": "right", "raw_judge_output": "\nRIGHT", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10050", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10018", "winner": "invalid", "raw_judge_output": "The sentence \"", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10017", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10028", "winner": "tie", "raw_judge_output": "TIE\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10095", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10007", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10084", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10015", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10009", "winner": "invalid", "raw_judge_output": "\nCorrect,", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10036", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10006", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10069", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10041", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10026", "winner": "invalid", "raw_judge_output": "The response is", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10047", "winner": "tie", "raw_judge_output": "TIE\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10034", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10003", "winner": "left", "raw_judge_output": "LEFT is", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10025", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10011", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10003", "winner": "left", "raw_judge_output": "LEFT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10028", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10091", "winner": "left", "raw_judge_output": "LEFT is", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10009", "winner": "tie", "raw_judge_output": "TIE\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10069", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10016", "winner": "invalid", "raw_judge_output": "Both are correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10033", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10021", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10096", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10063", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10098", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10042", "winner": "invalid", "raw_judge_output": "Both responses are", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10092", "winner": "tie", "raw_judge_output": "TIE\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10032", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10084", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10061", "winner": "tie", "raw_judge_output": "TIE\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10082", "winner": "invalid", "raw_judge_output": "Both responses are", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10034", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10089", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10052", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10089", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10001", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10038", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10028", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10078", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10028", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10012", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10097", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10012", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10017", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10017", "winner": "right", "raw_judge_output": "Right\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10058", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10055", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10016", "winner": "invalid", "raw_judge_output": "Both responses are", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10023", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10027", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10078", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10024", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10096", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10054", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10080", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10073", "winner": "right", "raw_judge_output": "\nRIGHT", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10001", "winner": "invalid", "raw_judge_output": "The Right response", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10028", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10015", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10077", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10009", "winner": "right", "raw_judge_output": "RIGHT\n\"\"\"", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10094", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10029", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10087", "winner": "invalid", "raw_judge_output": "The right response", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10044", "winner": "invalid", "raw_judge_output": "The correct response", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10090", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10040", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10099", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10070", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10052", "winner": "right", "raw_judge_output": "\nRIGHT", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10035", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10031", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10050", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10072", "winner": "invalid", "raw_judge_output": "Both responses are", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10005", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10037", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10039", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10047", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10044", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10020", "winner": "invalid", "raw_judge_output": "\nCorrectness", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10093", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10093", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10076", "winner": "right", "raw_judge_output": "RIGHT\n\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10065", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10027", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10036", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10026", "winner": "invalid", "raw_judge_output": "The text is", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10083", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10083", "winner": "invalid", "raw_judge_output": "The right answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10011", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10081", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10087", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10069", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10078", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10077", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10027", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10067", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10038", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10005", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10062", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10054", "winner": "invalid", "raw_judge_output": "Both responses are", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10007", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10032", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10045", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10078", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10039", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10058", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10056", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10061", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10094", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10064", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10069", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10074", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10014", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10022", "winner": "left", "raw_judge_output": "LEFT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10075", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10032", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10036", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10006", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10017", "winner": "right", "raw_judge_output": "RIGHT.\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10025", "winner": "left", "raw_judge_output": "LEFT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10035", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10043", "winner": "right", "raw_judge_output": "Right\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10055", "winner": "invalid", "raw_judge_output": "The LEFT", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10052", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10074", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10035", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10052", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10017", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10027", "winner": "tie", "raw_judge_output": "TIE\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10100", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10041", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10095", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10095", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10025", "winner": "invalid", "raw_judge_output": "\nCorrectness", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10061", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10036", "winner": "left", "raw_judge_output": "LEFT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10094", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10009", "winner": "tie", "raw_judge_output": "TIE\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10051", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10009", "winner": "invalid", "raw_judge_output": "\nCorrectness", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10082", "winner": "invalid", "raw_judge_output": "Both responses are", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10006", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10023", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10084", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10003", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10027", "winner": "tie", "raw_judge_output": "TIE\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10085", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10062", "winner": "right", "raw_judge_output": "Right.\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10043", "winner": "right", "raw_judge_output": "Right\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10010", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10022", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10094", "winner": "invalid", "raw_judge_output": "\n\nThe", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10004", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10010", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10030", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10022", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10035", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10044", "winner": "invalid", "raw_judge_output": "The document is", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10094", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10057", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10076", "winner": "left", "raw_judge_output": "LEFT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10062", "winner": "invalid", "raw_judge_output": "The correct sentence", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10060", "winner": "invalid", "raw_judge_output": "The Right response", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10099", "winner": "invalid", "raw_judge_output": "The Right response", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10077", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10010", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10062", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10071", "winner": "invalid", "raw_judge_output": "The right response", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10061", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10032", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10076", "winner": "right", "raw_judge_output": "RIGHT\n\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10047", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10098", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10010", "winner": "invalid", "raw_judge_output": "\n1.", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10047", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10092", "winner": "tie", "raw_judge_output": "TIE\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10081", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10066", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10075", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10085", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10080", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10086", "winner": "left", "raw_judge_output": "LEFT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10044", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10051", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10050", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10042", "winner": "invalid", "raw_judge_output": "The right response", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10084", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10068", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10001", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10058", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10033", "winner": "invalid", "raw_judge_output": "Correct, helpful", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10048", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10046", "winner": "invalid", "raw_judge_output": "\nCorrectness", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10007", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10071", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10055", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10066", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10001", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10045", "winner": "invalid", "raw_judge_output": "The right answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10093", "winner": "left", "raw_judge_output": "LEFT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10033", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10051", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10041", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10071", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10033", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10037", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10055", "winner": "invalid", "raw_judge_output": "The algorithm is", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10100", "winner": "invalid", "raw_judge_output": "The right response", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10042", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10025", "winner": "left", "raw_judge_output": "LEFT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10090", "winner": "invalid", "raw_judge_output": "The correct response", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10047", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10037", "winner": "left", "raw_judge_output": "LEFT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10029", "winner": "right", "raw_judge_output": "\nRIGHT", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10008", "winner": "left", "raw_judge_output": "LEFT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10039", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10047", "winner": "invalid", "raw_judge_output": "The RIGHT response", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10072", "winner": "right", "raw_judge_output": "RIGHT\n\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10081", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10086", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10059", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10020", "winner": "invalid", "raw_judge_output": "\nCorrectness", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10048", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10016", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10019", "winner": "left", "raw_judge_output": "LEFT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10039", "winner": "right", "raw_judge_output": "Right\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10100", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10051", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10003", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10040", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10005", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10015", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10030", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10078", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10014", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10056", "winner": "invalid", "raw_judge_output": "The Right response", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10004", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10096", "winner": "right", "raw_judge_output": "RIGHT\n\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10091", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10085", "winner": "left", "raw_judge_output": "LEFT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10026", "winner": "tie", "raw_judge_output": "TIE\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10045", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10021", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10068", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10049", "winner": "invalid", "raw_judge_output": "The right response", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10086", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10045", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10094", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10030", "winner": "invalid", "raw_judge_output": "\nCorrectness", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10067", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10087", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10057", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10037", "winner": "left", "raw_judge_output": "LEFT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10041", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10054", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10096", "winner": "left", "raw_judge_output": "LEFT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10052", "winner": "right", "raw_judge_output": "\nRIGHT", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10058", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10054", "winner": "invalid", "raw_judge_output": "Both responses are", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10002", "winner": "invalid", "raw_judge_output": "\nCorrect.", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10076", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10094", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10016", "winner": "invalid", "raw_judge_output": "Both responses are", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10006", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10073", "winner": "invalid", "raw_judge_output": "\nCorrectness", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10084", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10054", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10020", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10049", "winner": "invalid", "raw_judge_output": "The right response", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10025", "winner": "invalid", "raw_judge_output": "\nCorrectness", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10083", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10072", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10040", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10021", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10014", "winner": "right", "raw_judge_output": "RIGHT\n\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10096", "winner": "left", "raw_judge_output": "LEFT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10093", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10049", "winner": "invalid", "raw_judge_output": "The right response", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10039", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10068", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10050", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10084", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10095", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10026", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10080", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10023", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10022", "winner": "invalid", "raw_judge_output": "\nThe Right", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10078", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10059", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10058", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10055", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10021", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10073", "winner": "left", "raw_judge_output": "\nLEFT", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10017", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10056", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10096", "winner": "right", "raw_judge_output": "RIGHT\n\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10018", "winner": "invalid", "raw_judge_output": "The sentence \"", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10087", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10015", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10065", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10019", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10063", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10027", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10089", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10024", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10046", "winner": "invalid", "raw_judge_output": "The RIGHT response", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10030", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10025", "winner": "invalid", "raw_judge_output": "____\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10097", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10016", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10030", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10095", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10035", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10063", "winner": "left", "raw_judge_output": "LEFT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10074", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10009", "winner": "tie", "raw_judge_output": "TIE\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10053", "winner": "invalid", "raw_judge_output": "The correct response", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10003", "winner": "invalid", "raw_judge_output": "Correct, helpful", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10064", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10011", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10038", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10071", "winner": "invalid", "raw_judge_output": "The right response", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10031", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10093", "winner": "left", "raw_judge_output": "LEFT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10056", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10024", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10074", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10056", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10074", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10002", "winner": "invalid", "raw_judge_output": "\nCorrectness", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10027", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10014", "winner": "tie", "raw_judge_output": "TIE\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10019", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10032", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10059", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10023", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10091", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10066", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10038", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10064", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10079", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10011", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10079", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10042", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10008", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10011", "winner": "left", "raw_judge_output": "LEFT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10022", "winner": "invalid", "raw_judge_output": "\nThe right", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10038", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10065", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10008", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10087", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10029", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10042", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10083", "winner": "invalid", "raw_judge_output": "The right answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10057", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10006", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10020", "winner": "invalid", "raw_judge_output": "\nCorrectness", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10004", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10051", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10047", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10100", "winner": "invalid", "raw_judge_output": "The correct response", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10086", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10085", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10053", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10068", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10032", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10079", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10080", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10075", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10097", "winner": "right", "raw_judge_output": "Right\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10042", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10091", "winner": "left", "raw_judge_output": "LEFT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10076", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10089", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10084", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10022", "winner": "left", "raw_judge_output": "LEFT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10002", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10090", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10091", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10035", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10094", "winner": "invalid", "raw_judge_output": "The right response", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10027", "winner": "tie", "raw_judge_output": "TIE\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10057", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10019", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10031", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10053", "winner": "invalid", "raw_judge_output": "The correct response", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10043", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10041", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10013", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10083", "winner": "invalid", "raw_judge_output": "The right answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10049", "winner": "invalid", "raw_judge_output": "The right response", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10006", "winner": "invalid", "raw_judge_output": "The Right response", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10053", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10013", "winner": "invalid", "raw_judge_output": "The user's", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10079", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10013", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10017", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10012", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10081", "winner": "left", "raw_judge_output": "LEFT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10080", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10028", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10050", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10075", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10083", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10067", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10010", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__base__alpaca_10015", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10012", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10070", "winner": "left", "raw_judge_output": "LEFT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10062", "winner": "left", "raw_judge_output": "LEFT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10074", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10046", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10047", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10073", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10053", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10064", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10031", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10058", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10018", "winner": "invalid", "raw_judge_output": "The sentence \"", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10036", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10003", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10024", "winner": "invalid", "raw_judge_output": "The right response", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10078", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10004", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10095", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10011", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10007", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10093", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10040", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10004", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10073", "winner": "invalid", "raw_judge_output": "\nCorrectness", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10065", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10020", "winner": "right", "raw_judge_output": "RIGHT\n\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10090", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10024", "winner": "invalid", "raw_judge_output": "The right response", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10096", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10038", "winner": "right", "raw_judge_output": "RIGHT\n\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10034", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10099", "winner": "invalid", "raw_judge_output": "The Right response", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10082", "winner": "invalid", "raw_judge_output": "The right response", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10009", "winner": "invalid", "raw_judge_output": "\nCorrect,", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10006", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10062", "winner": "invalid", "raw_judge_output": "The correct sentence", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__qwen_1.8b__alpaca_10019", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10003", "winner": "left", "raw_judge_output": "LEFT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__phi_2__alpaca_10090", "winner": "invalid", "raw_judge_output": "The correct response", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10077", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "lora_ft__vs__phi_2__alpaca_10066", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10078", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10046", "winner": "invalid", "raw_judge_output": "\nThe correct", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10061", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__base__alpaca_10084", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10077", "winner": "invalid", "raw_judge_output": "Both LEFT", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10071", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10017", "winner": "right", "raw_judge_output": "RIGHT\n", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10041", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__phi_2__alpaca_10013", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10082", "winner": "invalid", "raw_judge_output": "The Right response", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "full_ft__vs__qwen_1.8b__alpaca_10002", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__qwen_1.8b__alpaca_10058", "winner": "invalid", "raw_judge_output": "The correct answer", "judge_model": "./models/phi-2-hf-4bit-mlx"}
+{"item_id": "qlora_ft__vs__base__alpaca_10025", "winner": "invalid", "raw_judge_output": "\nCorrectness", "judge_model": "./models/phi-2-hf-4bit-mlx"}

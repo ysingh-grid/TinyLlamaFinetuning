@@ -14,6 +14,7 @@ sentence-transformers
 nltk
 numpy
 requests
+tabulate
 
 # Visualization / EDA
 matplotlib

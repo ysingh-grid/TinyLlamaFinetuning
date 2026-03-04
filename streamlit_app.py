@@ -22,6 +22,24 @@ from typing import Any, Dict, List, Optional, Tuple
 import numpy as np
 import streamlit as st
 
+# TokenizersBackend shim for quantised models whose configs reference this
+# legacy tokenizer class. Mirrors the logic used in `evaluate_perplexity.py`.
+try:
+    import transformers  # type: ignore
+
+    if not hasattr(transformers, "TokenizersBackend"):
+        from transformers import PreTrainedTokenizerFast  # type: ignore
+
+        class TokenizersBackend(PreTrainedTokenizerFast):  # type: ignore
+            pass
+
+        transformers.TokenizersBackend = TokenizersBackend  # type: ignore
+except Exception:
+    # If anything goes wrong here we fall back to the default transformers
+    # behaviour; the worst case is the original error, but on supported
+    # versions this block is a no-op.
+    pass
+
 try:
     import matplotlib.pyplot as plt
 except Exception:  # pragma: no cover - optional
@@ -257,7 +275,6 @@ def generate_once(
     return text, token_count, elapsed
 
 
-@st.cache_data(show_spinner=False)
 def random_eval_prompt() -> str:
     if not EVAL_PROMPTS_PATH.exists():
         return ""
