@@ -24,10 +24,9 @@
    - [Pairwise Judging (Primary)](#pairwise-judging-primary)
    - [Cosine Similarity Ranking (Alternative)](#cosine-similarity-ranking-alternative)
 10. [Results](#results)
-11. [Model Comparison Playground](#model-comparison-playground)
-12. [Utility Scripts](#utility-scripts)
-13. [Project Layout](#project-layout)
-14. [Troubleshooting](#troubleshooting)
+11. [Utility Scripts](#utility-scripts)
+12. [Project Layout](#project-layout)
+13. [Troubleshooting](#troubleshooting)
 
 ---
 
@@ -306,7 +305,7 @@ Best adapters per technique are copied to `mlx_best_models/{full,lora,qlora}/`.
 
 | Setting | Value |
 |---------|-------|
-| Base model (LoRA/QLoRA) | `./models/tinyllama-4bit-base` |
+| Base model (QLoRA) | `./models/tinyllama-4bit-base` |
 | Base model (Full FT) | `TinyLlama/TinyLlama-1.1B-Chat-v1.0` |
 | LoRA target keys | `self_attn.{q,k,v,o}_proj` |
 | `dropout` | 0.05 |
@@ -504,7 +503,7 @@ make demo
 ├── validate_training_setup.py         ← pre-run sanity checks
 ├── eda.py                             ← dataset EDA report + leakage/dedup checks (planned)
 ├── streamlit_app.py                   ← Streamlit demo UI (3 pages: compare, collect, EDA)
-├── app.py                             ← Streamlit chat playground (legacy)
+├── app.py                             ← legacy chat app
 ├── quick_eval.py                      ← base vs adapter side-by-side
 ├── plot_loss.py                       ← ASCII loss curve plotter
 ├── lora_config.yaml                   ← baseline LoRA config
@@ -562,10 +561,9 @@ make demo
 | Cosine script import errors | `pip install sentence-transformers nltk numpy` |
 | FT model repeats text | `repetition_penalty=1.5` + 4-gram truncation is applied automatically |
 | Low win rate | Check `min_tokens=15` is set for FT models in `models.json` and `max_tokens=512` |
-| `'ArrayAt' object has no attribute 'set'` | MLX API incompatibility — fixed in `playground.py` and `pipeline.py` using pure Python list approach for logits processors |
+| `'ArrayAt' object has no attribute 'set'` | MLX API incompatibility — fixed in `pipeline.py` (and Streamlit UI) using pure Python list approach for logits processors |
 | LM Studio judge takes forever | Switch to `JUDGE_MODE=model` (local Qwen 1.8B, ~0.5 s/task vs 23 s/task for reasoning model) |
 | LM Studio judge interrupted, work lost | Fixed: judgments now written after each task; restart auto-resumes |
-| `fastapi`/`uvicorn` not found for playground | `.venv/bin/pip install fastapi uvicorn` |
 
 ---
 
