@@ -126,21 +126,26 @@ Optional extras:
 
 ## Quick Start
 
-### One-command pipelines (Makefile)
+### Easiest: use the Makefile
+
+Run these commands from the project root (only the first line is needed once to set up the virtualenv):
 
 ```bash
-# Gradio demo UI (recommended for browsing models & collecting data)
+# 1) Set up the Python environment (only once)
 make install
+
+# 2) Launch the Gradio demo (try the models in your browser)
 make demo
 
-# Full training + evaluation pipeline
-make install
-make prepare
-make train-lora
+# 3) (Optional) Train a LoRA model on Alpaca
+make prepare      # build data/train.jsonl, data/valid.jsonl, data/test.jsonl
+make train-lora   # run training for the best LoRA config
+
+# 4) (Optional) Run the main 6‑model evaluation
 make eval
 ```
 
-You can still run the individual Python scripts directly (as shown below), but the `Makefile` provides a convenient, reproducible entry point for the full workflow.
+You can still run the individual Python scripts directly (as shown below), but the `Makefile` is the easiest way to get started if you are new to the project.
 
 ### Script-level commands
 
