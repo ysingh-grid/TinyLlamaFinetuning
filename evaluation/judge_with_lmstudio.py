@@ -17,6 +17,7 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import threading
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
@@ -143,10 +144,10 @@ def _judge_prompt(prompt: str, left: str, right: str, max_response_chars: int = 
     left  = _truncate(left,  max_response_chars)
     right = _truncate(right, max_response_chars)
     return (
-        "You are an impartial evaluator. Compare two AI responses to the same prompt.\n"
+        "Compare two AI responses to the same prompt.\n"
         "Evaluate on: correctness, instruction-following, relevance, helpfulness.\n"
         "Do NOT favour a response simply because it is longer.\n"
-        "Think step-by-step, then end with exactly one of:\n"
+        "End with exactly one of:\n"
         "  Verdict: LEFT   Verdict: RIGHT   Verdict: TIE\n\n"
         f"Prompt:\n{prompt}\n\n"
         f"LEFT RESPONSE:\n{left}\n\n"
@@ -184,11 +185,11 @@ def _chat_completion_stream(
             {
                 "role": "system",
                 "content": (
-                    "You are an impartial judge. Reason carefully, then end your response "
+                    "You are an impartial judge. End your response "
                     "with exactly: Verdict: LEFT, Verdict: RIGHT, or Verdict: TIE."
                 ),
             },
-            {"role": "user", "content": user_prompt},
+            {"role": "user", "content": "/no_think\n" + user_prompt},
         ],
         "temperature": 0,
         "max_tokens": max_tokens,
@@ -249,11 +250,11 @@ def _chat_completion_blocking(
             {
                 "role": "system",
                 "content": (
-                    "You are an impartial judge. Reason carefully, then end your response "
+                    "You are an impartial judge. End your response "
                     "with exactly: Verdict: LEFT, Verdict: RIGHT, or Verdict: TIE."
                 ),
             },
-            {"role": "user", "content": user_prompt},
+            {"role": "user", "content": "/no_think\n" + user_prompt},
         ],
         "temperature": 0,
         "max_tokens": max_tokens,
@@ -319,8 +320,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--progress-every", type=int, default=25,
                         help="Print progress every N tasks. Default: 25")
     parser.add_argument(
-        "--max-judge-tokens", type=int, default=3000,
-        help="Max tokens for judge completion. Raise for reasoning models with long think chains. Default: 3000"
+        "--max-judge-tokens", type=int, default=256,
+        help="Max tokens for judge completion. 256 is enough with thinking disabled; raise to 3000 for reasoning models. Default: 256"
     )
     parser.add_argument(
         "--max-response-chars", type=int, default=2000,

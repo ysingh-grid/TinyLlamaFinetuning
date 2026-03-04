@@ -126,6 +126,24 @@ Optional extras:
 
 ## Quick Start
 
+### One-command pipelines (Makefile)
+
+```bash
+# Gradio demo UI (recommended for browsing models & collecting data)
+make install
+make demo
+
+# Full training + evaluation pipeline
+make install
+make prepare
+make train-lora
+make eval
+```
+
+You can still run the individual Python scripts directly (as shown below), but the `Makefile` provides a convenient, reproducible entry point for the full workflow.
+
+### Script-level commands
+
 ```bash
 # 1. Prepare data
 .venv/bin/python prepare_dataset.py
@@ -460,6 +478,24 @@ A custom FastAPI + browser UI for live side-by-side model comparison. No externa
 
 ---
 
+## Gradio App
+
+A Gradio UI for quick experimentation, model comparison, and dataset EDA.
+
+```bash
+.venv/bin/python gradio_app.py
+# or using the Makefile
+make demo
+```
+
+**Tabs:**
+
+- **Inference / Compare**: choose any two of the six models, enter a prompt + optional system message, and generate both responses with shared temperature / top-p / max-tokens / repetition-penalty sliders, plus per-model token/time stats.
+- **Data Collection**: generate a response from a chosen model, edit it, and save it into `data/collected.jsonl` as `[user, assistant]` message pairs in MLX-ready format (with a live example counter and download button).
+- **Dataset Stats / EDA**: compute basic statistics over `data/train.jsonl` (length distribution, top/bottom 10 examples) and render `data/eda_report.md` if present.
+
+---
+
 ## Utility Scripts
 
 | Script | Purpose | Usage |
@@ -476,12 +512,15 @@ A custom FastAPI + browser UI for live side-by-side model comparison. No externa
 ```
 .
 ├── README.md
+├── Makefile                         ← reproducible entry points (train, eval, demo)
 ├── report.md                          ← detailed technical report
 ├── requirements.txt
 ├── prepare_dataset.py                 ← dataset curation
 ├── smart_train.py                     ← early-stopping training wrapper
 ├── sweep_finetune.py                  ← hyperparameter sweep runner
 ├── validate_training_setup.py         ← pre-run sanity checks
+├── eda.py                             ← dataset EDA report + leakage/dedup checks (planned)
+├── gradio_app.py                      ← Gradio demo UI (3 tabs: compare, collect, EDA)
 ├── playground.py                      ← FastAPI model comparison playground (http://localhost:8765)
 ├── app.py                             ← Streamlit chat playground (legacy)
 ├── quick_eval.py                      ← base vs adapter side-by-side
