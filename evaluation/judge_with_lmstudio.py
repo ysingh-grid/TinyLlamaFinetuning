@@ -311,7 +311,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--tasks", type=Path, required=True)
     parser.add_argument("--out", type=Path, required=True)
-    parser.add_argument("--model", default="gpt-oss-20b")
+    parser.add_argument("--model", default="qwen/qwen3-4b")
     parser.add_argument("--base-url", default="http://127.0.0.1:1234/v1")
     parser.add_argument("--timeout-s", type=int, default=180,
                         help="Per-request timeout in seconds. Raise for slow reasoning models. Default: 180")

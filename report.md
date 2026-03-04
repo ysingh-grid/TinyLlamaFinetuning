@@ -529,7 +529,7 @@ All three used: `lora_layers=16`, `batch_size=1`, `max_seq_length=512`, `grad_ch
 
 **LM Studio judge details (updated):**
 - Default base URL: `http://127.0.0.1:1234/v1`
-- Default judge model: `mlx-community/ministral-3-14b-reasoning-2512`
+- Default judge model: `qwen/qwen3-4b`
 - `max_judge_tokens`: **3,000** (raised from 1,024 — reasoning models need room for thinking chain)
 - Response truncation: `max_response_chars=`**2,000** chars (raised from 800; covers 100% of 512-token responses at ~4 chars/token)
 - **SSE streaming with early exit**: reads the stream token-by-token; stops the request the moment `Verdict: X` is detected after `</think>`, cutting median latency ~60–70% for reasoning models
@@ -788,7 +788,7 @@ During development, a systematic audit identified 9 failure modes explaining why
 | Issue | Root Cause | Fix Applied |
 |-------|-----------|------------|
 | `'ArrayAt' object has no attribute 'set'` in `playground.py` and `pipeline.py` | MLX version incompatibility with `.at[idx].set(val)` array assignment API | Rewrote all logits processors to convert logits to Python list, modify in-place, convert back: `vals = logits.tolist(); flat = vals[0] if isinstance(...) else vals; flat[tid] = ...; logits = mx.array([flat]) if ... else mx.array(flat)` |
-| LM Studio `ministral-3-14b-reasoning` judge taking 23 s/task (~29 hrs for 4500 tasks) | Model generates 400–600 thinking tokens before verdict; no early exit; HTTP round-trip overhead | (1) SSE streaming with early exit on `Verdict: X` detection; (2) `<think>` block stripping; (3) `max_judge_tokens=3000` for full reasoning room. Net result: 60–70% latency reduction |
+| LM Studio reasoning judge (previously `ministral-3-14b-reasoning`, now `qwen3-4b`) taking 23 s/task (~29 hrs for 4500 tasks) | Model generates 400–600 thinking tokens before verdict; no early exit; HTTP round-trip overhead | (1) SSE streaming with early exit on `Verdict: X` detection; (2) `<think>` block stripping; (3) `max_judge_tokens=3000` for full reasoning room. Net result: 60–70% latency reduction |
 | LM Studio judge progress lost on interruption | Original script buffered all results and wrote at end | Incremental append-per-task + auto-resume by loading existing `item_id`s on startup |
 | Recommended judge still too slow for iteration cycles | Even with streaming, 23 s/task is 29 hrs for 500-prompt full eval | Pivoted to `JUDGE_MODE=model` (local Qwen 1.8B 4-bit, greedy, `max_tokens=3`) — 46× faster |
 
@@ -910,7 +910,7 @@ This section lists every parameter that can be changed and its current/default v
 
 | Parameter | Current Default | Previous | Effect |
 |-----------|----------------|----------|--------|
-| `--model` | `mlx-community/ministral-3-14b-reasoning-2512` | `gpt-oss-20b` | Judge model name |
+| `--model` | `qwen/qwen3-4b` | `gpt-oss-20b` | Judge model name |
 | `--base-url` | `http://127.0.0.1:1234/v1` | — | LM Studio API endpoint |
 | `--max-judge-tokens` | `3000` | `1024` | Max tokens in judge response; reasoning models need room for thinking chain |
 | `--max-response-chars` | `2000` | `800` | Response truncation before judging; 2000 covers all 512-token outputs |

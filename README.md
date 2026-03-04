@@ -143,7 +143,7 @@ JUDGE_MODE=model MAX_PROMPTS=100 ./evaluation/run_eval_6models.sh
 
 # 4b. Run 6-model eval — LM Studio reasoning judge (slow but high-quality)
 JUDGE_MODE=lmstudio \
-  LMSTUDIO_MODEL=mlx-community/ministral-3-14b-reasoning-2512 \
+  LMSTUDIO_MODEL=qwen/qwen3-4b \
   MAX_PROMPTS=100 \
   ./evaluation/run_eval_6models.sh
 
@@ -328,7 +328,7 @@ JUDGE_MODE=model MAX_PROMPTS=100 ./evaluation/run_eval_6models.sh
 
 # LM Studio reasoning judge — high-quality but ~23 s/task (use for final validation only)
 JUDGE_MODE=lmstudio \
-  LMSTUDIO_MODEL=mlx-community/ministral-3-14b-reasoning-2512 \
+  LMSTUDIO_MODEL=qwen/qwen3-4b \
   MAX_PROMPTS=100 \
   ./evaluation/run_eval_6models.sh
 
@@ -349,7 +349,7 @@ Environment variable overrides for `run_eval_6models.sh`:
 | `JUDGE_MODEL` | `./models/qwen1.5-1.8b-chat-4bit` | Local model path for `JUDGE_MODE=model` |
 | `JUDGE_MAX_TOKENS` | `3` | Max output tokens for local judge (3 is enough for LEFT/RIGHT/TIE) |
 | `JUDGE_MAX_RESPONSE_CHARS` | `600` | Response truncation for local judge (shorter = faster) |
-| `LMSTUDIO_MODEL` | `mlx-community/ministral-3-14b-reasoning-2512` | LM Studio model identifier |
+| `LMSTUDIO_MODEL` | `qwen/qwen3-4b` | LM Studio model identifier |
 | `LMSTUDIO_MAX_JUDGE_TOKENS` | `3000` | Max tokens for LM Studio judge (reasoning models need room to think) |
 | `LMSTUDIO_MAX_RESPONSE_CHARS` | `2000` | Response truncation for LM Studio judge |
 
@@ -357,7 +357,7 @@ Environment variable overrides for `run_eval_6models.sh`:
 
 | Judge mode | Model | s/task | 900 tasks | 4500 tasks |
 |---|---|---|---|---|
-| `lmstudio` (reasoning) | ministral-3-14b-reasoning | ~23 s | ~6 hrs | ~29 hrs |
+| `lmstudio` (reasoning) | qwen3-4b | ~23 s | ~6 hrs | ~29 hrs |
 | `model` (local MLX) | qwen1.5-1.8b-chat-4bit | ~0.5 s | ~8 min | ~37 min |
 
 Both judge modes are **crash-safe** — results are written to disk after each judgment and a restart automatically resumes from where it stopped.
