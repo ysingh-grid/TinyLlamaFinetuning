@@ -51,7 +51,7 @@
 | **Evaluation & Metrics** | 7 | Primary: pairwise blind LLM judge (100–500 prompts, 9 model pairs, 95% bootstrapped CI); secondary: cosine similarity ranking (500 prompts, all-MiniLM-L6-v2); two independent judge backends | §6.1–6.4, §7 |
 | **Streamlit UI — Data Acquisition & Inference** | 5 | `streamlit_app.py`: (1) **Inference/Compare** — two-model side-by-side generation; (2) **Data Collection** — generate, edit, and save new labelled examples to `data/collected.jsonl`; (3) **Dataset EDA** — length stats, histogram, top/bottom examples | §6.5 |
 | **Success Criteria & Insight** | 5 | All three FT variants ≥55% vs base (full_ft=61%, lora_ft=55%, qlora_ft=55%); formal pass/fail table; 9 diagnostic findings with impact estimates; 3 qualitative case studies | §7.6, §7.7, §8 |
-| **Reproducibility & Docs** | 5 | `Makefile` one-command entry points; `validate_training_setup.py` 6-point pre-run checker; fixed seeds throughout; crash-safe eval (auto-resume); `requirements.txt`; detailed parameter reference | §9, §10, §11 |
+| **Reproducibility & Docs** | 5 | `Makefile` with 12 named targets (`make install` → `make prepare` → `make sweep` → `make eval` → `make demo`); `validate_training_setup.py` 6-point pre-run checker; fixed seeds throughout; crash-safe eval (auto-resume); `requirements.txt`; full parameter reference | §9, §10, §11 |
 
 ---
 
@@ -1068,12 +1068,58 @@ This section lists every parameter that can be changed and its current/default v
 | `yaml` | Config file parsing |
 | `requests` | LM Studio API calls (SSE streaming) |
 
+### Makefile — One-Command Entry Points
+
+The project ships a `Makefile` that wraps every pipeline stage into a single command, eliminating the need to remember long script invocations and reducing reproduction to copy-paste commands.
+
+```bash
+make install        # create .venv and install requirements.txt
+make prepare        # download Alpaca, filter top-5000, write train/valid/test JSONL
+make eda            # compute dataset length stats, write data/eda_report.md
+make validate       # run 6-point pre-flight sanity check
+make train-lora     # train baseline LoRA (lora_config.yaml, patience=5)
+make train-qlora    # train baseline QLoRA (qlora_config.yaml, patience=5)
+make train-full     # replay best Full FT sweep trial (trial_0001, patience=5)
+make sweep          # grid sweep across all three techniques
+make eval           # 6-model pairwise eval, fast local judge, 100 prompts
+make eval-lmstudio  # 6-model pairwise eval, LM Studio reasoning judge, 500 prompts
+make perplexity     # test-set perplexity for all 6 models via MLX forward pass
+make demo           # launch Streamlit demo UI at http://localhost:8501
+```
+
+**Full end-to-end reproduction (from scratch):**
+
+```bash
+make install && make prepare && make validate
+make sweep          # or: make train-lora && make train-qlora && make train-full
+make eval
+make demo
+```
+
+| Target | Script invoked | Key env-var overrides |
+|--------|---------------|----------------------|
+| `install` | `python3 -m venv .venv && pip install -r requirements.txt` | — |
+| `prepare` | `prepare_dataset.py` | `NUM_EXAMPLES`, `MIN_ANSWER_WORDS` in script |
+| `eda` | `eda.py` | — |
+| `validate` | `validate_training_setup.py` | — |
+| `train-lora` | `smart_train.py --config lora_config.yaml --patience 5` | — |
+| `train-qlora` | `smart_train.py --config qlora_config.yaml --patience 5` | — |
+| `train-full` | `smart_train.py --config mlx_sweep_runs/full/trial_0001/config.yaml` | — |
+| `sweep` | `sweep_finetune.py --technique all --search grid` | — |
+| `eval` | `run_eval_6models.sh` | `JUDGE_MODE=model MAX_PROMPTS=100` |
+| `eval-lmstudio` | `run_eval_6models.sh` | `JUDGE_MODE=lmstudio MAX_PROMPTS=500` |
+| `perplexity` | `evaluate_perplexity.py` | `--data`, `--models-config`, `--out` |
+| `demo` | `streamlit run streamlit_app.py` | — |
+
 ### Environment Setup
 
 ```bash
+# One command sets up everything:
+make install
+# Equivalent manual steps:
 python3 -m venv .venv
 source .venv/bin/activate
-.venv/bin/pip install -r requirements.txt   # mlx-lm, mlx, datasets, streamlit
+.venv/bin/pip install -r requirements.txt   # mlx-lm, mlx, datasets, streamlit, tabulate, ...
 ```
 
 ### Key MLX-LM Commands Used
@@ -1093,6 +1139,7 @@ source .venv/bin/activate
 
 | File | Purpose |
 |------|---------|
+| `Makefile` | 12-target build file — one-command entry point for every pipeline stage (`install`, `prepare`, `eda`, `validate`, `train-lora`, `train-qlora`, `train-full`, `sweep`, `eval`, `eval-lmstudio`, `perplexity`, `demo`) |
 | `prepare_dataset.py` | Download, filter, format, and split the Alpaca dataset |
 | `smart_train.py` | Early-stopping training wrapper around `mlx_lm.lora` |
 | `sweep_finetune.py` | Grid/TPE hyperparameter sweep across Full FT, LoRA, QLoRA |
