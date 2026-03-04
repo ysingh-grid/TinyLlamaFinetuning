@@ -3,19 +3,19 @@
     "name": "full_ft",
     "model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
     "adapter_path": "./mlx_best_models/full",
-    "min_tokens": 50
+    "min_tokens": 15
   },
   {
     "name": "lora_ft",
     "model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
     "adapter_path": "./mlx_best_models/lora",
-    "min_tokens": 50
+    "min_tokens": 15
   },
   {
     "name": "qlora_ft",
     "model": "./models/tinyllama-4bit-base",
     "adapter_path": "./mlx_best_models/qlora",
-    "min_tokens": 50
+    "min_tokens": 15
   },
   {
     "name": "base",

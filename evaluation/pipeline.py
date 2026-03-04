@@ -168,6 +168,26 @@ def _format_prompt_for_model(tokenizer, prompt: str, system_prompt: Optional[str
     return f"User: {prompt}\nAssistant:"
 
 
+def _truncate_at_repeated_ngram(text: str, n: int = 4) -> str:
+    """Truncate text at the first repeated n-gram to prevent looping responses.
+
+    Walks forward through word-level n-grams. The moment an n-gram is seen for
+    the second time, returns everything up to (not including) that repeat.
+    Returns the original text unchanged if no repetition is found.
+    """
+    words = text.split()
+    if len(words) < n * 2:
+        return text
+    seen: set = set()
+    for i in range(len(words) - n + 1):
+        ng = tuple(words[i : i + n])
+        if ng in seen:
+            truncated = " ".join(words[:i]).rstrip(" ,.;:")
+            return truncated if truncated else text
+        seen.add(ng)
+    return text
+
+
 def run_generation(
     models: Sequence[ModelSpec],
     prompts: Sequence[Dict],
@@ -265,7 +285,7 @@ def run_generation(
                         return logits
                     return _proc
 
-                def _make_repetition_penalty_processor(penalty: float = 1.2):
+                def _make_repetition_penalty_processor(penalty: float = 1.5):
                     """Penalizes tokens that have already been generated.
                     For logits > 0: divide by penalty. For logits < 0: multiply by penalty.
                     This discourages repetition without completely blocking tokens."""
@@ -290,7 +310,7 @@ def run_generation(
 
                 processors = [
                     _make_suppress_processor(model_spec.min_tokens, eos_ids),
-                    _make_repetition_penalty_processor(1.2),
+                    _make_repetition_penalty_processor(1.5),
                 ]
                 response_parts: List[str] = []
                 for chunk in stream_generate(
@@ -303,6 +323,9 @@ def run_generation(
                 ):
                     response_parts.append(chunk.text)
                 response = "".join(response_parts)
+                # Post-process: truncate at first repeated 4-gram to eliminate
+                # any looping that the token-level penalty didn't catch.
+                response = _truncate_at_repeated_ngram(response, n=4)
             else:
                 response = generate(
                     model,
@@ -584,7 +607,18 @@ def run_model_judging(
     judge_model: str,
     seed: int,
     max_tokens: int,
+    max_response_chars: int = 600,
+    progress_every: int = 25,
 ) -> Path:
+    """Judge pairwise tasks with a local MLX model.
+
+    Speed notes vs LM-Studio reasoning judge:
+    - No HTTP overhead (direct Python call)
+    - max_tokens=3 → only 3 output tokens instead of 500+ reasoning tokens
+    - max_response_chars=600 keeps input short (fast prefill)
+    - Crash-safe: each result written immediately; restart auto-resumes
+    Combined these give ~30-100x faster throughput.
+    """
     try:
         import mlx.core as mx
         from mlx_lm import generate, load
@@ -594,7 +628,6 @@ def run_model_judging(
             "Model judging requires mlx + mlx_lm. Install dependencies in your venv first."
         ) from exc
 
-    # Keep tokenizer loading behavior consistent with run_generation.
     import transformers
     if not hasattr(transformers, "TokenizersBackend"):
         from transformers import PreTrainedTokenizerFast
@@ -604,59 +637,109 @@ def run_model_judging(
 
         transformers.TokenizersBackend = TokenizersBackend
 
-    tasks = read_jsonl(tasks_path)
-    if not tasks:
+    all_tasks = read_jsonl(tasks_path)
+    if not all_tasks:
         raise ValueError(f"No judging tasks found in {tasks_path}")
 
+    # ── Resume: skip already-written item_ids ──────────────────────────────
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    completed_ids: set = set()
+    if out_path.exists():
+        with out_path.open("r", encoding="utf-8") as _f:
+            for _line in _f:
+                _line = _line.strip()
+                if _line:
+                    try:
+                        _row = json.loads(_line)
+                        if _row.get("item_id"):
+                            completed_ids.add(str(_row["item_id"]))
+                    except json.JSONDecodeError:
+                        pass
+
+    tasks = [t for t in all_tasks if str(t["item_id"]) not in completed_ids]
+    total_all = len(all_tasks)
+    already_done = len(completed_ids)
+
+    if already_done:
+        print(f"Resuming local judge: {already_done}/{total_all} done, {len(tasks)} remaining")
+    else:
+        print(
+            f"Local MLX judge: {len(tasks)} tasks | model={judge_model} | "
+            f"max_tokens={max_tokens} | max_response_chars={max_response_chars}"
+        )
+
+    if not tasks:
+        print("All tasks already judged.")
+        return out_path
+
+    # ── Judge prompt (concise — short input = fast prefill) ────────────────
+    def _trunc(text: str) -> str:
+        if len(text) <= max_response_chars:
+            return text
+        return text[:max_response_chars].rstrip() + "…"
+
     judge_prompt_template = (
-        "You are an impartial evaluator. Compare two responses for the prompt. "
-        "Judge correctness, instruction-following, helpfulness, and safety. "
-        "Return exactly one token: LEFT, RIGHT, or TIE.\n\n"
-        "Prompt:\n{prompt}\n\n"
-        "LEFT RESPONSE:\n{left}\n\n"
-        "RIGHT RESPONSE:\n{right}\n\n"
-        "Verdict (LEFT/RIGHT/TIE):"
+        "Judge which response better answers the prompt.\n"
+        "Criteria: correctness, instruction-following, helpfulness.\n"
+        "Reply with exactly one word: LEFT, RIGHT, or TIE.\n\n"
+        "Prompt: {prompt}\n\n"
+        "LEFT: {left}\n\n"
+        "RIGHT: {right}\n\n"
+        "Verdict:"
     )
 
     model, tokenizer = load(judge_model)
-    rows: List[Dict] = []
+    sampler = make_sampler(temp=0.0, top_p=1.0)
 
-    for idx, task in enumerate(tasks):
-        mx.random.seed(seed + idx)
-        prompt = judge_prompt_template.format(
-            prompt=task["prompt"],
-            left=task["left_response"],
-            right=task["right_response"],
-        )
-        sampler = make_sampler(temp=0.0, top_p=1.0)
-        raw = generate(
-            model,
-            tokenizer,
-            prompt=prompt,
-            sampler=sampler,
-            max_tokens=max_tokens,
-            verbose=False,
-        )
-        text = raw.strip().split()[0].lower() if raw.strip() else "invalid"
-        if text.startswith("left"):
-            winner = "left"
-        elif text.startswith("right"):
-            winner = "right"
-        elif text.startswith("tie"):
-            winner = "tie"
-        else:
-            winner = "invalid"
+    import time as _time
+    t0 = _time.time()
 
-        rows.append(
-            {
+    with out_path.open("a", encoding="utf-8") as out_fh:
+        for idx, task in enumerate(tasks, start=1):
+            mx.random.seed(seed + idx)
+            prompt = judge_prompt_template.format(
+                prompt=str(task["prompt"]),
+                left=_trunc(str(task["left_response"])),
+                right=_trunc(str(task["right_response"])),
+            )
+            raw = generate(
+                model,
+                tokenizer,
+                prompt=prompt,
+                sampler=sampler,
+                max_tokens=max_tokens,
+                verbose=False,
+            )
+            text = raw.strip().split()[0].lower() if raw.strip() else "invalid"
+            if text.startswith("left"):
+                winner = "left"
+            elif text.startswith("right"):
+                winner = "right"
+            elif text.startswith("tie"):
+                winner = "tie"
+            else:
+                winner = "invalid"
+
+            row = {
                 "item_id": task["item_id"],
                 "winner": winner,
                 "raw_judge_output": raw,
                 "judge_model": judge_model,
             }
-        )
+            out_fh.write(json.dumps(row, ensure_ascii=True) + "\n")
+            out_fh.flush()
 
-    write_jsonl(out_path, rows)
+            done_total = already_done + idx
+            if progress_every > 0 and (idx % progress_every == 0 or idx == len(tasks)):
+                elapsed = _time.time() - t0
+                rate = idx / elapsed if elapsed > 0 else 0
+                eta_s = (len(tasks) - idx) / rate if rate > 0 else 0
+                pct = done_total / total_all * 100
+                print(
+                    f"Judged {done_total}/{total_all} ({pct:.0f}%)  "
+                    f"{rate:.1f} tasks/s  ETA {eta_s/60:.0f}m",
+                    flush=True,
+                )
 
     del model
     del tokenizer

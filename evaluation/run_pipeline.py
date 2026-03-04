@@ -18,6 +18,7 @@ from evaluation.pipeline import (
     run_pairing,
     run_scoring,
 )
+from evaluation.judge_with_lmstudio import run_lmstudio_judging
 
 
 def parse_args() -> argparse.Namespace:
@@ -65,7 +66,7 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--temperature", type=float, default=0.2)
     parser.add_argument("--top-p", type=float, default=0.9)
-    parser.add_argument("--max-tokens", type=int, default=256)
+    parser.add_argument("--max-tokens", type=int, default=512)
     parser.add_argument(
         "--progress-every",
         type=int,
@@ -77,13 +78,39 @@ def parse_args() -> argparse.Namespace:
 
     parser.add_argument(
         "--judge-mode",
-        choices=["manual", "model"],
+        choices=["manual", "model", "lmstudio"],
         default="manual",
-        help="manual: stop after pairing and wait for judgments file. model: auto-judge with --judge-model.",
+        help=(
+            "manual: stop after pairing and wait for judgments file. "
+            "model: auto-judge with local MLX model (--judge-model). "
+            "lmstudio: auto-judge via LM Studio OpenAI-compatible server."
+        ),
     )
+    # local MLX judge
     parser.add_argument("--judge-model", default=None)
     parser.add_argument("--judgments", type=Path, default=None)
-    parser.add_argument("--judge-max-tokens", type=int, default=8)
+    parser.add_argument("--judge-max-tokens", type=int, default=3,
+                        help="Max output tokens for local MLX judge. 3 is enough for LEFT/RIGHT/TIE. Default: 3")
+    parser.add_argument("--judge-max-response-chars", type=int, default=600,
+                        help="Truncate each response to this many chars before judging (shorter = faster prefill). Default: 600")
+    parser.add_argument("--judge-progress-every", type=int, default=25)
+    # LM Studio judge
+    parser.add_argument("--lmstudio-url", default="http://127.0.0.1:1234/v1",
+                        help="LM Studio base URL. Default: http://127.0.0.1:1234/v1")
+    parser.add_argument("--lmstudio-model", default="mlx-community/ministral-3-14b-reasoning-2512",
+                        help="Model identifier as loaded in LM Studio.")
+    parser.add_argument("--lmstudio-max-judge-tokens", type=int, default=3000,
+                        help="Max tokens per judge completion. Default: 3000")
+    parser.add_argument("--lmstudio-max-response-chars", type=int, default=2000,
+                        help="Chars to show the judge per response. Default: 2000")
+    parser.add_argument(
+        "--lmstudio-no-stream", dest="lmstudio_stream", action="store_false", default=True,
+        help="Disable SSE streaming for LM Studio judge (streaming is on by default).",
+    )
+    parser.add_argument("--lmstudio-concurrency", type=int, default=1,
+                        help="Parallel HTTP requests to LM Studio. Default: 1")
+    parser.add_argument("--lmstudio-timeout-s", type=int, default=180,
+                        help="Per-request timeout in seconds. Default: 180")
     return parser.parse_args()
 
 
@@ -133,6 +160,19 @@ def main() -> None:
             print("Then run evaluation/score_judgments.py with the key + your judgments file.")
             return
         judgments_path = args.judgments
+    elif args.judge_mode == "lmstudio":
+        judgments_path = pairing_dir / "judgments_lmstudio.jsonl"
+        run_lmstudio_judging(
+            tasks_path=tasks_path,
+            out_path=judgments_path,
+            model=args.lmstudio_model,
+            base_url=args.lmstudio_url,
+            timeout_s=args.lmstudio_timeout_s,
+            max_judge_tokens=args.lmstudio_max_judge_tokens,
+            max_response_chars=args.lmstudio_max_response_chars,
+            stream=args.lmstudio_stream,
+            concurrency=args.lmstudio_concurrency,
+        )
     else:
         if not args.judge_model:
             raise ValueError("--judge-model is required when --judge-mode model")
@@ -143,6 +183,8 @@ def main() -> None:
             judge_model=args.judge_model,
             seed=args.seed,
             max_tokens=args.judge_max_tokens,
+            max_response_chars=args.judge_max_response_chars,
+            progress_every=args.judge_progress_every,
         )
 
     pair_json, rollup_json, report_md = run_scoring(

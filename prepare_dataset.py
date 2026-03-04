@@ -1,5 +1,6 @@
-"""Prepare training data from Alpaca — select the 5000 examples with the LONGEST
-answers so the model learns to produce verbose, detailed responses."""
+"""Prepare training data from Alpaca — keep only examples whose answers contain
+at least MIN_ANSWER_WORDS words (removes terse/one-word answers that regress
+verbosity), then select the top NUM_EXAMPLES by answer length."""
 
 import json
 import random
@@ -13,7 +14,11 @@ OUTPUT_DIR = Path("./data")
 TRAIN_SPLIT = 0.8
 VALID_SPLIT = 0.1
 TEST_SPLIT = 0.1
-MIN_ANSWER_WORDS = 0  # no hard floor — we just take the top N by length
+# Hard floor: only keep examples whose answers are at least this many words.
+# Eliminates one-word and terse answers (e.g. "Sang.", "larger", "Fiction.")
+# that caused FT models to regress TinyLlama Chat's RLHF-trained verbosity.
+# ~24k of Alpaca's 52k examples pass this threshold, giving plenty of headroom.
+MIN_ANSWER_WORDS = 30
 
 
 def format_chat(example):
@@ -47,6 +52,10 @@ def main():
     # Filter out empty answers
     ds_filtered = [ex for ex in ds if len(ex["output"].strip()) > 0]
     print(f"After removing empty answers: {len(ds_filtered)}")
+
+    # Filter out answers shorter than MIN_ANSWER_WORDS
+    ds_filtered = [ex for ex in ds_filtered if answer_word_count(ex) >= MIN_ANSWER_WORDS]
+    print(f"After applying MIN_ANSWER_WORDS={MIN_ANSWER_WORDS} floor: {len(ds_filtered)}")
 
     # Sort by answer length (longest first)
     ds_sorted = sorted(ds_filtered, key=answer_word_count, reverse=True)
