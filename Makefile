@@ -1,6 +1,6 @@
 PYTHON := .venv/bin/python
 
-.PHONY: install prepare eda validate train-lora train-qlora train-full sweep eval eval-lmstudio perplexity demo playground
+.PHONY: install prepare eda validate train-lora train-qlora train-full sweep eval eval-lmstudio perplexity demo
 
 install:
 	python3 -m venv .venv
@@ -39,7 +39,4 @@ perplexity:
 
 demo:
 	$(PYTHON) gradio_app.py
-
-playground:
-	$(PYTHON) playground.py
 

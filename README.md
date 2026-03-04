@@ -170,9 +170,12 @@ JUDGE_MODE=lmstudio \
   MAX_PROMPTS=100 \
   ./evaluation/run_eval_6models.sh
 
-# 5. Launch model comparison playground
-.venv/bin/python playground.py
-# → open http://localhost:8765
+# 5. Launch Gradio demo app
+.venv/bin/python gradio_app.py
+# → by default: http://127.0.0.1:7860
+# If that port is already in use, pick another:
+# GRADIO_PORT=7861 .venv/bin/python gradio_app.py
+# → then open http://127.0.0.1:7861
 ```
 
 ---
@@ -462,27 +465,6 @@ All three FT variants meet or exceed the 55% target. Zero repetition across all 
 
 ---
 
-## Model Comparison Playground
-
-A custom FastAPI + browser UI for live side-by-side model comparison. No external dependencies beyond the project `.venv`.
-
-```bash
-.venv/bin/python playground.py
-# → open http://localhost:8765
-```
-
-**Features:**
-- Both panels offer all 6 models (full_ft, lora_ft, qlora_ft, base, qwen_1.8b, phi_2)
-- Models load on demand into slot A or B; switching model auto-resets the response
-- Independent per-panel parameter sliders: Temperature, Top P, Max Tokens, Repetition Penalty, Min Tokens, 4-gram loop guard
-- Streaming responses with live token cursor and per-request stats (tokens, t/s, elapsed)
-- **⚡ Generate Both** button — sequential A→B with progress indicator; Cmd+Enter shortcut
-- **🎲 Random** button — loads a random prompt from `evaluation/eval_prompts.jsonl`
-- Collapsible system prompt field
-- Crash-safe MLX logits processors (pure Python list — compatible with all MLX versions)
-
----
-
 ## Gradio App
 
 A Gradio UI for quick experimentation, model comparison, and dataset EDA.
@@ -505,7 +487,6 @@ make demo
 
 | Script | Purpose | Usage |
 |--------|---------|-------|
-| `playground.py` | Live side-by-side model comparison UI | `.venv/bin/python playground.py` → http://localhost:8765 |
 | `quick_eval.py` | Side-by-side base vs adapter check | `.venv/bin/python quick_eval.py --adapter ./adapters/tinyllama-lora-alpaca --n-prompts 10` |
 | `plot_loss.py` | ASCII loss curves from `train.log` | `.venv/bin/python plot_loss.py --log ./adapters/tinyllama-lora-alpaca/train.log` |
 | `evaluation/check_response_quality.py` | Heuristic gibberish guard | `.venv/bin/python evaluation/check_response_quality.py --responses-dir evaluation/runs/<run_id>/responses` |
@@ -526,7 +507,6 @@ make demo
 ├── validate_training_setup.py         ← pre-run sanity checks
 ├── eda.py                             ← dataset EDA report + leakage/dedup checks (planned)
 ├── gradio_app.py                      ← Gradio demo UI (3 tabs: compare, collect, EDA)
-├── playground.py                      ← FastAPI model comparison playground (http://localhost:8765)
 ├── app.py                             ← Streamlit chat playground (legacy)
 ├── quick_eval.py                      ← base vs adapter side-by-side
 ├── plot_loss.py                       ← ASCII loss curve plotter

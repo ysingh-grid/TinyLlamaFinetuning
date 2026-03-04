@@ -729,8 +729,28 @@ def build_interface() -> gr.Blocks:
 
 def main() -> None:
     demo = build_interface()
-    port = int(os.environ.get("GRADIO_PORT", "7860"))
-    demo.queue().launch(server_port=port)
+    # Work around a Gradio 4.x bug where API schema generation can crash
+    # with `TypeError: argument of type 'bool' is not iterable` on some
+    # environments by disabling the API info route entirely.
+    try:  # pragma: no cover - defensive monkeypatch
+        import gradio.routes as gr_routes  # type: ignore
+
+        def _dummy_api_info(*_args, **_kwargs):
+            return {}
+
+        gr_routes.api_info = _dummy_api_info  # type: ignore[attr-defined]
+    except Exception:
+        pass
+
+    # In some environments localhost is not directly accessible from the browser.
+    # Setting share=True ensures a reachable URL is created even when 127.0.0.1
+    # is blocked by proxy or sandbox settings.
+    port_env = os.environ.get("GRADIO_PORT")
+    if port_env:
+        demo.queue().launch(server_port=int(port_env), share=True)
+    else:
+        # Let Gradio pick any free port in its default range.
+        demo.queue().launch(share=True)
 
 
 if __name__ == "__main__":
