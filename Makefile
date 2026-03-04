@@ -38,5 +38,5 @@ perplexity:
 	$(PYTHON) evaluate_perplexity.py
 
 demo:
-	$(PYTHON) gradio_app.py
+	$(PYTHON) -m streamlit run streamlit_app.py
 

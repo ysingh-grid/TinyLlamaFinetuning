@@ -639,7 +639,7 @@ A custom FastAPI + browser UI for live interactive comparison of any two of the 
 | System prompt | Collapsible system message field applied to both panels independently |
 | Crash-safe logits processors | Uses pure Python list approach (not MLX `.at[].set()`) — compatible with all MLX versions |
 
-> A separate Gradio UI (`gradio_app.py`) provides a more beginner-friendly browser interface with the same comparison capability plus data collection and dataset-EDA tabs. See the project `README.md` for launch instructions.
+> A separate Streamlit UI (`streamlit_app.py`) provides a more beginner-friendly browser interface with the same comparison capability plus data collection and dataset-EDA pages. See the project `README.md` for launch instructions.
 
 #### API Endpoints
 
@@ -1108,7 +1108,7 @@ source .venv/bin/activate
 | File | Purpose |
 |------|---------|
 | `playground.py` | FastAPI model comparison playground; all 6 models, side-by-side, streaming, parameter sliders |
-| `gradio_app.py` | Gradio-based comparison / data collection / EDA UI |
+| `streamlit_app.py` | Streamlit-based comparison / data collection / EDA UI |
 | `app.py` | Legacy Streamlit single-model chat UI |
 | `quick_eval.py` | Side-by-side base vs adapter sanity check |
 | `plot_loss.py` | ASCII loss curve plotter from `train.log` |

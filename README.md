@@ -134,7 +134,7 @@ Run these commands from the project root (only the first line is needed once to 
 # 1) Set up the Python environment (only once)
 make install
 
-# 2) Launch the Gradio demo (try the models in your browser)
+# 2) Launch the Streamlit demo (try the models in your browser)
 make demo
 
 # 3) (Optional) Train a LoRA model on Alpaca
@@ -170,12 +170,9 @@ JUDGE_MODE=lmstudio \
   MAX_PROMPTS=100 \
   ./evaluation/run_eval_6models.sh
 
-# 5. Launch Gradio demo app
-.venv/bin/python gradio_app.py
-# → by default: http://127.0.0.1:7860
-# If that port is already in use, pick another:
-# GRADIO_PORT=7861 .venv/bin/python gradio_app.py
-# → then open http://127.0.0.1:7861
+# 5. Launch Streamlit demo app
+.venv/bin/python -m streamlit run streamlit_app.py
+# → Streamlit will print a local URL (http://localhost:8501 by default)
 ```
 
 ---
@@ -465,17 +462,17 @@ All three FT variants meet or exceed the 55% target. Zero repetition across all 
 
 ---
 
-## Gradio App
+## Streamlit App
 
-A Gradio UI for quick experimentation, model comparison, and dataset EDA.
+A Streamlit UI for quick experimentation, model comparison, and dataset EDA.
 
 ```bash
-.venv/bin/python gradio_app.py
+.venv/bin/python -m streamlit run streamlit_app.py
 # or using the Makefile
 make demo
 ```
 
-**Tabs:**
+**Pages:**
 
 - **Inference / Compare**: choose any two of the six models, enter a prompt + optional system message, and generate both responses with shared temperature / top-p / max-tokens / repetition-penalty sliders, plus per-model token/time stats.
 - **Data Collection**: generate a response from a chosen model, edit it, and save it into `data/collected.jsonl` as `[user, assistant]` message pairs in MLX-ready format (with a live example counter and download button).
@@ -506,7 +503,7 @@ make demo
 ├── sweep_finetune.py                  ← hyperparameter sweep runner
 ├── validate_training_setup.py         ← pre-run sanity checks
 ├── eda.py                             ← dataset EDA report + leakage/dedup checks (planned)
-├── gradio_app.py                      ← Gradio demo UI (3 tabs: compare, collect, EDA)
+├── streamlit_app.py                   ← Streamlit demo UI (3 pages: compare, collect, EDA)
 ├── app.py                             ← Streamlit chat playground (legacy)
 ├── quick_eval.py                      ← base vs adapter side-by-side
 ├── plot_loss.py                       ← ASCII loss curve plotter

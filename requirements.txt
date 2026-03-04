@@ -4,7 +4,6 @@ mlx
 datasets
 
 # UIs
-gradio
 streamlit
 fastapi
 uvicorn[standard]
