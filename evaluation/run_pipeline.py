@@ -117,6 +117,13 @@ def parse_args() -> argparse.Namespace:
 def main() -> None:
     args = parse_args()
 
+    # Auto-download any missing local models before attempting generation.
+    try:
+        from download_models import ensure_local_models
+        ensure_local_models()
+    except Exception:
+        pass
+
     run_id = datetime.now().strftime("%Y%m%d_%H%M%S")
     run_dir = args.out_root / run_id
     responses_dir = run_dir / "responses"

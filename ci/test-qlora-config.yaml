@@ -2,9 +2,10 @@
 # Adapter saved to ci/adapters/qlora/ to avoid touching production adapters.
 # Run via: make test-train-qlora
 
-# Use the Hub 4-bit version for CI so it works on any fresh clone.
-# Production QLoRA uses the local ./models/tinyllama-4bit-base instead.
-model: "mlx-community/TinyLlama-1.1B-Chat-v1.0-4bit"
+# Uses the same local model as production QLoRA.
+# The Makefile $(TINYLLAMA_4BIT) sentinel + smart_train.py auto-download ensure
+# ./models/tinyllama-4bit-base is present before this config is ever loaded.
+model: "./models/tinyllama-4bit-base"
 fine_tune_type: lora
 train: true
 data: "./ci/data"

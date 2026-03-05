@@ -40,6 +40,13 @@ except Exception:
     # versions this block is a no-op.
     pass
 
+# Auto-download any missing local models at startup (no-op when all present).
+try:
+    from download_models import ensure_local_models
+    ensure_local_models()
+except Exception:
+    pass
+
 try:
     import matplotlib.pyplot as plt
 except Exception:  # pragma: no cover - optional

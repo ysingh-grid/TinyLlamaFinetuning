@@ -5,8 +5,14 @@ verbosity), then select the top NUM_EXAMPLES by answer length."""
 import argparse
 import json
 import random
+import time
 from datasets import load_dataset
 from pathlib import Path
+
+
+def _ts() -> str:
+    """Return a short HH:MM:SS timestamp for progress lines."""
+    return time.strftime("%H:%M:%S")
 
 # Defaults (overridable via CLI flags)
 DATASET_NAME = "tatsu-lab/alpaca"
@@ -57,54 +63,54 @@ def answer_word_count(example):
 
 
 def main():
+    wall_start = time.monotonic()
     args = parse_args()
     num_examples = args.num_examples
     min_answer_words = args.min_answer_words
     output_dir = args.out_dir
 
-    print(f"Loading FULL dataset from {DATASET_NAME}...")
+    print(f"[{_ts()}] PREPARE  target={num_examples} examples, min_words={min_answer_words}, out={output_dir}")
+
+    # Step 1 — download/cache dataset
+    t0 = time.monotonic()
+    print(f"[{_ts()}] Step 1/5  Downloading {DATASET_NAME} from HuggingFace Hub (cached after first run)…")
     ds = load_dataset(DATASET_NAME, split="train")
-    print(f"Total examples in Alpaca: {len(ds)}")
+    print(f"[{_ts()}]           Loaded {len(ds):,} examples  ({time.monotonic()-t0:.1f}s)")
 
-    # Filter out empty answers
+    # Step 2 — filter
+    t0 = time.monotonic()
+    print(f"[{_ts()}] Step 2/5  Filtering: remove empty answers, apply ≥{min_answer_words}-word floor…")
     ds_filtered = [ex for ex in ds if len(ex["output"].strip()) > 0]
-    print(f"After removing empty answers: {len(ds_filtered)}")
-
-    # Filter out answers shorter than min_answer_words
     ds_filtered = [ex for ex in ds_filtered if answer_word_count(ex) >= min_answer_words]
-    print(f"After applying MIN_ANSWER_WORDS={min_answer_words} floor: {len(ds_filtered)}")
+    print(f"[{_ts()}]           {len(ds_filtered):,} examples pass filter  ({time.monotonic()-t0:.1f}s)")
 
-    # Sort by answer length (longest first)
+    # Step 3 — sort and select
+    t0 = time.monotonic()
+    print(f"[{_ts()}] Step 3/5  Sorting by answer length, selecting top {num_examples:,}…")
     ds_sorted = sorted(ds_filtered, key=answer_word_count, reverse=True)
-
-    # Take top N
     selected = ds_sorted[:num_examples]
-
     min_wc = answer_word_count(selected[-1])
     max_wc = answer_word_count(selected[0])
     avg_wc = sum(answer_word_count(ex) for ex in selected) / len(selected)
-    print(f"Selected {len(selected)} longest examples:")
-    print(f"  Word count range: {min_wc} - {max_wc}")
-    print(f"  Average answer length: {avg_wc:.1f} words")
+    print(f"[{_ts()}]           Selected {len(selected):,}  word-count: min={min_wc} avg={avg_wc:.0f} max={max_wc}  ({time.monotonic()-t0:.1f}s)")
 
-    # Format to chat
-    print("Formatting to chat JSONL...")
+    # Step 4 — format, shuffle, split
+    t0 = time.monotonic()
+    print(f"[{_ts()}] Step 4/5  Formatting to ChatML JSONL, shuffling, splitting 80/10/10…")
     samples = [format_chat(ex) for ex in selected]
-
-    # Shuffle
     random.seed(42)
     random.shuffle(samples)
-
-    # Split
     n = len(samples)
     n_train = int(n * TRAIN_SPLIT)
     n_valid = int(n * VALID_SPLIT)
-
     train_data = samples[:n_train]
     valid_data = samples[n_train : n_train + n_valid]
-    test_data = samples[n_train + n_valid :]
+    test_data  = samples[n_train + n_valid :]
+    print(f"[{_ts()}]           train={len(train_data):,}  valid={len(valid_data):,}  test={len(test_data):,}  ({time.monotonic()-t0:.1f}s)")
 
-    # Back up old data
+    # Step 5 — save
+    t0 = time.monotonic()
+    print(f"[{_ts()}] Step 5/5  Writing JSONL files to {output_dir}/…")
     backup_dir = output_dir / "backup_v1"
     if not backup_dir.exists():
         backup_dir.mkdir(parents=True)
@@ -112,28 +118,19 @@ def main():
             src = output_dir / f
             if src.exists():
                 src.rename(backup_dir / f)
-                print(f"Backed up {f} -> {backup_dir / f}")
-
-    # Save
+                print(f"[{_ts()}]           Backed up {f} → {backup_dir / f}")
     output_dir.mkdir(exist_ok=True)
-    print(f"Saving to {output_dir}...")
     save_jsonl(train_data, output_dir / "train.jsonl")
     save_jsonl(valid_data, output_dir / "valid.jsonl")
-    save_jsonl(test_data, output_dir / "test.jsonl")
+    save_jsonl(test_data,  output_dir / "test.jsonl")
+    print(f"[{_ts()}]           Wrote train/valid/test.jsonl  ({time.monotonic()-t0:.1f}s)")
 
-    print("Done!")
-    print(f"Train: {len(train_data)}")
-    print(f"Valid: {len(valid_data)}")
-    print(f"Test:  {len(test_data)}")
-
-    # Print distribution
-    ans_lens = [len(s["messages"][1]["content"].split()) for s in train_data]
-    ans_lens.sort()
+    ans_lens = sorted(len(s["messages"][1]["content"].split()) for s in train_data)
     n = len(ans_lens)
-    print(f"\nNew training answer length stats:")
-    print(f"  min={ans_lens[0]}  median={ans_lens[n//2]}  mean={sum(ans_lens)/n:.0f}  max={ans_lens[-1]}")
-    print(f"  <30 words: {sum(1 for l in ans_lens if l < 30)} ({100*sum(1 for l in ans_lens if l < 30)/n:.0f}%)")
-    print(f"  >=50 words: {sum(1 for l in ans_lens if l >= 50)} ({100*sum(1 for l in ans_lens if l >= 50)/n:.0f}%)")
+    total_elapsed = time.monotonic() - wall_start
+    print(f"[{_ts()}] PREPARE done in {total_elapsed:.1f}s")
+    print(f"           Answer length (train): min={ans_lens[0]}  median={ans_lens[n//2]}  mean={sum(ans_lens)/n:.0f}  max={ans_lens[-1]}")
+    print(f"           ≥50 words: {sum(1 for l in ans_lens if l >= 50):,} / {n:,} ({100*sum(1 for l in ans_lens if l >= 50)/n:.0f}%)")
 
 
 def save_jsonl(data, path):

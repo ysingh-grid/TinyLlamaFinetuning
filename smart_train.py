@@ -20,10 +20,15 @@ import re
 import shutil
 import subprocess
 import sys
+import time
 from pathlib import Path
 from typing import Dict, Optional, Tuple
 
 ANSI_ESCAPE_RE = re.compile(r"\x1B\[[0-?]*[ -/]*[@-~]")
+
+
+def _ts() -> str:
+    return time.strftime("%H:%M:%S")
 
 
 def parse_args() -> argparse.Namespace:
@@ -180,12 +185,31 @@ def maybe_prepare_effective_config(
     }
 
 
+def _ensure_model_from_config(config_path: Path) -> None:
+    """Download the base model specified in the config if it is a local path that is missing."""
+    try:
+        import yaml as _yaml
+        with config_path.open() as f:
+            cfg = _yaml.safe_load(f)
+        model_path = cfg.get("model", "")
+        if model_path and model_path.startswith("."):
+            # local path — trigger download if needed
+            ROOT = Path(__file__).resolve().parent
+            sys.path.insert(0, str(ROOT))
+            from download_models import ensure_model_path
+            ensure_model_path(model_path)
+    except Exception:
+        pass  # never block training on a download helper failure
+
+
 def main():
     args = parse_args()
 
     if not args.config.exists():
         print(f"Error: Config file not found: {args.config}")
         sys.exit(1)
+
+    _ensure_model_from_config(args.config)
 
     adapter_dir = extract_adapter_path(args.config)
     effective_config_path, interval_info = maybe_prepare_effective_config(
@@ -205,9 +229,28 @@ def main():
             log_file.write(msg + "\n")
             log_file.flush()
 
+    # Read a few key fields from the config for the banner
+    _banner_model, _banner_data, _banner_iters = "", "", ""
+    try:
+        import yaml as _yaml
+        with args.config.open() as _f:
+            _cfg = _yaml.safe_load(_f)
+        _banner_model = _cfg.get("model", "")
+        _banner_data  = _cfg.get("data", "")
+        _banner_iters = str(_cfg.get("iters", "?"))
+    except Exception:
+        pass
+
+    wall_start = time.monotonic()
     log_print(f"{'=' * 60}")
-    log_print(f"  Smart Training Wrapper")
+    log_print(f"  [{_ts()}]  Smart Training Wrapper")
     log_print(f"  Config:    {args.config}")
+    if _banner_model:
+        log_print(f"  Model:     {_banner_model}")
+    if _banner_data:
+        log_print(f"  Data:      {_banner_data}")
+    if _banner_iters:
+        log_print(f"  Max iters: {_banner_iters}")
     if effective_config_path != args.config:
         log_print(f"  Effective: {effective_config_path}")
     log_print(f"  Patience:  {args.patience} {'(disabled)' if args.patience == 0 else 'evals'}")
@@ -312,11 +355,13 @@ def main():
             log_print(f"  ⚠️  Could not find checkpoint for iter {best_iter}. Last saved weights are active.\n")
 
     # Summary
+    elapsed = time.monotonic() - wall_start
     log_print(f"{'=' * 60}")
-    log_print(f"  Training Summary")
+    log_print(f"  [{_ts()}]  Training Summary")
     log_print(f"  {'Early stopped' if early_stopped else 'Completed normally'}")
     if best_val is not None:
         log_print(f"  Best val loss:  {best_val:.6f} (iter {best_iter})")
+    log_print(f"  Wall time:      {elapsed:.1f}s  ({elapsed/60:.1f} min)")
     log_print(f"  Exit code:      {return_code}")
     log_print(f"{'=' * 60}")
     

@@ -673,6 +673,17 @@ def run_technique(
 def main() -> None:
     args = parse_args()
     validate_model_sources(args)
+
+    # Auto-download the 4-bit base model if it is a local path that is missing.
+    try:
+        _root = Path(__file__).resolve().parent
+        sys.path.insert(0, str(_root))
+        from download_models import ensure_model_path
+        if args.model.startswith("."):
+            ensure_model_path(args.model)
+    except Exception:
+        pass
+
     ensure_gpu_available_or_fail()
     args.out_dir.mkdir(parents=True, exist_ok=True)
     args.best_dir.mkdir(parents=True, exist_ok=True)

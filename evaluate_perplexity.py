@@ -18,9 +18,14 @@ from __future__ import annotations
 import argparse
 import json
 import math
+import time
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Sequence, Tuple
+
+
+def _ts() -> str:
+    return time.strftime("%H:%M:%S")
 
 
 ROOT = Path(__file__).parent
@@ -174,11 +179,15 @@ def compute_perplexity_for_model(
     if spec.adapter_path:
         load_kwargs["adapter_path"] = spec.adapter_path
 
-    print(f"Loading model: {spec.name} ({spec.model})", flush=True)
+    n_rows = len(rows)
+    print(f"[{_ts()}] Loading model {spec.name} ({spec.model})", flush=True)
+    load_t0 = time.monotonic()
     model, tokenizer = load(spec.model, **load_kwargs)
+    print(f"[{_ts()}]   model loaded in {time.monotonic()-load_t0:.1f}s — scoring {n_rows} examples…", flush=True)
 
     total_nll = 0.0
     total_tokens = 0
+    example_t0 = time.monotonic()
 
     for idx, row in enumerate(rows, start=1):
         try:
@@ -197,11 +206,15 @@ def compute_perplexity_for_model(
         total_nll += nll
         total_tokens += token_count
 
-        if idx % 50 == 0:
+        if idx % 5 == 0 or idx == n_rows:
+            elapsed = time.monotonic() - example_t0
+            per_ex  = elapsed / idx
+            remaining = per_ex * (n_rows - idx)
             avg_loss = total_nll / max(total_tokens, 1)
+            eta_str = f"{remaining:.0f}s remaining" if idx < n_rows else "done"
             print(
-                f"[{spec.name}] processed {idx} examples — "
-                f"running cross-entropy {avg_loss:.4f}",
+                f"[{_ts()}]   [{spec.name}] {idx}/{n_rows} examples — "
+                f"CE={avg_loss:.4f} — {eta_str}",
                 flush=True,
             )
 
@@ -274,6 +287,13 @@ def main(argv: Optional[Sequence[str]] = None) -> None:
     )
     args = parser.parse_args(list(argv) if argv is not None else None)
 
+    # Auto-download any missing local models before loading them.
+    try:
+        from download_models import ensure_local_models
+        ensure_local_models()
+    except Exception:
+        pass
+
     data_path = Path(args.data)
     models_path = Path(args.models_config)
     out_path = Path(args.out)
@@ -283,16 +303,24 @@ def main(argv: Optional[Sequence[str]] = None) -> None:
     if not rows:
         raise RuntimeError(f"No rows found in {data_path}")
 
+    print(f"[{_ts()}] PERPLEXITY  {len(specs)} models × {len(rows)} examples → {out_path}", flush=True)
+    wall_start = time.monotonic()
+
     results: List[Tuple[ModelSpec, float, float, int]] = []
-    for spec in specs:
+    for i, spec in enumerate(specs, start=1):
+        print(f"\n[{_ts()}] ── Model {i}/{len(specs)}: {spec.name} ──", flush=True)
+        model_t0 = time.monotonic()
         ce, ppl, tokens = compute_perplexity_for_model(spec, rows)
+        elapsed = time.monotonic() - model_t0
         print(
-            f"[{spec.name}] cross-entropy={ce:.4f}, perplexity={ppl:.3f}, tokens={tokens}",
+            f"[{_ts()}]   RESULT  CE={ce:.4f}  PPL={ppl:.3f}  tokens={tokens}  ({elapsed:.1f}s)",
             flush=True,
         )
         results.append((spec, ce, ppl, tokens))
 
     write_markdown_report(out_path, results, data_path)
+    total = time.monotonic() - wall_start
+    print(f"\n[{_ts()}] PERPLEXITY complete — total {total:.1f}s  report → {out_path}", flush=True)
 
 
 if __name__ == "__main__":
