@@ -53,9 +53,20 @@ MODELS: dict[str, dict] = {
 
 
 def _is_downloaded(local_path: str) -> bool:
-    """Return True if the model directory exists and contains config.json."""
+    """Return True if the model directory has config.json AND at least one weight file.
+
+    Checks for both modern (model*.safetensors) and legacy (weights.*.safetensors / *.npz)
+    naming so that a partial download (metadata only) is correctly treated as missing.
+    """
     p = Path(local_path)
-    return p.is_dir() and (p / "config.json").exists()
+    if not p.is_dir() or not (p / "config.json").exists():
+        return False
+    has_weights = (
+        bool(list(p.glob("model*.safetensors")))
+        or bool(list(p.glob("weights.*.safetensors")))
+        or bool(list(p.glob("*.npz")))
+    )
+    return has_weights
 
 
 def download_model(key: str, spec: dict, force: bool = False) -> bool:
@@ -77,8 +88,35 @@ def download_model(key: str, spec: dict, force: bool = False) -> bool:
     )
     elapsed = time.monotonic() - t0
     print(f"[{_ts()}]     Download complete in {elapsed:.1f}s")
+    _patch_weight_filenames(local)
     _patch_tokenizer_config(local)
     return True
+
+
+def _patch_weight_filenames(local_path: str) -> None:
+    """Rename legacy weights.NN.safetensors → model[-NN-of-MM].safetensors.
+
+    Newer mlx_lm (≥ 0.20) only globs for 'model*.safetensors', so models
+    distributed with the older 'weights.NN.safetensors' naming fail to load.
+    This renames the files in-place once at download time.
+    """
+    p = Path(local_path)
+    shards = sorted(p.glob("weights.*.safetensors"))
+    if not shards:
+        return
+
+    # If any model*.safetensors already exists, nothing to do.
+    if list(p.glob("model*.safetensors")):
+        return
+
+    n = len(shards)
+    for i, src in enumerate(shards, start=1):
+        if n == 1:
+            dst = p / "model.safetensors"
+        else:
+            dst = p / f"model-{i:05d}-of-{n:05d}.safetensors"
+        src.rename(dst)
+        print(f"[{_ts()}]     Renamed {src.name} → {dst.name}")
 
 
 def _patch_tokenizer_config(local_path: str) -> None:
@@ -99,7 +137,7 @@ def _patch_tokenizer_config(local_path: str) -> None:
         if cfg.get("tokenizer_class") == "TokenizersBackend":
             cfg["tokenizer_class"] = "PreTrainedTokenizerFast"
             cfg_path.write_text(_json.dumps(cfg, indent=2, ensure_ascii=False), encoding="utf-8")
-            print(f"    Patched tokenizer_class → PreTrainedTokenizerFast")
+            print(f"[{_ts()}]     Patched tokenizer_class → PreTrainedTokenizerFast")
     except Exception:
         pass
 
