@@ -61,16 +61,19 @@ demo:
 .PHONY: test-prepare test-train-lora test-train-qlora test-train-full \
         test-eval test-eval-lmstudio test-cosine test-perplexity test-demo ci
 
-test-prepare:
+# sentinel file: created by test-prepare, depended on by all test-train-* targets
+ci/data/train.jsonl:
 	$(PYTHON) prepare_dataset.py --num-examples 200 --min-answer-words 20 --out-dir ci/data
 
-test-train-lora:
+test-prepare: ci/data/train.jsonl
+
+test-train-lora: ci/data/train.jsonl
 	$(PYTHON) smart_train.py --config ci/test-lora-config.yaml --patience 3
 
-test-train-qlora:
+test-train-qlora: ci/data/train.jsonl
 	$(PYTHON) smart_train.py --config ci/test-qlora-config.yaml --patience 3
 
-test-train-full:
+test-train-full: ci/data/train.jsonl
 	$(PYTHON) smart_train.py --config ci/test-full-config.yaml --patience 3
 
 test-eval:
