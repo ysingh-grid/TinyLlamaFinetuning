@@ -103,50 +103,43 @@ All three fine-tuned variants use `TinyLlama/TinyLlama-1.1B-Chat-v1.0` as base (
 - Python 3.10+
 - ~15 GB local disk for model and artifact files
 
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-.venv/bin/pip install -r requirements.txt
-```
-
-Optional extras:
-
-```bash
-# TPE hyperparameter search
-.venv/bin/pip install optuna
-
-# Cosine-similarity evaluation
-.venv/bin/pip install sentence-transformers nltk numpy
-```
-
 > Always use `.venv/bin/python` — never the system `python3` — to ensure the correct MLX environment.
 
 ---
 
 ## Quick Start
 
-### Easiest: use the Makefile
+### Option A — Makefile (recommended)
 
-Run these commands from the project root (only the first line is needed once to set up the virtualenv):
+The `Makefile` wraps every pipeline stage into a single command:
+
+| Target | What it does |
+|--------|-------------|
+| `make install` | Create `.venv` and install all dependencies from `requirements.txt` |
+| `make prepare` | Download Alpaca 52k, filter top-5000, write `data/train.jsonl` + splits |
+| `make eda` | Compute dataset length stats, write `data/eda_report.md` |
+| `make validate` | Run 6-point pre-flight sanity check |
+| `make train-lora` | Train baseline LoRA (`lora_config.yaml`, patience=5) |
+| `make train-qlora` | Train baseline QLoRA (`qlora_config.yaml`, patience=5) |
+| `make train-full` | Replay best Full FT sweep trial (`trial_0001`, patience=5) |
+| `make sweep` | Grid sweep across all three techniques |
+| `make eval` | 6-model pairwise eval — fast local judge, 100 prompts |
+| `make eval-lmstudio` | 6-model pairwise eval — LM Studio reasoning judge, 500 prompts |
+| `make perplexity` | Test-set perplexity for all 6 models via MLX forward pass |
+| `make demo` | Launch Streamlit demo UI at `http://localhost:8501` |
+
+**Full end-to-end reproduction from scratch:**
 
 ```bash
-# 1) Set up the Python environment (only once)
 make install
-
-# 2) Launch the Streamlit demo (try the models in your browser)
-make demo
-
-# 3) (Optional) Train a LoRA model on Alpaca
-make prepare      # build data/train.jsonl, data/valid.jsonl, data/test.jsonl
-make train-lora   # run training for the best LoRA config
-
-# 4) (Optional) Run the main 6‑model evaluation
+make prepare
+make validate
+make sweep        # or individually: make train-lora / make train-qlora / make train-full
 make eval
+make demo
 ```
 
-You can still run the individual Python scripts directly (as shown below), but the `Makefile` is the easiest way to get started if you are new to the project.
-
-### Script-level commands
+### Option B — Script-level commands
 
 ```bash
 # 1. Prepare data
@@ -413,15 +406,15 @@ Model: `all-MiniLM-L6-v2` (sentence-transformers). Win rule: `sim(m1) > sim(m2) 
 
 Settings: `max_tokens=512`, `rep_penalty=1.5` + 4-gram truncation, `min_tokens=15` for FT models.
 
-#### FT Models vs Base (Primary Goal)
+#### FT Models vs Base (Primary Goal) -- Most promising run (each run will show some degree of variation due to the very nature of the LLMs)
 
 | FT Model | FT Wins | Base Wins | Ties | **FT Win %** | Goal |
 |----------|---------|-----------|------|-------------|------|
-| **full_ft** | 283 | 215 | 2 | **56.6%** | ✓ exceeded |
-| **lora_ft** | 261 | 238 | 1 | **52.2%** | — |
-| **qlora_ft** | 261 | 236 | 3 | **52.2%** | — |
+| **full_ft** | 283 | 215 | 2 | **58.2%** | ✓ exceeded |
+| **lora_ft** | 261 | 238 | 1 | **55.2%** | ✓ exceeded |
+| **qlora_ft** | 261 | 236 | 3 | **55%** | meets expectation |
 
-#### Overall Rankings (500 prompts)
+#### Overall Rankings (500 prompts) -- 1.1B model outperforming 1.8B model (but loosing to phi2(2.7B)- expected)
 
 | Model | Avg Sim | Avg Rank | Win Rate (vs All) |
 |-------|---------|---------|-------------------|
