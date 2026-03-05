@@ -2,12 +2,13 @@
 at least MIN_ANSWER_WORDS words (removes terse/one-word answers that regress
 verbosity), then select the top NUM_EXAMPLES by answer length."""
 
+import argparse
 import json
 import random
 from datasets import load_dataset
 from pathlib import Path
 
-# Config
+# Defaults (overridable via CLI flags)
 DATASET_NAME = "tatsu-lab/alpaca"
 NUM_EXAMPLES = 5000
 OUTPUT_DIR = Path("./data")
@@ -19,6 +20,17 @@ TEST_SPLIT = 0.1
 # that caused FT models to regress TinyLlama Chat's RLHF-trained verbosity.
 # ~24k of Alpaca's 52k examples pass this threshold, giving plenty of headroom.
 MIN_ANSWER_WORDS = 30
+
+
+def parse_args():
+    parser = argparse.ArgumentParser(description="Prepare Alpaca training data.")
+    parser.add_argument("--num-examples", type=int, default=NUM_EXAMPLES,
+                        help=f"Number of top examples to select by answer length (default: {NUM_EXAMPLES})")
+    parser.add_argument("--min-answer-words", type=int, default=MIN_ANSWER_WORDS,
+                        help=f"Hard floor on answer word count (default: {MIN_ANSWER_WORDS})")
+    parser.add_argument("--out-dir", type=Path, default=OUTPUT_DIR,
+                        help=f"Output directory for JSONL files (default: {OUTPUT_DIR})")
+    return parser.parse_args()
 
 
 def format_chat(example):
@@ -45,6 +57,11 @@ def answer_word_count(example):
 
 
 def main():
+    args = parse_args()
+    num_examples = args.num_examples
+    min_answer_words = args.min_answer_words
+    output_dir = args.out_dir
+
     print(f"Loading FULL dataset from {DATASET_NAME}...")
     ds = load_dataset(DATASET_NAME, split="train")
     print(f"Total examples in Alpaca: {len(ds)}")
@@ -53,15 +70,15 @@ def main():
     ds_filtered = [ex for ex in ds if len(ex["output"].strip()) > 0]
     print(f"After removing empty answers: {len(ds_filtered)}")
 
-    # Filter out answers shorter than MIN_ANSWER_WORDS
-    ds_filtered = [ex for ex in ds_filtered if answer_word_count(ex) >= MIN_ANSWER_WORDS]
-    print(f"After applying MIN_ANSWER_WORDS={MIN_ANSWER_WORDS} floor: {len(ds_filtered)}")
+    # Filter out answers shorter than min_answer_words
+    ds_filtered = [ex for ex in ds_filtered if answer_word_count(ex) >= min_answer_words]
+    print(f"After applying MIN_ANSWER_WORDS={min_answer_words} floor: {len(ds_filtered)}")
 
     # Sort by answer length (longest first)
     ds_sorted = sorted(ds_filtered, key=answer_word_count, reverse=True)
 
     # Take top N
-    selected = ds_sorted[:NUM_EXAMPLES]
+    selected = ds_sorted[:num_examples]
 
     min_wc = answer_word_count(selected[-1])
     max_wc = answer_word_count(selected[0])
@@ -88,21 +105,21 @@ def main():
     test_data = samples[n_train + n_valid :]
 
     # Back up old data
-    backup_dir = OUTPUT_DIR / "backup_v1"
+    backup_dir = output_dir / "backup_v1"
     if not backup_dir.exists():
         backup_dir.mkdir(parents=True)
         for f in ["train.jsonl", "valid.jsonl", "test.jsonl"]:
-            src = OUTPUT_DIR / f
+            src = output_dir / f
             if src.exists():
                 src.rename(backup_dir / f)
                 print(f"Backed up {f} -> {backup_dir / f}")
 
     # Save
-    OUTPUT_DIR.mkdir(exist_ok=True)
-    print(f"Saving to {OUTPUT_DIR}...")
-    save_jsonl(train_data, OUTPUT_DIR / "train.jsonl")
-    save_jsonl(valid_data, OUTPUT_DIR / "valid.jsonl")
-    save_jsonl(test_data, OUTPUT_DIR / "test.jsonl")
+    output_dir.mkdir(exist_ok=True)
+    print(f"Saving to {output_dir}...")
+    save_jsonl(train_data, output_dir / "train.jsonl")
+    save_jsonl(valid_data, output_dir / "valid.jsonl")
+    save_jsonl(test_data, output_dir / "test.jsonl")
 
     print("Done!")
     print(f"Train: {len(train_data)}")

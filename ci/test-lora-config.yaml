@@ -1,0 +1,26 @@
+# CI smoke-test LoRA config — 100 iters only (~1-2 min).
+# Adapter saved to ci/adapters/lora/ to avoid touching production adapters.
+# Run via: make test-train-lora
+
+model: "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
+train: true
+data: "./ci/data"
+seed: 0
+lora_layers: 4        # fewer layers → faster
+batch_size: 1
+iters: 100
+val_batches: 5        # quick validation pass
+learning_rate: 1e-4
+steps_per_report: 10
+steps_per_eval: 50
+adapter_path: "./ci/adapters/lora"
+save_every: 100
+test: false
+max_seq_length: 256   # shorter sequences → faster
+grad_checkpoint: true
+mask_prompt: true
+lora_parameters:
+  keys: ["self_attn.q_proj", "self_attn.v_proj"]
+  rank: 8
+  scale: 2.0
+  dropout: 0.0
