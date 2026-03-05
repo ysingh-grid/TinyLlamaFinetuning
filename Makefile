@@ -174,6 +174,37 @@ demo: $(TINYLLAMA_4BIT) $(PHI2) $(QWEN)
 .PHONY: test-prepare test-train-lora test-train-qlora test-train-full \
         test-eval test-eval-lmstudio test-cosine test-perplexity test-demo ci
 
+# ── CI adapter sentinels ──────────────────────────────────────────────────────
+# These ensure that if test-eval/test-perplexity are run alone (without
+# test-train-* first), Make will automatically run the required training steps.
+ci/adapters/lora/adapters.safetensors: ci/data/train.jsonl
+	@echo ""
+	@echo "──────────────────────────────────────────────────────────────────────"
+	@echo "  CI TRAIN-LORA  100 iters, rank 8, 4 layers on ci/data/"
+	@echo "  Config:  ci/test-lora-config.yaml  →  ci/adapters/lora/"
+	@echo "  ETA:     ~2 min"
+	@echo "──────────────────────────────────────────────────────────────────────"
+	$(PYTHON) smart_train.py --config ci/test-lora-config.yaml --patience 3
+
+ci/adapters/qlora/adapters.safetensors: ci/data/train.jsonl $(TINYLLAMA_4BIT)
+	@echo ""
+	@echo "──────────────────────────────────────────────────────────────────────"
+	@echo "  CI TRAIN-QLORA  100 iters, rank 8, 4-bit base model"
+	@echo "  Config:  ci/test-qlora-config.yaml  →  ci/adapters/qlora/"
+	@echo "  ETA:     ~2 min"
+	@echo "──────────────────────────────────────────────────────────────────────"
+	$(PYTHON) smart_train.py --config ci/test-qlora-config.yaml --patience 3
+
+ci/adapters/full/adapters.safetensors: ci/data/train.jsonl
+	@echo ""
+	@echo "──────────────────────────────────────────────────────────────────────"
+	@echo "  CI TRAIN-FULL  100 iters, full fine-tuning on ci/data/"
+	@echo "  Config:  ci/test-full-config.yaml  →  ci/adapters/full/"
+	@echo "  ETA:     ~4 min"
+	@echo "──────────────────────────────────────────────────────────────────────"
+	$(PYTHON) smart_train.py --config ci/test-full-config.yaml --patience 3
+
+# ── CI data sentinel ──────────────────────────────────────────────────────────
 # Sentinel: data prepared for CI
 ci/data/train.jsonl:
 	@echo ""
@@ -187,60 +218,44 @@ ci/data/train.jsonl:
 test-prepare: ci/data/train.jsonl
 
 # LoRA CI: only needs the Hub full-precision model (auto-downloaded by mlx_lm)
-test-train-lora: ci/data/train.jsonl
-	@echo ""
-	@echo "──────────────────────────────────────────────────────────────────────"
-	@echo "  CI TRAIN-LORA  100 iters, rank 8, 4 layers on ci/data/"
-	@echo "  Config:  ci/test-lora-config.yaml"
-	@echo "  Output:  ci/adapters/lora/"
-	@echo "  ETA:     ~2 min"
-	@echo "──────────────────────────────────────────────────────────────────────"
-	$(PYTHON) smart_train.py --config ci/test-lora-config.yaml --patience 3
-	@echo "  ✓ CI TRAIN-LORA complete"
+test-train-lora: ci/adapters/lora/adapters.safetensors
+	@echo "  ✓ CI TRAIN-LORA complete  (output: ci/adapters/lora/)"
 
 # QLoRA CI: uses the same local 4-bit base as production; sentinel downloads it first.
-test-train-qlora: ci/data/train.jsonl $(TINYLLAMA_4BIT)
-	@echo ""
-	@echo "──────────────────────────────────────────────────────────────────────"
-	@echo "  CI TRAIN-QLORA  100 iters, rank 8, 4-bit base model"
-	@echo "  Config:  ci/test-qlora-config.yaml"
-	@echo "  Output:  ci/adapters/qlora/"
-	@echo "  ETA:     ~2 min"
-	@echo "──────────────────────────────────────────────────────────────────────"
-	$(PYTHON) smart_train.py --config ci/test-qlora-config.yaml --patience 3
-	@echo "  ✓ CI TRAIN-QLORA complete"
+test-train-qlora: ci/adapters/qlora/adapters.safetensors
+	@echo "  ✓ CI TRAIN-QLORA complete  (output: ci/adapters/qlora/)"
 
 # Full FT CI: uses the Hub full-precision model (auto-downloaded by mlx_lm)
-test-train-full: ci/data/train.jsonl
-	@echo ""
-	@echo "──────────────────────────────────────────────────────────────────────"
-	@echo "  CI TRAIN-FULL  100 iters, full fine-tuning on ci/data/"
-	@echo "  Config:  ci/test-full-config.yaml"
-	@echo "  Output:  ci/adapters/full/"
-	@echo "  ETA:     ~4 min"
-	@echo "──────────────────────────────────────────────────────────────────────"
-	$(PYTHON) smart_train.py --config ci/test-full-config.yaml --patience 3
-	@echo "  ✓ CI TRAIN-FULL complete"
+test-train-full: ci/adapters/full/adapters.safetensors
+	@echo "  ✓ CI TRAIN-FULL complete  (output: ci/adapters/full/)"
 
-# test-eval uses the same 6-model eval; needs phi_2, qwen, and tinyllama-4bit locally
-test-eval: $(TINYLLAMA_4BIT) $(PHI2) $(QWEN)
+# test-eval uses ci/adapters/ (trained by test-train-*) not production mlx_best_models/
+test-eval: ci/data/train.jsonl $(TINYLLAMA_4BIT) $(PHI2) $(QWEN) \
+           ci/adapters/lora/adapters.safetensors \
+           ci/adapters/qlora/adapters.safetensors \
+           ci/adapters/full/adapters.safetensors
 	@echo ""
 	@echo "──────────────────────────────────────────────────────────────────────"
 	@echo "  CI EVAL  25 prompts × 6 models → judge with local MLX model"
+	@echo "  Models:  ci/models_ci.json  (ci/adapters/ — from test-train-*)"
 	@echo "  Output:  evaluation/runs/<timestamp>/"
 	@echo "  ETA:     ~3–5 min"
 	@echo "──────────────────────────────────────────────────────────────────────"
-	JUDGE_MODE=model MAX_PROMPTS=25 ./evaluation/run_eval_6models.sh
+	MODELS_CONFIG=evaluation/models_ci.json JUDGE_MODE=model MAX_PROMPTS=25 ./evaluation/run_eval_6models.sh
 	@echo "  ✓ CI EVAL complete"
 
-test-eval-lmstudio: $(TINYLLAMA_4BIT) $(PHI2) $(QWEN)
+test-eval-lmstudio: ci/data/train.jsonl $(TINYLLAMA_4BIT) $(PHI2) $(QWEN) \
+                    ci/adapters/lora/adapters.safetensors \
+                    ci/adapters/qlora/adapters.safetensors \
+                    ci/adapters/full/adapters.safetensors
 	@echo ""
 	@echo "──────────────────────────────────────────────────────────────────────"
 	@echo "  CI EVAL-LMSTUDIO  25 prompts × 6 models → LM Studio judge"
+	@echo "  Models:   evaluation/models_ci.json  (ci/adapters/)"
 	@echo "  Requires: LM Studio running at http://127.0.0.1:1234"
 	@echo "  ETA:      ~3–5 min"
 	@echo "──────────────────────────────────────────────────────────────────────"
-	JUDGE_MODE=lmstudio MAX_PROMPTS=25 ./evaluation/run_eval_6models.sh
+	MODELS_CONFIG=evaluation/models_ci.json JUDGE_MODE=lmstudio MAX_PROMPTS=25 ./evaluation/run_eval_6models.sh
 	@echo "  ✓ CI EVAL-LMSTUDIO complete"
 
 test-cosine:
@@ -255,15 +270,22 @@ test-cosine:
 	  --out-dir evaluation/runs/$$(ls -t evaluation/runs | head -1)/cosine_similarity
 	@echo "  ✓ CI COSINE complete"
 
-# test-perplexity runs all 6 models — needs the same local models as test-eval
-test-perplexity: $(TINYLLAMA_4BIT) $(PHI2) $(QWEN)
+# test-perplexity uses ci/models_ci.json so it loads ci/adapters/ not mlx_best_models/
+test-perplexity: ci/data/train.jsonl $(TINYLLAMA_4BIT) $(PHI2) $(QWEN) \
+                 ci/adapters/lora/adapters.safetensors \
+                 ci/adapters/qlora/adapters.safetensors \
+                 ci/adapters/full/adapters.safetensors
 	@echo ""
 	@echo "──────────────────────────────────────────────────────────────────────"
 	@echo "  CI PERPLEXITY  MLX forward pass on ci/data/test.jsonl (all 6 models)"
+	@echo "  Models:  evaluation/models_ci.json  (ci/adapters/)"
 	@echo "  Output:  ci/perplexity_report.md"
 	@echo "  ETA:     ~3–5 min"
 	@echo "──────────────────────────────────────────────────────────────────────"
-	$(PYTHON) evaluate_perplexity.py --data ci/data/test.jsonl --out ci/perplexity_report.md
+	$(PYTHON) evaluate_perplexity.py \
+	  --models-config evaluation/models_ci.json \
+	  --data ci/data/test.jsonl \
+	  --out ci/perplexity_report.md
 	@echo "  ✓ CI PERPLEXITY complete"
 
 test-demo:

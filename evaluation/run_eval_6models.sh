@@ -46,8 +46,10 @@ elif [ "${JUDGE_MODE}" = "model" ]; then
   )
 fi
 
+MODELS_CONFIG="${MODELS_CONFIG:-evaluation/models.json}"
+
 .venv/bin/python evaluation/run_pipeline.py \
-  --models-config evaluation/models.json \
+  --models-config "${MODELS_CONFIG}" \
   --prompts evaluation/eval_prompts.jsonl \
   --max-prompts "${MAX_PROMPTS}" \
   --pairs "${PAIRS}" \
