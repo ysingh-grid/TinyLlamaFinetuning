@@ -1,0 +1,54 @@
+{
+  "base_fused": {
+    "batch_1_tok_sec": 99.58256837644961,
+    "batch_1_latency_mean_sec": 0.31129946239999995,
+    "batch_1_latency_var_sec": 0.18490452082491673,
+    "batch_4_tok_sec": 99.443017852598,
+    "batch_4_latency_mean_sec": 1.2469452625,
+    "batch_4_latency_var_sec": 2.9662376974384097,
+    "batch_8_tok_sec": 98.3367974599548,
+    "batch_8_latency_mean_sec": 2.521945054199999,
+    "batch_8_latency_var_sec": 12.091072735388035,
+    "size_mb": 2102.1424522399902,
+    "perplexity": 4.95340477685505
+  },
+  "model_q4": {
+    "batch_1_tok_sec": 206.53065049391918,
+    "batch_1_latency_mean_sec": 0.1021640126999999,
+    "batch_1_latency_var_sec": 0.011620432861654435,
+    "batch_4_tok_sec": 208.69588442710344,
+    "batch_4_latency_mean_sec": 0.4044162165999999,
+    "batch_4_latency_var_sec": 0.1899234529361745,
+    "batch_8_tok_sec": 209.02854081132463,
+    "batch_8_latency_mean_sec": 0.8075452249,
+    "batch_8_latency_var_sec": 0.7651472413585337,
+    "size_mb": 594.258059501648,
+    "perplexity": 5.125762378869003
+  },
+  "model_q6": {
+    "batch_1_tok_sec": 169.4548094120658,
+    "batch_1_latency_mean_sec": 0.18293962920000006,
+    "batch_1_latency_var_sec": 0.04744414388904097,
+    "batch_4_tok_sec": 171.62600264242917,
+    "batch_4_latency_mean_sec": 0.7225012416000003,
+    "batch_4_latency_var_sec": 0.7686722174857397,
+    "batch_8_tok_sec": 171.48463188051045,
+    "batch_8_latency_mean_sec": 1.4461937333999997,
+    "batch_8_latency_var_sec": 3.119651143512734,
+    "size_mb": 856.5081186294556,
+    "perplexity": 5.036006558630061
+  },
+  "model_q8": {
+    "batch_1_tok_sec": 152.39627160063523,
+    "batch_1_latency_mean_sec": 0.20341705000000002,
+    "batch_1_latency_var_sec": 0.06527686991533359,
+    "batch_4_tok_sec": 153.25840815511415,
+    "batch_4_latency_mean_sec": 0.8090910083999995,
+    "batch_4_latency_var_sec": 1.0552527008103012,
+    "batch_8_tok_sec": 153.52970320304757,
+    "batch_8_latency_mean_sec": 1.6153226042000006,
+    "batch_8_latency_var_sec": 4.2438902117177815,
+    "size_mb": 1118.7582578659058,
+    "perplexity": 4.957129841373568
+  }
+}
