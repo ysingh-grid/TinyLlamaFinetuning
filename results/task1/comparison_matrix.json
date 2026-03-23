@@ -8,8 +8,10 @@
     "peak_mem_mb": 3057.48,
     "test_loss": 1.263,
     "train_time_sec": 1157.1,
-    "accuracy": 0.0,
-    "exact_match": 0.0
+    "accuracy": 22.0,
+    "exact_match": 22.0,
+    "fuzzy_match": 22.0,
+    "avg_token_f1": 0.0
   },
   {
     "rank": 8,
@@ -20,8 +22,10 @@
     "peak_mem_mb": 3065.82,
     "test_loss": 1.262,
     "train_time_sec": 1133.8,
-    "accuracy": 0.0,
-    "exact_match": 0.0
+    "accuracy": 19.0,
+    "exact_match": 19.0,
+    "fuzzy_match": 19.0,
+    "avg_token_f1": 0.0
   },
   {
     "rank": 16,
@@ -32,8 +36,10 @@
     "peak_mem_mb": 3074.63,
     "test_loss": 1.262,
     "train_time_sec": 1123.0,
-    "accuracy": 0.0,
-    "exact_match": 0.0
+    "accuracy": 17.0,
+    "exact_match": 17.0,
+    "fuzzy_match": 17.0,
+    "avg_token_f1": 0.0
   },
   {
     "rank": 32,
@@ -44,8 +50,10 @@
     "peak_mem_mb": 3100.27,
     "test_loss": 1.265,
     "train_time_sec": 1150.0,
-    "accuracy": 0.0,
-    "exact_match": 0.0
+    "accuracy": 17.0,
+    "exact_match": 17.0,
+    "fuzzy_match": 17.0,
+    "avg_token_f1": 0.0
   },
   {
     "rank": 64,
@@ -56,7 +64,9 @@
     "peak_mem_mb": 3151.0,
     "test_loss": 1.27,
     "train_time_sec": 1169.9,
-    "accuracy": 0.0,
-    "exact_match": 0.0
+    "accuracy": 18.0,
+    "exact_match": 18.0,
+    "fuzzy_match": 18.0,
+    "avg_token_f1": 0.0
   }
 ]
