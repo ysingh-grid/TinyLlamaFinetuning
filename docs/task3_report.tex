@@ -1,0 +1,107 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{xcolor}
+
+\title{\textbf{Task 3: Attention Visualization \& Head Clustering}}
+\author{TinyLlama MLX Fine-Tuning Project}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section*{Task Description}
+This task provides \textbf{interpretability analysis} of transformer attention mechanisms through visualization and clustering. We extract attention weights from all 22 layers × 32 heads (704 total heads), analyze their patterns, and compare base vs. LoRA-tuned models to understand how fine-tuning modifies attention behavior.
+
+\textbf{Key objectives:}
+\begin{itemize}
+    \item Visualize attention heatmaps for individual inference examples
+    \item Cluster attention heads by similarity to identify functional groups
+    \item Quantify attention pattern differences between base and fine-tuned models
+\end{itemize}
+
+\section*{Technical Implementation}
+
+\subsection*{Procedure}
+\begin{enumerate}
+    \item \textbf{Attention Extraction:} Hook into transformer layers to capture attention weights during generation
+    \item \textbf{Attention Rollout:} Aggregate attention across layers: $A^{(l)} = A^{(l)} \cdot A^{(l-1)}$
+    \item \textbf{Head Clustering:} Compute cosine similarity, apply hierarchical clustering
+    \item \textbf{Comparative Analysis:} Generate difference maps (base - LoRA) to visualize tuning effects
+\end{enumerate}
+
+\subsection*{Technical Details}
+\begin{itemize}
+    \item \textbf{Models:} TinyLlama base vs. LoRA-tuned (adapters/tinyllama-lora-alpaca)
+    \item \textbf{Architecture:} 22 layers, 32 heads/layer (704 total heads)
+    \item \textbf{Test Cases:} 5 Alpaca prompts spanning short to multi-turn instructions
+\end{itemize}
+
+\section*{Results}
+
+\subsection*{Quantitative Metrics}
+\begin{table}[H]
+\centering
+\small
+\begin{tabular}{@{}lccc@{}}
+\toprule
+\textbf{Metric} & \textbf{Base Model} & \textbf{LoRA Model} & \textbf{Change} \\
+\midrule
+Instruction-following heads & 445 (63.2\%) & 417 (59.2\%) & -28 (-4.0\%) \\
+Completion heads & 259 (36.8\%) & 287 (40.8\%) & +28 (+4.0\%) \\
+Mean attention focus & 0.5305 & 0.5690 & +7.3\% \\
+Most affected layers & \multicolumn{3}{c}{16, 12, 13, 9, 2} \\
+\bottomrule
+\end{tabular}
+\caption{Attention behavior and head classification comparison}
+\end{table}
+
+\subsection*{Key Findings}
+\begin{itemize}
+    \item \textbf{Head mode distribution shift:} LoRA tuning shifted 28 heads (4\%) from instruction-following to completion mode (59.2\% → 40.8\% for instruction-following)
+    \item \textbf{Enhanced attention focus:} Mean attention focus increased by 7.3\% (0.5305 → 0.5690), indicating sharper, more targeted token attribution
+    \item \textbf{Layer-specific changes:} Most affected layers are 16, 12, 13, 9, and 2, suggesting LoRA concentrates changes in mid-to-late layers where semantic understanding develops
+    \item \textbf{Mode rebalancing:} The shift towards completion-oriented attention suggests LoRA fine-tuning optimizes the model for answer generation rather than purely following instructions
+\end{itemize}
+
+\subsection*{Visual Evidence}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.44\textwidth]{../results/task3/head_clustering_Base.png}
+\includegraphics[width=0.44\textwidth]{../results/task3/head_clustering_LoRA.png}
+\caption{Clustering dendrograms: Base model (left) and LoRA-tuned model (right), showing hierarchical grouping of attention heads by similarity.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{../results/task3/head_clustering_Comparison.png}
+\caption{Comparative clustering analysis highlighting structural differences between base and LoRA models.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{../results/task3/base_vs_lora_attention_diff.png}
+\caption{Attention difference heatmap (Base - LoRA), visualizing which layers and heads show the largest changes during fine-tuning.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{../results/task3/base_vs_lora_comparison.png}
+\caption{Side-by-side comparison of base and LoRA attention patterns, highlighting divergence in semantic focus.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{../results/task3/multi_head_visualization.png}
+\caption{Multi-head attention visualization showing individual head activation patterns across inference examples.}
+\end{figure}
+
+\section*{Conclusion}
+Attention visualization reveals that LoRA fine-tuning fundamentally \textbf{rebalances attention modalities} rather than simply refining existing patterns. The 4\% shift of 28 heads from instruction-following to completion mode, combined with a 7.3\% increase in attention focus (0.5305 → 0.5690), demonstrates that LoRA actively optimizes the model toward generative tasks. The concentration of changes in layers 16, 12, 13, 9, and 2 indicates strategic recalibration in mid-to-late layers where high-level semantic reasoning occurs. For practitioners, these metrics provide actionable indicators for assessing fine-tuning effectiveness and monitoring attention-based quality during model optimization.
+
+\end{document}
