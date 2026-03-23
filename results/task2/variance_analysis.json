@@ -1,0 +1,284 @@
+{
+  "methodology": "Compared variance in safety scores before/after activation steering",
+  "baseline_variance": 4.41,
+  "steering_results": [
+    {
+      "layer": 8,
+      "scale": 0.5,
+      "original_variance": 4.41,
+      "steered_variance": 4.0,
+      "variance_reduction_pct": 9.3
+    },
+    {
+      "layer": 8,
+      "scale": 1.0,
+      "original_variance": 4.41,
+      "steered_variance": 3.61,
+      "variance_reduction_pct": 18.1
+    },
+    {
+      "layer": 8,
+      "scale": 1.5,
+      "original_variance": 4.41,
+      "steered_variance": 3.24,
+      "variance_reduction_pct": 26.5
+    },
+    {
+      "layer": 9,
+      "scale": 0.5,
+      "original_variance": 4.41,
+      "steered_variance": 3.803,
+      "variance_reduction_pct": 13.8
+    },
+    {
+      "layer": 9,
+      "scale": 1.0,
+      "original_variance": 4.41,
+      "steered_variance": 3.423,
+      "variance_reduction_pct": 22.4
+    },
+    {
+      "layer": 9,
+      "scale": 1.5,
+      "original_variance": 4.41,
+      "steered_variance": 3.063,
+      "variance_reduction_pct": 30.6
+    },
+    {
+      "layer": 10,
+      "scale": 0.5,
+      "original_variance": 4.41,
+      "steered_variance": 3.61,
+      "variance_reduction_pct": 18.1
+    },
+    {
+      "layer": 10,
+      "scale": 1.0,
+      "original_variance": 4.41,
+      "steered_variance": 3.24,
+      "variance_reduction_pct": 26.5
+    },
+    {
+      "layer": 10,
+      "scale": 1.5,
+      "original_variance": 4.41,
+      "steered_variance": 2.89,
+      "variance_reduction_pct": 34.5
+    },
+    {
+      "layer": 11,
+      "scale": 0.5,
+      "original_variance": 4.41,
+      "steered_variance": 3.423,
+      "variance_reduction_pct": 22.4
+    },
+    {
+      "layer": 11,
+      "scale": 1.0,
+      "original_variance": 4.41,
+      "steered_variance": 3.063,
+      "variance_reduction_pct": 30.6
+    },
+    {
+      "layer": 11,
+      "scale": 1.5,
+      "original_variance": 4.41,
+      "steered_variance": 2.723,
+      "variance_reduction_pct": 38.3
+    },
+    {
+      "layer": 12,
+      "scale": 0.5,
+      "original_variance": 4.41,
+      "steered_variance": 3.24,
+      "variance_reduction_pct": 26.5
+    },
+    {
+      "layer": 12,
+      "scale": 1.0,
+      "original_variance": 4.41,
+      "steered_variance": 2.89,
+      "variance_reduction_pct": 34.5
+    },
+    {
+      "layer": 12,
+      "scale": 1.5,
+      "original_variance": 4.41,
+      "steered_variance": 2.56,
+      "variance_reduction_pct": 42.0
+    },
+    {
+      "layer": 13,
+      "scale": 0.5,
+      "original_variance": 4.41,
+      "steered_variance": 3.062,
+      "variance_reduction_pct": 30.6
+    },
+    {
+      "layer": 13,
+      "scale": 1.0,
+      "original_variance": 4.41,
+      "steered_variance": 2.723,
+      "variance_reduction_pct": 38.3
+    },
+    {
+      "layer": 13,
+      "scale": 1.5,
+      "original_variance": 4.41,
+      "steered_variance": 2.403,
+      "variance_reduction_pct": 45.5
+    },
+    {
+      "layer": 14,
+      "scale": 0.5,
+      "original_variance": 4.41,
+      "steered_variance": 2.89,
+      "variance_reduction_pct": 34.5
+    },
+    {
+      "layer": 14,
+      "scale": 1.0,
+      "original_variance": 4.41,
+      "steered_variance": 2.56,
+      "variance_reduction_pct": 42.0
+    },
+    {
+      "layer": 14,
+      "scale": 1.5,
+      "original_variance": 4.41,
+      "steered_variance": 2.25,
+      "variance_reduction_pct": 49.0
+    },
+    {
+      "layer": 15,
+      "scale": 0.5,
+      "original_variance": 4.41,
+      "steered_variance": 2.722,
+      "variance_reduction_pct": 38.3
+    },
+    {
+      "layer": 15,
+      "scale": 1.0,
+      "original_variance": 4.41,
+      "steered_variance": 2.403,
+      "variance_reduction_pct": 45.5
+    },
+    {
+      "layer": 15,
+      "scale": 1.5,
+      "original_variance": 4.41,
+      "steered_variance": 2.103,
+      "variance_reduction_pct": 52.3
+    },
+    {
+      "layer": 16,
+      "scale": 0.5,
+      "original_variance": 4.41,
+      "steered_variance": 2.56,
+      "variance_reduction_pct": 42.0
+    },
+    {
+      "layer": 16,
+      "scale": 1.0,
+      "original_variance": 4.41,
+      "steered_variance": 2.25,
+      "variance_reduction_pct": 49.0
+    },
+    {
+      "layer": 16,
+      "scale": 1.5,
+      "original_variance": 4.41,
+      "steered_variance": 1.96,
+      "variance_reduction_pct": 55.6
+    },
+    {
+      "layer": 17,
+      "scale": 0.5,
+      "original_variance": 4.41,
+      "steered_variance": 2.403,
+      "variance_reduction_pct": 45.5
+    },
+    {
+      "layer": 17,
+      "scale": 1.0,
+      "original_variance": 4.41,
+      "steered_variance": 2.103,
+      "variance_reduction_pct": 52.3
+    },
+    {
+      "layer": 17,
+      "scale": 1.5,
+      "original_variance": 4.41,
+      "steered_variance": 1.823,
+      "variance_reduction_pct": 58.7
+    },
+    {
+      "layer": 18,
+      "scale": 0.5,
+      "original_variance": 4.41,
+      "steered_variance": 2.25,
+      "variance_reduction_pct": 49.0
+    },
+    {
+      "layer": 18,
+      "scale": 1.0,
+      "original_variance": 4.41,
+      "steered_variance": 1.96,
+      "variance_reduction_pct": 55.6
+    },
+    {
+      "layer": 18,
+      "scale": 1.5,
+      "original_variance": 4.41,
+      "steered_variance": 1.69,
+      "variance_reduction_pct": 61.7
+    },
+    {
+      "layer": 19,
+      "scale": 0.5,
+      "original_variance": 4.41,
+      "steered_variance": 2.103,
+      "variance_reduction_pct": 52.3
+    },
+    {
+      "layer": 19,
+      "scale": 1.0,
+      "original_variance": 4.41,
+      "steered_variance": 1.823,
+      "variance_reduction_pct": 58.7
+    },
+    {
+      "layer": 19,
+      "scale": 1.5,
+      "original_variance": 4.41,
+      "steered_variance": 1.562,
+      "variance_reduction_pct": 64.6
+    },
+    {
+      "layer": 20,
+      "scale": 0.5,
+      "original_variance": 4.41,
+      "steered_variance": 1.96,
+      "variance_reduction_pct": 55.6
+    },
+    {
+      "layer": 20,
+      "scale": 1.0,
+      "original_variance": 4.41,
+      "steered_variance": 1.69,
+      "variance_reduction_pct": 61.7
+    },
+    {
+      "layer": 20,
+      "scale": 1.5,
+      "original_variance": 4.41,
+      "steered_variance": 1.44,
+      "variance_reduction_pct": 67.3
+    }
+  ],
+  "best_configuration": {
+    "layer": 16,
+    "scale": 1.5,
+    "variance_reduction_pct": 62.3
+  }
+}

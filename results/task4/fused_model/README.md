@@ -15,9 +15,9 @@ widget:
   - role: user
     content: Write me a function to calculate the first 10 digits of the fibonacci
       sequence in Python and print it out to the CLI.
-base_model: TinyLlama/TinyLlama-1.1B-Chat-v1.0
-library_name: mlx
+pipeline_tag: text-generation
 tags:
 - mlx
-pipeline_tag: text-generation
+base_model: TinyLlama/TinyLlama-1.1B-Chat-v1.0
+library_name: mlx
 ---

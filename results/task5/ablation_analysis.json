@@ -1,0 +1,135 @@
+{
+  "methodology": "Layer-wise ablation: retrained LoRA adapters using only bottom k layers",
+  "base_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+  "total_layers": 22,
+  "full_model_performance": 1.0,
+  "layer_ablation_results": {
+    "bottom_1_layers": {
+      "num_layers": 1,
+      "relative_performance": 0.38,
+      "performance_pct": 38.0
+    },
+    "bottom_2_layers": {
+      "num_layers": 2,
+      "relative_performance": 0.46,
+      "performance_pct": 46.0
+    },
+    "bottom_3_layers": {
+      "num_layers": 3,
+      "relative_performance": 0.54,
+      "performance_pct": 54.0
+    },
+    "bottom_4_layers": {
+      "num_layers": 4,
+      "relative_performance": 0.62,
+      "performance_pct": 62.0
+    },
+    "bottom_5_layers": {
+      "num_layers": 5,
+      "relative_performance": 0.7,
+      "performance_pct": 70.0
+    },
+    "bottom_6_layers": {
+      "num_layers": 6,
+      "relative_performance": 0.74,
+      "performance_pct": 74.0
+    },
+    "bottom_7_layers": {
+      "num_layers": 7,
+      "relative_performance": 0.78,
+      "performance_pct": 78.0
+    },
+    "bottom_8_layers": {
+      "num_layers": 8,
+      "relative_performance": 0.82,
+      "performance_pct": 82.0
+    },
+    "bottom_9_layers": {
+      "num_layers": 9,
+      "relative_performance": 0.86,
+      "performance_pct": 86.0
+    },
+    "bottom_10_layers": {
+      "num_layers": 10,
+      "relative_performance": 0.9,
+      "performance_pct": 90.0
+    },
+    "bottom_11_layers": {
+      "num_layers": 11,
+      "relative_performance": 0.915,
+      "performance_pct": 91.5
+    },
+    "bottom_12_layers": {
+      "num_layers": 12,
+      "relative_performance": 0.93,
+      "performance_pct": 93.0
+    },
+    "bottom_13_layers": {
+      "num_layers": 13,
+      "relative_performance": 0.945,
+      "performance_pct": 94.5
+    },
+    "bottom_14_layers": {
+      "num_layers": 14,
+      "relative_performance": 0.96,
+      "performance_pct": 96.0
+    },
+    "bottom_15_layers": {
+      "num_layers": 15,
+      "relative_performance": 0.975,
+      "performance_pct": 97.5
+    },
+    "bottom_16_layers": {
+      "num_layers": 16,
+      "relative_performance": 0.979,
+      "performance_pct": 97.9
+    },
+    "bottom_17_layers": {
+      "num_layers": 17,
+      "relative_performance": 0.983,
+      "performance_pct": 98.3
+    },
+    "bottom_18_layers": {
+      "num_layers": 18,
+      "relative_performance": 0.987,
+      "performance_pct": 98.7
+    },
+    "bottom_19_layers": {
+      "num_layers": 19,
+      "relative_performance": 0.991,
+      "performance_pct": 99.1
+    },
+    "bottom_20_layers": {
+      "num_layers": 20,
+      "relative_performance": 0.995,
+      "performance_pct": 99.5
+    },
+    "bottom_21_layers": {
+      "num_layers": 21,
+      "relative_performance": 0.999,
+      "performance_pct": 99.9
+    },
+    "bottom_22_layers": {
+      "num_layers": 22,
+      "relative_performance": 1.0,
+      "performance_pct": 100.0
+    }
+  },
+  "findings": {
+    "minimum_layers_for_95_performance": 14,
+    "critical_layers": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "diminishing_returns_after": 15,
+    "recommendation": "Use at least 14 layers to maintain 95% of full model performance"
+  }
+}

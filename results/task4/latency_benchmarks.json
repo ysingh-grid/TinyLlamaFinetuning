@@ -1,0 +1,317 @@
+{
+  "Q4_K_M": {
+    "model_path": "/Users/ysingh/PyCharmMiscProject/results/task4/model-Q4_K_M.gguf",
+    "num_generations": 10,
+    "generation_tokens": 100,
+    "mean_latency_sec": 0.466137,
+    "latency_std_sec": 0.013101,
+    "tokens_per_second": 214.529,
+    "peak_rss_mb_mean": 748.64,
+    "peak_rss_mb_max": 764.98,
+    "output_quality_rouge_l_f1": 0.2011,
+    "samples": [
+      {
+        "prompt": "Synthesize a list of questions to ask while interviewing a Graphic Designer.",
+        "reference": "1. What led you to pursue a career in Graphic Design? \n2. What do you consider to be your strengths and weaknesses when it comes to Graphic Design? \n3. What tools do you usually use for designing? \n4. What has been your most challenging project so far? \n5. What design processes do you typically follow? \n6. Describe your process for conceptualizing a design solution. \n7. What have been some of the most successful designs that you have developed? \n8. What do you consider to be the most important elements of a successful design? \n9. How do you approach color and typography in your work? \n10. How do you make sure the designs you create are easy to use? \n11. How do you make sure that your designs are visually appealing? \n12. Can you tell me about a successful project that you are particularly proud of? \n13. How do you stay up to date with the latest changes in Graphic Design? \n14. What do you think is the most important skill a Graphic Designer should have? \n15. How do you manage data and assets when working on your projects?\n16. How do you collaborate with other departments in order to ensure the successful completion of projects? \n17. What do you think about current trends in Graphic Design? \n18. How do you handle criticism when receiving feedback on your work? \n19. How do you engage your client to ensure that you have an understanding of their requirements?",
+        "generated": "1. What is your experience in Graphic Design?\n2. What are your skills in Graphic Design?\n3. What are your strengths in Graphic Design?\n4. What are your weaknesses in Graphic Design?\n5. What are your goals in Graphic Design?\n6. What are your career aspirations in Graphic Design?\n7. What are your favorite Graphic Design tools?\n8. What are your favorite Graphic Design techniques",
+        "latency_sec": 0.463485,
+        "peak_rss_mb": 735.08,
+        "tokens_predicted": 100,
+        "rouge_l_f1": 0.2
+      },
+      {
+        "prompt": "Compare the data storage methods for an online shopping website.",
+        "reference": "Data storage for an online shopping website can be divided into two primary methods: traditional databases and cloud-based storage. A traditional database stores all the website\u2019s data on-site on a physical server and offers the best performance. However, it is often the most expensive option and provides limited scalability due to the physical limitations of the server. On the other hand, cloud-based storage stores data on a remote server, generally owned and maintained by a third-party provider. This method is typically more affordable, easier to set up, and more suitable for large websites. Additionally, cloud-based solutions offer unparalleled scalability and security, as data can be easily backed up, accessed, and managed from anywhere.",
+        "generated": "The data storage methods for an online shopping website can vary depending on the type of data being stored. For example, if the data is primarily text-based, such as product descriptions or reviews, then a database or file system can be used. If the data is primarily images, such as product images or product reviews, then a file system can be used. If the data is primarily video, such as product videos or product reviews, then a video file system can be used. If the",
+        "latency_sec": 0.461161,
+        "peak_rss_mb": 738.03,
+        "tokens_predicted": 100,
+        "rouge_l_f1": 0.1951
+      },
+      {
+        "prompt": "Explain how to build a professional portfolio.",
+        "reference": "Building a professional portfolio involves creating a balanced mix of representative samples that showcase your skills and accomplishments. An important first step is to select a portfolio platform. Once the platform is selected, create a profile page to give a high-level overview of your experience. \n\nThe next step is to identify the types of items you want to include, such as resume, cover letter, work samples, letters of recommendation, certifications, awards and other relevant materials. Once you have compiled the items, organize them so that a viewer can easily navigate the page and quickly understand your accomplishment, expertise and career highlights. It\u2019s also important to keep the portfolio updated with your latest achievements.\n\nFinally, consider adding a professional headshot and designing the portfolio to reflect your personal style and brand. Once you are satisfied with the design of the portfolio, be sure to share it with your professional contacts and networks.",
+        "generated": "Building a professional portfolio is a great way to showcase your skills and experience. Here are some steps to follow:\n\n1. Choose a platform: There are many platforms available to build a portfolio, such as LinkedIn, Behance, and Dribbble. Choose one that best suits your needs.\n\n2. Create a profile: Create a profile on the platform of your choice and fill it out with your contact information, work experience, and",
+        "latency_sec": 0.46317,
+        "peak_rss_mb": 740.88,
+        "tokens_predicted": 100,
+        "rouge_l_f1": 0.2422
+      },
+      {
+        "prompt": "Create a poem of 5 verses, each with 8 lines each, about a city skyline.",
+        "reference": "Verse 1\n\nThe city skyline stands so strong\nThrough the night its sky is long\nThe stars light up its ivory walls\nAnd fill the darkness with surreal calls\nThe lights below the sky unfold\nBridges to cities, stories untold\nVeils of clouds above them floating\nGlistens like a shimmering coating\n\nVerse 2\n\nA backdrop of amaranthine hues\nClimbing skyward, no one refuses\nThe sky above holds so much awe\nA cool gentle breeze, nature's claw\nTwinkling stars, the night aglow\nHung amidst the ebon sky's flow\nAn array of street lamps, glimmer dim\nDecorate the city's nightly trim\n\nVerse 3\n\nAn abbey stands atop a nearby hill\nThe night sky is so still\nMoonlight glistening off its steeple\nThe night air a refreshing tussle\nA formation of birds soaring free\nShadows of freedom, peacefully\nSpinning and twisting with grace\nThe night moves on at its pace\n\nVerse 4\n\nThe skyline sparkles a midnight blue\nThe dreamscape a dreamer's view\nSkyscrapers of the night so grand\nFrom far below, we see them stand\nThe stars and lights so bright above\nA hypnotizing sight, a sign of love\nBeacons of glory, up into the sky\nA beautiful sight for passersby\n\nVerse 5\n\nAt the break of morning we can see\nThe silhouettes of towers piercing free\nThe skyline changed, yet still the same\nThe city wakes, but only a few remain\nThe night is gone, but never ends\nDarkness fades and new beginnings lend\nMarveling at its beauty and its grace\nThe city skyline stands in its place.",
+        "generated": "The city skyline, a sight to behold\nA sight that's worth the journey\nA sight that's worth the trip\nA sight that's worth the journey\n\nThe city skyline, a sight to behold\nA sight that's worth the journey\nA sight that's worth the trip\nA sight that's worth the journey\n\nThe city skyline, a sight to behold\nA sight that's worth the journey\nA sight",
+        "latency_sec": 0.462154,
+        "peak_rss_mb": 743.7,
+        "tokens_predicted": 100,
+        "rouge_l_f1": 0.1622
+      },
+      {
+        "prompt": "Generate an example of what a resume should like for a culinary professional",
+        "reference": "Jean Tremaine\n1234 Main Street, Anytown, CA 98765\n(415) 555-1234 | j.tremaine@gmail.com\n\nEXPERIENCED CULINARY PROFESSIONAL\n\nHighly experienced chef and cook with a passion for creating dignified dishes, producing exceptional results in just about any cooking environment. Adept at innovating classic recipes to produce uniquely-flavored dishes while still meeting customer expectations.\n\n\u2022 Experienced in creating and executing full-menu dishes in both lunch and dinner settings\n\u2022 Certified in food handling and safety regulations with advanced understanding of health and government standards \n\u2022 In-depth knowledge and experience in all aspects of food preparation and kitchen management\n\u2022 Proven ability to quickly master new methods and recipes\n\u2022 Expert in using modern kitchen appliances, such as ovens, mixers, and fryers\n\u2022 Phenomenal collaboration and communication skills \n\nPROFESSIONAL EXPERIENCE\n\nChef de Cuisine | XYZ Restaurant | San Francisco, CA | May 2015 \u2013 Present\n\u2022 Crafted original and diverse menu items tailored to the restaurant\u2019s atmosphere and customers\n\u2022 Implemented innovative promotion and marketing strategies to increase lunch and dinner traffic\n\u2022 Managed frontline kitchen staff in all duties, including meal preparation and sanitation\n\u2022 Guided shifts to smoothly coordinate with incoming and outgoing kitchen staff, while providing efficient and quality service\n\u2022 Maintained quality control to ensure only excellent dishes leave the kitchen area\n\nAssistant Chef | ABC Restaurant | San Francisco, CA | August 2010 \u2013 April 2015\n\u2022 Assisted senior chef in creating daily menu, ensuring all dishes met the restaurant\u2019s standards of excellence\n\u2022 Developed original recipes as requested by head chef, employing creative flavors to devise signature dishes for the restaurant\n\u2022 Managed and monitored junior kitchen staff during meal service\n\u2022 Acted as an exemplary role model for junior chefs, providing friendly and professional guidance",
+        "generated": "A resume for a culinary professional should include a brief summary of the applicant's experience, education, and skills. The summary should include the applicant's name, job title, and any relevant experience or education. The resume should also include a list of the applicant's accomplishments, such as any awards or certifications. The resume should also include a list of the applicant's skills, such as cooking, baking, and pastry.",
+        "latency_sec": 0.458644,
+        "peak_rss_mb": 746.72,
+        "tokens_predicted": 100,
+        "rouge_l_f1": 0.0991
+      },
+      {
+        "prompt": "Compose a poem on the theme of autumn.",
+        "reference": "The leaves fall in the crispy air\nOn the ground they never dare\nAutumn\u2019s chill doth soothe and bless\nIn the season of nature\u2019s caress\n\nThe Sun dips low in the night\nLeaving all the stars to shine so bright\nFor a few weeks the trees bare their souls\nCreating mesmerising patterns of their own\n\nThe twilight paintings of the sky\nEach with their own majestic hue\nAs the colours of the trees revolve\nWe\u2019re blessed with the beauty of the Fall\n\nSo pause in nature\u2019s golden show\nBefore the winter will come with snow\nTake in and bask in this precious time\nCelebrate the glory of Autumn sublime.",
+        "generated": "Autumn's leaves are falling,\nThe world is changing,\nThe trees are turning red,\nThe sky is turning blue.\n\nThe air is crisp and cool,\nThe earth is turning brown,\nThe leaves are falling,\nThe world is changing.\n\nThe leaves are falling,\nThe world is changing,\nThe trees are turning red,\nThe sky is turning blue.\n\nThe leaves are falling,\nThe world is changing,\nThe trees",
+        "latency_sec": 0.461006,
+        "peak_rss_mb": 749.61,
+        "tokens_predicted": 100,
+        "rouge_l_f1": 0.1788
+      },
+      {
+        "prompt": "Think of some improvement ideas for a movie review website",
+        "reference": "Improvement ideas for a movie review website:\n1. Make it easier to find reviews; add search filters that allow users to think of relevant reviews based on genre, rating, and year of release.\n2. Allow reviews to be personalized; this could include allowing users to mark the reviews they liked and dislike, and then personalizing the reviews they see based on those interests.\n3. Make it easier to write reviews; create a template that prompts users to answer key questions and rate their experience with the movie.\n4. Allow users to interact with reviews; add an interactive feature that allows users to comment on reviews and give their perspective.\n5. Add an aggregate rating system; incorporate an overall user rating system to give users a sense of the general opinion of the movie.\n6. Add additional content; add photos, audios, and videos from the movie and related material to give users a more in-depth experience.",
+        "generated": "Here are some improvement ideas for a movie review website:\n- Add more user-generated content, such as user reviews, ratings, and comments.\n- Create a section for user-generated content, where users can share their experiences with the movie.\n- Add more information about the movie, such as its genre, director, and cast.\n- Create a section for user-generated content, where users can share their thoughts on the movie.\n- Add more information about the movie,",
+        "latency_sec": 0.462387,
+        "peak_rss_mb": 752.39,
+        "tokens_predicted": 100,
+        "rouge_l_f1": 0.2271
+      },
+      {
+        "prompt": "Describe how a Docker container works.",
+        "reference": "A Docker container is an isolated environment in which applications can be packaged and run. It consists of the application, system libraries, and other configuration files necessary for a specific task. The container runs within a docker host, which isolates the container from other host resources and is responsible for managing its life cycle. Docker containers are lightweight and highly portable; they can be quickly spun up and transported to different environments such as cloud, bare metal, and on-premises. Containers are isolated from the underlying host system so they can be securely run and managed. Docker also uses images which function like snapshots \u2013 making it easy to deploy and run applications reliably and consistently across different environments.",
+        "generated": "A Docker container is a virtual environment that runs a specific application or service. It is created by running a Dockerfile, which specifies the required software, libraries, and dependencies. The container is then started and configured by the Docker daemon, which manages the resources and environment of the container. The container can be accessed from the host machine, and can be used to run multiple instances of the same application or service. Docker containers are designed to be lightweight, efficient, and scalable,",
+        "latency_sec": 0.462714,
+        "peak_rss_mb": 755.19,
+        "tokens_predicted": 100,
+        "rouge_l_f1": 0.27
+      },
+      {
+        "prompt": "Write a story given the characters and context below.\n\nInput:\nCharacters: \n- Lewis: A high school student\n- Ms. Wilson: Lewis's English teacher\n- Mark: Lewis's older brother\n\nContext:\nLewis is in his high school English class. His teacher, Ms. Wilson, is teaching a lesson about the power of words. The mood in the classroom is light, and everyone is enjoying the lesson. After class, Lewis is walking home with his older brother, Mark, when they stumble upon a secret book store.",
+        "reference": "Lewis had been dreading English class but today it was different. Ms. Wilson had decided to focus the lesson on the power of words and everyone was excited. She asked the class to reflect on how a single word could change the world and everyone was engaged in the discussion. \n\nAfter class, Lewis was walking home with his older brother, Mark, when they stumbled upon a secret bookstore. They were amazed to find racks filled with books of all kinds and topics. Lewis began to read some of the titles out loud and Mark watched as his brother's eyes lit up. Mark remembered reading about books like these when he was Lewis's age, but never thought it would be possible to find such a place in their small town. \n\nThe brothers started browsing through the shelves and soon Lewis had gathered an armful of books. Mark smiled as he watched his brother, seeing the same look of wonder on his face that he had seen years ago. Lewis thanked his brother for showing him the bookstore and Mark felt proud to see Lewis so excited about reading.",
+        "generated": "Lewis and Mark were walking home from school when they stumbled upon the secret book store. They were both intrigued by the store's mysterious atmosphere and decided to explore it. As they walked through the store, they came across a book titled \"The Power of Words.\" They both read the book and were amazed by the power of words. They decided to take a chance and read the book again, and again, and again. They were amazed by the power",
+        "latency_sec": 0.50319,
+        "peak_rss_mb": 759.78,
+        "tokens_predicted": 100,
+        "rouge_l_f1": 0.163
+      },
+      {
+        "prompt": "Summarize the website link in maximum 100 words.\n\nInput:\nhttps://en.wikipedia.org/wiki/Inferential_statistics",
+        "reference": "Inferential statistics is a type of statistical analysis used to draw conclusions about a population based on a sample. It is used to make predictions and generalizations about a larger group of individuals, known as a population, on the basis of information obtained from a smaller group of individuals, known as a sample. It involves the use of statistical tests, such as hypothesis testing, to compare the data from the sample to the population mean. The results of inferential statistics are subject to variability and can be affected by factors such as sample size, population variability, and the nature of the statistical test used. Inferential statistics can be used to understand complex patterns in data and can be used to determine whether a relationship between two or more variables is real or the result of chance.",
+        "generated": "Inferential statistics is a branch of statistics that involves the use of statistical methods to analyze data. It is used to make inferences about the underlying structure of a population or a sample. Inferential statistics is used in a variety of fields, including medicine, economics, and social sciences. It is used to make predictions about the future based on past data, and to identify patterns in data that may not be immediately apparent. Inferential statistics is also used to test hypotheses and to",
+        "latency_sec": 0.463461,
+        "peak_rss_mb": 764.98,
+        "tokens_predicted": 100,
+        "rouge_l_f1": 0.274
+      }
+    ],
+    "server_endpoint": "http://127.0.0.1:50646/v1/chat/completions",
+    "file_size_mb": 636.88
+  },
+  "Q5_K_M": {
+    "model_path": "/Users/ysingh/PyCharmMiscProject/results/task4/model-Q5_K_M.gguf",
+    "num_generations": 10,
+    "generation_tokens": 100,
+    "mean_latency_sec": 0.601042,
+    "latency_std_sec": 0.016189,
+    "tokens_per_second": 166.378,
+    "peak_rss_mb_mean": 862.18,
+    "peak_rss_mb_max": 878.53,
+    "output_quality_rouge_l_f1": 0.2005,
+    "samples": [
+      {
+        "prompt": "Synthesize a list of questions to ask while interviewing a Graphic Designer.",
+        "reference": "1. What led you to pursue a career in Graphic Design? \n2. What do you consider to be your strengths and weaknesses when it comes to Graphic Design? \n3. What tools do you usually use for designing? \n4. What has been your most challenging project so far? \n5. What design processes do you typically follow? \n6. Describe your process for conceptualizing a design solution. \n7. What have been some of the most successful designs that you have developed? \n8. What do you consider to be the most important elements of a successful design? \n9. How do you approach color and typography in your work? \n10. How do you make sure the designs you create are easy to use? \n11. How do you make sure that your designs are visually appealing? \n12. Can you tell me about a successful project that you are particularly proud of? \n13. How do you stay up to date with the latest changes in Graphic Design? \n14. What do you think is the most important skill a Graphic Designer should have? \n15. How do you manage data and assets when working on your projects?\n16. How do you collaborate with other departments in order to ensure the successful completion of projects? \n17. What do you think about current trends in Graphic Design? \n18. How do you handle criticism when receiving feedback on your work? \n19. How do you engage your client to ensure that you have an understanding of their requirements?",
+        "generated": "- What is your experience with designing for print and digital media?\n- What are your favorite design tools?\n- What are your design goals for the project?\n- What are your design philosophies?\n- What are your design strategies for creating a cohesive visual identity?\n- What are your design techniques for creating a visually appealing website?\n- What are your design techniques for creating a visually appealing print piece?\n- What are your design techniques",
+        "latency_sec": 0.590076,
+        "peak_rss_mb": 848.67,
+        "tokens_predicted": 100,
+        "rouge_l_f1": 0.1465
+      },
+      {
+        "prompt": "Compare the data storage methods for an online shopping website.",
+        "reference": "Data storage for an online shopping website can be divided into two primary methods: traditional databases and cloud-based storage. A traditional database stores all the website\u2019s data on-site on a physical server and offers the best performance. However, it is often the most expensive option and provides limited scalability due to the physical limitations of the server. On the other hand, cloud-based storage stores data on a remote server, generally owned and maintained by a third-party provider. This method is typically more affordable, easier to set up, and more suitable for large websites. Additionally, cloud-based solutions offer unparalleled scalability and security, as data can be easily backed up, accessed, and managed from anywhere.",
+        "generated": "The data storage methods for an online shopping website can vary depending on the type of data being stored. For example, if the data is primarily text-based, such as product descriptions or reviews, then a database or a file system can be used to store the data. If the data is primarily images, such as product images or product videos, then a database or a file system can be used to store the images. If the data is primarily videos, such as product videos or product demonstr",
+        "latency_sec": 0.594861,
+        "peak_rss_mb": 851.59,
+        "tokens_predicted": 100,
+        "rouge_l_f1": 0.2029
+      },
+      {
+        "prompt": "Explain how to build a professional portfolio.",
+        "reference": "Building a professional portfolio involves creating a balanced mix of representative samples that showcase your skills and accomplishments. An important first step is to select a portfolio platform. Once the platform is selected, create a profile page to give a high-level overview of your experience. \n\nThe next step is to identify the types of items you want to include, such as resume, cover letter, work samples, letters of recommendation, certifications, awards and other relevant materials. Once you have compiled the items, organize them so that a viewer can easily navigate the page and quickly understand your accomplishment, expertise and career highlights. It\u2019s also important to keep the portfolio updated with your latest achievements.\n\nFinally, consider adding a professional headshot and designing the portfolio to reflect your personal style and brand. Once you are satisfied with the design of the portfolio, be sure to share it with your professional contacts and networks.",
+        "generated": "Building a professional portfolio is an important part of any career. It is a way to showcase your skills, knowledge, and experience to potential employers. Here are some steps to help you build a professional portfolio:\n\n1. Determine what you want to showcase. What skills, knowledge, and experience do you want to highlight?\n\n2. Choose the right platform. There are many different platforms available, such as LinkedIn, Github, and Be",
+        "latency_sec": 0.599171,
+        "peak_rss_mb": 854.44,
+        "tokens_predicted": 100,
+        "rouge_l_f1": 0.1973
+      },
+      {
+        "prompt": "Create a poem of 5 verses, each with 8 lines each, about a city skyline.",
+        "reference": "Verse 1\n\nThe city skyline stands so strong\nThrough the night its sky is long\nThe stars light up its ivory walls\nAnd fill the darkness with surreal calls\nThe lights below the sky unfold\nBridges to cities, stories untold\nVeils of clouds above them floating\nGlistens like a shimmering coating\n\nVerse 2\n\nA backdrop of amaranthine hues\nClimbing skyward, no one refuses\nThe sky above holds so much awe\nA cool gentle breeze, nature's claw\nTwinkling stars, the night aglow\nHung amidst the ebon sky's flow\nAn array of street lamps, glimmer dim\nDecorate the city's nightly trim\n\nVerse 3\n\nAn abbey stands atop a nearby hill\nThe night sky is so still\nMoonlight glistening off its steeple\nThe night air a refreshing tussle\nA formation of birds soaring free\nShadows of freedom, peacefully\nSpinning and twisting with grace\nThe night moves on at its pace\n\nVerse 4\n\nThe skyline sparkles a midnight blue\nThe dreamscape a dreamer's view\nSkyscrapers of the night so grand\nFrom far below, we see them stand\nThe stars and lights so bright above\nA hypnotizing sight, a sign of love\nBeacons of glory, up into the sky\nA beautiful sight for passersby\n\nVerse 5\n\nAt the break of morning we can see\nThe silhouettes of towers piercing free\nThe skyline changed, yet still the same\nThe city wakes, but only a few remain\nThe night is gone, but never ends\nDarkness fades and new beginnings lend\nMarveling at its beauty and its grace\nThe city skyline stands in its place.",
+        "generated": "The city skyline, a sight to behold\nA sight that's worth the trip\nThe buildings towering high, a sight to see\nA sight that's worth the trip\n\nThe city skyline, a sight to see\nA sight that's worth the trip\nThe buildings, so tall and grand\nA sight that's worth the trip\n\nThe city skyline, a sight to see\nA sight that's worth the trip\nThe lights,",
+        "latency_sec": 0.598972,
+        "peak_rss_mb": 857.27,
+        "tokens_predicted": 100,
+        "rouge_l_f1": 0.1682
+      },
+      {
+        "prompt": "Generate an example of what a resume should like for a culinary professional",
+        "reference": "Jean Tremaine\n1234 Main Street, Anytown, CA 98765\n(415) 555-1234 | j.tremaine@gmail.com\n\nEXPERIENCED CULINARY PROFESSIONAL\n\nHighly experienced chef and cook with a passion for creating dignified dishes, producing exceptional results in just about any cooking environment. Adept at innovating classic recipes to produce uniquely-flavored dishes while still meeting customer expectations.\n\n\u2022 Experienced in creating and executing full-menu dishes in both lunch and dinner settings\n\u2022 Certified in food handling and safety regulations with advanced understanding of health and government standards \n\u2022 In-depth knowledge and experience in all aspects of food preparation and kitchen management\n\u2022 Proven ability to quickly master new methods and recipes\n\u2022 Expert in using modern kitchen appliances, such as ovens, mixers, and fryers\n\u2022 Phenomenal collaboration and communication skills \n\nPROFESSIONAL EXPERIENCE\n\nChef de Cuisine | XYZ Restaurant | San Francisco, CA | May 2015 \u2013 Present\n\u2022 Crafted original and diverse menu items tailored to the restaurant\u2019s atmosphere and customers\n\u2022 Implemented innovative promotion and marketing strategies to increase lunch and dinner traffic\n\u2022 Managed frontline kitchen staff in all duties, including meal preparation and sanitation\n\u2022 Guided shifts to smoothly coordinate with incoming and outgoing kitchen staff, while providing efficient and quality service\n\u2022 Maintained quality control to ensure only excellent dishes leave the kitchen area\n\nAssistant Chef | ABC Restaurant | San Francisco, CA | August 2010 \u2013 April 2015\n\u2022 Assisted senior chef in creating daily menu, ensuring all dishes met the restaurant\u2019s standards of excellence\n\u2022 Developed original recipes as requested by head chef, employing creative flavors to devise signature dishes for the restaurant\n\u2022 Managed and monitored junior kitchen staff during meal service\n\u2022 Acted as an exemplary role model for junior chefs, providing friendly and professional guidance",
+        "generated": "A resume for a culinary professional should include information about the applicant's education, work experience, and skills. The resume should also include a list of the applicant's accomplishments and achievements. The resume should be written in a professional and clear style, with a clear introduction and conclusion. The resume should also include a list of the applicant's skills and experience in the culinary field. The resume should also include a list of the applicant",
+        "latency_sec": 0.592145,
+        "peak_rss_mb": 860.28,
+        "tokens_predicted": 100,
+        "rouge_l_f1": 0.1032
+      },
+      {
+        "prompt": "Compose a poem on the theme of autumn.",
+        "reference": "The leaves fall in the crispy air\nOn the ground they never dare\nAutumn\u2019s chill doth soothe and bless\nIn the season of nature\u2019s caress\n\nThe Sun dips low in the night\nLeaving all the stars to shine so bright\nFor a few weeks the trees bare their souls\nCreating mesmerising patterns of their own\n\nThe twilight paintings of the sky\nEach with their own majestic hue\nAs the colours of the trees revolve\nWe\u2019re blessed with the beauty of the Fall\n\nSo pause in nature\u2019s golden show\nBefore the winter will come with snow\nTake in and bask in this precious time\nCelebrate the glory of Autumn sublime.",
+        "generated": "Autumn's beauty is a sight to behold,\nA time of year when the world is at peace.\nThe leaves on the trees are a sight to see,\nA sight that fills the heart with joy.\n\nThe air is crisp and cool,\nA time of year when the world is at peace.\nThe sun is setting,\nA time of year when the world is at peace.\n\nThe colors of the leaves are changing,\nA time of",
+        "latency_sec": 0.59257,
+        "peak_rss_mb": 863.16,
+        "tokens_predicted": 100,
+        "rouge_l_f1": 0.2116
+      },
+      {
+        "prompt": "Think of some improvement ideas for a movie review website",
+        "reference": "Improvement ideas for a movie review website:\n1. Make it easier to find reviews; add search filters that allow users to think of relevant reviews based on genre, rating, and year of release.\n2. Allow reviews to be personalized; this could include allowing users to mark the reviews they liked and dislike, and then personalizing the reviews they see based on those interests.\n3. Make it easier to write reviews; create a template that prompts users to answer key questions and rate their experience with the movie.\n4. Allow users to interact with reviews; add an interactive feature that allows users to comment on reviews and give their perspective.\n5. Add an aggregate rating system; incorporate an overall user rating system to give users a sense of the general opinion of the movie.\n6. Add additional content; add photos, audios, and videos from the movie and related material to give users a more in-depth experience.",
+        "generated": "Here are some improvement ideas for a movie review website:\n- Add more information about the movie's plot, characters, and themes.\n- Add more reviews from different perspectives, such as critics, fans, and experts.\n- Add more information about the movie's production, such as the director, actors, and cinematography.\n- Add more information about the movie's soundtrack, such as the composer and the songs.\n- Add more information about",
+        "latency_sec": 0.594874,
+        "peak_rss_mb": 865.89,
+        "tokens_predicted": 100,
+        "rouge_l_f1": 0.1883
+      },
+      {
+        "prompt": "Describe how a Docker container works.",
+        "reference": "A Docker container is an isolated environment in which applications can be packaged and run. It consists of the application, system libraries, and other configuration files necessary for a specific task. The container runs within a docker host, which isolates the container from other host resources and is responsible for managing its life cycle. Docker containers are lightweight and highly portable; they can be quickly spun up and transported to different environments such as cloud, bare metal, and on-premises. Containers are isolated from the underlying host system so they can be securely run and managed. Docker also uses images which function like snapshots \u2013 making it easy to deploy and run applications reliably and consistently across different environments.",
+        "generated": "A Docker container is a lightweight, self-contained environment that can be used to run applications. It is a virtual machine that is created from a Docker image, which is a pre-built container that contains all the necessary software and dependencies. The container is then run on a host machine, and the host machine is responsible for managing the container's resources. The container can be used to run applications, run scripts, or even run other containers. Docker containers are designed to be light",
+        "latency_sec": 0.593575,
+        "peak_rss_mb": 868.66,
+        "tokens_predicted": 100,
+        "rouge_l_f1": 0.266
+      },
+      {
+        "prompt": "Write a story given the characters and context below.\n\nInput:\nCharacters: \n- Lewis: A high school student\n- Ms. Wilson: Lewis's English teacher\n- Mark: Lewis's older brother\n\nContext:\nLewis is in his high school English class. His teacher, Ms. Wilson, is teaching a lesson about the power of words. The mood in the classroom is light, and everyone is enjoying the lesson. After class, Lewis is walking home with his older brother, Mark, when they stumble upon a secret book store.",
+        "reference": "Lewis had been dreading English class but today it was different. Ms. Wilson had decided to focus the lesson on the power of words and everyone was excited. She asked the class to reflect on how a single word could change the world and everyone was engaged in the discussion. \n\nAfter class, Lewis was walking home with his older brother, Mark, when they stumbled upon a secret bookstore. They were amazed to find racks filled with books of all kinds and topics. Lewis began to read some of the titles out loud and Mark watched as his brother's eyes lit up. Mark remembered reading about books like these when he was Lewis's age, but never thought it would be possible to find such a place in their small town. \n\nThe brothers started browsing through the shelves and soon Lewis had gathered an armful of books. Mark smiled as he watched his brother, seeing the same look of wonder on his face that he had seen years ago. Lewis thanked his brother for showing him the bookstore and Mark felt proud to see Lewis so excited about reading.",
+        "generated": "Lewis and Mark were walking home from school when they stumbled upon a secret book store. They were both intrigued by the store's selection of books and the atmosphere of the store. As they browsed the shelves, Lewis noticed a book with a strange title. He asked Mark what it was, and Mark replied that it was a book about the power of words. Lewis was intrigued and asked if he could read it. Mark agreed, and they both read",
+        "latency_sec": 0.644275,
+        "peak_rss_mb": 873.31,
+        "tokens_predicted": 100,
+        "rouge_l_f1": 0.1926
+      },
+      {
+        "prompt": "Summarize the website link in maximum 100 words.\n\nInput:\nhttps://en.wikipedia.org/wiki/Inferential_statistics",
+        "reference": "Inferential statistics is a type of statistical analysis used to draw conclusions about a population based on a sample. It is used to make predictions and generalizations about a larger group of individuals, known as a population, on the basis of information obtained from a smaller group of individuals, known as a sample. It involves the use of statistical tests, such as hypothesis testing, to compare the data from the sample to the population mean. The results of inferential statistics are subject to variability and can be affected by factors such as sample size, population variability, and the nature of the statistical test used. Inferential statistics can be used to understand complex patterns in data and can be used to determine whether a relationship between two or more variables is real or the result of chance.",
+        "generated": "Inferential statistics is a branch of statistics that involves using statistical methods to make inferences about the population from a sample. It is used to make predictions about the population based on the sample data. Inferential statistics is used in a variety of fields, including medicine, economics, and social sciences. It is used to make predictions about the population based on the sample data, and to test hypotheses about the population. Inferential statistics is also used to make predictions about the population based",
+        "latency_sec": 0.609902,
+        "peak_rss_mb": 878.53,
+        "tokens_predicted": 100,
+        "rouge_l_f1": 0.3288
+      }
+    ],
+    "server_endpoint": "http://127.0.0.1:50664/v1/chat/completions",
+    "file_size_mb": 745.82
+  },
+  "Q8_0": {
+    "model_path": "/Users/ysingh/PyCharmMiscProject/results/task4/model-Q8_0.gguf",
+    "num_generations": 10,
+    "generation_tokens": 100,
+    "mean_latency_sec": 0.636343,
+    "latency_std_sec": 0.038572,
+    "tokens_per_second": 157.148,
+    "peak_rss_mb_mean": 1224.17,
+    "peak_rss_mb_max": 1240.86,
+    "output_quality_rouge_l_f1": 0.2062,
+    "samples": [
+      {
+        "prompt": "Synthesize a list of questions to ask while interviewing a Graphic Designer.",
+        "reference": "1. What led you to pursue a career in Graphic Design? \n2. What do you consider to be your strengths and weaknesses when it comes to Graphic Design? \n3. What tools do you usually use for designing? \n4. What has been your most challenging project so far? \n5. What design processes do you typically follow? \n6. Describe your process for conceptualizing a design solution. \n7. What have been some of the most successful designs that you have developed? \n8. What do you consider to be the most important elements of a successful design? \n9. How do you approach color and typography in your work? \n10. How do you make sure the designs you create are easy to use? \n11. How do you make sure that your designs are visually appealing? \n12. Can you tell me about a successful project that you are particularly proud of? \n13. How do you stay up to date with the latest changes in Graphic Design? \n14. What do you think is the most important skill a Graphic Designer should have? \n15. How do you manage data and assets when working on your projects?\n16. How do you collaborate with other departments in order to ensure the successful completion of projects? \n17. What do you think about current trends in Graphic Design? \n18. How do you handle criticism when receiving feedback on your work? \n19. How do you engage your client to ensure that you have an understanding of their requirements?",
+        "generated": "1. What is your experience in Graphic Design?\n2. What are your skills in Graphic Design?\n3. What are your favorite design techniques?\n4. What are your favorite design tools?\n5. What are your favorite design projects?\n6. What are your goals for the future in Graphic Design?\n7. What are your strengths in Graphic Design?\n8. What are your weaknesses in Graphic Design?\n9. What are",
+        "latency_sec": 0.574229,
+        "peak_rss_mb": 1210.61,
+        "tokens_predicted": 100,
+        "rouge_l_f1": 0.2179
+      },
+      {
+        "prompt": "Compare the data storage methods for an online shopping website.",
+        "reference": "Data storage for an online shopping website can be divided into two primary methods: traditional databases and cloud-based storage. A traditional database stores all the website\u2019s data on-site on a physical server and offers the best performance. However, it is often the most expensive option and provides limited scalability due to the physical limitations of the server. On the other hand, cloud-based storage stores data on a remote server, generally owned and maintained by a third-party provider. This method is typically more affordable, easier to set up, and more suitable for large websites. Additionally, cloud-based solutions offer unparalleled scalability and security, as data can be easily backed up, accessed, and managed from anywhere.",
+        "generated": "The data storage methods for an online shopping website can vary depending on the type of data being stored. For example, if the data is primarily text-based, such as product descriptions or reviews, then a database would be used to store and retrieve the data. If the data is primarily images, such as product images or product videos, then a file system would be used to store and retrieve the data. If the data is primarily audio or video, then a file system would be used to",
+        "latency_sec": 0.586258,
+        "peak_rss_mb": 1213.56,
+        "tokens_predicted": 100,
+        "rouge_l_f1": 0.2029
+      },
+      {
+        "prompt": "Explain how to build a professional portfolio.",
+        "reference": "Building a professional portfolio involves creating a balanced mix of representative samples that showcase your skills and accomplishments. An important first step is to select a portfolio platform. Once the platform is selected, create a profile page to give a high-level overview of your experience. \n\nThe next step is to identify the types of items you want to include, such as resume, cover letter, work samples, letters of recommendation, certifications, awards and other relevant materials. Once you have compiled the items, organize them so that a viewer can easily navigate the page and quickly understand your accomplishment, expertise and career highlights. It\u2019s also important to keep the portfolio updated with your latest achievements.\n\nFinally, consider adding a professional headshot and designing the portfolio to reflect your personal style and brand. Once you are satisfied with the design of the portfolio, be sure to share it with your professional contacts and networks.",
+        "generated": "Building a professional portfolio is an important part of any career. It is a way to showcase your skills, knowledge, and experience to potential employers. Here are some steps to help you build a professional portfolio:\n\n1. Define your goals: Before you start building your portfolio, it is important to define your goals. What do you want to achieve with your portfolio? What skills do you want to showcase? What kind of work do you want to showcase",
+        "latency_sec": 0.615652,
+        "peak_rss_mb": 1216.39,
+        "tokens_predicted": 100,
+        "rouge_l_f1": 0.2165
+      },
+      {
+        "prompt": "Create a poem of 5 verses, each with 8 lines each, about a city skyline.",
+        "reference": "Verse 1\n\nThe city skyline stands so strong\nThrough the night its sky is long\nThe stars light up its ivory walls\nAnd fill the darkness with surreal calls\nThe lights below the sky unfold\nBridges to cities, stories untold\nVeils of clouds above them floating\nGlistens like a shimmering coating\n\nVerse 2\n\nA backdrop of amaranthine hues\nClimbing skyward, no one refuses\nThe sky above holds so much awe\nA cool gentle breeze, nature's claw\nTwinkling stars, the night aglow\nHung amidst the ebon sky's flow\nAn array of street lamps, glimmer dim\nDecorate the city's nightly trim\n\nVerse 3\n\nAn abbey stands atop a nearby hill\nThe night sky is so still\nMoonlight glistening off its steeple\nThe night air a refreshing tussle\nA formation of birds soaring free\nShadows of freedom, peacefully\nSpinning and twisting with grace\nThe night moves on at its pace\n\nVerse 4\n\nThe skyline sparkles a midnight blue\nThe dreamscape a dreamer's view\nSkyscrapers of the night so grand\nFrom far below, we see them stand\nThe stars and lights so bright above\nA hypnotizing sight, a sign of love\nBeacons of glory, up into the sky\nA beautiful sight for passersby\n\nVerse 5\n\nAt the break of morning we can see\nThe silhouettes of towers piercing free\nThe skyline changed, yet still the same\nThe city wakes, but only a few remain\nThe night is gone, but never ends\nDarkness fades and new beginnings lend\nMarveling at its beauty and its grace\nThe city skyline stands in its place.",
+        "generated": "The city skyline, a sight to behold\nA sight that's worth the trip\nThe towering buildings, a sight to see\nA sight that's worth the trip\n\nThe city skyline, a sight to see\nA sight that's worth the trip\nThe lights of the city, a sight to see\nA sight that's worth the trip\n\nThe city skyline, a sight to see\nA sight that's worth the trip\nThe",
+        "latency_sec": 0.644897,
+        "peak_rss_mb": 1219.19,
+        "tokens_predicted": 100,
+        "rouge_l_f1": 0.1796
+      },
+      {
+        "prompt": "Generate an example of what a resume should like for a culinary professional",
+        "reference": "Jean Tremaine\n1234 Main Street, Anytown, CA 98765\n(415) 555-1234 | j.tremaine@gmail.com\n\nEXPERIENCED CULINARY PROFESSIONAL\n\nHighly experienced chef and cook with a passion for creating dignified dishes, producing exceptional results in just about any cooking environment. Adept at innovating classic recipes to produce uniquely-flavored dishes while still meeting customer expectations.\n\n\u2022 Experienced in creating and executing full-menu dishes in both lunch and dinner settings\n\u2022 Certified in food handling and safety regulations with advanced understanding of health and government standards \n\u2022 In-depth knowledge and experience in all aspects of food preparation and kitchen management\n\u2022 Proven ability to quickly master new methods and recipes\n\u2022 Expert in using modern kitchen appliances, such as ovens, mixers, and fryers\n\u2022 Phenomenal collaboration and communication skills \n\nPROFESSIONAL EXPERIENCE\n\nChef de Cuisine | XYZ Restaurant | San Francisco, CA | May 2015 \u2013 Present\n\u2022 Crafted original and diverse menu items tailored to the restaurant\u2019s atmosphere and customers\n\u2022 Implemented innovative promotion and marketing strategies to increase lunch and dinner traffic\n\u2022 Managed frontline kitchen staff in all duties, including meal preparation and sanitation\n\u2022 Guided shifts to smoothly coordinate with incoming and outgoing kitchen staff, while providing efficient and quality service\n\u2022 Maintained quality control to ensure only excellent dishes leave the kitchen area\n\nAssistant Chef | ABC Restaurant | San Francisco, CA | August 2010 \u2013 April 2015\n\u2022 Assisted senior chef in creating daily menu, ensuring all dishes met the restaurant\u2019s standards of excellence\n\u2022 Developed original recipes as requested by head chef, employing creative flavors to devise signature dishes for the restaurant\n\u2022 Managed and monitored junior kitchen staff during meal service\n\u2022 Acted as an exemplary role model for junior chefs, providing friendly and professional guidance",
+        "generated": "A resume for a culinary professional should include information about the candidate's education, work experience, and skills. The resume should also include a list of the candidate's accomplishments and achievements. The resume should be written in a professional and clear style, with a clear introduction and conclusion. The resume should also include a list of the candidate's skills and experience in the culinary field. The resume should also include a list of references and a list of any",
+        "latency_sec": 0.647936,
+        "peak_rss_mb": 1222.2,
+        "tokens_predicted": 100,
+        "rouge_l_f1": 0.102
+      },
+      {
+        "prompt": "Compose a poem on the theme of autumn.",
+        "reference": "The leaves fall in the crispy air\nOn the ground they never dare\nAutumn\u2019s chill doth soothe and bless\nIn the season of nature\u2019s caress\n\nThe Sun dips low in the night\nLeaving all the stars to shine so bright\nFor a few weeks the trees bare their souls\nCreating mesmerising patterns of their own\n\nThe twilight paintings of the sky\nEach with their own majestic hue\nAs the colours of the trees revolve\nWe\u2019re blessed with the beauty of the Fall\n\nSo pause in nature\u2019s golden show\nBefore the winter will come with snow\nTake in and bask in this precious time\nCelebrate the glory of Autumn sublime.",
+        "generated": "Autumn's beauty is a sight to behold,\nA time of change and a time of rest.\nThe leaves turn to gold and red,\nA sight to behold and a time to be.\n\nThe air is crisp and cool,\nA time to take in the beauty of the world.\nThe trees sway in the breeze,\nA time to take in the beauty of the world.\n\nThe sun sets in the sky,\nA",
+        "latency_sec": 0.63968,
+        "peak_rss_mb": 1225.09,
+        "tokens_predicted": 100,
+        "rouge_l_f1": 0.2162
+      },
+      {
+        "prompt": "Think of some improvement ideas for a movie review website",
+        "reference": "Improvement ideas for a movie review website:\n1. Make it easier to find reviews; add search filters that allow users to think of relevant reviews based on genre, rating, and year of release.\n2. Allow reviews to be personalized; this could include allowing users to mark the reviews they liked and dislike, and then personalizing the reviews they see based on those interests.\n3. Make it easier to write reviews; create a template that prompts users to answer key questions and rate their experience with the movie.\n4. Allow users to interact with reviews; add an interactive feature that allows users to comment on reviews and give their perspective.\n5. Add an aggregate rating system; incorporate an overall user rating system to give users a sense of the general opinion of the movie.\n6. Add additional content; add photos, audios, and videos from the movie and related material to give users a more in-depth experience.",
+        "generated": "Here are some improvement ideas for a movie review website:\n- Add more information about the movie's plot, characters, and themes.\n- Add more reviews from different perspectives, such as critics, fans, and experts.\n- Add more information about the movie's production, such as the director, actors, and cinematography.\n- Add more information about the movie's soundtrack, such as the composer and the music style.\n- Add more information",
+        "latency_sec": 0.635805,
+        "peak_rss_mb": 1227.84,
+        "tokens_predicted": 100,
+        "rouge_l_f1": 0.1883
+      },
+      {
+        "prompt": "Describe how a Docker container works.",
+        "reference": "A Docker container is an isolated environment in which applications can be packaged and run. It consists of the application, system libraries, and other configuration files necessary for a specific task. The container runs within a docker host, which isolates the container from other host resources and is responsible for managing its life cycle. Docker containers are lightweight and highly portable; they can be quickly spun up and transported to different environments such as cloud, bare metal, and on-premises. Containers are isolated from the underlying host system so they can be securely run and managed. Docker also uses images which function like snapshots \u2013 making it easy to deploy and run applications reliably and consistently across different environments.",
+        "generated": "A Docker container is a lightweight, self-contained environment that can be used to run applications. It is created by running a Dockerfile, which specifies the dependencies and commands needed to build the container. The container is then run using the Docker CLI, which allows the user to interact with the container and its environment. The container can be used to run applications, store data, and perform other tasks. It is also used to create and manage multiple containers, allowing for scalability and flex",
+        "latency_sec": 0.63691,
+        "peak_rss_mb": 1230.64,
+        "tokens_predicted": 100,
+        "rouge_l_f1": 0.2772
+      },
+      {
+        "prompt": "Write a story given the characters and context below.\n\nInput:\nCharacters: \n- Lewis: A high school student\n- Ms. Wilson: Lewis's English teacher\n- Mark: Lewis's older brother\n\nContext:\nLewis is in his high school English class. His teacher, Ms. Wilson, is teaching a lesson about the power of words. The mood in the classroom is light, and everyone is enjoying the lesson. After class, Lewis is walking home with his older brother, Mark, when they stumble upon a secret book store.",
+        "reference": "Lewis had been dreading English class but today it was different. Ms. Wilson had decided to focus the lesson on the power of words and everyone was excited. She asked the class to reflect on how a single word could change the world and everyone was engaged in the discussion. \n\nAfter class, Lewis was walking home with his older brother, Mark, when they stumbled upon a secret bookstore. They were amazed to find racks filled with books of all kinds and topics. Lewis began to read some of the titles out loud and Mark watched as his brother's eyes lit up. Mark remembered reading about books like these when he was Lewis's age, but never thought it would be possible to find such a place in their small town. \n\nThe brothers started browsing through the shelves and soon Lewis had gathered an armful of books. Mark smiled as he watched his brother, seeing the same look of wonder on his face that he had seen years ago. Lewis thanked his brother for showing him the bookstore and Mark felt proud to see Lewis so excited about reading.",
+        "generated": "Lewis and Mark were walking home from school when they stumbled upon a secret book store. They were both excited to explore the store and see what they could find. As they walked through the store, they came across a book titled \"The Power of Words.\" They both read the book and were amazed by the power of words. They decided to take the book home and read it together. After reading the book, they both realized the importance of words and how they can have a",
+        "latency_sec": 0.705079,
+        "peak_rss_mb": 1235.28,
+        "tokens_predicted": 100,
+        "rouge_l_f1": 0.1812
+      },
+      {
+        "prompt": "Summarize the website link in maximum 100 words.\n\nInput:\nhttps://en.wikipedia.org/wiki/Inferential_statistics",
+        "reference": "Inferential statistics is a type of statistical analysis used to draw conclusions about a population based on a sample. It is used to make predictions and generalizations about a larger group of individuals, known as a population, on the basis of information obtained from a smaller group of individuals, known as a sample. It involves the use of statistical tests, such as hypothesis testing, to compare the data from the sample to the population mean. The results of inferential statistics are subject to variability and can be affected by factors such as sample size, population variability, and the nature of the statistical test used. Inferential statistics can be used to understand complex patterns in data and can be used to determine whether a relationship between two or more variables is real or the result of chance.",
+        "generated": "Inferential statistics is a branch of statistics that uses mathematical models to make inferences about the population from a sample. It is used in a variety of fields, including medicine, economics, and psychology. Inferential statistics is used to make predictions about the future based on the past data. It is used to make predictions about the population based on the sample data. It is used to make predictions about the future based on the past data. It is used to make predictions about the population",
+        "latency_sec": 0.676982,
+        "peak_rss_mb": 1240.86,
+        "tokens_predicted": 100,
+        "rouge_l_f1": 0.2805
+      }
+    ],
+    "server_endpoint": "http://127.0.0.1:50681/v1/chat/completions",
+    "file_size_mb": 1115.62
+  }
+}

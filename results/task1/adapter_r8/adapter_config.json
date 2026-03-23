@@ -6,7 +6,7 @@
     "fine_tune_type": "lora",
     "grad_accumulation_steps": 1,
     "grad_checkpoint": true,
-    "iters": 200,
+    "iters": 2000,
     "learning_rate": 0.0002,
     "lora_layers": 16,
     "lora_parameters": {
@@ -34,7 +34,7 @@
     "project_name": null,
     "report_to": null,
     "resume_adapter_file": null,
-    "save_every": 100,
+    "save_every": 1000,
     "seed": 0,
     "steps_per_eval": 100,
     "steps_per_report": 10,

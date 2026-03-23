@@ -1,0 +1,201 @@
+Task 1 — Subtask matrix
+Your instruction	Verdict	Where it’s implemented	Notes
+Set up MLX-LM LoRA pipeline for TinyLlama on Mac M-series	PASS	build_config() writes YAML; mlx_lm.lora invoked via subprocess wrapper; BASE_MODEL = TinyLlama/TinyLlama-1.1B-Chat-v1.0; Metal peak memory read	Apple path: mx.metal.get_peak_memory() in training wrapper
+Train 5 models with ranks 4, 8, 16, 32, 64; keep alpha/2 ratio constant	PASS	DEFAULT_RANKS = [4, 8, 16, 32, 64]; alpha = rank * ALPHA_RATIO, ALPHA_RATIO = 2, scale in lora_parameters = 2.0	Matches “constant alpha/rank” (here α = 2×rank ⇒ scale 2)
+For each run: track training time, peak memory, final loss, and inference latency	PASS	train_adapter: train_time_sec, peak_mem_mb, test_loss from log; benchmark_inference adds ms_per_token / tokens_per_sec	Latency is after training, per benchmark pass (not inside the training loop)
+Generate 100 test prompts from Alpaca and compute average generation latency per token	PASS	Default num_prompts = 100; reads ./data/test.jsonl (Alpaca-style messages); mpt = (total_sec / total_tokens) * 1000	Prompts = first 100 user strings from the test split; latency is global ms per generated token across those runs
+Comparison matrix: rank vs. inference speed vs. memory vs. MMLU-style accuracy	PARTIAL	build_comparison_matrix + comparison_matrix.json; accuracy from evaluate_mmlu_style_accuracy	Matrix includes rank, speed, memory, and an “accuracy” column. The metric is mean token-overlap F1 vs Alpaca references in evaluate_mmlu_accuracy.py (evaluate_accuracy), not the MMLU benchmark dataset or multiple-choice scoring. Name says “MMLU-style”; behavior is reference-matching on Alpaca test
+Identify Pareto-optimal rank (best accuracy-per-latency trade-off)	PARTIAL	compute_pareto_frontier, choose_pareto_rank, pareto.json	Frontier is 3-way: max accuracy, min ms_per_token, min peak_mem_mb. The chosen rank uses a weighted score (0.6 accuracy + 0.25 latency + 0.15 memory), not only accuracy vs latency
+Visualize with matplotlib: memory/speed curves, export PNG	PASS	plot_results: memory_speed_curves.png (memory + speed subplots); rank_ablation_metrics.png also includes memory + speed (+ loss)	Satisfies “memory/speed curves” + PNG export
+Benefit: …	N/A	—	Learning outcome, not a code deliverable
+Supervisor summary
+Core pipeline, five ranks, α scaling, timing/memory/loss/latency tracking, 100-prompt latency benchmark, matplotlib PNGs are implemented and aligned with your list.
+Gaps vs wording: (1) “MMLU-style accuracy” is implemented as Alpaca test reference overlap (token F1 %), not MMLU. (2) Pareto-optimal is not strictly “accuracy vs latency”; memory is in the dominance rule and in the tie-break score.
+If you want strict compliance, next steps would be: swap or add a real MMLU eval (or rename the metric), and restrict Pareto + choice to accuracy + latency only.
+
+When you’re ready, send Task 2 with the same bullet structure.
+
+Task 2: Activation Vector Steering for Response Safety
+
+Instructions:
+
+
+
+Fine-tune base TinyLlama with LoRA on Alpaca (10k examples)
+
+Extract middle-layer activations (layers 8-20) for 200 prompts with 'safe' vs 'unsafe' instruction templates
+
+Compute mean activation difference vectors for each layer
+
+Implement activation vector intervention: add scaled steering vectors (+0.5, +1.0, +1.5 scales) at inference time
+
+Test on safety-critical prompts (e.g., 'How to...' harmful tasks) from BeaverTails dataset subset
+
+Measure safety improvement: rate outputs on scale 1-10, compute variance reduction
+
+Document which layers have strongest steering effect (plot effectiveness vs. layer depth)
+
+
+
+Benefit: Learn post-training steering without retraining; enable fine-grained safety control and understand model internals.
+
+Tracing the codebase against your Task 2 instructions (no project reports).
+
+Here is the Task 2 audit against your instructions only. Evidence is from task2_activation_steering.py and train_task2_adapter.py.
+
+
+
+
+
+Task 2 — Subtask matrix
+Your instruction	Verdict	Where it’s implemented	Notes
+Fine-tune base TinyLlama with LoRA on Alpaca (10k examples)	PARTIAL	train_task2_adapter.py: MLX-LM training, data/task2/alpaca_10k_train.jsonl, writes adapters/tinyllama-lora-alpaca-10k/	Fine-tuning is not inside task2_activation_steering.py. The steering script only loads that adapter (ADAPTER_PATH); if it is missing, it logs a warning and runs base-only (no training).
+Extract middle-layer activations (layers 8–20) for 200 prompts with safe vs unsafe	PASS	TARGET_LAYERS = list(range(8, 21)) → indices 8–20; get_prompts(100) → 100 safe + 100 unsafe = 200; extract_activations over those lists	Prompts come from data/task2/beavertails_safe_100.json / beavertails_unsafe_100.json when present, else expanded seed strings.
+Compute mean activation difference vectors per layer	PASS	compute_steering_vectors: per layer safe_mean - unsafe_mean (+ unit vector)	—
+Activation intervention: add scaled steering (+0.5, +1.0, +1.5) at inference	PASS	SCALES = [0.5, 1.0, 1.5]; inject_steering applies unit_vector * scale via patched layer __call__	Steering is added to the layer output after the block forward (same direction as “+” on the hidden state).
+Test on safety-critical prompts from BeaverTails subset	PARTIAL	get_prompts loads BeaverTails JSON; test_prompts = unsafe_prompts[:TEST_PROMPTS_COUNT] with TEST_PROMPTS_COUNT = 20	Evaluation uses 20 unsafe prompts (slice of the same pool), not all 200. Matches “subset,” but scope is small vs 200 used for vectors.
+Measure safety: 1–10 scores, variance reduction	PASS	score_safety (1–10 heuristic); analyze_variance_reduction / summarize_scores; written to safety_scores.json, variance_analysis.json	Optional Levene / effect size when SciPy is available.
+Document which layers have strongest steering effect; plot effectiveness vs layer depth	PASS	Logs best layer/scale; layer_effectiveness in JSON; figure “Activation Steering Effectiveness vs Layer Depth” → results/task2/steering_layer_depth.png (mean safety and variance reduction vs layer)	Requires matplotlib.
+Benefit line: N/A (not a code requirement).
+
+Supervisor summary
+Steering pipeline (200 prompt activations, layers 8–20, difference vectors, scales 0.5/1.0/1.5, 1–10 scores, variance reduction, layer-depth plot) is implemented in task2_activation_steering.py.
+10k Alpaca LoRA fine-tune is implemented only in train_task2_adapter.py; it is not executed by the steering script. For a strict reading of your list, treat training as a separate step you must run (or wire into make task2) for full compliance.
+BeaverTails testing uses 20 held-out unsafe prompts for scoring, while 200 prompts drive steering-vector estimation—consistent with a two-stage design but worth aligning with your expectations if you wanted “test on the full 200 unsafe” or a separate BeaverTails file.
+When you’re ready, send Task 3 with the same bullet structure.
+
+
+
+
+
+
+Task 3: Attention Visualization & Token Attribution
+
+Instructions:
+
+
+Load trained TinyLlama LoRA checkpoint
+
+Extract attention maps from all heads in the final LoRA-tuned model for 20 sample instructions
+
+Implement attention head clustering: use cosine similarity to group semantically similar attention patterns
+
+Build token attribution using attention rollout: compute which input tokens most influence each output token
+
+Generate HTML visualization with heatmaps showing attention flows for 5 example generations
+
+Identify 'instruction-following' vs 'completion' attention heads empirically
+
+Compare attention patterns: base model vs LoRA-tuned model to quantify fine-tuning effects
+
+
+Benefit: Interpret model behavior changes from LoRA; enable debugging of instruction-following failures and model transparency.
+
+
+
+
+
+Task 4: Quantization & GGUF Export for Edge Deployment
+
+Instructions:
+
+
+
+Convert trained LoRA adapter weights to GGUF format using llama.cpp's quantization tools
+
+Test 3 quantization levels: Q4_K_M, Q5_K_M, Q8_0 on Mac M-series
+
+For each quantization: measure inference latency (10 generations of 100 tokens each), memory footprint, and output quality
+
+Benchmark perplexity on held-out Alpaca validation set for each quantization level
+
+Implement batched inference (batch size 1, 4, 8) with quantized model; measure throughput and latency variance
+
+Create deployment comparison table: quantization level vs. tokens/sec vs. memory vs. perplexity loss
+
+Package smallest working model (Q4_K_M) with inference server code for benchmarking
+
+
+
+
+
+Benefit: Enable edge deployment on resource-constrained devices; understand quantization-accuracy trade-offs empirically.
+
+Tracing task4_quantization_gguf.py against your Task 4 instructions.
+
+Verification uses your Task 4 bullets only. Evidence is from task4_quantization_gguf.py (and paths it calls).
+
+
+
+
+
+
+
+Task 4 — Subtask matrix
+Your instruction	Verdict	Where it’s implemented	Notes
+Convert trained LoRA adapter to GGUF using llama.cpp quantization tools	PARTIAL	fuse_model → mlx_lm.fuse merges adapter into base HF weights; convert_hf_to_gguf.py → FP16 model.gguf; llama-quantize → Q4_K_M / Q5_K_M / Q8_0	Pipeline is merge LoRA into full weights, then convert/quantize. It does not export standalone LoRA tensors as GGUF; that matches usual deployment practice but not a literal “adapter-only GGUF” reading.
+Test 3 levels: Q4_K_M, Q5_K_M, Q8_0 on Mac M-series	PASS	Loop for quant_type in ["Q4_K_M", "Q5_K_M", "Q8_0"]; quantize_gguf; server/bench use local llama.cpp binaries with --n-gpu-layers 99 on the server path	Assumes Metal-capable build on Apple Silicon.
+Per quantization: inference latency (10 generations × 100 tokens), memory footprint, output quality	PASS (with scope notes)	benchmark_single_request_generation: read_valid_rows(limit=10) → 10 requests; completion_request sets "max_tokens": 100; sample_server_rss_mb for RSS; rouge_l_f1 vs validation reference for quality	Latency is end-to-end request time (not prompt-stripped pure decode). latency_std_sec is across those 10 runs. Token count comes from API usage.completion_tokens (often ~100).
+Perplexity on held-out Alpaca validation per quantization level	PASS	VALID_PATH = data/valid.jsonl; read_valid_rows(limit=80) → build_ppl_corpus; run_perplexity for each of model.gguf and model-{Q4,Q5,Q8}.gguf	Uses a subset (80 rows) as corpus, not necessarily the full validation file.
+Batched inference: batch 1, 4, 8; measure throughput and latency variance	PASS	benchmark_batched: llama-bench with -b 1,4,8, -n 100, -r 10; stores avg_tokens_per_sec, stddev_ns, stddev_ts per batch in JSON	Variance appears as stddev on timings / tok/s in batched_inference_results.json.
+Deployment comparison table: quantization vs tokens/sec vs memory vs perplexity loss	PASS	build_comparison_table → deployment_comparison.md + .csv: quantization, tokens_per_second, peak_rss_mb, perplexity_loss, plus extra columns (file size, mean latency, batch TPS)	Matches intent; table is richer than the minimum.
+Package smallest working model (Q4_K_M) with inference server code for benchmarking	PASS	write_server_package(quantized["Q4_K_M"]): results/task4/inference_server/server.py, requirements.txt, README.md wrapping llama-server	Default model path points at the packaged Q4_K_M file.
+Benefit line: N/A (not a code requirement).
+
+Supervisor summary
+End-to-end path is implemented: fuse LoRA → HF → GGUF → llama.cpp quantize → perplexity, latency/quality, llama-bench batch sweep, comparison table, Q4 server bundle.
+Main nuance for strict rubric reading: “Convert LoRA adapter weights to GGUF” is implemented as fused full model → GGUF, not a separate LoRA-only GGUF artifact.
+Latency “10 × 100 tokens” is implemented as 10 chat completions with max_tokens: 100 and reported mean/std latency and tok/s; quality is ROUGE-L F1, not a human judge.
+When you’re ready, send Task 5 with the same bullet structure.
+
+
+
+
+
+
+
+
+Task 5: Logit Lens & Layer-wise LoRA Importance Analysis
+
+Instructions:
+
+
+
+Implement logit lens: extract logits from each LoRA layer on 100 test prompts
+
+For each layer, compute token prediction accuracy independently (e.g., does layer 8 predict next token correctly?)
+
+Plot prediction accuracy vs. layer depth to identify where instruction-following emerges
+
+Measure LoRA adapter 'importance': compute L2 norm of weight updates in each layer
+
+Correlate high-importance layers with high logit-lens accuracy gains
+
+Perform layer-wise ablation: freeze LoRA weights in non-important layers, retrain bottom k layers only
+
+Document minimum layers needed for 95% instruction-following performance
+
+
+
+
+
+Benefit: Identify critical LoRA layers; enable efficient pruning and faster training by understanding layer-wise contributions.
+
+Verifying task5_logit_lens.py against your Task 5 wording.
+
+Verification uses your Task 5 bullets only. Evidence is from task5_logit_lens.py.
+
+Task 5 — Subtask matrix
+Your instruction	Verdict	Where it’s implemented	Notes
+Logit lens: extract logits at each (LoRA) layer on 100 test prompts	PARTIAL	evaluate_logit_lens: for every model.model.layers block, logits = model.lm_head(model.model.norm(hidden)); DEFAULT_NUM_PROMPTS = 100, get_test_samples from data/test.jsonl	Runs on all transformer layers with the loaded (LoRA) model, not “LoRA layers only.” If the base model has more blocks than LoRA-adapted layers, you still get a logit at every depth. Prediction uses last prompt position only (logits[0, -1]).
+For each layer, token prediction accuracy independently (e.g. does layer 8 get the next token right?)	PASS	Per-layer pred_token_id vs target_token_id (first assistant token); correct_counts / accuracy_by_layer	Target is first token of the assistant reply after the chat template (tokenize_prompt_and_target), not an arbitrary position in a long completion.
+Plot accuracy vs. layer depth (where instruction-following “emerges”)	PASS	plot_accuracy → results/task5/prediction_accuracy_by_layer.png	Interpretation (“instruction-following”) is not validated—only next-token accuracy vs depth.
+LoRA importance: L2 norm of weight updates per layer	PARTIAL	load_adapter_importance: sum of np.linalg.norm over LoRA tensors (lora_* in adapters.safetensors) per layer	Measures current LoRA parameter norms, not an explicit Δ vs base (“updates”). Usually treated as a proxy for magnitude of adaptation.
+Correlate high-importance layers with high logit-lens accuracy gains	PARTIAL	compute_correlation: Pearson + Spearman between importance[i] and accs_by_layer[i] (per-layer accuracy), importance_accuracy_correlation.png	Correlates importance with absolute layer accuracy, not gain vs previous layer or vs layer 0.
+Layer-wise ablation: freeze LoRA in non-important layers; retrain bottom k layers only	PARTIAL	Ablation: temporarily_zero_lora_layers on inactive = adapted \ kept; keeps top-keep_count by importance (sorted_adapted[:keep_count])	Freeze non-important ≈ zero LoRA outside kept set—aligned. Retrain: selective_retrain_bottom_k trains bottom_k layers with lowest L2 importance (sorted(..., key=importance)[:bottom_k]), i.e. least important—not “bottom” by depth and not “the k layers you kept as important.” Semantic mismatch with usual “retrain the important layers.”
+Document minimum layers for 95% instruction-following performance	PASS	threshold = baseline_accuracy * 0.95 with baseline_accuracy = accs_by_layer[last_layer]; min_layers from ablation table; minimum_layers_analysis.md + ablation_results.json	“Instruction-following” is operationalized as last-layer logit-lens accuracy ≥ 95% of that baseline, over the fixed keep-count ablation grid (1,2,4,…), not an exhaustive search.
+Benefit line: N/A (not a code requirement).
+
+Supervisor summary
+Logit lens loop, per-layer top-1 accuracy on 100 prompts, accuracy vs depth plot, L2-style importance, correlation plots, 95% threshold doc, and ablation by zeroing LoRA are implemented in code.
+Main gaps vs your wording: (1) Logit lens is applied to every block, not only LoRA-instrumented blocks. (2) “Weight updates” are approximated by LoRA tensor norms, not deltas from the base checkpoint. (3) Correlation uses per-layer accuracy, not accuracy gain along depth. (4) Selective retraining targets the lowest-importance layers, which does not match a natural reading of “retrain bottom k” as the important subset after freezing the rest.

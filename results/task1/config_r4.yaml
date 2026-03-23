@@ -4,13 +4,13 @@ data: data
 seed: 0
 lora_layers: 16
 batch_size: 2
-iters: 200
+iters: 2000
 val_batches: 10
 learning_rate: 0.0002
 steps_per_report: 10
 steps_per_eval: 100
 adapter_path: results/task1/adapter_r4
-save_every: 100
+save_every: 1000
 test: true
 test_batches: 25
 max_seq_length: 512

@@ -1,0 +1,39 @@
+# Task 2: LoRA Configuration for 10k Alpaca Training
+# Dedicated adapter for activation steering task
+
+model: "TinyLlama/TinyLlama-1.1B-Chat-v1.0"
+train: true
+data: "./data/task2"
+seed: 42
+
+# LoRA configuration
+lora_layers: 16  # Apply to first 16 layers
+
+# Training hyperparameters
+batch_size: 2
+iters: 5000  # 5000 * 2 = 10k samples = 1.25 epochs over 8k training set
+learning_rate: 1e-4
+steps_per_report: 10
+steps_per_eval: 100
+
+# Validation & testing
+val_batches: 25
+test: true
+test_batches: 50
+
+# Checkpointing
+adapter_path: "./adapters/tinyllama-lora-alpaca-10k"
+save_every: 500
+resume_adapter_file: null
+
+# Memory optimization
+max_seq_length: 512
+grad_checkpoint: true
+mask_prompt: true
+
+# LoRA-specific parameters
+lora_parameters:
+  keys: ["self_attn.q_proj", "self_attn.v_proj"]
+  rank: 16
+  scale: 2.0  # alpha=32 / rank=16
+  dropout: 0.05

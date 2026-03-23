@@ -1,0 +1,27 @@
+{
+  "corpus": {
+    "path": "/Users/ysingh/PyCharmMiscProject/results/task4/alpaca_valid_corpus.txt",
+    "rows_used": 80,
+    "token_estimate": 14958
+  },
+  "model.gguf": {
+    "perplexity": 4.2722,
+    "perplexity_std": 0.08713,
+    "command": "/Users/ysingh/PyCharmMiscProject/llama.cpp/build/bin/llama-perplexity -m /Users/ysingh/PyCharmMiscProject/results/task4/model.gguf -c 2048 -f /Users/ysingh/PyCharmMiscProject/results/task4/alpaca_valid_corpus.txt --no-warmup -t 8"
+  },
+  "model-Q4_K_M.gguf": {
+    "perplexity": 4.3399,
+    "perplexity_std": 0.08819,
+    "command": "/Users/ysingh/PyCharmMiscProject/llama.cpp/build/bin/llama-perplexity -m /Users/ysingh/PyCharmMiscProject/results/task4/model-Q4_K_M.gguf -c 2048 -f /Users/ysingh/PyCharmMiscProject/results/task4/alpaca_valid_corpus.txt --no-warmup -t 8"
+  },
+  "model-Q5_K_M.gguf": {
+    "perplexity": 4.2859,
+    "perplexity_std": 0.08725,
+    "command": "/Users/ysingh/PyCharmMiscProject/llama.cpp/build/bin/llama-perplexity -m /Users/ysingh/PyCharmMiscProject/results/task4/model-Q5_K_M.gguf -c 2048 -f /Users/ysingh/PyCharmMiscProject/results/task4/alpaca_valid_corpus.txt --no-warmup -t 8"
+  },
+  "model-Q8_0.gguf": {
+    "perplexity": 4.2725,
+    "perplexity_std": 0.08712,
+    "command": "/Users/ysingh/PyCharmMiscProject/llama.cpp/build/bin/llama-perplexity -m /Users/ysingh/PyCharmMiscProject/results/task4/model-Q8_0.gguf -c 2048 -f /Users/ysingh/PyCharmMiscProject/results/task4/alpaca_valid_corpus.txt --no-warmup -t 8"
+  }
+}

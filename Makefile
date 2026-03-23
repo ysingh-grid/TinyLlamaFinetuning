@@ -304,3 +304,84 @@ ci: test-prepare test-train-lora test-train-qlora test-train-full \
 	@echo "══════════════════════════════════════════════════════════════════════"
 	@echo "  ✓ ALL CI SMOKE TESTS PASSED"
 	@echo "══════════════════════════════════════════════════════════════════════"
+
+task1:
+	$(PYTHON) task1_lora_rank_ablation.py
+
+task2:
+	@if [ ! -d "adapters/tinyllama-lora-alpaca-10k" ]; then \
+		echo "Adapter not found — fine-tuning TinyLlama with LoRA on Alpaca 10k..."; \
+		$(PYTHON) train_task2_adapter.py; \
+	else \
+		echo "Adapter already exists at adapters/tinyllama-lora-alpaca-10k — skipping training."; \
+	fi
+	$(PYTHON) task2_activation_steering.py
+
+task3:
+	$(PYTHON) task3_attention_visualization.py
+
+task4:
+	@echo "Running Task 4: Enhanced GGUF Quantization & Deployment"
+	$(PYTHON) task4_quantization_gguf.py
+	@echo ""
+	@echo "Note: Requires CMake for full GGUF conversion"
+	@echo "      Install: brew install cmake"
+
+task5:
+	@echo "Running Task 5: Enhanced Logit Lens + LoRA Importance"
+	$(PYTHON) task5_logit_lens.py
+
+# ── Per-task result cleanup (results are also cleared automatically on each run) ─
+.PHONY: clean-task1 clean-task2 clean-task3 clean-task4 clean-task5 clean-tasks-all
+
+clean-task1:
+	rm -rf results/task1
+	@echo "  ✓ results/task1 cleared"
+
+clean-task2:
+	rm -rf results/task2
+	@echo "  ✓ results/task2 cleared"
+
+clean-task3:
+	rm -rf results/task3
+	@echo "  ✓ results/task3 cleared"
+
+clean-task4:
+	rm -rf results/task4
+	@echo "  ✓ results/task4 cleared"
+
+clean-task5:
+	rm -rf results/task5
+	@echo "  ✓ results/task5 cleared"
+
+clean-tasks-all: clean-task1 clean-task2 clean-task3 clean-task4 clean-task5
+	@echo "  ✓ All task results cleared"
+
+tasks-all:
+	@echo "========================================="
+	@echo "Running All Tasks (Enhanced Versions)"
+	@echo "========================================="
+	@echo ""
+	@echo "Task 1: LoRA Rank Ablation..."
+	$(PYTHON) task1_lora_rank_ablation.py
+	@echo ""
+	@echo "Task 2: Activation Steering..."
+	$(PYTHON) task2_activation_steering.py
+	@echo ""
+	@echo "Task 3: Attention Visualization..."
+	$(PYTHON) task3_attention_visualization.py
+	@echo ""
+	@echo "Task 4: Enhanced GGUF Quantization..."
+	$(PYTHON) task4_quantization_gguf.py
+	@echo ""
+	@echo "Task 5: Enhanced Logit Lens..."
+	$(PYTHON) task5_logit_lens.py
+	@echo ""
+	@echo "✓ ALL TASKS COMPLETE"
+	@echo ""
+	@echo "📋 Results:"
+	@echo "  • Task 1: results/task1/comparison_matrix.json"
+	@echo "  • Task 2: results/task2/steering_layer_depth.png"
+	@echo "  • Task 3: results/task3/attention_heatmap_*.html"
+	@echo "  • Task 4: results/task4/gguf_models/procedure/"
+	@echo "  • Task 5: results/task5/enhanced_analysis.json"

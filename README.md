@@ -24,9 +24,10 @@
    - [Pairwise Judging (Primary)](#pairwise-judging-primary)
    - [Cosine Similarity Ranking (Alternative)](#cosine-similarity-ranking-alternative)
 10. [Results](#results)
-11. [Utility Scripts](#utility-scripts)
-12. [Project Layout](#project-layout)
-13. [Troubleshooting](#troubleshooting)
+11. [Advanced Tasks (1-5)](#advanced-tasks-1-5)
+12. [Utility Scripts](#utility-scripts)
+13. [Project Layout](#project-layout)
+14. [Troubleshooting](#troubleshooting)
 
 ---
 
@@ -469,6 +470,165 @@ make demo
 - **Inference / Compare**: choose any two of the six models, enter a prompt + optional system message, and generate both responses with shared temperature / top-p / max-tokens / repetition-penalty sliders, plus per-model token/time stats.
 - **Data Collection**: generate a response from a chosen model, edit it, and save it into `data/collected.jsonl` as `[user, assistant]` message pairs in MLX-ready format (with a live example counter and download button).
 - **Dataset Stats / EDA**: compute basic statistics over `data/train.jsonl` (length distribution, top/bottom 10 examples) and render `data/eda_report.md` if present.
+
+---
+
+## Advanced Tasks (1-5)
+
+Five standalone advanced ML tasks for model interpretability, optimization, and edge deployment. Each task generates detailed reports and visualizations in `results/task{1,2,3,4,5}/`.
+
+### Task 1: LoRA Rank Ablation Study
+
+**Objective**: Train 5 models with different LoRA ranks [4, 8, 16, 32, 64] and identify the Pareto-optimal rank (best accuracy-per-latency trade-off).
+
+**What it does**:
+- Trains each rank with alpha = rank * 2 (keeping alpha/2 ratio constant)
+- Measures: training time, peak memory, final loss, inference latency per token
+- Generates 100 test prompts from Alpaca and computes average generation latency
+- Creates comparison matrix and Pareto frontier visualization
+
+**Run it**:
+```bash
+make task1
+# Or with custom parameters:
+.venv/bin/python task1_lora_rank_ablation.py --ranks 4 8 16 32 64 --iters 500
+```
+
+**Outputs**:
+- `results/task1/comparison_matrix.json` — metrics table
+- `results/task1/rank_ablation_metrics.png` — memory/speed/loss curves
+- `results/task1/pareto.json` — Pareto-optimal rank
+- `results/task1/adapter_r{4,8,16,32,64}/` — trained adapters
+
+**ETA**: ~2-4 hours (trains 5 models sequentially)
+
+---
+
+### Task 2: Activation Vector Steering for Response Safety
+
+**Objective**: Implement post-training safety steering via activation editing on middle layers.
+
+**What it does**:
+- Extracts activations from layers 8-20 for 200 prompts with 'safe' vs 'unsafe' templates
+- Computes mean activation difference vectors per layer
+- Implements activation intervention at inference time with scales [0.5, 1.0, 1.5]
+- Tests on safety-critical prompts from BeaverTails dataset subset
+- Rates outputs 1-10 for safety, computes variance reduction
+- Plots layer-wise steering effectiveness
+
+**Run it**:
+```bash
+make task2
+# Or specify adapter:
+.venv/bin/python task2_activation_steering.py --adapter adapters/tinyllama-lora-alpaca
+```
+
+**Outputs**:
+- `results/task2/safety_evaluation.json` — safety ratings and statistics
+- `results/task2/steering_layer_depth.png` — layer effectiveness plot
+
+**ETA**: ~30 minutes
+
+---
+
+### Task 3: Attention Visualization & Token Attribution
+
+**Objective**: Visualize and interpret attention patterns to understand how LoRA changes instruction-following behavior.
+
+**What it does**:
+- Extracts attention maps from all heads for 20 sample instructions
+- Implements attention head clustering via cosine similarity
+- Builds token attribution using attention rollout (which input tokens influence each output token)
+- Generates HTML visualizations with heatmaps
+- Identifies 'instruction-following' vs 'completion' attention heads
+- Compares base model vs LoRA-tuned attention patterns
+
+**Run it**:
+```bash
+make task3
+# Or with base model specified:
+.venv/bin/python task3_attention_visualization.py --base-model TinyLlama/TinyLlama-1.1B-Chat-v1.0
+```
+
+**Outputs**:
+- `results/task3/attention_heatmap_*.html` — interactive per-prompt visualizations
+- `results/task3/base_vs_lora_attention_diff.png` — comparison plot
+- `results/task3/head_classification_*.json` — clustered head analysis
+
+**ETA**: ~20 minutes
+
+---
+
+### Task 4: Quantization & GGUF Export for Edge Deployment
+
+**Objective**: Convert trained LoRA adapters to GGUF format and benchmark quantized models for edge deployment.
+
+**What it does**:
+- Converts LoRA adapter weights to GGUF format using llama.cpp quantization tools
+- Tests 3 quantization levels: Q4_K_M (4-bit), Q5_K_M (5-bit), Q8_0 (8-bit)
+- For each quantization: measures inference latency (10 gens × 100 tokens), memory footprint, output quality
+- Benchmarks perplexity on held-out Alpaca validation set
+- Implements batched inference (batch size 1, 4, 8) and measures throughput/latency variance
+- Creates deployment comparison table
+- Packages smallest working model (Q4_K_M) with inference server code
+
+**Run it**:
+```bash
+make task4
+# Or specify adapter:
+.venv/bin/python task4_quantization_gguf.py --adapter adapters/tinyllama-lora-alpaca
+```
+
+**Outputs**:
+- `results/task4/quantization_report.md` — benchmark results and deployment guide
+- `results/task4/gguf_models/` — quantized models (Q4_K_M, Q5_K_M, Q8_0)
+
+**ETA**: ~45 minutes
+
+**Note**: Requires llama.cpp (auto-installed if missing)
+
+---
+
+### Task 5: Logit Lens & Layer-wise LoRA Importance Analysis
+
+**Objective**: Analyze which LoRA layers are most critical for instruction-following and identify minimum layers needed for 95% performance.
+
+**What it does**:
+- Implements logit lens: extracts logits from each LoRA layer on 100 test prompts
+- For each layer, computes token prediction accuracy independently
+- Plots prediction accuracy vs layer depth to identify where instruction-following emerges
+- Measures LoRA adapter 'importance': L2 norm of weight updates in each layer
+- Correlates high-importance layers with high logit-lens accuracy gains
+- Performs layer-wise ablation: freezes LoRA weights in non-important layers, retrains bottom k layers only
+- Documents minimum layers needed for 95% instruction-following performance
+
+**Run it**:
+```bash
+make task5
+# Or specify adapter:
+.venv/bin/python task5_logit_lens.py --adapter adapters/tinyllama-lora-alpaca
+```
+
+**Outputs**:
+- `results/task5/logit_lens_report.md` — layer-wise analysis and ablation results
+- `results/task5/layer_accuracy_curve.png` — accuracy vs depth plot
+- `results/task5/importance_scores.json` — L2 norms per layer
+
+**ETA**: ~30 minutes
+
+---
+
+### Run All Advanced Tasks
+
+To execute all 5 tasks sequentially:
+
+```bash
+make tasks-all
+```
+
+**Total ETA**: ~4-6 hours
+
+Each task is self-contained and can be run independently. Task outputs are saved to `results/task{1,2,3,4,5}/` with reports (Markdown/JSON) and visualizations (PNG/HTML).
 
 ---
 

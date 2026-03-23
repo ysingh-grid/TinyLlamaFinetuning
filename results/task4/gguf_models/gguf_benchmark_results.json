@@ -1,0 +1,26 @@
+{
+  "Q4_K_M": {
+    "model_path": "results/task4/gguf_models/model-Q4_K_M.gguf",
+    "size_mb": 636.8796081542969,
+    "benchmark": {
+      "output": "",
+      "timestamp": 1773917737.367317
+    }
+  },
+  "Q5_K_M": {
+    "model_path": "results/task4/gguf_models/model-Q5_K_M.gguf",
+    "size_mb": 745.8171081542969,
+    "benchmark": {
+      "output": "",
+      "timestamp": 1773917744.508161
+    }
+  },
+  "Q8_0": {
+    "model_path": "results/task4/gguf_models/model-Q8_0.gguf",
+    "size_mb": 1115.6178894042969,
+    "benchmark": {
+      "output": "",
+      "timestamp": 1773917755.2017732
+    }
+  }
+}

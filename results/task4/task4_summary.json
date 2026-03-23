@@ -1,0 +1,54 @@
+{
+  "artifacts": {
+    "model.gguf": "/Users/ysingh/PyCharmMiscProject/results/task4/model.gguf",
+    "model-Q4_K_M.gguf": "/Users/ysingh/PyCharmMiscProject/results/task4/model-Q4_K_M.gguf",
+    "model-Q5_K_M.gguf": "/Users/ysingh/PyCharmMiscProject/results/task4/model-Q5_K_M.gguf",
+    "model-Q8_0.gguf": "/Users/ysingh/PyCharmMiscProject/results/task4/model-Q8_0.gguf",
+    "perplexity_results.json": "/Users/ysingh/PyCharmMiscProject/results/task4/perplexity_results.json",
+    "latency_benchmarks.json": "/Users/ysingh/PyCharmMiscProject/results/task4/latency_benchmarks.json",
+    "batched_inference_results.json": "/Users/ysingh/PyCharmMiscProject/results/task4/batched_inference_results.json",
+    "deployment_comparison.md": "/Users/ysingh/PyCharmMiscProject/results/task4/deployment_comparison.md",
+    "deployment_comparison.csv": "/Users/ysingh/PyCharmMiscProject/results/task4/deployment_comparison.csv",
+    "quantization_analysis.md": "/Users/ysingh/PyCharmMiscProject/results/task4/quantization_analysis.md",
+    "conversion_logs.txt": "/Users/ysingh/PyCharmMiscProject/results/task4/conversion_logs.txt",
+    "server_package": "/Users/ysingh/PyCharmMiscProject/results/task4/inference_server"
+  },
+  "comparison_rows": [
+    {
+      "quantization": "Q4_K_M",
+      "file_size_mb": 636.88,
+      "tokens_per_second": 214.529,
+      "mean_latency_sec": 0.4661,
+      "peak_rss_mb": 748.64,
+      "perplexity": 4.3399,
+      "perplexity_loss": 0.0677,
+      "batch_1_tps": 197.074,
+      "batch_4_tps": 198.918,
+      "batch_8_tps": 193.096
+    },
+    {
+      "quantization": "Q5_K_M",
+      "file_size_mb": 745.82,
+      "tokens_per_second": 166.378,
+      "mean_latency_sec": 0.601,
+      "peak_rss_mb": 862.18,
+      "perplexity": 4.2859,
+      "perplexity_loss": 0.0137,
+      "batch_1_tps": 144.095,
+      "batch_4_tps": 139.196,
+      "batch_8_tps": 116.52
+    },
+    {
+      "quantization": "Q8_0",
+      "file_size_mb": 1115.62,
+      "tokens_per_second": 157.148,
+      "mean_latency_sec": 0.6363,
+      "peak_rss_mb": 1224.17,
+      "perplexity": 4.2725,
+      "perplexity_loss": 0.0003,
+      "batch_1_tps": 95.942,
+      "batch_4_tps": 80.914,
+      "batch_8_tps": 80.567
+    }
+  ]
+}

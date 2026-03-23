@@ -1,0 +1,32 @@
+{
+  "4": {
+    "accuracy": 0.0,
+    "exact_match": 0.0,
+    "fuzzy_match": 0.0,
+    "total_evaluated": 100
+  },
+  "8": {
+    "accuracy": 0.0,
+    "exact_match": 0.0,
+    "fuzzy_match": 0.0,
+    "total_evaluated": 100
+  },
+  "16": {
+    "accuracy": 0.0,
+    "exact_match": 0.0,
+    "fuzzy_match": 0.0,
+    "total_evaluated": 100
+  },
+  "32": {
+    "accuracy": 0.0,
+    "exact_match": 0.0,
+    "fuzzy_match": 0.0,
+    "total_evaluated": 100
+  },
+  "64": {
+    "accuracy": 0.0,
+    "exact_match": 0.0,
+    "fuzzy_match": 0.0,
+    "total_evaluated": 100
+  }
+}

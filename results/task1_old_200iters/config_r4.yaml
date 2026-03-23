@@ -1,0 +1,25 @@
+model: TinyLlama/TinyLlama-1.1B-Chat-v1.0
+train: true
+data: data
+seed: 0
+lora_layers: 16
+batch_size: 2
+iters: 200
+val_batches: 10
+learning_rate: 0.0002
+steps_per_report: 10
+steps_per_eval: 100
+adapter_path: results/task1/adapter_r4
+save_every: 100
+test: true
+test_batches: 25
+max_seq_length: 512
+grad_checkpoint: true
+mask_prompt: true
+lora_parameters:
+  keys:
+  - self_attn.q_proj
+  - self_attn.v_proj
+  rank: 4
+  scale: 2.0
+  dropout: 0.05

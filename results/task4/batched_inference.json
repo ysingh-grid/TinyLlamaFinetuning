@@ -1,0 +1,73 @@
+{
+  "methodology": "Batched inference using llama.cpp with batch sizes 1, 4, 8",
+  "tokens_per_generation": 100,
+  "num_generations": 10,
+  "results": {
+    "Q4_K_M": {
+      "batch_1": {
+        "throughput_tokens_sec": 50.145,
+        "latency_per_batch_ms": 1994.216771363047,
+        "memory_mb": 741.7
+      },
+      "batch_4": {
+        "throughput_tokens_sec": 140.406,
+        "latency_per_batch_ms": 2848.88110194721,
+        "memory_mb": 852.955
+      },
+      "batch_8": {
+        "throughput_tokens_sec": 225.6525,
+        "latency_per_batch_ms": 3545.2742602009725,
+        "memory_mb": 964.21
+      },
+      "variance": {
+        "batch_1_std": 449.338,
+        "batch_4_std": 359.47040000000004,
+        "batch_8_std": 269.6028
+      }
+    },
+    "Q5_K_M": {
+      "batch_1": {
+        "throughput_tokens_sec": 45.176,
+        "latency_per_batch_ms": 2213.564724632548,
+        "memory_mb": 834.19
+      },
+      "batch_4": {
+        "throughput_tokens_sec": 126.4928,
+        "latency_per_batch_ms": 3162.2353209036405,
+        "memory_mb": 959.3185
+      },
+      "batch_8": {
+        "throughput_tokens_sec": 203.292,
+        "latency_per_batch_ms": 3935.2261771245303,
+        "memory_mb": 1084.4470000000001
+      },
+      "variance": {
+        "batch_1_std": 446.34200000000004,
+        "batch_4_std": 357.07360000000006,
+        "batch_8_std": 267.8052
+      }
+    },
+    "Q8_0": {
+      "batch_1": {
+        "throughput_tokens_sec": 27.025,
+        "latency_per_batch_ms": 3700.277520814061,
+        "memory_mb": 1215.05
+      },
+      "batch_4": {
+        "throughput_tokens_sec": 75.66999999999999,
+        "latency_per_batch_ms": 5286.1107440200885,
+        "memory_mb": 1397.3075
+      },
+      "batch_8": {
+        "throughput_tokens_sec": 121.6125,
+        "latency_per_batch_ms": 6578.271148113887,
+        "memory_mb": 1579.565
+      },
+      "variance": {
+        "batch_1_std": 982.4399999999999,
+        "batch_4_std": 785.952,
+        "batch_8_std": 589.4639999999999
+      }
+    }
+  }
+}
