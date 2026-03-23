@@ -224,3 +224,4 @@ adapters/
 *.pth
 *.index.json
 *.gguf
+results/task4/gguf_models/
