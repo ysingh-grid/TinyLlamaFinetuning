@@ -657,7 +657,6 @@ def summarize_layers(
         layer_completion = completion[layer]
         layer_entropy = entropy[layer]
         layer_net = layer_instruction - layer_completion
-        labels = head_labels[layer * num_heads : (layer + 1) * num_heads]
         summaries.append(
             {
                 "layer": layer,
@@ -665,8 +664,8 @@ def summarize_layers(
                 "completion_mean": safe_float(layer_completion.mean()),
                 "entropy_mean": safe_float(layer_entropy.mean()),
                 "net_mean": safe_float(layer_net.mean()),
-                "instruction_heads": int(np.sum(labels == 1)),
-                "completion_heads": int(np.sum(labels == -1)),
+                "instruction_heads": int(np.sum(layer_net >= 0)),
+                "completion_heads": int(np.sum(layer_net < 0)),
                 "confidence_mean": safe_float(head_confidence[layer * num_heads : (layer + 1) * num_heads].mean()),
             }
         )
@@ -860,7 +859,10 @@ def analyze_model(
             }
         )
 
-    layer_summary = summarize_layers(model_name, layer_instruction, layer_completion, layer_entropy, flat_labels, confidences)
+    head_instr_by_layer = head_instruction.mean(axis=1).reshape(num_layers, num_heads)
+    head_comp_by_layer = head_completion.mean(axis=1).reshape(num_layers, num_heads)
+    head_entr_by_layer = head_entropy.mean(axis=1).reshape(num_layers, num_heads)
+    layer_summary = summarize_layers(model_name, head_instr_by_layer, head_comp_by_layer, head_entr_by_layer, flat_labels, confidences)
 
     result = {
         "model_name": model_name,
@@ -965,9 +967,190 @@ def build_layer_report(base_result: Dict[str, Any], lora_result: Dict[str, Any])
     return payload, "\n".join(md)
 
 
+def generate_summary_files(base_result: Dict[str, Any], lora_result: Dict[str, Any], prompts: Sequence[str]) -> None:
+    """Write analysis_summary.json and TASK3_COMPLETION_SUMMARY.txt from actual computed metrics."""
+
+    base_cls = base_result["classification"]
+    lora_cls = lora_result["classification"]
+    num_layers = base_result["num_layers"]
+    num_heads = base_result["num_heads"]
+    total_heads = num_layers * num_heads
+
+    base_instr_pct = 100.0 * base_cls["instruction_count"] / max(total_heads, 1)
+    lora_instr_pct = 100.0 * lora_cls["instruction_count"] / max(total_heads, 1)
+    head_shift = lora_cls["instruction_count"] - base_cls["instruction_count"]
+
+    # Mean attention focus — average the per-sample summary value across all prompts.
+    def _mean_focus(result: Dict[str, Any]) -> float:
+        values = [r[result["model_name"]]["summary"]["attention_focus"]
+                  for r in result["sample_records"]
+                  if result["model_name"] in r and r[result["model_name"]] is not None]
+        return float(np.mean(values)) if values else 0.0
+
+    base_focus = _mean_focus(base_result)
+    lora_focus = _mean_focus(lora_result)
+    focus_delta_pct = 100.0 * (lora_focus - base_focus) / max(abs(base_focus), 1e-9)
+
+    base_entropy = float(np.mean([r["Base"]["summary"]["entropy_mean"]
+                                  for r in base_result["sample_records"]
+                                  if r.get("Base") is not None]))
+    lora_entropy = float(np.mean([r["LoRA"]["summary"]["entropy_mean"]
+                                  for r in lora_result["sample_records"]
+                                  if r.get("LoRA") is not None]))
+
+    # Top changed layers from layer_analysis
+    layer_payload_path = RESULTS_DIR / "layer_analysis.json"
+    top_layers: list = []
+    if layer_payload_path.exists():
+        with open(layer_payload_path, encoding="utf-8") as fh:
+            top_layers = json.load(fh).get("top_layers_by_change", [])
+
+    # Top instruction-following and completion heads from both models.
+    top_instr_heads = base_result["top_heads"][:4]
+    top_comp_heads = base_result["bottom_heads"][:4]
+    lora_top_instr = lora_result["top_heads"][:4]
+    lora_top_comp = lora_result["bottom_heads"][:4]
+
+    summary: Dict[str, Any] = {
+        "model": BASE_MODEL,
+        "adapter": str(ADAPTER_PATH),
+        "num_prompts": len(prompts),
+        "architecture": {"num_layers": num_layers, "num_heads": num_heads, "total_heads": total_heads},
+        "head_classification": {
+            "base": {
+                "instruction_following": base_cls["instruction_count"],
+                "instruction_following_pct": round(base_instr_pct, 2),
+                "completion": base_cls["completion_count"],
+                "completion_pct": round(100.0 - base_instr_pct, 2),
+                "mean_diff": round(base_cls["mean_diff"], 6),
+                "confidence_mean": round(base_cls["confidence_mean"], 4),
+            },
+            "lora": {
+                "instruction_following": lora_cls["instruction_count"],
+                "instruction_following_pct": round(lora_instr_pct, 2),
+                "completion": lora_cls["completion_count"],
+                "completion_pct": round(100.0 - lora_instr_pct, 2),
+                "mean_diff": round(lora_cls["mean_diff"], 6),
+                "confidence_mean": round(lora_cls["confidence_mean"], 4),
+            },
+            "head_shift": int(head_shift),
+            "shift_direction": "instruction→completion" if head_shift < 0 else "completion→instruction",
+        },
+        "attention_focus": {
+            "base_mean": round(base_focus, 4),
+            "lora_mean": round(lora_focus, 4),
+            "delta_pct": round(focus_delta_pct, 2),
+        },
+        "attention_entropy": {
+            "base_mean": round(base_entropy, 4),
+            "lora_mean": round(lora_entropy, 4),
+        },
+        "top_changed_layers": top_layers,
+        "top_instruction_following_heads": {
+            "base": [{"layer": h["layer"], "head": h["head"], "net_score": round(h["net_score"], 5)} for h in top_instr_heads],
+            "lora": [{"layer": h["layer"], "head": h["head"], "net_score": round(h["net_score"], 5)} for h in lora_top_instr],
+        },
+        "top_completion_heads": {
+            "base": [{"layer": h["layer"], "head": h["head"], "net_score": round(h["net_score"], 5)} for h in top_comp_heads],
+            "lora": [{"layer": h["layer"], "head": h["head"], "net_score": round(h["net_score"], 5)} for h in lora_top_comp],
+        },
+        "outputs": {
+            "html_heatmaps": HTML_SAMPLES,
+            "detailed_html": DETAILED_HTML_SAMPLES,
+            "clustering_plots": ["head_clustering_Base.png", "head_clustering_LoRA.png", "head_clustering_Comparison.png"],
+            "comparison_plots": ["base_vs_lora_comparison.png", "base_vs_lora_attention_diff.png", "multi_head_visualization.png"],
+            "json_outputs": ["layer_analysis.json", "head_classification.json", "analysis_summary.json"],
+        },
+    }
+
+    (RESULTS_DIR / "analysis_summary.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")
+    logging.info("Saved analysis_summary.json")
+
+    avg_delta = float(np.mean([abs(e["delta_net"]) for e in top_layers])) if top_layers else 0.0
+    shift_word = "shifted" if head_shift != 0 else "unchanged"
+    top5 = "\n".join(
+        f"     {i+1}. Layer {e['layer']}: delta_net = {e['delta_net']:+.6f}"
+        for i, e in enumerate(top_layers[:5])
+    )
+
+    txt = f"""\
+================================================================================
+TASK 3: ATTENTION VISUALIZATION & TOKEN ATTRIBUTION - COMPLETION SUMMARY
+================================================================================
+
+STATUS: ALL 7 SUBTASKS COMPLETED
+
+================================================================================
+SUBTASK COMPLETION DETAILS
+================================================================================
+
+1. LOAD TRAINED TINYLLAMA LORA CHECKPOINT
+   Adapter : {ADAPTER_PATH}
+   Model   : {BASE_MODEL}
+
+2. EXTRACT ATTENTION MAPS FROM ALL HEADS ({len(prompts)} SAMPLES)
+   Layers  : {num_layers}   Heads/layer : {num_heads}   Total : {total_heads}
+   Samples : {len(prompts)} Alpaca instructions
+
+3. IMPLEMENT ATTENTION HEAD CLUSTERING
+   Method    : cosine similarity + hierarchical average-linkage (scipy)
+   Clusters  : {CLUSTER_COUNT}
+   Outputs   : head_clustering_Base.png, head_clustering_LoRA.png, head_clustering_Comparison.png
+
+4. BUILD TOKEN ATTRIBUTION USING ATTENTION ROLLOUT
+   Algorithm : recursive attention composition across all {num_layers} layers
+   Criterion : last-output-token attribution to input tokens
+
+5. GENERATE HTML VISUALIZATION WITH HEATMAPS
+   Files     : {HTML_SAMPLES} HTML heatmaps (attention_heatmap_prompt_XX.html)
+   Detailed  : first {DETAILED_HTML_SAMPLES} include per-head table
+
+6. IDENTIFY INSTRUCTION-FOLLOWING VS COMPLETION HEADS
+   Criterion : mean response→prompt attention  vs  mean local response attention
+
+   BASE MODEL
+     Instruction-following : {base_cls["instruction_count"]} / {total_heads} ({base_instr_pct:.1f}%)
+     Completion            : {base_cls["completion_count"]} / {total_heads} ({100-base_instr_pct:.1f}%)
+     Mean confidence       : {base_cls["confidence_mean"]:.4f}
+
+   LORA MODEL
+     Instruction-following : {lora_cls["instruction_count"]} / {total_heads} ({lora_instr_pct:.1f}%)
+     Completion            : {lora_cls["completion_count"]} / {total_heads} ({100-lora_instr_pct:.1f}%)
+     Mean confidence       : {lora_cls["confidence_mean"]:.4f}
+
+   HEAD SHIFT after LoRA: {head_shift:+d} heads {shift_word}
+   ({abs(head_shift)} heads shifted {'instruction→completion' if head_shift < 0 else 'completion→instruction'})
+
+7. COMPARE ATTENTION PATTERNS: BASE VS LORA-TUNED
+   Attention focus  : base={base_focus:.4f}  lora={lora_focus:.4f}  delta={focus_delta_pct:+.1f}%
+   Attention entropy: base={base_entropy:.4f}  lora={lora_entropy:.4f}
+
+   TOP 5 MOST AFFECTED LAYERS (by |delta_net|):
+{top5}
+   Average |delta_net| across all layers : {avg_delta:.6f}
+
+================================================================================
+OUTPUT LOCATIONS — results/task3/
+================================================================================
+
+  HTML heatmaps  : attention_heatmap_prompt_00.html … _19.html
+  Clustering     : head_clustering_Base/LoRA/Comparison.png
+  Comparison     : base_vs_lora_comparison.png, base_vs_lora_attention_diff.png
+  Multi-head viz : multi_head_visualization.png
+  JSON outputs   : layer_analysis.json, head_classification.json, analysis_summary.json
+  Markdown       : layer_analysis.md
+
+================================================================================
+"""
+    (RESULTS_DIR / "TASK3_COMPLETION_SUMMARY.txt").write_text(txt, encoding="utf-8")
+    logging.info("Saved TASK3_COMPLETION_SUMMARY.txt")
+
+
 def save_results(base_result: Dict[str, Any], lora_result: Dict[str, Any], prompts: Sequence[str]) -> None:
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
 
+    # Per-pass cleanup of non-clustering artifacts (clustering PNGs are regenerated
+    # during analyze_model before save_results is called, so they must not be deleted here).
     for pattern in [
         "attention_heatmap_*.html",
         "multi_head_visualization.png",
@@ -978,6 +1161,8 @@ def save_results(base_result: Dict[str, Any], lora_result: Dict[str, Any], promp
         "head_classification.json",
         "head_classification_Base.json",
         "head_classification_LoRA.json",
+        "analysis_summary.json",
+        "TASK3_COMPLETION_SUMMARY.txt",
     ]:
         for path in RESULTS_DIR.glob(pattern):
             try:
@@ -1042,6 +1227,8 @@ def save_results(base_result: Dict[str, Any], lora_result: Dict[str, Any], promp
         json.dumps(lora_result["classification"], indent=2), encoding="utf-8"
     )
 
+    generate_summary_files(base_result, lora_result, prompts)
+
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Task 3: Attention Visualization & Token Attribution")
@@ -1050,9 +1237,8 @@ def main() -> None:
 
     if RESULTS_DIR.exists():
         logging.info("Cleaning previous Task 3 artifacts in %s", RESULTS_DIR)
-        RESULTS_DIR.mkdir(parents=True, exist_ok=True)
-    else:
-        RESULTS_DIR.mkdir(parents=True, exist_ok=True)
+        shutil.rmtree(RESULTS_DIR, ignore_errors=True)
+    RESULTS_DIR.mkdir(parents=True, exist_ok=True)
 
     prompts = get_prompts(max(HTML_SAMPLES, args.num_samples))
     prompts = prompts[: args.num_samples]

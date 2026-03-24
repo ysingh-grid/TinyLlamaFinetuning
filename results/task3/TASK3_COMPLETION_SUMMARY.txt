@@ -2,237 +2,70 @@
 TASK 3: ATTENTION VISUALIZATION & TOKEN ATTRIBUTION - COMPLETION SUMMARY
 ================================================================================
 
-EXECUTION TIME: ~37 seconds (2026-03-22 20:48:34 to 20:49:11)
-STATUS: ✅ ALL 7 SUBTASKS COMPLETED SUCCESSFULLY
+STATUS: ALL 7 SUBTASKS COMPLETED
 
 ================================================================================
 SUBTASK COMPLETION DETAILS
 ================================================================================
 
-✅ 1. LOAD TRAINED TINYLLAMA LORA CHECKPOINT
-   - Successfully loaded: adapters/tinyllama-lora-alpaca
-   - Model: TinyLlama/TinyLlama-1.1B-Chat-v1.0 with LoRA adapters
-   - Ready for attention extraction
+1. LOAD TRAINED TINYLLAMA LORA CHECKPOINT
+   Adapter : adapters/tinyllama-lora-alpaca
+   Model   : TinyLlama/TinyLlama-1.1B-Chat-v1.0
 
-✅ 2. EXTRACT ATTENTION MAPS FROM ALL HEADS (20 SAMPLES)
-   - Extracted attention from ALL 704 attention heads (22 layers × 32 heads)
-   - Processed 20 sample instructions from Alpaca dataset
-   - Attention maps stored for both Base and LoRA-tuned models
+2. EXTRACT ATTENTION MAPS FROM ALL HEADS (20 SAMPLES)
+   Layers  : 22   Heads/layer : 32   Total : 704
+   Samples : 20 Alpaca instructions
 
-✅ 3. IMPLEMENT ATTENTION HEAD CLUSTERING
-   - Method: Cosine similarity between attention patterns
-   - Clustering algorithm: Hierarchical clustering with scipy
-   - Successfully grouped heads with similar attention patterns
-   - Generated 3 clustering visualizations (Base, LoRA, Comparison)
+3. IMPLEMENT ATTENTION HEAD CLUSTERING
+   Method    : cosine similarity + hierarchical average-linkage (scipy)
+   Clusters  : 3
+   Outputs   : head_clustering_Base.png, head_clustering_LoRA.png, head_clustering_Comparison.png
 
-✅ 4. BUILD TOKEN ATTRIBUTION USING ATTENTION ROLLOUT
-   - Implemented attention rollout algorithm
-   - Computed cumulative attention from input tokens to output tokens
-   - Tracked strongest influences for each output token
-   - Results embedded in HTML heatmaps
+4. BUILD TOKEN ATTRIBUTION USING ATTENTION ROLLOUT
+   Algorithm : recursive attention composition across all 22 layers
+   Criterion : last-output-token attribution to input tokens
 
-✅ 5. GENERATE HTML VISUALIZATION WITH HEATMAPS
-   - Created 20 HTML files with interactive attention heatmaps
-   - Each file shows side-by-side comparison: Base vs LoRA
-   - Token-to-token attention flows visualized with color gradients
-   - Includes attention statistics and multi-head highlights
+5. GENERATE HTML VISUALIZATION WITH HEATMAPS
+   Files     : 20 HTML heatmaps (attention_heatmap_prompt_XX.html)
+   Detailed  : first 5 include per-head table
 
-✅ 6. IDENTIFY 'INSTRUCTION-FOLLOWING' VS 'COMPLETION' HEADS
-   - Criterion: Response-to-prompt attention vs local response attention
-   
-   BASE MODEL:
-     - Instruction-following heads: 445 (63.2%)
-     - Completion heads: 259 (36.8%)
-     - Total: 704 heads
-   
-   LORA MODEL:
-     - Instruction-following heads: 417 (59.2%)
-     - Completion heads: 287 (40.8%)
-     - Total: 704 heads
-   
-   EMPIRICAL FINDING:
-     LoRA fine-tuning shifted 28 heads from instruction-following to
-     completion mode, indicating stronger focus on autoregressive generation
+6. IDENTIFY INSTRUCTION-FOLLOWING VS COMPLETION HEADS
+   Criterion : mean response→prompt attention  vs  mean local response attention
 
-✅ 7. COMPARE ATTENTION PATTERNS: BASE VS LORA-TUNED
-   - Analyzed all 22 layers for attention pattern changes
-   - Computed delta_net (change in attention distribution)
-   
-   TOP 5 LAYERS MOST AFFECTED BY LORA:
+   BASE MODEL
+     Instruction-following : 445 / 704 (63.2%)
+     Completion            : 259 / 704 (36.8%)
+     Mean confidence       : 0.3896
+
+   LORA MODEL
+     Instruction-following : 417 / 704 (59.2%)
+     Completion            : 287 / 704 (40.8%)
+     Mean confidence       : 0.3855
+
+   HEAD SHIFT after LoRA: -28 heads shifted
+   (28 heads shifted instruction→completion)
+
+7. COMPARE ATTENTION PATTERNS: BASE VS LORA-TUNED
+   Attention focus  : base=0.5445  lora=0.5999  delta=+10.2%
+   Attention entropy: base=0.7355  lora=0.7289
+
+   TOP 5 MOST AFFECTED LAYERS (by |delta_net|):
      1. Layer 16: delta_net = -0.003010
      2. Layer 12: delta_net = -0.002481
      3. Layer 13: delta_net = -0.002428
-     4. Layer 9:  delta_net = -0.002362
-     5. Layer 2:  delta_net = -0.002082
-   
-   AVERAGE CHANGE: -0.002473 (subtle but consistent shifts)
+     4. Layer 9: delta_net = -0.002362
+     5. Layer 2: delta_net = -0.002082
+   Average |delta_net| across all layers : 0.002473
 
 ================================================================================
-OUTPUT LOCATIONS
+OUTPUT LOCATIONS — results/task3/
 ================================================================================
 
-Directory: results/task3/
-Total files: 33
-
-ATTENTION MAPS & VISUALIZATIONS:
-  ✓ 20 × attention_heatmap_prompt_XX.html (15-23 KB each)
-    - Interactive HTML heatmaps with token-level attention flows
-    - Side-by-side Base vs LoRA comparison
-    - Color-coded attention weights (red = high, white = low)
-
-CLUSTERING ANALYSIS:
-  ✓ head_clustering_Base.png (1.3 MB)
-  ✓ head_clustering_LoRA.png (1.4 MB)
-  ✓ head_clustering_Comparison.png (68 KB)
-  ✓ multi_head_visualization.png
-    - Dendrograms showing hierarchical clustering
-    - Cosine similarity-based grouping
-
-HEAD CLASSIFICATION:
-  ✓ head_classification.json (28 KB)
-  ✓ head_classification_Base.json (6.5 KB)
-  ✓ head_classification_LoRA.json (6.5 KB)
-    - Lists of instruction-following vs completion head indices
-    - Classification criteria documented
-
-LAYER ANALYSIS:
-  ✓ layer_analysis.json (50 KB)
-    - Per-layer attention statistics
-    - Top layers ranked by LoRA impact
-    - Quantitative comparison metrics
-
-BASE VS LORA COMPARISON:
-  ✓ base_vs_lora_comparison.png (859 KB)
-  ✓ base_vs_lora_attention_diff.png (859 KB)
-    - Visual comparison of attention pattern changes
-
-================================================================================
-KEY FINDINGS
-================================================================================
-
-🎯 INSTRUCTION-FOLLOWING VS COMPLETION HEADS:
-
-   The empirical classification reveals a functional split:
-   
-   INSTRUCTION-FOLLOWING HEADS (respond to prompt):
-     - Focus attention on instruction tokens (<|user|>, question words)
-     - Higher mean response-to-prompt attention
-     - Examples: L8H11, L15H16, L15H20, L11H8
-   
-   COMPLETION HEADS (autoregressive generation):
-     - Focus on recent context within response
-     - Higher local response attention (window ~8 tokens)
-     - Support fluent continuation
-   
-   POST-LORA SHIFT:
-     28 heads (4%) shifted from instruction → completion mode
-     This suggests fine-tuning enhanced autoregressive coherence
-
-📊 QUANTITATIVE BASE VS LORA COMPARISON:
-
-   ATTENTION DISTRIBUTION CHANGES:
-     - Subtle but consistent shifts across all layers
-     - Middle layers (9-16) most affected by LoRA
-     - Average change magnitude: 0.25% per layer
-   
-   ATTENTION PATTERN INSIGHTS:
-     - LoRA maintains overall attention architecture
-     - Fine-grained adjustments to token attribution
-     - No catastrophic forgetting observed
-   
-   CLUSTERING BEHAVIOR:
-     - Both models show 3-4 major attention pattern clusters
-     - LoRA preserves cluster structure
-     - Within-cluster similarity increased slightly
-
-🔬 TOKEN ATTRIBUTION ANALYSIS:
-
-   ATTENTION ROLLOUT FINDINGS:
-     - Instruction tokens receive 2-3% of cumulative attention
-     - Response tokens show local attention windows (±8 tokens)
-     - LoRA increased attention focus (less entropy)
-   
-   EXAMPLE (from HTML prompt_00):
-     Base:  attention_focus = 0.5305, entropy = 0.7305
-     LoRA:  attention_focus = 0.5690, entropy = 0.7333
-     → LoRA shows 7.3% higher attention focus
-
-================================================================================
-INTERPRETABILITY INSIGHTS
-================================================================================
-
-1. MODEL TRANSPARENCY:
-   - Attention heatmaps reveal which instruction tokens drive responses
-   - Can debug failures by identifying low instruction attention
-   - Token attribution enables explainability
-
-2. LORA IMPACT:
-   - Fine-tuning refines attention without architectural changes
-   - Shift toward completion-focused heads improves fluency
-   - Preserves pre-trained attention structure (no rewiring)
-
-3. INSTRUCTION-FOLLOWING MECHANISMS:
-   - Early/middle layers encode instruction semantics
-   - Late layers (15-16) maintain strong instruction grounding
-   - Heads specialize: some track instructions, others generate
-
-================================================================================
-TECHNICAL DETAILS
-================================================================================
-
-IMPLEMENTATION:
-  - Language: Python 3.9
-  - Framework: MLX (Apple Silicon optimized)
-  - Dependencies: numpy, scipy, matplotlib
-  - Model: TinyLlama-1.1B-Chat-v1.0 (704 attention heads)
-
-ALGORITHMS:
-  - Attention extraction: Hooked model forward pass
-  - Clustering: Hierarchical (scipy) with cosine similarity
-  - Rollout: Recursive attention composition across layers
-  - Normalization: Row-wise with epsilon=1e-9
-
-STATISTICS:
-  - Samples analyzed: 20 instructions
-  - Tokens per sample: ~80-120 (instruction + response)
-  - Total attention matrices: 20 samples × 22 layers × 32 heads = 14,080
-
-================================================================================
-NO ISSUES OR BLOCKERS ENCOUNTERED
-================================================================================
-
-- All dependencies available
-- Model loaded successfully
-- Attention extraction complete
-- Clustering algorithms converged
-- HTML generation successful
-- File I/O operations clean
-
-================================================================================
-VERIFICATION
-================================================================================
-
-✅ Script executed: task3_attention_visualization.py
-✅ Adapter used: adapters/tinyllama-lora-alpaca
-✅ Output directory: results/task3/ (33 files)
-✅ SQL status: Updated todos.task3-complete = 'done'
-✅ All 7 subtasks completed as specified
-
-================================================================================
-USAGE INSTRUCTIONS
-================================================================================
-
-View HTML visualizations:
-  open results/task3/attention_heatmap_prompt_00.html
-  (repeat for prompt_01.html through prompt_19.html)
-
-Inspect clustering:
-  open results/task3/head_clustering_Comparison.png
-
-Review head classification:
-  cat results/task3/head_classification.json | jq .
-
-Analyze layer-wise changes:
-  cat results/task3/layer_analysis.json | jq .top_layers_by_change
+  HTML heatmaps  : attention_heatmap_prompt_00.html … _19.html
+  Clustering     : head_clustering_Base/LoRA/Comparison.png
+  Comparison     : base_vs_lora_comparison.png, base_vs_lora_attention_diff.png
+  Multi-head viz : multi_head_visualization.png
+  JSON outputs   : layer_analysis.json, head_classification.json, analysis_summary.json
+  Markdown       : layer_analysis.md
 
 ================================================================================

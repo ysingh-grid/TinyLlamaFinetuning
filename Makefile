@@ -308,6 +308,8 @@ ci: test-prepare test-train-lora test-train-qlora test-train-full \
 task1:
 	$(PYTHON) task1_lora_rank_ablation.py
 
+# Task 2 safety judge defaults to http://127.0.0.1:1234 (LM Studio). Override: JUDGE_API_BASE=... make task2
+# MLX judge (no LM Studio):  JUDGE_API_BASE= make task2
 task2:
 	@if [ ! -d "adapters/tinyllama-lora-alpaca-10k" ]; then \
 		echo "Adapter not found — fine-tuning TinyLlama with LoRA on Alpaca 10k..."; \
