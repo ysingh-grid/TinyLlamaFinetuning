@@ -1,0 +1,61 @@
+{
+  "benchmark_config": {
+    "base_model": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+    "test_prompts": 100,
+    "max_tokens": 100,
+    "lora_modules": [
+      "self_attn.q_proj",
+      "self_attn.v_proj"
+    ],
+    "alpha_over_rank": 2.0,
+    "hardware": "Apple Silicon (Metal)"
+  },
+  "pareto_optimal_rank": 8,
+  "per_rank": {
+    "r4": {
+      "rank": 4,
+      "tokens_per_sec": 96.831,
+      "ms_per_token": 10.327,
+      "peak_mem_mb": 3057.48,
+      "test_loss": 1.263,
+      "train_time_min": 19.29,
+      "mcq_accuracy": 22.0
+    },
+    "r8": {
+      "rank": 8,
+      "tokens_per_sec": 99.09,
+      "ms_per_token": 10.092,
+      "peak_mem_mb": 3065.82,
+      "test_loss": 1.262,
+      "train_time_min": 18.9,
+      "mcq_accuracy": 19.0
+    },
+    "r16": {
+      "rank": 16,
+      "tokens_per_sec": 98.855,
+      "ms_per_token": 10.116,
+      "peak_mem_mb": 3074.63,
+      "test_loss": 1.262,
+      "train_time_min": 18.72,
+      "mcq_accuracy": 17.0
+    },
+    "r32": {
+      "rank": 32,
+      "tokens_per_sec": 97.51,
+      "ms_per_token": 10.255,
+      "peak_mem_mb": 3100.27,
+      "test_loss": 1.265,
+      "train_time_min": 19.17,
+      "mcq_accuracy": 17.0
+    },
+    "r64": {
+      "rank": 64,
+      "tokens_per_sec": 95.722,
+      "ms_per_token": 10.447,
+      "peak_mem_mb": 3151.0,
+      "test_loss": 1.27,
+      "train_time_min": 19.5,
+      "mcq_accuracy": 18.0
+    }
+  }
+}

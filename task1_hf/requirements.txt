@@ -1,0 +1,10 @@
+# Core inference (Apple Silicon required)
+mlx>=0.22.0
+mlx-lm>=0.21.0
+
+# Gradio Space UI
+gradio>=4.44.0
+
+# Plotting (for regenerating plots locally)
+matplotlib>=3.8.0
+numpy>=1.26.0

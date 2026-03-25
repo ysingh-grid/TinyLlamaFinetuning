@@ -162,7 +162,8 @@ def fuse_model(adapter_path: Path) -> Path:
     cmd = [
         sys.executable,
         "-m",
-        "mlx_lm.fuse",
+        "mlx_lm",
+        "fuse",
         "--model",
         BASE_MODEL,
         "--adapter-path",

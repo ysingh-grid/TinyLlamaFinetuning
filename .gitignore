@@ -225,3 +225,16 @@ adapters/
 *.index.json
 *.gguf
 results/task4/gguf_models/
+
+# ── task1_hf: standalone HF deployment package ────────────────────────────
+# The rules above would silently swallow task1_hf/adapters/ (matched by
+# `adapters/`) and every *.safetensors inside it.  Negate them explicitly
+# so the entire HF deployment folder is tracked.
+!task1_hf/
+!task1_hf/adapters/
+!task1_hf/adapters/r4/
+!task1_hf/adapters/r8/
+!task1_hf/adapters/r16/
+!task1_hf/adapters/r32/
+!task1_hf/adapters/r64/
+!task1_hf/adapters/**
