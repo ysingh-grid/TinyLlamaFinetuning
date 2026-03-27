@@ -1,9 +1,19 @@
-# Core inference (Apple Silicon required)
-mlx>=0.22.0
-mlx-lm>=0.21.0
+# Gradio Space UI (5.x required: compatible with huggingface_hub without HfFolder)
+gradio>=5.10.0,<6
 
-# Gradio Space UI
-gradio>=4.44.0
+# PyDub/gradio audio support on Python 3.13+
+# (fixes ModuleNotFoundError: audioop / pyaudioop during app import)
+audioop-lts>=0.2.1
+
+# Live inference on HF Spaces / Linux / CUDA (see torch_inference.py)
+torch>=2.2.0
+transformers>=4.40.0
+peft>=0.10.0
+accelerate>=0.30.0
+safetensors>=0.4.0
+
+# Apple Silicon fast path (optional — not installed on Linux Spaces)
+# pip install mlx mlx-lm
 
 # Plotting (for regenerating plots locally)
 matplotlib>=3.8.0

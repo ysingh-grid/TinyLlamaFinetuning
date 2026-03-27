@@ -1,6 +1,15 @@
 ---
-language: en
+title: TinyLlama LoRA Rank Ablation
+emoji: 🦙
+colorFrom: blue
+colorTo: purple
+sdk: gradio
+sdk_version: 5.10.0
+app_file: app.py
+pinned: false
 license: apache-2.0
+language:
+  - en
 base_model: TinyLlama/TinyLlama-1.1B-Chat-v1.0
 tags:
   - lora
@@ -11,8 +20,6 @@ tags:
   - text-generation
 datasets:
   - tatsu-lab/alpaca
-pipeline_tag: text-generation
-library_name: mlx
 ---
 
 # TinyLlama LoRA Rank Ablation
@@ -21,8 +28,9 @@ Five LoRA adapters fine-tuned on [Alpaca instructions](https://huggingface.co/da
 with ranks **r ∈ {4, 8, 16, 32, 64}** — an empirical study of how rank affects quality,
 throughput, and memory on Apple Silicon.
 
-> **Inference requires Apple Silicon (M1/M2/M3/M4)** — adapters use the
-> [mlx-lm](https://github.com/ml-explore/mlx-lm) format.
+> **Inference:** On **Apple Silicon**, the app prefers [mlx-lm](https://github.com/ml-explore/mlx-lm).
+> On **Hugging Face Spaces** (and other Linux/CPU/CUDA hosts), **Transformers + PEFT** loads the same
+> `adapters/r*/adapters.safetensors` weights via `torch_inference.py` (converted to PEFT on first use).
 
 ---
 

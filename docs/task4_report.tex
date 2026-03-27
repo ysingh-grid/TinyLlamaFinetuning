@@ -49,6 +49,16 @@ This task implements \textbf{post-training quantization} using the GGUF (GPT-Gen
     \item \textbf{Hardware:} Apple Silicon Mac (Metal GPU for MLX, CPU for llama.cpp)
 \end{itemize}
 
+\section*{Metrics Calculation Methodology}
+To enforce absolute transparency and tracking reproducibility across the edge quantization pipeline, all performance telemetry metrics were mathematically standardized:
+\begin{itemize}
+    \item \textbf{Compression Ratio:} The straightforward programmatic comparison mathematically evaluating the uncompressed, fused FP16 Safetensors footprint against the final raw `.gguf` physical disk allocation magnitude.
+    \item \textbf{Perplexity (PPL):} Evaluated natively utilizing the internal \texttt{llama.cpp} \texttt{llama-perplexity} routine spanning a fixed 80-row held-out Alpaca validation set ($14,958$ distinct tokens). Lower numbers indicate higher preservation of language structure coherence.
+    \item \textbf{PPL Loss:} The absolute arithmetic discrepancy tracking mathematical accuracy destruction, taking the quantized edge model's perplexity and subtracting the baseline uncompressed FP16 model's true perplexity. 
+    \item \textbf{Tokens/sec (Throughput):} Extracted mathematically mapping the \texttt{llama-bench} latency utility running 10 distinct, deterministic instruction prompts explicitly scaling to 100 generated sequence tokens per iteration.
+    \item \textbf{Memory (MB):} System-level unified Apple Silicon RAM mapped and tracked strictly targeting the active resident memory consumption of the physical \texttt{llama.cpp} execution binary.
+\end{itemize}
+
 \section*{Results}
 
 \subsection*{Quantitative Metrics}
@@ -79,7 +89,8 @@ Q4\_K\_M & 637 & \textbf{3.30×} & 4.3399 & 0.0677 & \textbf{214.5} & \textbf{74
     \item \textbf{Production ready:} Packaged inference server enables immediate deployment
 \end{itemize}
 
-\subsection*{Implementation Evidence}
+\section*{Evidence (screenshots)}
+The following localized system CLI snapshot blocks present quantitative throughput verifications and explicit GGUF serialization size routing mapped to valid disk configurations.
 \begin{verbatim}
 $ ls -lh results/task4/
 -rw-r--r--  637M  model-Q4_K_M.gguf

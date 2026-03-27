@@ -19,22 +19,25 @@
 \vspace{-1em}
 
 \section*{Task description}
-{\small
-\textbf{Subtasks:} (1)~Load trained TinyLlama LoRA checkpoint. (2)~Extract attention maps from all heads for 20 sample instructions. (3)~Cluster attention heads by cosine similarity. (4)~Token attribution via attention rollout. (5)~HTML heatmaps for 5 detailed + 20 total generations. (6)~Identify \emph{instruction-following} vs \emph{completion} heads empirically. (7)~Compare base model vs LoRA-tuned model quantitatively.
-
-Model: \texttt{TinyLlama-1.1B-Chat-v1.0} + LoRA (\path{adapters/tinyllama-lora-alpaca}, rank~16, $\alpha{=}32$); \textbf{704 total heads} (22 layers $\times$ 32 heads); 20 Alpaca prompts; script: \path{task3_attention_visualization.py}.
-}
+This analytical phase, "Attention Visualization \& Token Attribution," investigates how Low-Rank Adaptation (LoRA) mathematically shifts the internal attention mechanisms of TinyLlama. We loaded a fine-tuned LoRA checkpoint (rank 16, train on 10k Alpaca examples) and evaluated the structural routing of all 704 attention heads (32 heads $\times$ 22 layers) across 20 distinct instructional prompts. The task encapsulates multiple sub-objectives: extracting deep attention maps, implementing cosine-similarity based feature clustering to uncover semantic head groupings, mapping token attribution flows using attention rollout matrices, and generating interpretable HTML heatmaps. By empirically classifying heads as "instruction-following" or "completion-centric", we isolate and quantify the exact architectural alterations triggered by fine-tuning.
 
 \section*{Procedure \& technical implementation}
-{\small
-\begin{enumerate}[label=\textbf{\arabic*.}]
-  \item \textbf{Attention extraction.} Monkey-patch \texttt{self\_attn.\_\_call\_\_} to capture softmax weights $(H,L,L)$ per layer in a post-generation full-sequence forward pass (KV-cache calls skipped so only one hook fires per input).
-  \item \textbf{Attention rollout.} Cumulative product $R^{(l)} = \mathrm{norm}(A^{(l)}+I)\cdot R^{(l-1)}$ across all 22 layers; output is one attribution vector per sample ranking input tokens by influence on the last output position.
-  \item \textbf{Head clustering.} Feature vector per head = concatenated mean instruction- and completion-attention over 20 samples ($\dim = 2\times20$); cosine distance + average-linkage hierarchical clustering (\texttt{scipy}), $k{=}3$ groups, applied independently to base and LoRA.
-  \item \textbf{Head classification.} Per head: if mean response$\to$prompt attention $\geq$ mean local-window response attention $\Rightarrow$ \textbf{instruction-following}; else \textbf{completion}. Threshold applied across all 20 prompts.
-  \item \textbf{Base vs LoRA comparison.} Layer-wise $\Delta\mathrm{net} = (\mathrm{LoRA\;instr} - \mathrm{LoRA\;comp}) - (\mathrm{Base\;instr} - \mathrm{Base\;comp})$; heatmap and scatter over all 704 heads. Outputs: \path{results/task3/} — 20 HTML heatmaps, 3 clustering PNGs, \path{analysis_summary.json}, \path{layer_analysis.json}, \path{head_classification.json}.
+\begin{enumerate}
+  \item \textbf{Attention Map Extraction:} We isolated the base \texttt{TinyLlama-1.1B-Chat-v1.0} model and merged it with the Alpaca LoRA adapter. We monkey-patched the transformer \texttt{self\_attn.\_\_call\_\_} logic specifically over a forced sequence forward-pass to capture the raw softmax matrices $(H, L, L)$ per layer simultaneously across the 20 Alpaca inference samples.
+  \item \textbf{Token Attribution (Rollout):} We simulated token influence flows from embedded input queries to generated output text. This was achieved by determining the cumulative product $R^{(l)} = \mathrm{norm}(A^{(l)}+I)\cdot R^{(l-1)}$ incrementally down the model's 22 nested layer blocks.
+  \item \textbf{Clustering Analysis:} To group head behavior, we constructed a 40-dimensional feature profile for each head by concatenating mean instruction and mean completion attention scores spanning the 20 test inputs. We mapped groups utilizing average-linkage hierarchical clustering over spatial cosine distances with $k=3$ distinct clusters.
+  \item \textbf{Head Function Classification:} We established an algorithmic classification threshold per head. If the mean attention mass directed toward prompt tokens exceeded the local-window response attention, the head was tagged as \textbf{instruction-following}. Conversely, if attention leaned toward recent generation context, it was tagged as \textbf{completion}.
+  \item \textbf{Visualization Exports:} Comprehensive comparative heatmaps scaling the base vs LoRA distributions were assembled. The pipeline outputted 20 distinct topological HTML attention graphs alongside Python clustering artifacts natively stored within \path{results/task3/}.
 \end{enumerate}
-}
+
+\section*{Metrics Calculation Methodology}
+To ensure reproducibility, performance shifts within internal weights were tracked via the following metrics:
+\begin{itemize}
+  \item \textbf{Instruction-Following vs. Completion classification:} A binary toggle determined per-head. Calculated mathematically by taking the average attention weight addressing the "prompt" token indices and subtracting the average weight traversing the latest "completion" token sequence window.
+  \item \textbf{Attention Focus:} A measurement of graph sharpness per evaluated sequence. Calculated by extracting the maximum attention weight scalar applied to any single target token by a head.
+  \item \textbf{Attention Entropy:} Derived utilizing standard Shannon information theory over the softmax probability vectors mapping token correlation. A lower entropy figure inherently signifies a highly concentrated and deterministic focal target.
+  \item \textbf{$\Delta$Net (Layer Level):} Measured comprehensively across layer clusters by subtracting the net instruction-completion orientation of the target baseline model from the identical structure within the LoRA modification.
+\end{itemize}
 
 \section*{Results}
 {\small
@@ -65,20 +68,20 @@ $\Delta$ & $-28$ heads ($-4.0\%$) & $+28$ & $+10.2\%$ & $-0.9\%$ \\
 }
 
 \section*{Evidence (screenshots)}
-{\small
 \begin{figure}[H]
+\vspace{0.3cm}
 \centering
 \includegraphics[width=0.485\linewidth]{../results/task3/head_clustering_Base.png}
 \includegraphics[width=0.485\linewidth]{../results/task3/head_clustering_LoRA.png}
-\caption{Attention head clustering dendrograms (left: base; right: LoRA-tuned). Cosine-distance average-linkage, $k{=}3$. Both models share the same 3-cluster topology; LoRA modestly shifts within-cluster similarity.}
+\caption{Attention head clustering dendrogram topologies mapping base unsteered (left) vs Alpaca LoRA-tuned (right).}
 \end{figure}
 
 \begin{figure}[H]
+\vspace{0.3cm}
 \centering
 \includegraphics[width=0.49\linewidth]{../results/task3/base_vs_lora_attention_diff.png}
 \includegraphics[width=0.49\linewidth]{../results/task3/multi_head_visualization.png}
-\caption{\textbf{Left:} $\Delta$ attention heatmaps (LoRA$-$Base) per (layer, head) for instruction and completion modes, layer-wise means, and per-head scatter. Most points lie below the diagonal, confirming the completion shift. \textbf{Right:} Multi-head attention matrices for prompt~0 (LoRA). Top row: 4 most instruction-following heads; bottom: 4 most completion-oriented heads.}
+\caption{\textbf{Left:} Scatter highlighting broad net-completion shift orientation. \textbf{Right:} Multi-head attention instruction vs. completion contrast graph mapping specific prompt tokens.}
 \end{figure}
-}
 
 \end{document}

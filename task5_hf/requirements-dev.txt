@@ -1,0 +1,12 @@
+# Local: logit lens + plots + optional MLX LoRA retrain
+-r requirements.txt
+
+torch>=2.2.0
+transformers>=4.40.0
+peft>=0.10.0
+mlx-lm>=0.18.0
+mlx>=0.18.0
+numpy>=1.26.0
+scipy>=1.11.0
+matplotlib>=3.8.0
+safetensors>=0.4.0

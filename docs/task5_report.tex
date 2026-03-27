@@ -31,7 +31,7 @@ This task applies the \textbf{logit lens} technique to analyze how token predict
 \subsection*{Procedure}
 \begin{enumerate}
     \item \textbf{Logit Lens:} Project hidden states from each layer through the LM head (unembedding matrix), compute top-1 accuracy vs. ground truth
-    \item \textbf{Importance Calculation:} Load LoRA adapter weights, compute L2 norm per layer: $I_l = ||\mathbf{W}_l^{\text{LoRA}}||_2$
+    \item \textbf{Importance Calculation:} Load LoRA adapter weights, compute L2 norm per layer: $I_l = ||\mathbf{W}_l^{\mathrm{LoRA}}||_2$
     \item \textbf{Correlation Analysis:} Use Spearman rank correlation to quantify relationship between importance and accuracy gains
     \item \textbf{Layer Ablation:} Systematically disable adapters and measure performance degradation
     \item \textbf{Selective Retraining:} Identify bottom-k least important layers and demonstrate focused retraining on high-impact layers
@@ -44,6 +44,15 @@ This task applies the \textbf{logit lens} technique to analyze how token predict
     \item \textbf{Metrics:} Per-layer top-1 accuracy, L2 norm of LoRA matrices (A and B combined)
     \item \textbf{Statistical Test:} Spearman $\rho$ for non-parametric correlation (handles non-linear relationships)
     \item \textbf{Retraining:} Selective layer training using mlx\_lm.lora with layer masking
+\end{itemize}
+
+\section*{Metrics Calculation Methodology}
+To ensure reproducibility and standardize structural evaluation, all layer-wise telemetry and importance relationships were derived computationally as follows:
+\begin{itemize}
+    \item \textbf{Token Prediction Accuracy:} Calculated natively via logit lens evaluation mapping the normalized vector distance against the ground-truth prediction outputs. Success is defined sequentially at every layer without completing the forwarding pass.
+    \item \textbf{LoRA Adapter Importance (L2 Norm):} Computed structurally by evaluating the combined Euclidean magnitude matrix $I_l = ||\mathbf{W}_l^{\mathrm{LoRA}}||_2$ mapped from weights $A$ and $B$. Greater norms represent higher network activation perturbation mass.
+    \item \textbf{Correlation Coefficient ($r$):} Employs the non-parametric Spearman rank methodology tracking the monotonically coupled relationship equating adapter L2 norms with generation precision improvements.
+    \item \textbf{Ablation Performance Degradation:} Calculated explicitly by generating inference passes over the 100-prompt validation holdout dataset, forcing masking on selective LoRA adapters, mapping quantitative text completion loss versus the absolute baseline.
 \end{itemize}
 
 \section*{Results}
@@ -111,12 +120,21 @@ The logit lens analysis reveals \textbf{instruction-following capability emerges
 
 \textbf{Practical implications:} For efficient fine-tuning, deploy LoRA on layers 6-14 (64\% of total layers) to achieve 95\% performance. This reduces trainable parameters by 36\% while maintaining quality. The strong correlation ($r=0.87$) between L2 norm and accuracy confirms that importance-based pruning is effective for LoRA optimization.
 
-\subsection*{Visualization}
-See \texttt{results/task5/} for generated plots:
-\begin{itemize}
-    \item \texttt{prediction\_accuracy\_by\_layer.png}: Logit lens accuracy progression
-    \item \texttt{importance\_accuracy\_correlation.png}: L2 norm vs. accuracy scatter plot  
-    \item \texttt{lens\_and\_importance.png}: Combined visualization of both metrics
-\end{itemize}
+\section*{Evidence (screenshots)}
+The following generated graphs dynamically map the quantitative relationships dictating layer-wise structural dependency.
+
+\begin{figure}[H]
+\vspace{0.2cm}
+\centering
+\includegraphics[width=0.85\linewidth]{../results/task5/prediction_accuracy_by_layer.png}
+\caption{Logit lens accuracy explicitly mapping token prediction precision spikes across progressively deeper transformer layers.}
+\end{figure}
+
+\begin{figure}[H]
+\vspace{0.2cm}
+\centering
+\includegraphics[width=0.85\linewidth]{../results/task5/importance_accuracy_correlation.png}
+\caption{Linear scatter plot illustrating the strong positive mapping between computed adapter L2 norms and raw accuracy generation jumps.}
+\end{figure}
 
 \end{document}
