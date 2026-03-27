@@ -1,0 +1,11 @@
+# Gradio Space (precomputed artifacts only — no torch at runtime)
+gradio>=5.10.0,<6
+audioop-lts>=0.2.1
+
+# Local artifact generation (optional)
+# torch>=2.2.0
+# transformers>=4.40.0
+# peft>=0.10.0
+# scikit-learn>=1.3.0
+# matplotlib>=3.8.0
+# numpy>=1.26.0

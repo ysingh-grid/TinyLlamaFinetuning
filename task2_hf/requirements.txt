@@ -1,0 +1,13 @@
+transformers>=4.40.0
+peft>=0.10.0
+torch>=2.2.0
+# 5.x: Gradio 4.44 imports huggingface_hub.HfFolder (removed in recent hub)
+gradio>=5.10.0,<6
+
+# PyDub/gradio audio support on Python 3.13+
+# (fixes ModuleNotFoundError: audioop / pyaudioop during app import)
+audioop-lts>=0.2.1
+
+accelerate>=0.30.0
+safetensors>=0.4.3
+numpy>=1.24.0

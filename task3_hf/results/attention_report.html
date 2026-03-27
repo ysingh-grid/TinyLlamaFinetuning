@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Attention visualization — Task 3</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 1100px; margin: 2rem auto; padding: 0 1rem; line-height: 1.45; }
+    h1 { font-size: 1.5rem; }
+    h2 { border-bottom: 1px solid #ccc; margin-top: 2rem; font-size: 1.15rem; }
+    figure { margin: 1rem 0; }
+    img { max-width: 100%; height: auto; border: 1px solid #e0e0e0; border-radius: 4px; }
+    .meta { background: #f6f8fa; padding: 0.75rem 1rem; border-radius: 6px; margin-bottom: 1.5rem; }
+    .caption { color: #444; font-size: 0.95rem; }
+  </style>
+</head>
+<body>
+  <h1>TinyLlama LoRA — Attention rollout &amp; attribution</h1>
+  <div class="meta"><p>Mean cosine similarity (base vs LoRA) averaged over all heads: <b>0.9920</b></p></div>
+  <h2>Example 1</h2>
+  <p class="caption">Explain what a REST API is in two sentences.</p>
+  <figure>
+    <img src="heatmaps/rollout_0.png" alt="Example 1" loading="lazy"/>
+  </figure>
+  <h2>Example 1 — attribution</h2>
+  <p class="caption">Rollout mass from last position to all positions (instruction vs completion shaded).</p>
+  <figure>
+    <img src="heatmaps/attr_0.png" alt="Example 1 — attribution" loading="lazy"/>
+  </figure>
+  <h2>Example 2</h2>
+  <p class="caption">Write a Python function that returns the factorial of n.</p>
+  <figure>
+    <img src="heatmaps/rollout_1.png" alt="Example 2" loading="lazy"/>
+  </figure>
+  <h2>Example 2 — attribution</h2>
+  <p class="caption">Rollout mass from last position to all positions (instruction vs completion shaded).</p>
+  <figure>
+    <img src="heatmaps/attr_1.png" alt="Example 2 — attribution" loading="lazy"/>
+  </figure>
+  <h2>Example 3</h2>
+  <p class="caption">Summarize the causes of the French Revolution in one paragraph.</p>
+  <figure>
+    <img src="heatmaps/rollout_2.png" alt="Example 3" loading="lazy"/>
+  </figure>
+  <h2>Example 3 — attribution</h2>
+  <p class="caption">Rollout mass from last position to all positions (instruction vs completion shaded).</p>
+  <figure>
+    <img src="heatmaps/attr_2.png" alt="Example 3 — attribution" loading="lazy"/>
+  </figure>
+  <h2>Example 4</h2>
+  <p class="caption">What is the difference between supervised and unsupervised learning?</p>
+  <figure>
+    <img src="heatmaps/rollout_3.png" alt="Example 4" loading="lazy"/>
+  </figure>
+  <h2>Example 4 — attribution</h2>
+  <p class="caption">Rollout mass from last position to all positions (instruction vs completion shaded).</p>
+  <figure>
+    <img src="heatmaps/attr_3.png" alt="Example 4 — attribution" loading="lazy"/>
+  </figure>
+  <h2>Example 5</h2>
+  <p class="caption">Translate to French: The weather is nice today.</p>
+  <figure>
+    <img src="heatmaps/rollout_4.png" alt="Example 5" loading="lazy"/>
+  </figure>
+  <h2>Example 5 — attribution</h2>
+  <p class="caption">Rollout mass from last position to all positions (instruction vs completion shaded).</p>
+  <figure>
+    <img src="heatmaps/attr_4.png" alt="Example 5 — attribution" loading="lazy"/>
+  </figure>
+</body>
+</html>

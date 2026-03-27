@@ -1,0 +1,9 @@
+# Full stack to run generate_artifacts.py
+torch>=2.2.0
+transformers>=4.40.0
+peft>=0.10.0
+accelerate>=0.30.0
+safetensors>=0.4.0
+scikit-learn>=1.3.0
+matplotlib>=3.8.0
+numpy>=1.26.0

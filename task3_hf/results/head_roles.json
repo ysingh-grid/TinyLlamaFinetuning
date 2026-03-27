@@ -1,0 +1,6338 @@
+[
+  {
+    "layer": 0,
+    "head": 0,
+    "cluster": 5,
+    "mean_attn_to_instruction": 0.02065760027617216,
+    "mean_attn_to_completion": 0.009812068566679955,
+    "instruction_ratio": 0.6779723666505999,
+    "role": "completion_local"
+  },
+  {
+    "layer": 0,
+    "head": 1,
+    "cluster": 5,
+    "mean_attn_to_instruction": 0.020346396323293447,
+    "mean_attn_to_completion": 0.01021329890936613,
+    "instruction_ratio": 0.6657916419150853,
+    "role": "completion_local"
+  },
+  {
+    "layer": 0,
+    "head": 2,
+    "cluster": 5,
+    "mean_attn_to_instruction": 0.02070198776200414,
+    "mean_attn_to_completion": 0.009889118000864982,
+    "instruction_ratio": 0.6767320264640949,
+    "role": "completion_local"
+  },
+  {
+    "layer": 0,
+    "head": 3,
+    "cluster": 5,
+    "mean_attn_to_instruction": 0.020173581317067146,
+    "mean_attn_to_completion": 0.010164245311170817,
+    "instruction_ratio": 0.6649643995475243,
+    "role": "completion_local"
+  },
+  {
+    "layer": 0,
+    "head": 4,
+    "cluster": 5,
+    "mean_attn_to_instruction": 0.02060882393270731,
+    "mean_attn_to_completion": 0.009905840875580907,
+    "instruction_ratio": 0.6753741949466773,
+    "role": "completion_local"
+  },
+  {
+    "layer": 0,
+    "head": 5,
+    "cluster": 5,
+    "mean_attn_to_instruction": 0.020568571239709853,
+    "mean_attn_to_completion": 0.009941048687323928,
+    "instruction_ratio": 0.6741665267294699,
+    "role": "completion_local"
+  },
+  {
+    "layer": 0,
+    "head": 6,
+    "cluster": 5,
+    "mean_attn_to_instruction": 0.019737029913812876,
+    "mean_attn_to_completion": 0.010476664500311017,
+    "instruction_ratio": 0.6532476006016156,
+    "role": "completion_local"
+  },
+  {
+    "layer": 0,
+    "head": 7,
+    "cluster": 5,
+    "mean_attn_to_instruction": 0.021551718655973672,
+    "mean_attn_to_completion": 0.009310880699194968,
+    "instruction_ratio": 0.6983116173994001,
+    "role": "completion_local"
+  },
+  {
+    "layer": 0,
+    "head": 8,
+    "cluster": 5,
+    "mean_attn_to_instruction": 0.02174013704061508,
+    "mean_attn_to_completion": 0.009105638647451997,
+    "instruction_ratio": 0.7048008846480903,
+    "role": "completion_local"
+  },
+  {
+    "layer": 0,
+    "head": 9,
+    "cluster": 5,
+    "mean_attn_to_instruction": 0.02179399337619543,
+    "mean_attn_to_completion": 0.009109888575039804,
+    "instruction_ratio": 0.705218404548697,
+    "role": "completion_local"
+  },
+  {
+    "layer": 0,
+    "head": 10,
+    "cluster": 5,
+    "mean_attn_to_instruction": 0.02159259030595422,
+    "mean_attn_to_completion": 0.00919663030654192,
+    "instruction_ratio": 0.7013033413439904,
+    "role": "completion_local"
+  },
+  {
+    "layer": 0,
+    "head": 11,
+    "cluster": 5,
+    "mean_attn_to_instruction": 0.021410791762173177,
+    "mean_attn_to_completion": 0.009424740658141672,
+    "instruction_ratio": 0.6943543093980883,
+    "role": "completion_local"
+  },
+  {
+    "layer": 0,
+    "head": 12,
+    "cluster": 5,
+    "mean_attn_to_instruction": 0.021381651889532803,
+    "mean_attn_to_completion": 0.009319002740085125,
+    "instruction_ratio": 0.6964556678979916,
+    "role": "completion_local"
+  },
+  {
+    "layer": 0,
+    "head": 13,
+    "cluster": 5,
+    "mean_attn_to_instruction": 0.02182921664789319,
+    "mean_attn_to_completion": 0.009028153400868178,
+    "instruction_ratio": 0.7074228794991112,
+    "role": "completion_local"
+  },
+  {
+    "layer": 0,
+    "head": 14,
+    "cluster": 5,
+    "mean_attn_to_instruction": 0.0214864912442863,
+    "mean_attn_to_completion": 0.009346054377965629,
+    "instruction_ratio": 0.6968767528559795,
+    "role": "completion_local"
+  },
+  {
+    "layer": 0,
+    "head": 15,
+    "cluster": 5,
+    "mean_attn_to_instruction": 0.021272439602762462,
+    "mean_attn_to_completion": 0.009454121929593384,
+    "instruction_ratio": 0.6923141288432408,
+    "role": "completion_local"
+  },
+  {
+    "layer": 0,
+    "head": 16,
+    "cluster": 5,
+    "mean_attn_to_instruction": 0.013483581924811005,
+    "mean_attn_to_completion": 0.014157489268109202,
+    "instruction_ratio": 0.4878094974180892,
+    "role": "completion_local"
+  },
+  {
+    "layer": 0,
+    "head": 17,
+    "cluster": 5,
+    "mean_attn_to_instruction": 0.0116792336339131,
+    "mean_attn_to_completion": 0.015325551480054855,
+    "instruction_ratio": 0.4324874002792243,
+    "role": "completion_local"
+  },
+  {
+    "layer": 0,
+    "head": 18,
+    "cluster": 5,
+    "mean_attn_to_instruction": 0.01714379396289587,
+    "mean_attn_to_completion": 0.012127958890050649,
+    "instruction_ratio": 0.5856768534584572,
+    "role": "completion_local"
+  },
+  {
+    "layer": 0,
+    "head": 19,
+    "cluster": 5,
+    "mean_attn_to_instruction": 0.026204470451921223,
+    "mean_attn_to_completion": 0.006572264665737748,
+    "instruction_ratio": 0.7994836082062085,
+    "role": "completion_local"
+  },
+  {
+    "layer": 0,
+    "head": 20,
+    "cluster": 0,
+    "mean_attn_to_instruction": 0.005962500453460961,
+    "mean_attn_to_completion": 0.019858199823647737,
+    "instruction_ratio": 0.23091930428989804,
+    "role": "completion_local"
+  },
+  {
+    "layer": 0,
+    "head": 21,
+    "cluster": 5,
+    "mean_attn_to_instruction": 0.02129666805267334,
+    "mean_attn_to_completion": 0.009474726626649499,
+    "instruction_ratio": 0.6920928139164167,
+    "role": "completion_local"
+  },
+  {
+    "layer": 0,
+    "head": 22,
+    "cluster": 5,
+    "mean_attn_to_instruction": 0.017518485989421607,
+    "mean_attn_to_completion": 0.012424293300136923,
+    "instruction_ratio": 0.585065266298706,
+    "role": "completion_local"
+  },
+  {
+    "layer": 0,
+    "head": 23,
+    "cluster": 0,
+    "mean_attn_to_instruction": 0.0040015121921896935,
+    "mean_attn_to_completion": 0.021330894250422717,
+    "instruction_ratio": 0.15796014569927214,
+    "role": "completion_local"
+  },
+  {
+    "layer": 0,
+    "head": 24,
+    "cluster": 5,
+    "mean_attn_to_instruction": 0.02180625479668379,
+    "mean_attn_to_completion": 0.009085872257128359,
+    "instruction_ratio": 0.7058836609037009,
+    "role": "completion_local"
+  },
+  {
+    "layer": 0,
+    "head": 25,
+    "cluster": 5,
+    "mean_attn_to_instruction": 0.021662154234945774,
+    "mean_attn_to_completion": 0.00924859344959259,
+    "instruction_ratio": 0.7007966111999006,
+    "role": "completion_local"
+  },
+  {
+    "layer": 0,
+    "head": 26,
+    "cluster": 5,
+    "mean_attn_to_instruction": 0.020308845862746238,
+    "mean_attn_to_completion": 0.010377827193588018,
+    "instruction_ratio": 0.6618130029062931,
+    "role": "completion_local"
+  },
+  {
+    "layer": 0,
+    "head": 27,
+    "cluster": 5,
+    "mean_attn_to_instruction": 0.021520304121077062,
+    "mean_attn_to_completion": 0.009346610028296709,
+    "instruction_ratio": 0.6971962615041987,
+    "role": "completion_local"
+  },
+  {
+    "layer": 0,
+    "head": 28,
+    "cluster": 5,
+    "mean_attn_to_instruction": 0.02166453655809164,
+    "mean_attn_to_completion": 0.009182487148791552,
+    "instruction_ratio": 0.7023215510429266,
+    "role": "completion_local"
+  },
+  {
+    "layer": 0,
+    "head": 29,
+    "cluster": 5,
+    "mean_attn_to_instruction": 0.021666477806866168,
+    "mean_attn_to_completion": 0.009205768327228725,
+    "instruction_ratio": 0.7018106390656045,
+    "role": "completion_local"
+  },
+  {
+    "layer": 0,
+    "head": 30,
+    "cluster": 5,
+    "mean_attn_to_instruction": 0.019932796712964773,
+    "mean_attn_to_completion": 0.010173638863489032,
+    "instruction_ratio": 0.662077383474128,
+    "role": "completion_local"
+  },
+  {
+    "layer": 0,
+    "head": 31,
+    "cluster": 5,
+    "mean_attn_to_instruction": 0.021440097037702797,
+    "mean_attn_to_completion": 0.009313219017349184,
+    "instruction_ratio": 0.6971635197871789,
+    "role": "completion_local"
+  },
+  {
+    "layer": 1,
+    "head": 0,
+    "cluster": 1,
+    "mean_attn_to_instruction": 0.01660189568065107,
+    "mean_attn_to_completion": 0.01248609907925129,
+    "instruction_ratio": 0.5707471453503294,
+    "role": "completion_local"
+  },
+  {
+    "layer": 1,
+    "head": 1,
+    "cluster": 1,
+    "mean_attn_to_instruction": 0.01600384064950049,
+    "mean_attn_to_completion": 0.012750908592715859,
+    "instruction_ratio": 0.5565631941026452,
+    "role": "completion_local"
+  },
+  {
+    "layer": 1,
+    "head": 2,
+    "cluster": 1,
+    "mean_attn_to_instruction": 0.01565576489083469,
+    "mean_attn_to_completion": 0.013187398249283434,
+    "instruction_ratio": 0.5427892699177055,
+    "role": "completion_local"
+  },
+  {
+    "layer": 1,
+    "head": 3,
+    "cluster": 0,
+    "mean_attn_to_instruction": 0.007592511712573469,
+    "mean_attn_to_completion": 0.018673520628362895,
+    "instruction_ratio": 0.2890618850766233,
+    "role": "completion_local"
+  },
+  {
+    "layer": 1,
+    "head": 4,
+    "cluster": 1,
+    "mean_attn_to_instruction": 0.017567743733525275,
+    "mean_attn_to_completion": 0.011669527739286423,
+    "instruction_ratio": 0.6008678936125389,
+    "role": "completion_local"
+  },
+  {
+    "layer": 1,
+    "head": 5,
+    "cluster": 1,
+    "mean_attn_to_instruction": 0.012540273321792483,
+    "mean_attn_to_completion": 0.014754388527944685,
+    "instruction_ratio": 0.45944034025502445,
+    "role": "completion_local"
+  },
+  {
+    "layer": 1,
+    "head": 6,
+    "cluster": 1,
+    "mean_attn_to_instruction": 0.017203884525224568,
+    "mean_attn_to_completion": 0.01182881100103259,
+    "instruction_ratio": 0.5925691117441806,
+    "role": "completion_local"
+  },
+  {
+    "layer": 1,
+    "head": 7,
+    "cluster": 1,
+    "mean_attn_to_instruction": 0.01657593734562397,
+    "mean_attn_to_completion": 0.012641079630702734,
+    "instruction_ratio": 0.5673382633713805,
+    "role": "completion_local"
+  },
+  {
+    "layer": 1,
+    "head": 8,
+    "cluster": 5,
+    "mean_attn_to_instruction": 0.015448011597618461,
+    "mean_attn_to_completion": 0.012945134099572897,
+    "instruction_ratio": 0.5440751905976613,
+    "role": "completion_local"
+  },
+  {
+    "layer": 1,
+    "head": 9,
+    "cluster": 0,
+    "mean_attn_to_instruction": 0.013132279505953193,
+    "mean_attn_to_completion": 0.015192504925653338,
+    "instruction_ratio": 0.46363194400801705,
+    "role": "completion_local"
+  },
+  {
+    "layer": 1,
+    "head": 10,
+    "cluster": 5,
+    "mean_attn_to_instruction": 0.023284268006682395,
+    "mean_attn_to_completion": 0.008047541370615363,
+    "instruction_ratio": 0.7431508437570524,
+    "role": "completion_local"
+  },
+  {
+    "layer": 1,
+    "head": 11,
+    "cluster": 5,
+    "mean_attn_to_instruction": 0.01949272267520428,
+    "mean_attn_to_completion": 0.010700524505227803,
+    "instruction_ratio": 0.6455985374058052,
+    "role": "completion_local"
+  },
+  {
+    "layer": 1,
+    "head": 12,
+    "cluster": 5,
+    "mean_attn_to_instruction": 0.01696157637052238,
+    "mean_attn_to_completion": 0.012630999274551868,
+    "instruction_ratio": 0.5731697991502027,
+    "role": "completion_local"
+  },
+  {
+    "layer": 1,
+    "head": 13,
+    "cluster": 5,
+    "mean_attn_to_instruction": 0.02107080165296793,
+    "mean_attn_to_completion": 0.009299801476299763,
+    "instruction_ratio": 0.6937891429219228,
+    "role": "completion_local"
+  },
+  {
+    "layer": 1,
+    "head": 14,
+    "cluster": 5,
+    "mean_attn_to_instruction": 0.011026753741316498,
+    "mean_attn_to_completion": 0.01582165281288326,
+    "instruction_ratio": 0.41070406215787203,
+    "role": "completion_local"
+  },
+  {
+    "layer": 1,
+    "head": 15,
+    "cluster": 5,
+    "mean_attn_to_instruction": 0.02244400288909674,
+    "mean_attn_to_completion": 0.008584899199195205,
+    "instruction_ratio": 0.7233254851228081,
+    "role": "completion_local"
+  },
+  {
+    "layer": 1,
+    "head": 16,
+    "cluster": 1,
+    "mean_attn_to_instruction": 0.02533508390188217,
+    "mean_attn_to_completion": 0.006924363411962986,
+    "instruction_ratio": 0.7853536919546636,
+    "role": "completion_local"
+  },
+  {
+    "layer": 1,
+    "head": 17,
+    "cluster": 1,
+    "mean_attn_to_instruction": 0.023212634958326817,
+    "mean_attn_to_completion": 0.008168329810723662,
+    "instruction_ratio": 0.7397040764081141,
+    "role": "completion_local"
+  },
+  {
+    "layer": 1,
+    "head": 18,
+    "cluster": 1,
+    "mean_attn_to_instruction": 0.02550291605293751,
+    "mean_attn_to_completion": 0.006807348574511707,
+    "instruction_ratio": 0.7893128841211238,
+    "role": "completion_local"
+  },
+  {
+    "layer": 1,
+    "head": 19,
+    "cluster": 1,
+    "mean_attn_to_instruction": 0.020704322308301926,
+    "mean_attn_to_completion": 0.010451942728832365,
+    "instruction_ratio": 0.6645313755776332,
+    "role": "completion_local"
+  },
+  {
+    "layer": 1,
+    "head": 20,
+    "cluster": 1,
+    "mean_attn_to_instruction": 0.019984268117696047,
+    "mean_attn_to_completion": 0.010688147693872451,
+    "instruction_ratio": 0.6515385591105978,
+    "role": "completion_local"
+  },
+  {
+    "layer": 1,
+    "head": 21,
+    "cluster": 1,
+    "mean_attn_to_instruction": 0.025694875698536634,
+    "mean_attn_to_completion": 0.006711588241159916,
+    "instruction_ratio": 0.7928932887407261,
+    "role": "completion_local"
+  },
+  {
+    "layer": 1,
+    "head": 22,
+    "cluster": 1,
+    "mean_attn_to_instruction": 0.02025377908721566,
+    "mean_attn_to_completion": 0.01037359363399446,
+    "instruction_ratio": 0.6612964376217979,
+    "role": "completion_local"
+  },
+  {
+    "layer": 1,
+    "head": 23,
+    "cluster": 1,
+    "mean_attn_to_instruction": 0.02588715935125947,
+    "mean_attn_to_completion": 0.006570276734419167,
+    "instruction_ratio": 0.7975722822715183,
+    "role": "completion_local"
+  },
+  {
+    "layer": 1,
+    "head": 24,
+    "cluster": 1,
+    "mean_attn_to_instruction": 0.02063678246922791,
+    "mean_attn_to_completion": 0.009960263292305172,
+    "instruction_ratio": 0.6744695512557346,
+    "role": "completion_local"
+  },
+  {
+    "layer": 1,
+    "head": 25,
+    "cluster": 0,
+    "mean_attn_to_instruction": 0.007515844097360969,
+    "mean_attn_to_completion": 0.018836434185504913,
+    "instruction_ratio": 0.28520650718016505,
+    "role": "completion_local"
+  },
+  {
+    "layer": 1,
+    "head": 26,
+    "cluster": 1,
+    "mean_attn_to_instruction": 0.022633439395576715,
+    "mean_attn_to_completion": 0.008847612352110446,
+    "instruction_ratio": 0.7189541311210554,
+    "role": "completion_local"
+  },
+  {
+    "layer": 1,
+    "head": 27,
+    "cluster": 1,
+    "mean_attn_to_instruction": 0.02001947946846485,
+    "mean_attn_to_completion": 0.010752041079103946,
+    "instruction_ratio": 0.6505844562238244,
+    "role": "completion_local"
+  },
+  {
+    "layer": 1,
+    "head": 28,
+    "cluster": 1,
+    "mean_attn_to_instruction": 0.022515293955802918,
+    "mean_attn_to_completion": 0.008712845831178128,
+    "instruction_ratio": 0.7209935301767222,
+    "role": "completion_local"
+  },
+  {
+    "layer": 1,
+    "head": 29,
+    "cluster": 1,
+    "mean_attn_to_instruction": 0.017627201648429035,
+    "mean_attn_to_completion": 0.011562937591224908,
+    "instruction_ratio": 0.6038750094666528,
+    "role": "completion_local"
+  },
+  {
+    "layer": 1,
+    "head": 30,
+    "cluster": 0,
+    "mean_attn_to_instruction": 0.002916489407652989,
+    "mean_attn_to_completion": 0.02259895224124193,
+    "instruction_ratio": 0.11430287214921013,
+    "role": "completion_local"
+  },
+  {
+    "layer": 1,
+    "head": 31,
+    "cluster": 1,
+    "mean_attn_to_instruction": 0.010506723122671247,
+    "mean_attn_to_completion": 0.017291389871388674,
+    "instruction_ratio": 0.37796520020133695,
+    "role": "completion_local"
+  },
+  {
+    "layer": 2,
+    "head": 0,
+    "cluster": 1,
+    "mean_attn_to_instruction": 0.019595806766301394,
+    "mean_attn_to_completion": 0.01126203048042953,
+    "instruction_ratio": 0.6350347971334056,
+    "role": "completion_local"
+  },
+  {
+    "layer": 2,
+    "head": 1,
+    "cluster": 0,
+    "mean_attn_to_instruction": 0.010978883597999811,
+    "mean_attn_to_completion": 0.017017898987978695,
+    "instruction_ratio": 0.3921479063819014,
+    "role": "completion_local"
+  },
+  {
+    "layer": 2,
+    "head": 2,
+    "cluster": 0,
+    "mean_attn_to_instruction": 0.014062386937439442,
+    "mean_attn_to_completion": 0.014895693026483059,
+    "instruction_ratio": 0.48561168761334383,
+    "role": "completion_local"
+  },
+  {
+    "layer": 2,
+    "head": 3,
+    "cluster": 0,
+    "mean_attn_to_instruction": 0.014752116659656167,
+    "mean_attn_to_completion": 0.014395901188254356,
+    "instruction_ratio": 0.5061102842576594,
+    "role": "completion_local"
+  },
+  {
+    "layer": 2,
+    "head": 4,
+    "cluster": 5,
+    "mean_attn_to_instruction": 0.01456494303420186,
+    "mean_attn_to_completion": 0.013209006702527403,
+    "instruction_ratio": 0.524410029115894,
+    "role": "completion_local"
+  },
+  {
+    "layer": 2,
+    "head": 5,
+    "cluster": 5,
+    "mean_attn_to_instruction": 0.007703208248130977,
+    "mean_attn_to_completion": 0.0183954200707376,
+    "instruction_ratio": 0.2951574773371136,
+    "role": "completion_local"
+  },
+  {
+    "layer": 2,
+    "head": 6,
+    "cluster": 5,
+    "mean_attn_to_instruction": 0.012759376736357807,
+    "mean_attn_to_completion": 0.015431534172967077,
+    "instruction_ratio": 0.45260588603678104,
+    "role": "completion_local"
+  },
+  {
+    "layer": 2,
+    "head": 7,
+    "cluster": 1,
+    "mean_attn_to_instruction": 0.02332566324621439,
+    "mean_attn_to_completion": 0.008584380755200982,
+    "instruction_ratio": 0.7309816287111196,
+    "role": "completion_local"
+  },
+  {
+    "layer": 2,
+    "head": 8,
+    "cluster": 1,
+    "mean_attn_to_instruction": 0.0180695372633636,
+    "mean_attn_to_completion": 0.011443446669727565,
+    "instruction_ratio": 0.6122570046376522,
+    "role": "completion_local"
+  },
+  {
+    "layer": 2,
+    "head": 9,
+    "cluster": 1,
+    "mean_attn_to_instruction": 0.020983930258080364,
+    "mean_attn_to_completion": 0.009550689160823822,
+    "instruction_ratio": 0.6872174530171005,
+    "role": "completion_local"
+  },
+  {
+    "layer": 2,
+    "head": 10,
+    "cluster": 1,
+    "mean_attn_to_instruction": 0.018890594551339745,
+    "mean_attn_to_completion": 0.010828807577490806,
+    "instruction_ratio": 0.6356315013719311,
+    "role": "completion_local"
+  },
+  {
+    "layer": 2,
+    "head": 11,
+    "cluster": 1,
+    "mean_attn_to_instruction": 0.017232307931408286,
+    "mean_attn_to_completion": 0.012073586694896221,
+    "instruction_ratio": 0.588014877928076,
+    "role": "completion_local"
+  },
+  {
+    "layer": 2,
+    "head": 12,
+    "cluster": 1,
+    "mean_attn_to_instruction": 0.020017119869589806,
+    "mean_attn_to_completion": 0.010141245508566498,
+    "instruction_ratio": 0.6637333615818111,
+    "role": "completion_local"
+  },
+  {
+    "layer": 2,
+    "head": 13,
+    "cluster": 1,
+    "mean_attn_to_instruction": 0.01760846497491002,
+    "mean_attn_to_completion": 0.01165264155715704,
+    "instruction_ratio": 0.6017700984039014,
+    "role": "completion_local"
+  },
+  {
+    "layer": 2,
+    "head": 14,
+    "cluster": 1,
+    "mean_attn_to_instruction": 0.016909942589700223,
+    "mean_attn_to_completion": 0.012335950462147593,
+    "instruction_ratio": 0.5781986816998567,
+    "role": "completion_local"
+  },
+  {
+    "layer": 2,
+    "head": 15,
+    "cluster": 1,
+    "mean_attn_to_instruction": 0.019438646035268903,
+    "mean_attn_to_completion": 0.010785440914332867,
+    "instruction_ratio": 0.6431505982687441,
+    "role": "completion_local"
+  },
+  {
+    "layer": 2,
+    "head": 16,
+    "cluster": 1,
+    "mean_attn_to_instruction": 0.019630267424508928,
+    "mean_attn_to_completion": 0.01031717681325972,
+    "instruction_ratio": 0.6554903554957917,
+    "role": "completion_local"
+  },
+  {
+    "layer": 2,
+    "head": 17,
+    "cluster": 1,
+    "mean_attn_to_instruction": 0.019317034911364318,
+    "mean_attn_to_completion": 0.010470021422952414,
+    "instruction_ratio": 0.6485041089497885,
+    "role": "completion_local"
+  },
+  {
+    "layer": 2,
+    "head": 18,
+    "cluster": 1,
+    "mean_attn_to_instruction": 0.027420955058187247,
+    "mean_attn_to_completion": 0.005631542741321027,
+    "instruction_ratio": 0.8296179891861395,
+    "role": "completion_local"
+  },
+  {
+    "layer": 2,
+    "head": 19,
+    "cluster": 1,
+    "mean_attn_to_instruction": 0.022719996981322765,
+    "mean_attn_to_completion": 0.00880768378265202,
+    "instruction_ratio": 0.7206362543774959,
+    "role": "completion_local"
+  },
+  {
+    "layer": 2,
+    "head": 20,
+    "cluster": 1,
+    "mean_attn_to_instruction": 0.02089389441534877,
+    "mean_attn_to_completion": 0.009597053844481706,
+    "instruction_ratio": 0.6852488609016559,
+    "role": "completion_local"
+  },
+  {
+    "layer": 2,
+    "head": 21,
+    "cluster": 0,
+    "mean_attn_to_instruction": 0.017053152807056902,
+    "mean_attn_to_completion": 0.01293479073792696,
+    "instruction_ratio": 0.5686667741923794,
+    "role": "completion_local"
+  },
+  {
+    "layer": 2,
+    "head": 22,
+    "cluster": 1,
+    "mean_attn_to_instruction": 0.021839964063838126,
+    "mean_attn_to_completion": 0.009155782172456384,
+    "instruction_ratio": 0.7046114280078315,
+    "role": "completion_local"
+  },
+  {
+    "layer": 2,
+    "head": 23,
+    "cluster": 1,
+    "mean_attn_to_instruction": 0.01965380902402103,
+    "mean_attn_to_completion": 0.01054233331233263,
+    "instruction_ratio": 0.6508713032408263,
+    "role": "completion_local"
+  },
+  {
+    "layer": 2,
+    "head": 24,
+    "cluster": 1,
+    "mean_attn_to_instruction": 0.02007592925801873,
+    "mean_attn_to_completion": 0.010741813341155648,
+    "instruction_ratio": 0.6514404057665312,
+    "role": "completion_local"
+  },
+  {
+    "layer": 2,
+    "head": 25,
+    "cluster": 1,
+    "mean_attn_to_instruction": 0.020996790239587428,
+    "mean_attn_to_completion": 0.009684834093786777,
+    "instruction_ratio": 0.6843439306865082,
+    "role": "completion_local"
+  },
+  {
+    "layer": 2,
+    "head": 26,
+    "cluster": 1,
+    "mean_attn_to_instruction": 0.021102797333151103,
+    "mean_attn_to_completion": 0.009630963229574263,
+    "instruction_ratio": 0.6866322272459816,
+    "role": "completion_local"
+  },
+  {
+    "layer": 2,
+    "head": 27,
+    "cluster": 1,
+    "mean_attn_to_instruction": 0.016231721453368663,
+    "mean_attn_to_completion": 0.01274561956524849,
+    "instruction_ratio": 0.5601520112359555,
+    "role": "completion_local"
+  },
+  {
+    "layer": 2,
+    "head": 28,
+    "cluster": 1,
+    "mean_attn_to_instruction": 0.022661471320316196,
+    "mean_attn_to_completion": 0.008832486951723695,
+    "instruction_ratio": 0.7195495697642802,
+    "role": "completion_local"
+  },
+  {
+    "layer": 2,
+    "head": 29,
+    "cluster": 1,
+    "mean_attn_to_instruction": 0.021878081373870373,
+    "mean_attn_to_completion": 0.009063773159869015,
+    "instruction_ratio": 0.7070705564628869,
+    "role": "completion_local"
+  },
+  {
+    "layer": 2,
+    "head": 30,
+    "cluster": 1,
+    "mean_attn_to_instruction": 0.022654712293297054,
+    "mean_attn_to_completion": 0.008629982499405742,
+    "instruction_ratio": 0.7241465899522025,
+    "role": "completion_local"
+  },
+  {
+    "layer": 2,
+    "head": 31,
+    "cluster": 1,
+    "mean_attn_to_instruction": 0.021815121872350574,
+    "mean_attn_to_completion": 0.009168096911162138,
+    "instruction_ratio": 0.7040945288426228,
+    "role": "completion_local"
+  },
+  {
+    "layer": 3,
+    "head": 0,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03528584809973836,
+    "mean_attn_to_completion": 0.0010221686185104772,
+    "instruction_ratio": 0.9718470346394034,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 3,
+    "head": 1,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03576124310493469,
+    "mean_attn_to_completion": 0.0007859928591642529,
+    "instruction_ratio": 0.9784935133023057,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 3,
+    "head": 2,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03533368231728673,
+    "mean_attn_to_completion": 0.0010150575792067685,
+    "instruction_ratio": 0.9720742093717867,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 3,
+    "head": 3,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03347032899037004,
+    "mean_attn_to_completion": 0.002399180908105336,
+    "instruction_ratio": 0.9331133810852229,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 3,
+    "head": 4,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.035791723616421224,
+    "mean_attn_to_completion": 0.0007439065462676808,
+    "instruction_ratio": 0.9796386064961471,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 3,
+    "head": 5,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.034997733309865,
+    "mean_attn_to_completion": 0.001367741878493689,
+    "instruction_ratio": 0.9623887355988988,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 3,
+    "head": 6,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.035283731017261746,
+    "mean_attn_to_completion": 0.0012049455661326646,
+    "instruction_ratio": 0.966977283126408,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 3,
+    "head": 7,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03549948902800679,
+    "mean_attn_to_completion": 0.0009192568482831121,
+    "instruction_ratio": 0.9747584225170747,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 3,
+    "head": 8,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.032277271058410405,
+    "mean_attn_to_completion": 0.002975973405409604,
+    "instruction_ratio": 0.9155827326959609,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 3,
+    "head": 9,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03215421065688133,
+    "mean_attn_to_completion": 0.0028677610331214964,
+    "instruction_ratio": 0.9181151124312273,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 3,
+    "head": 10,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03218008689582348,
+    "mean_attn_to_completion": 0.0029926164308562873,
+    "instruction_ratio": 0.9149162476303393,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 3,
+    "head": 11,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.0328244186937809,
+    "mean_attn_to_completion": 0.0025038548512384294,
+    "instruction_ratio": 0.9291257711955432,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 3,
+    "head": 12,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.033529160730540755,
+    "mean_attn_to_completion": 0.00255073492298834,
+    "instruction_ratio": 0.9293028937635583,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 3,
+    "head": 13,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.030105579551309346,
+    "mean_attn_to_completion": 0.0042932819458656015,
+    "instruction_ratio": 0.8751909071721089,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 3,
+    "head": 14,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03172651110216975,
+    "mean_attn_to_completion": 0.0033835171139799058,
+    "instruction_ratio": 0.9036307766699161,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 3,
+    "head": 15,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.029881512466818094,
+    "mean_attn_to_completion": 0.004678603552747518,
+    "instruction_ratio": 0.8646239440765116,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 3,
+    "head": 16,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03502009995281696,
+    "mean_attn_to_completion": 0.0012033316859742626,
+    "instruction_ratio": 0.9667800288560758,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 3,
+    "head": 17,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03155085844919085,
+    "mean_attn_to_completion": 0.0035911703831516205,
+    "instruction_ratio": 0.8978095607860256,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 3,
+    "head": 18,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03185305623337627,
+    "mean_attn_to_completion": 0.003039310546591878,
+    "instruction_ratio": 0.9128944248837538,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 3,
+    "head": 19,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.034125615190714595,
+    "mean_attn_to_completion": 0.0018784501531627028,
+    "instruction_ratio": 0.9478264575545572,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 3,
+    "head": 20,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03137371903285384,
+    "mean_attn_to_completion": 0.0034005891997367144,
+    "instruction_ratio": 0.90220946455394,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 3,
+    "head": 21,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.031924056727439164,
+    "mean_attn_to_completion": 0.003218562452821061,
+    "instruction_ratio": 0.9084140109064763,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 3,
+    "head": 22,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.0333315203897655,
+    "mean_attn_to_completion": 0.0024440448672976346,
+    "instruction_ratio": 0.9316837018067204,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 3,
+    "head": 23,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.031071383599191905,
+    "mean_attn_to_completion": 0.0039477872662246226,
+    "instruction_ratio": 0.8872675725512672,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 3,
+    "head": 24,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.028808578476309778,
+    "mean_attn_to_completion": 0.004832039983011782,
+    "instruction_ratio": 0.8563626720334692,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 3,
+    "head": 25,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.030249297991394995,
+    "mean_attn_to_completion": 0.0040672857780009505,
+    "instruction_ratio": 0.881477287479848,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 3,
+    "head": 26,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.031407959293574095,
+    "mean_attn_to_completion": 0.003402650181669742,
+    "instruction_ratio": 0.9022522370195221,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 3,
+    "head": 27,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03247559731826186,
+    "mean_attn_to_completion": 0.002700594090856612,
+    "instruction_ratio": 0.9232263865149306,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 3,
+    "head": 28,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.02488553076982498,
+    "mean_attn_to_completion": 0.007270372903440148,
+    "instruction_ratio": 0.7739021513332135,
+    "role": "completion_local"
+  },
+  {
+    "layer": 3,
+    "head": 29,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.032615842577069995,
+    "mean_attn_to_completion": 0.0029066790302749723,
+    "instruction_ratio": 0.9181733705692879,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 3,
+    "head": 30,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.029280791897326706,
+    "mean_attn_to_completion": 0.00464985579601489,
+    "instruction_ratio": 0.8629597504994029,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 3,
+    "head": 31,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03189638890326023,
+    "mean_attn_to_completion": 0.00337765893782489,
+    "instruction_ratio": 0.9042449566465589,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 4,
+    "head": 0,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03377504413947463,
+    "mean_attn_to_completion": 0.0018510308756958694,
+    "instruction_ratio": 0.9480425403210134,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 4,
+    "head": 1,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03245079955086112,
+    "mean_attn_to_completion": 0.0028681000811047854,
+    "instruction_ratio": 0.9187939233970869,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 4,
+    "head": 2,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03234795946627855,
+    "mean_attn_to_completion": 0.0029077517334371804,
+    "instruction_ratio": 0.9175236916310585,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 4,
+    "head": 3,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.033022926189005375,
+    "mean_attn_to_completion": 0.0024936019006418066,
+    "instruction_ratio": 0.9297901193424963,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 4,
+    "head": 4,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03556940797716379,
+    "mean_attn_to_completion": 0.0008435033611021936,
+    "instruction_ratio": 0.9768347792459114,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 4,
+    "head": 5,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03364114295691252,
+    "mean_attn_to_completion": 0.0019300841435324402,
+    "instruction_ratio": 0.9457400332160981,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 4,
+    "head": 6,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.034217402525246146,
+    "mean_attn_to_completion": 0.0017523580114357173,
+    "instruction_ratio": 0.9512822021022164,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 4,
+    "head": 7,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03284261617809534,
+    "mean_attn_to_completion": 0.002522810117807239,
+    "instruction_ratio": 0.9286642444702561,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 4,
+    "head": 8,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.035425939969718455,
+    "mean_attn_to_completion": 0.0011739928988390603,
+    "instruction_ratio": 0.9679233679938984,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 4,
+    "head": 9,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03515102891251445,
+    "mean_attn_to_completion": 0.0014667167328298093,
+    "instruction_ratio": 0.9599449308953948,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 4,
+    "head": 10,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03366891788318753,
+    "mean_attn_to_completion": 0.002124423021450639,
+    "instruction_ratio": 0.9406472719720871,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 4,
+    "head": 11,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03351408671587706,
+    "mean_attn_to_completion": 0.0021414718707092107,
+    "instruction_ratio": 0.9399397638125214,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 4,
+    "head": 12,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.035527230612933634,
+    "mean_attn_to_completion": 0.0009224048495525494,
+    "instruction_ratio": 0.9746934479650318,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 4,
+    "head": 13,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03411862924695015,
+    "mean_attn_to_completion": 0.001704583060927689,
+    "instruction_ratio": 0.952416534551867,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 4,
+    "head": 14,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03356187408789992,
+    "mean_attn_to_completion": 0.002273729210719466,
+    "instruction_ratio": 0.9365508497992675,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 4,
+    "head": 15,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.033279274497181176,
+    "mean_attn_to_completion": 0.002226996177341789,
+    "instruction_ratio": 0.9372785283326015,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 4,
+    "head": 16,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03514599977061152,
+    "mean_attn_to_completion": 0.0011885362400789745,
+    "instruction_ratio": 0.9672888099460696,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 4,
+    "head": 17,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.035287060495466,
+    "mean_attn_to_completion": 0.0010181032252148726,
+    "instruction_ratio": 0.9719568006188903,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 4,
+    "head": 18,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03299022875726223,
+    "mean_attn_to_completion": 0.002512041089357808,
+    "instruction_ratio": 0.929242541599847,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 4,
+    "head": 19,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.032312167901545764,
+    "mean_attn_to_completion": 0.0034364109946182,
+    "instruction_ratio": 0.903872541526053,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 4,
+    "head": 20,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03440099135041237,
+    "mean_attn_to_completion": 0.0015784535935381427,
+    "instruction_ratio": 0.9561287519225318,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 4,
+    "head": 21,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.032708150986582044,
+    "mean_attn_to_completion": 0.002824178372975439,
+    "instruction_ratio": 0.920517803671832,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 4,
+    "head": 22,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.030164695531129836,
+    "mean_attn_to_completion": 0.004014429094968364,
+    "instruction_ratio": 0.882547082046277,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 4,
+    "head": 23,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03475106647238135,
+    "mean_attn_to_completion": 0.0013724389602430165,
+    "instruction_ratio": 0.9620067719377192,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 4,
+    "head": 24,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03328574998304248,
+    "mean_attn_to_completion": 0.002375410031527281,
+    "instruction_ratio": 0.9333891728578513,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 4,
+    "head": 25,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.035598690155893564,
+    "mean_attn_to_completion": 0.0008986594752059318,
+    "instruction_ratio": 0.9753771372973464,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 4,
+    "head": 26,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03318856125697493,
+    "mean_attn_to_completion": 0.0026608421438140796,
+    "instruction_ratio": 0.9257769683964893,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 4,
+    "head": 27,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.032678716070950034,
+    "mean_attn_to_completion": 0.0026387999998405574,
+    "instruction_ratio": 0.9252832716948715,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 4,
+    "head": 28,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03569806646555662,
+    "mean_attn_to_completion": 0.0008388575515709817,
+    "instruction_ratio": 0.9770405598023703,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 4,
+    "head": 29,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.035535692051053044,
+    "mean_attn_to_completion": 0.0010095874647959135,
+    "instruction_ratio": 0.9723740739731156,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 4,
+    "head": 30,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03458615588024259,
+    "mean_attn_to_completion": 0.0015688227344071493,
+    "instruction_ratio": 0.9566081253370531,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 4,
+    "head": 31,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03547687204554677,
+    "mean_attn_to_completion": 0.0009074154921108856,
+    "instruction_ratio": 0.9750599694505107,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 5,
+    "head": 0,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.02803620882332325,
+    "mean_attn_to_completion": 0.005551557964645326,
+    "instruction_ratio": 0.8347146344430291,
+    "role": "completion_local"
+  },
+  {
+    "layer": 5,
+    "head": 1,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.02482145056128502,
+    "mean_attn_to_completion": 0.007823285239282995,
+    "instruction_ratio": 0.7603505542032166,
+    "role": "completion_local"
+  },
+  {
+    "layer": 5,
+    "head": 2,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.028048690501600505,
+    "mean_attn_to_completion": 0.005373790382873267,
+    "instruction_ratio": 0.8392160416335207,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 5,
+    "head": 3,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.026730476599186658,
+    "mean_attn_to_completion": 0.006682126334635541,
+    "instruction_ratio": 0.8000115600695361,
+    "role": "completion_local"
+  },
+  {
+    "layer": 5,
+    "head": 4,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03136066561564803,
+    "mean_attn_to_completion": 0.0038503925898112357,
+    "instruction_ratio": 0.8906479471925178,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 5,
+    "head": 5,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.0293507082387805,
+    "mean_attn_to_completion": 0.004636199877131731,
+    "instruction_ratio": 0.8635884000626372,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 5,
+    "head": 6,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.026885769702494143,
+    "mean_attn_to_completion": 0.006227862206287682,
+    "instruction_ratio": 0.8119242750935216,
+    "role": "completion_local"
+  },
+  {
+    "layer": 5,
+    "head": 7,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.0313516465947032,
+    "mean_attn_to_completion": 0.0034109092666767538,
+    "instruction_ratio": 0.9018795309794386,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 5,
+    "head": 8,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.034807953704148534,
+    "mean_attn_to_completion": 0.0014514619542751461,
+    "instruction_ratio": 0.9599698029431433,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 5,
+    "head": 9,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03542737970128655,
+    "mean_attn_to_completion": 0.0009302332080551423,
+    "instruction_ratio": 0.9744140806351745,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 5,
+    "head": 10,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03383683357387781,
+    "mean_attn_to_completion": 0.001847074821125716,
+    "instruction_ratio": 0.9482376122297056,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 5,
+    "head": 11,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.034764135535806415,
+    "mean_attn_to_completion": 0.001399433150072582,
+    "instruction_ratio": 0.9613024152773068,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 5,
+    "head": 12,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03239286318421364,
+    "mean_attn_to_completion": 0.002912865550024435,
+    "instruction_ratio": 0.9174956917924607,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 5,
+    "head": 13,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03567798528820276,
+    "mean_attn_to_completion": 0.0007944160606712103,
+    "instruction_ratio": 0.9782184387790489,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 5,
+    "head": 14,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03589495839551091,
+    "mean_attn_to_completion": 0.0006272273050853983,
+    "instruction_ratio": 0.9828258599174212,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 5,
+    "head": 15,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03511910447850823,
+    "mean_attn_to_completion": 0.001224614688544534,
+    "instruction_ratio": 0.9663043744653834,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 5,
+    "head": 16,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03540305094793439,
+    "mean_attn_to_completion": 0.0011474164697574452,
+    "instruction_ratio": 0.9686070729899126,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 5,
+    "head": 17,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03479857807978988,
+    "mean_attn_to_completion": 0.0014933996804757043,
+    "instruction_ratio": 0.9588501547410205,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 5,
+    "head": 18,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03376915780827403,
+    "mean_attn_to_completion": 0.0021613551361951977,
+    "instruction_ratio": 0.9398459872255241,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 5,
+    "head": 19,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03327149329707026,
+    "mean_attn_to_completion": 0.002635171136353165,
+    "instruction_ratio": 0.9266102701535559,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 5,
+    "head": 20,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.0349234214052558,
+    "mean_attn_to_completion": 0.0012193463102448733,
+    "instruction_ratio": 0.9662627947457971,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 5,
+    "head": 21,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.033365174848586324,
+    "mean_attn_to_completion": 0.0024691878526937215,
+    "instruction_ratio": 0.931094151604738,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 5,
+    "head": 22,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03430748051032424,
+    "mean_attn_to_completion": 0.0016634232131764292,
+    "instruction_ratio": 0.9537561590466446,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 5,
+    "head": 23,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.033251799270510675,
+    "mean_attn_to_completion": 0.0021851976693142206,
+    "instruction_ratio": 0.9383354335476217,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 5,
+    "head": 24,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03172384724020958,
+    "mean_attn_to_completion": 0.0033418504288420083,
+    "instruction_ratio": 0.9046971913305636,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 5,
+    "head": 25,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.033921750262379646,
+    "mean_attn_to_completion": 0.0018121085304301232,
+    "instruction_ratio": 0.9492884875987805,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 5,
+    "head": 26,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.033549203909933566,
+    "mean_attn_to_completion": 0.0023348085698671637,
+    "instruction_ratio": 0.9349343131422504,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 5,
+    "head": 27,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.031064225267618893,
+    "mean_attn_to_completion": 0.0035908193560317157,
+    "instruction_ratio": 0.8963836763488716,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 5,
+    "head": 28,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03470712210983038,
+    "mean_attn_to_completion": 0.0013969660096336157,
+    "instruction_ratio": 0.9613069960919342,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 5,
+    "head": 29,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03415352627635002,
+    "mean_attn_to_completion": 0.0019022518768906592,
+    "instruction_ratio": 0.9472411511625857,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 5,
+    "head": 30,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03196888519451022,
+    "mean_attn_to_completion": 0.003457266843179241,
+    "instruction_ratio": 0.9024089360992283,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 5,
+    "head": 31,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.033116731233894824,
+    "mean_attn_to_completion": 0.0025579220557119696,
+    "instruction_ratio": 0.9282983546348655,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 6,
+    "head": 0,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03331919200718403,
+    "mean_attn_to_completion": 0.0022920969044207596,
+    "instruction_ratio": 0.9356354029626865,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 6,
+    "head": 1,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.025585249438881873,
+    "mean_attn_to_completion": 0.006964985118247569,
+    "instruction_ratio": 0.7860232630196311,
+    "role": "completion_local"
+  },
+  {
+    "layer": 6,
+    "head": 2,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.031960992980748414,
+    "mean_attn_to_completion": 0.0030985502351541074,
+    "instruction_ratio": 0.9116200877953958,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 6,
+    "head": 3,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.033042661380022764,
+    "mean_attn_to_completion": 0.0023296568397199735,
+    "instruction_ratio": 0.9341387192483503,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 6,
+    "head": 4,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03156474120914936,
+    "mean_attn_to_completion": 0.0032092735869809984,
+    "instruction_ratio": 0.9077103209710103,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 6,
+    "head": 5,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.026776310056447983,
+    "mean_attn_to_completion": 0.006241246755234897,
+    "instruction_ratio": 0.8109716324394171,
+    "role": "completion_local"
+  },
+  {
+    "layer": 6,
+    "head": 6,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.027420001197606327,
+    "mean_attn_to_completion": 0.005879332800395787,
+    "instruction_ratio": 0.8234396809514165,
+    "role": "completion_local"
+  },
+  {
+    "layer": 6,
+    "head": 7,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.034286275133490564,
+    "mean_attn_to_completion": 0.0016671855002641678,
+    "instruction_ratio": 0.9536290802841457,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 6,
+    "head": 8,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.030739781353622674,
+    "mean_attn_to_completion": 0.004321606719167903,
+    "instruction_ratio": 0.8767414605032051,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 6,
+    "head": 9,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03181099155917764,
+    "mean_attn_to_completion": 0.0032096120063215493,
+    "instruction_ratio": 0.9083504919090415,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 6,
+    "head": 10,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03143674805760384,
+    "mean_attn_to_completion": 0.0032040647231042383,
+    "instruction_ratio": 0.907505813490994,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 6,
+    "head": 11,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.035021545365452766,
+    "mean_attn_to_completion": 0.0011393367603886873,
+    "instruction_ratio": 0.9684922939283768,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 6,
+    "head": 12,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.029898962285369635,
+    "mean_attn_to_completion": 0.004162399505730718,
+    "instruction_ratio": 0.8777967742679618,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 6,
+    "head": 13,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03431767961010337,
+    "mean_attn_to_completion": 0.001722317491658032,
+    "instruction_ratio": 0.952210678349898,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 6,
+    "head": 14,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.0258958013728261,
+    "mean_attn_to_completion": 0.006720957881771028,
+    "instruction_ratio": 0.7939413364545983,
+    "role": "completion_local"
+  },
+  {
+    "layer": 6,
+    "head": 15,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.034713745675981046,
+    "mean_attn_to_completion": 0.0013381211727391928,
+    "instruction_ratio": 0.9628831758647622,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 6,
+    "head": 16,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03206513673067093,
+    "mean_attn_to_completion": 0.0034352901042439044,
+    "instruction_ratio": 0.9032321737273589,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 6,
+    "head": 17,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03379444917663932,
+    "mean_attn_to_completion": 0.002038358844583854,
+    "instruction_ratio": 0.9431144699985203,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 6,
+    "head": 18,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03070689709857106,
+    "mean_attn_to_completion": 0.0038504950585775076,
+    "instruction_ratio": 0.8885765474769349,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 6,
+    "head": 19,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.027821121644228695,
+    "mean_attn_to_completion": 0.006070775236003101,
+    "instruction_ratio": 0.8208780267968923,
+    "role": "completion_local"
+  },
+  {
+    "layer": 6,
+    "head": 20,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.029099469259381294,
+    "mean_attn_to_completion": 0.005137938191182911,
+    "instruction_ratio": 0.8499317830089943,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 6,
+    "head": 21,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.030544180795550345,
+    "mean_attn_to_completion": 0.004042770771775395,
+    "instruction_ratio": 0.8831125780185731,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 6,
+    "head": 22,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.0340528785251081,
+    "mean_attn_to_completion": 0.0019671777117764577,
+    "instruction_ratio": 0.9453863383026748,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 6,
+    "head": 23,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03190966527909041,
+    "mean_attn_to_completion": 0.0032129513449035583,
+    "instruction_ratio": 0.9085216097503189,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 6,
+    "head": 24,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.02979073179885745,
+    "mean_attn_to_completion": 0.004135989630594849,
+    "instruction_ratio": 0.8780902416374738,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 6,
+    "head": 25,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03569559110328555,
+    "mean_attn_to_completion": 0.0007950809813337401,
+    "instruction_ratio": 0.9782111230617728,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 6,
+    "head": 26,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.027055113948881625,
+    "mean_attn_to_completion": 0.006247439177241176,
+    "instruction_ratio": 0.8124033530518068,
+    "role": "completion_local"
+  },
+  {
+    "layer": 6,
+    "head": 27,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.029051600117236377,
+    "mean_attn_to_completion": 0.0046661845175549384,
+    "instruction_ratio": 0.8616103286678132,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 6,
+    "head": 28,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.02903711860999465,
+    "mean_attn_to_completion": 0.005058412393555045,
+    "instruction_ratio": 0.851639767410395,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 6,
+    "head": 29,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.029566581733524798,
+    "mean_attn_to_completion": 0.004280904226470738,
+    "instruction_ratio": 0.8735234585290927,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 6,
+    "head": 30,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03008397910743952,
+    "mean_attn_to_completion": 0.004533104132860899,
+    "instruction_ratio": 0.8690498332314178,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 6,
+    "head": 31,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.02638897206634283,
+    "mean_attn_to_completion": 0.006147531443275511,
+    "instruction_ratio": 0.811057154557811,
+    "role": "completion_local"
+  },
+  {
+    "layer": 7,
+    "head": 0,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03085528118535876,
+    "mean_attn_to_completion": 0.003577460319502279,
+    "instruction_ratio": 0.8961026881921641,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 7,
+    "head": 1,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.034109382145106795,
+    "mean_attn_to_completion": 0.0016986073227599264,
+    "instruction_ratio": 0.9525631884494349,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 7,
+    "head": 2,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.030617190152406694,
+    "mean_attn_to_completion": 0.0039124855655245485,
+    "instruction_ratio": 0.886691828084239,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 7,
+    "head": 3,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03246849980205298,
+    "mean_attn_to_completion": 0.0026453712198417634,
+    "instruction_ratio": 0.924662807332739,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 7,
+    "head": 4,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03175449287518859,
+    "mean_attn_to_completion": 0.0030280505947303028,
+    "instruction_ratio": 0.9129431196778272,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 7,
+    "head": 5,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.026231246441602706,
+    "mean_attn_to_completion": 0.006906917807646096,
+    "instruction_ratio": 0.7915718664614522,
+    "role": "completion_local"
+  },
+  {
+    "layer": 7,
+    "head": 6,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.029363165237009527,
+    "mean_attn_to_completion": 0.00471991861704737,
+    "instruction_ratio": 0.8615170137647126,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 7,
+    "head": 7,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03342601153999567,
+    "mean_attn_to_completion": 0.0021856966661289333,
+    "instruction_ratio": 0.938623948064572,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 7,
+    "head": 8,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.029813051223754883,
+    "mean_attn_to_completion": 0.004526480700587854,
+    "instruction_ratio": 0.868184301626368,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 7,
+    "head": 9,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.02826035413891077,
+    "mean_attn_to_completion": 0.005451621150132269,
+    "instruction_ratio": 0.8382880419711105,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 7,
+    "head": 10,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.030573939345777033,
+    "mean_attn_to_completion": 0.0038585042115300895,
+    "instruction_ratio": 0.8879396089184225,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 7,
+    "head": 11,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.02409141156822443,
+    "mean_attn_to_completion": 0.007508618617430329,
+    "instruction_ratio": 0.7623854725083873,
+    "role": "completion_local"
+  },
+  {
+    "layer": 7,
+    "head": 12,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.02849399670958519,
+    "mean_attn_to_completion": 0.00503112047445029,
+    "instruction_ratio": 0.8499295633740028,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 7,
+    "head": 13,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03009319622069597,
+    "mean_attn_to_completion": 0.0046307488228194416,
+    "instruction_ratio": 0.8666408012273872,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 7,
+    "head": 14,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.02914356403052807,
+    "mean_attn_to_completion": 0.004936281265690923,
+    "instruction_ratio": 0.8551551577087071,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 7,
+    "head": 15,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03326920568943024,
+    "mean_attn_to_completion": 0.0022730887576472014,
+    "instruction_ratio": 0.9360452623146074,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 7,
+    "head": 16,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.027052427269518377,
+    "mean_attn_to_completion": 0.0063012265367433425,
+    "instruction_ratio": 0.8110781300265919,
+    "role": "completion_local"
+  },
+  {
+    "layer": 7,
+    "head": 17,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.0329499744810164,
+    "mean_attn_to_completion": 0.0022850533277960494,
+    "instruction_ratio": 0.9351479813873069,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 7,
+    "head": 18,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.027795364521443842,
+    "mean_attn_to_completion": 0.005726455524563789,
+    "instruction_ratio": 0.8291720494762845,
+    "role": "completion_local"
+  },
+  {
+    "layer": 7,
+    "head": 19,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.02338877469301224,
+    "mean_attn_to_completion": 0.008532172441482544,
+    "instruction_ratio": 0.7327090661619792,
+    "role": "completion_local"
+  },
+  {
+    "layer": 7,
+    "head": 20,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.02834946131333709,
+    "mean_attn_to_completion": 0.005730379524175077,
+    "instruction_ratio": 0.8318540315362074,
+    "role": "completion_local"
+  },
+  {
+    "layer": 7,
+    "head": 21,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03469929601997137,
+    "mean_attn_to_completion": 0.0013103748584399,
+    "instruction_ratio": 0.9636102062980094,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 7,
+    "head": 22,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03366472823545337,
+    "mean_attn_to_completion": 0.0019481283321511,
+    "instruction_ratio": 0.9452967840021269,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 7,
+    "head": 23,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.02730552004650235,
+    "mean_attn_to_completion": 0.006038754526525736,
+    "instruction_ratio": 0.8188965634185343,
+    "role": "completion_local"
+  },
+  {
+    "layer": 7,
+    "head": 24,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.032906772755086425,
+    "mean_attn_to_completion": 0.0024078125279629603,
+    "instruction_ratio": 0.9318179209286114,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 7,
+    "head": 25,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.034741487447172405,
+    "mean_attn_to_completion": 0.0013146068638889119,
+    "instruction_ratio": 0.9635396865799055,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 7,
+    "head": 26,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.033636960107833146,
+    "mean_attn_to_completion": 0.0022177344741066917,
+    "instruction_ratio": 0.9381463464846457,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 7,
+    "head": 27,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.0281249450519681,
+    "mean_attn_to_completion": 0.005053965310798958,
+    "instruction_ratio": 0.8476751125250457,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 7,
+    "head": 28,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.027952597290277482,
+    "mean_attn_to_completion": 0.005160017614252865,
+    "instruction_ratio": 0.8441673642868799,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 7,
+    "head": 29,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.02775302194058895,
+    "mean_attn_to_completion": 0.005781463475432247,
+    "instruction_ratio": 0.8275962287874433,
+    "role": "completion_local"
+  },
+  {
+    "layer": 7,
+    "head": 30,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.024866087082773446,
+    "mean_attn_to_completion": 0.007454896462149918,
+    "instruction_ratio": 0.7693478558513911,
+    "role": "completion_local"
+  },
+  {
+    "layer": 7,
+    "head": 31,
+    "cluster": 4,
+    "mean_attn_to_instruction": 0.03247444722801447,
+    "mean_attn_to_completion": 0.002906881579110632,
+    "instruction_ratio": 0.917841108417151,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 8,
+    "head": 0,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03056553127244115,
+    "mean_attn_to_completion": 0.0038700735312886536,
+    "instruction_ratio": 0.8876139266469704,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 8,
+    "head": 1,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.027879640646278857,
+    "mean_attn_to_completion": 0.005529194523114711,
+    "instruction_ratio": 0.83449878332879,
+    "role": "completion_local"
+  },
+  {
+    "layer": 8,
+    "head": 2,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02580885188654065,
+    "mean_attn_to_completion": 0.007084496133029461,
+    "instruction_ratio": 0.7846219857268908,
+    "role": "completion_local"
+  },
+  {
+    "layer": 8,
+    "head": 3,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.023841135390102863,
+    "mean_attn_to_completion": 0.008366963150911034,
+    "instruction_ratio": 0.7402215302318511,
+    "role": "completion_local"
+  },
+  {
+    "layer": 8,
+    "head": 4,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.028083160892128943,
+    "mean_attn_to_completion": 0.005729788634926081,
+    "instruction_ratio": 0.8305443026854405,
+    "role": "completion_local"
+  },
+  {
+    "layer": 8,
+    "head": 5,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.030807278770953416,
+    "mean_attn_to_completion": 0.004091661376878619,
+    "instruction_ratio": 0.8827566055842284,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 8,
+    "head": 6,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.027291424665600063,
+    "mean_attn_to_completion": 0.005746712861582637,
+    "instruction_ratio": 0.8260579574912781,
+    "role": "completion_local"
+  },
+  {
+    "layer": 8,
+    "head": 7,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03175396881997585,
+    "mean_attn_to_completion": 0.0034468420781195164,
+    "instruction_ratio": 0.9020803495436092,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 8,
+    "head": 8,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03162556635215878,
+    "mean_attn_to_completion": 0.0038286896189674733,
+    "instruction_ratio": 0.8920101851188925,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 8,
+    "head": 9,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.036210831720381975,
+    "mean_attn_to_completion": 0.0006518186419270933,
+    "instruction_ratio": 0.9823173738541787,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 8,
+    "head": 10,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.0298399499617517,
+    "mean_attn_to_completion": 0.004670366132631898,
+    "instruction_ratio": 0.8646672848045912,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 8,
+    "head": 11,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03691101241856813,
+    "mean_attn_to_completion": 1.8510055997467135e-05,
+    "instruction_ratio": 0.9994985028307567,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 8,
+    "head": 12,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03452406255528331,
+    "mean_attn_to_completion": 0.0015861864987527952,
+    "instruction_ratio": 0.9560735220320857,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 8,
+    "head": 13,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03278658427298069,
+    "mean_attn_to_completion": 0.0024857510812580585,
+    "instruction_ratio": 0.9295266289697025,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 8,
+    "head": 14,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03588658627122641,
+    "mean_attn_to_completion": 0.0006493814558780287,
+    "instruction_ratio": 0.982225972964827,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 8,
+    "head": 15,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.034252104628831145,
+    "mean_attn_to_completion": 0.0015714763372670858,
+    "instruction_ratio": 0.9561326406737318,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 8,
+    "head": 16,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03523305272683501,
+    "mean_attn_to_completion": 0.0010962639105855487,
+    "instruction_ratio": 0.9698239958717993,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 8,
+    "head": 17,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.034837493859231475,
+    "mean_attn_to_completion": 0.0016988602932542563,
+    "instruction_ratio": 0.9535019334117657,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 8,
+    "head": 18,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.034918094892054795,
+    "mean_attn_to_completion": 0.0012823760829633103,
+    "instruction_ratio": 0.9645754407559313,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 8,
+    "head": 19,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03400258319452405,
+    "mean_attn_to_completion": 0.0017680168501101434,
+    "instruction_ratio": 0.9505731982791453,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 8,
+    "head": 20,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.035492082498967646,
+    "mean_attn_to_completion": 0.0009842601211857982,
+    "instruction_ratio": 0.9730162132317477,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 8,
+    "head": 21,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.034597075264900926,
+    "mean_attn_to_completion": 0.0016293542605126277,
+    "instruction_ratio": 0.955022787724706,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 8,
+    "head": 22,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.0332233683206141,
+    "mean_attn_to_completion": 0.0026610944769345224,
+    "instruction_ratio": 0.9258424530312087,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 8,
+    "head": 23,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.034129799157381055,
+    "mean_attn_to_completion": 0.0018696895393077284,
+    "instruction_ratio": 0.9480631784608793,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 8,
+    "head": 24,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.034130617137998344,
+    "mean_attn_to_completion": 0.0017398607218638063,
+    "instruction_ratio": 0.9514957608421416,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 8,
+    "head": 25,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03573002452030778,
+    "mean_attn_to_completion": 0.0008046386152273044,
+    "instruction_ratio": 0.9779757543678509,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 8,
+    "head": 26,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03416426973417401,
+    "mean_attn_to_completion": 0.0015973539353581145,
+    "instruction_ratio": 0.955333026725817,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 8,
+    "head": 27,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03568634083494544,
+    "mean_attn_to_completion": 0.0008554677566280589,
+    "instruction_ratio": 0.9765890754866444,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 8,
+    "head": 28,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.034457335248589516,
+    "mean_attn_to_completion": 0.001614195411093533,
+    "instruction_ratio": 0.9552498900359495,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 8,
+    "head": 29,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03325064685195685,
+    "mean_attn_to_completion": 0.0023647508991416545,
+    "instruction_ratio": 0.9336028688575461,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 8,
+    "head": 30,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02686906922608614,
+    "mean_attn_to_completion": 0.006087906402535736,
+    "instruction_ratio": 0.8152769045343571,
+    "role": "completion_local"
+  },
+  {
+    "layer": 8,
+    "head": 31,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.0320905277505517,
+    "mean_attn_to_completion": 0.0032347728905733676,
+    "instruction_ratio": 0.9084287489093585,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 9,
+    "head": 0,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.030381748639047145,
+    "mean_attn_to_completion": 0.0038269064425549004,
+    "instruction_ratio": 0.8881302022915509,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 9,
+    "head": 1,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.024823789298534394,
+    "mean_attn_to_completion": 0.007660968811251223,
+    "instruction_ratio": 0.7641670463720056,
+    "role": "completion_local"
+  },
+  {
+    "layer": 9,
+    "head": 2,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.026924873795360328,
+    "mean_attn_to_completion": 0.005828870960976928,
+    "instruction_ratio": 0.8220393049792514,
+    "role": "completion_local"
+  },
+  {
+    "layer": 9,
+    "head": 3,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.025252429489046335,
+    "mean_attn_to_completion": 0.007113987614866346,
+    "instruction_ratio": 0.7802044200916339,
+    "role": "completion_local"
+  },
+  {
+    "layer": 9,
+    "head": 4,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.027766414731740952,
+    "mean_attn_to_completion": 0.005887956381775439,
+    "instruction_ratio": 0.8250460657138426,
+    "role": "completion_local"
+  },
+  {
+    "layer": 9,
+    "head": 5,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02231593606993556,
+    "mean_attn_to_completion": 0.008535984612535685,
+    "instruction_ratio": 0.7233238107401339,
+    "role": "completion_local"
+  },
+  {
+    "layer": 9,
+    "head": 6,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03440796798095107,
+    "mean_attn_to_completion": 0.0016147392670973204,
+    "instruction_ratio": 0.9551741403631953,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 9,
+    "head": 7,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.033645438868552445,
+    "mean_attn_to_completion": 0.0019022154025151393,
+    "instruction_ratio": 0.946488033981367,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 9,
+    "head": 8,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.029865975584834815,
+    "mean_attn_to_completion": 0.0044558357913047075,
+    "instruction_ratio": 0.8701745533119519,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 9,
+    "head": 9,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02775411382317543,
+    "mean_attn_to_completion": 0.0062217457918450235,
+    "instruction_ratio": 0.8168772172031635,
+    "role": "completion_local"
+  },
+  {
+    "layer": 9,
+    "head": 10,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02664031842723489,
+    "mean_attn_to_completion": 0.006201297603547573,
+    "instruction_ratio": 0.8111753785353049,
+    "role": "completion_local"
+  },
+  {
+    "layer": 9,
+    "head": 11,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.023742429353296755,
+    "mean_attn_to_completion": 0.008486285177059471,
+    "instruction_ratio": 0.7366853544245529,
+    "role": "completion_local"
+  },
+  {
+    "layer": 9,
+    "head": 12,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.032187079265713694,
+    "mean_attn_to_completion": 0.0028094446402974426,
+    "instruction_ratio": 0.9197219173806558,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 9,
+    "head": 13,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.025020272750407458,
+    "mean_attn_to_completion": 0.007670859177596867,
+    "instruction_ratio": 0.7653532814947114,
+    "role": "completion_local"
+  },
+  {
+    "layer": 9,
+    "head": 14,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.026653384696692227,
+    "mean_attn_to_completion": 0.006809826102107763,
+    "instruction_ratio": 0.7964978881425553,
+    "role": "completion_local"
+  },
+  {
+    "layer": 9,
+    "head": 15,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.023719370365142822,
+    "mean_attn_to_completion": 0.008574026892893017,
+    "instruction_ratio": 0.734495749414628,
+    "role": "completion_local"
+  },
+  {
+    "layer": 9,
+    "head": 16,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.032601517532020806,
+    "mean_attn_to_completion": 0.0026289664674550295,
+    "instruction_ratio": 0.925377814245405,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 9,
+    "head": 17,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03007902204990387,
+    "mean_attn_to_completion": 0.004386658198200166,
+    "instruction_ratio": 0.8727236226339184,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 9,
+    "head": 18,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.029879681952297687,
+    "mean_attn_to_completion": 0.00449440412921831,
+    "instruction_ratio": 0.8692499689719813,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 9,
+    "head": 19,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.0331669501028955,
+    "mean_attn_to_completion": 0.002376043063122779,
+    "instruction_ratio": 0.9331499071132385,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 9,
+    "head": 20,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02793154865503311,
+    "mean_attn_to_completion": 0.005549225572030992,
+    "instruction_ratio": 0.8342561054007426,
+    "role": "completion_local"
+  },
+  {
+    "layer": 9,
+    "head": 21,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.030588546488434076,
+    "mean_attn_to_completion": 0.004268054303247481,
+    "instruction_ratio": 0.8775536632418076,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 9,
+    "head": 22,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.029292081855237483,
+    "mean_attn_to_completion": 0.004776672832667828,
+    "instruction_ratio": 0.8597928960317253,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 9,
+    "head": 23,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.029926542844623327,
+    "mean_attn_to_completion": 0.004350275511387736,
+    "instruction_ratio": 0.8730837793332522,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 9,
+    "head": 24,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.024785833805799483,
+    "mean_attn_to_completion": 0.007615938130766153,
+    "instruction_ratio": 0.7649527996430499,
+    "role": "completion_local"
+  },
+  {
+    "layer": 9,
+    "head": 25,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03165338933467865,
+    "mean_attn_to_completion": 0.0031919865112286063,
+    "instruction_ratio": 0.9083954321715877,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 9,
+    "head": 26,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.029373036790639163,
+    "mean_attn_to_completion": 0.004656953958328813,
+    "instruction_ratio": 0.8631512237486494,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 9,
+    "head": 27,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.029832079820334912,
+    "mean_attn_to_completion": 0.004527803603559732,
+    "instruction_ratio": 0.8682238752111208,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 9,
+    "head": 28,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03233780227601528,
+    "mean_attn_to_completion": 0.0028477925865445287,
+    "instruction_ratio": 0.9190634181885328,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 9,
+    "head": 29,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02760976031422615,
+    "mean_attn_to_completion": 0.005544052238110453,
+    "instruction_ratio": 0.8327775860729603,
+    "role": "completion_local"
+  },
+  {
+    "layer": 9,
+    "head": 30,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.031212963815778493,
+    "mean_attn_to_completion": 0.00369569081813097,
+    "instruction_ratio": 0.8941322775623719,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 9,
+    "head": 31,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03254402671009302,
+    "mean_attn_to_completion": 0.0026032384135760366,
+    "instruction_ratio": 0.9259331369383186,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 10,
+    "head": 0,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02385459216311574,
+    "mean_attn_to_completion": 0.008206950454041361,
+    "instruction_ratio": 0.7440248589318295,
+    "role": "completion_local"
+  },
+  {
+    "layer": 10,
+    "head": 1,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02606378896161914,
+    "mean_attn_to_completion": 0.006392666464671492,
+    "instruction_ratio": 0.8030384276073005,
+    "role": "completion_local"
+  },
+  {
+    "layer": 10,
+    "head": 2,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.024583612475544213,
+    "mean_attn_to_completion": 0.007443172088824212,
+    "instruction_ratio": 0.767595159301232,
+    "role": "completion_local"
+  },
+  {
+    "layer": 10,
+    "head": 3,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02183478940278292,
+    "mean_attn_to_completion": 0.00998224939685315,
+    "instruction_ratio": 0.6862606755354591,
+    "role": "completion_local"
+  },
+  {
+    "layer": 10,
+    "head": 4,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.029484359174966814,
+    "mean_attn_to_completion": 0.004680144181475043,
+    "instruction_ratio": 0.8630112440752041,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 10,
+    "head": 5,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.027062561921775342,
+    "mean_attn_to_completion": 0.006239005655515939,
+    "instruction_ratio": 0.8126510481061896,
+    "role": "completion_local"
+  },
+  {
+    "layer": 10,
+    "head": 6,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.030983122996985912,
+    "mean_attn_to_completion": 0.003705679188715294,
+    "instruction_ratio": 0.893173361806756,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 10,
+    "head": 7,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.028059917502105236,
+    "mean_attn_to_completion": 0.005366967711597681,
+    "instruction_ratio": 0.8394413337737223,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 10,
+    "head": 8,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.033193000964820384,
+    "mean_attn_to_completion": 0.002540848159696907,
+    "instruction_ratio": 0.928894941046163,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 10,
+    "head": 9,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03131538480520248,
+    "mean_attn_to_completion": 0.00332914725295268,
+    "instruction_ratio": 0.9039052891112177,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 10,
+    "head": 10,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.029899931605905296,
+    "mean_attn_to_completion": 0.004447810899000615,
+    "instruction_ratio": 0.870506202746007,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 10,
+    "head": 11,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03247149419039488,
+    "mean_attn_to_completion": 0.0028982782561797647,
+    "instruction_ratio": 0.9180575040132755,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 10,
+    "head": 12,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.032839477993547916,
+    "mean_attn_to_completion": 0.0027399433020036668,
+    "instruction_ratio": 0.9229905256426558,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 10,
+    "head": 13,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03268791474401951,
+    "mean_attn_to_completion": 0.0027765787788666786,
+    "instruction_ratio": 0.9217079472979264,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 10,
+    "head": 14,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03370594782754779,
+    "mean_attn_to_completion": 0.002023831842234358,
+    "instruction_ratio": 0.9433570177451678,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 10,
+    "head": 15,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.029930858686566354,
+    "mean_attn_to_completion": 0.00519381599733606,
+    "instruction_ratio": 0.8521317402824576,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 10,
+    "head": 16,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.0350923010148108,
+    "mean_attn_to_completion": 0.001374266273342073,
+    "instruction_ratio": 0.9623140866091499,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 10,
+    "head": 17,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02795899650081992,
+    "mean_attn_to_completion": 0.0054961988353170455,
+    "instruction_ratio": 0.8357143894322399,
+    "role": "completion_local"
+  },
+  {
+    "layer": 10,
+    "head": 18,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02834547869861126,
+    "mean_attn_to_completion": 0.00522442382061854,
+    "instruction_ratio": 0.8443715390194766,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 10,
+    "head": 19,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.028616478852927684,
+    "mean_attn_to_completion": 0.004975565924542025,
+    "instruction_ratio": 0.8518823585665513,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 10,
+    "head": 20,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.027724565751850606,
+    "mean_attn_to_completion": 0.006091017974540591,
+    "instruction_ratio": 0.8198751728618362,
+    "role": "completion_local"
+  },
+  {
+    "layer": 10,
+    "head": 21,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.027296882681548597,
+    "mean_attn_to_completion": 0.005859739985316992,
+    "instruction_ratio": 0.823270654647243,
+    "role": "completion_local"
+  },
+  {
+    "layer": 10,
+    "head": 22,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02786467708647251,
+    "mean_attn_to_completion": 0.005697063007391989,
+    "instruction_ratio": 0.8302510151747574,
+    "role": "completion_local"
+  },
+  {
+    "layer": 10,
+    "head": 23,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.027585165668278934,
+    "mean_attn_to_completion": 0.005470372654963284,
+    "instruction_ratio": 0.8345093960786935,
+    "role": "completion_local"
+  },
+  {
+    "layer": 10,
+    "head": 24,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02791834492236376,
+    "mean_attn_to_completion": 0.0055972101516090335,
+    "instruction_ratio": 0.8329963961742757,
+    "role": "completion_local"
+  },
+  {
+    "layer": 10,
+    "head": 25,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02387459306046367,
+    "mean_attn_to_completion": 0.008036622568033636,
+    "instruction_ratio": 0.7481565684253513,
+    "role": "completion_local"
+  },
+  {
+    "layer": 10,
+    "head": 26,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03147131437435746,
+    "mean_attn_to_completion": 0.0031700915540568532,
+    "instruction_ratio": 0.9084881068196577,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 10,
+    "head": 27,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02351700495928526,
+    "mean_attn_to_completion": 0.007950343587435783,
+    "instruction_ratio": 0.7473460133099025,
+    "role": "completion_local"
+  },
+  {
+    "layer": 10,
+    "head": 28,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.023996877018362284,
+    "mean_attn_to_completion": 0.008574756025336683,
+    "instruction_ratio": 0.7367413730454877,
+    "role": "completion_local"
+  },
+  {
+    "layer": 10,
+    "head": 29,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.023262471053749324,
+    "mean_attn_to_completion": 0.008230294985696673,
+    "instruction_ratio": 0.7386605431230363,
+    "role": "completion_local"
+  },
+  {
+    "layer": 10,
+    "head": 30,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.023926735576242208,
+    "mean_attn_to_completion": 0.008202336472459137,
+    "instruction_ratio": 0.7447064793190792,
+    "role": "completion_local"
+  },
+  {
+    "layer": 10,
+    "head": 31,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02541778115555644,
+    "mean_attn_to_completion": 0.0071448226692155,
+    "instruction_ratio": 0.7805817214900579,
+    "role": "completion_local"
+  },
+  {
+    "layer": 11,
+    "head": 0,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03194759022444486,
+    "mean_attn_to_completion": 0.0030248224386014043,
+    "instruction_ratio": 0.9135080669776532,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 11,
+    "head": 1,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03363799750804901,
+    "mean_attn_to_completion": 0.002166957187000662,
+    "instruction_ratio": 0.9394785833345546,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 11,
+    "head": 2,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.030355405528098345,
+    "mean_attn_to_completion": 0.003939361369702965,
+    "instruction_ratio": 0.8851320309957892,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 11,
+    "head": 3,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03495798762887716,
+    "mean_attn_to_completion": 0.0012336644824245014,
+    "instruction_ratio": 0.9659127431442488,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 11,
+    "head": 4,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02863065917044878,
+    "mean_attn_to_completion": 0.0052786406595259905,
+    "instruction_ratio": 0.8443303421392602,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 11,
+    "head": 5,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03375187125056982,
+    "mean_attn_to_completion": 0.0018836841074516997,
+    "instruction_ratio": 0.9471400526825743,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 11,
+    "head": 6,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.034698643162846564,
+    "mean_attn_to_completion": 0.0012818286020774394,
+    "instruction_ratio": 0.964374056732974,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 11,
+    "head": 7,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03306854655966163,
+    "mean_attn_to_completion": 0.0026710202073445544,
+    "instruction_ratio": 0.9252640783980861,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 11,
+    "head": 8,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03686976982280612,
+    "mean_attn_to_completion": 3.665892581921071e-05,
+    "instruction_ratio": 0.9990064355418043,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 11,
+    "head": 9,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02017852123826742,
+    "mean_attn_to_completion": 0.009622298064641654,
+    "instruction_ratio": 0.6771127418355988,
+    "role": "completion_local"
+  },
+  {
+    "layer": 11,
+    "head": 10,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.025839505530893803,
+    "mean_attn_to_completion": 0.00679767276160419,
+    "instruction_ratio": 0.791719718601902,
+    "role": "completion_local"
+  },
+  {
+    "layer": 11,
+    "head": 11,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03627890013158321,
+    "mean_attn_to_completion": 0.00040843652459443547,
+    "instruction_ratio": 0.9888668284348205,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 11,
+    "head": 12,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.024253519531339408,
+    "mean_attn_to_completion": 0.007344011741224676,
+    "instruction_ratio": 0.7675761643010675,
+    "role": "completion_local"
+  },
+  {
+    "layer": 11,
+    "head": 13,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.029865145590156315,
+    "mean_attn_to_completion": 0.0040027768118306994,
+    "instruction_ratio": 0.8818118931997201,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 11,
+    "head": 14,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02329647708684206,
+    "mean_attn_to_completion": 0.007789395656436682,
+    "instruction_ratio": 0.7494230509467878,
+    "role": "completion_local"
+  },
+  {
+    "layer": 11,
+    "head": 15,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.0351429920643568,
+    "mean_attn_to_completion": 0.0010426008186186664,
+    "instruction_ratio": 0.9711871369950509,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 11,
+    "head": 16,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.026802569255232812,
+    "mean_attn_to_completion": 0.0062077326118014755,
+    "instruction_ratio": 0.8119453509919476,
+    "role": "completion_local"
+  },
+  {
+    "layer": 11,
+    "head": 17,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.024049289524555206,
+    "mean_attn_to_completion": 0.007549577485769987,
+    "instruction_ratio": 0.7610805129782587,
+    "role": "completion_local"
+  },
+  {
+    "layer": 11,
+    "head": 18,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.022526652738451957,
+    "mean_attn_to_completion": 0.008178986393613741,
+    "instruction_ratio": 0.7336321939185948,
+    "role": "completion_local"
+  },
+  {
+    "layer": 11,
+    "head": 19,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.025336798373609783,
+    "mean_attn_to_completion": 0.00720713782357052,
+    "instruction_ratio": 0.778541060143623,
+    "role": "completion_local"
+  },
+  {
+    "layer": 11,
+    "head": 20,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.029670826531946658,
+    "mean_attn_to_completion": 0.004334152780938893,
+    "instruction_ratio": 0.8725433276552584,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 11,
+    "head": 21,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02826799275353551,
+    "mean_attn_to_completion": 0.005222026561386883,
+    "instruction_ratio": 0.8440719023479605,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 11,
+    "head": 22,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.024445815756917,
+    "mean_attn_to_completion": 0.007325056463014334,
+    "instruction_ratio": 0.7694408857674407,
+    "role": "completion_local"
+  },
+  {
+    "layer": 11,
+    "head": 23,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.028302220068871974,
+    "mean_attn_to_completion": 0.004970852145925164,
+    "instruction_ratio": 0.8506040975153623,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 11,
+    "head": 24,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.024657770805060864,
+    "mean_attn_to_completion": 0.007557153818197548,
+    "instruction_ratio": 0.7654142742620543,
+    "role": "completion_local"
+  },
+  {
+    "layer": 11,
+    "head": 25,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02543766740709543,
+    "mean_attn_to_completion": 0.007348395581357181,
+    "instruction_ratio": 0.7758680771574773,
+    "role": "completion_local"
+  },
+  {
+    "layer": 11,
+    "head": 26,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.025525877065956593,
+    "mean_attn_to_completion": 0.006686935340985656,
+    "instruction_ratio": 0.7924135533201666,
+    "role": "completion_local"
+  },
+  {
+    "layer": 11,
+    "head": 27,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02963476162403822,
+    "mean_attn_to_completion": 0.0045843733591027554,
+    "instruction_ratio": 0.8660286993914844,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 11,
+    "head": 28,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.024028795771300793,
+    "mean_attn_to_completion": 0.008373603504151107,
+    "instruction_ratio": 0.7415743553830436,
+    "role": "completion_local"
+  },
+  {
+    "layer": 11,
+    "head": 29,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02604284565895796,
+    "mean_attn_to_completion": 0.006646123062819242,
+    "instruction_ratio": 0.7966858151370869,
+    "role": "completion_local"
+  },
+  {
+    "layer": 11,
+    "head": 30,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.0258573274128139,
+    "mean_attn_to_completion": 0.006967414519749582,
+    "instruction_ratio": 0.7877386999279158,
+    "role": "completion_local"
+  },
+  {
+    "layer": 11,
+    "head": 31,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03253395212814212,
+    "mean_attn_to_completion": 0.0030230943870265038,
+    "instruction_ratio": 0.9149787782423201,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 12,
+    "head": 0,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.01792968697845936,
+    "mean_attn_to_completion": 0.012622198602184654,
+    "instruction_ratio": 0.5868600503406608,
+    "role": "completion_local"
+  },
+  {
+    "layer": 12,
+    "head": 1,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02331518167629838,
+    "mean_attn_to_completion": 0.008322826214134693,
+    "instruction_ratio": 0.7369355993489273,
+    "role": "completion_local"
+  },
+  {
+    "layer": 12,
+    "head": 2,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.024570700246840715,
+    "mean_attn_to_completion": 0.007329132640734315,
+    "instruction_ratio": 0.7702451806247292,
+    "role": "completion_local"
+  },
+  {
+    "layer": 12,
+    "head": 3,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.022046286053955554,
+    "mean_attn_to_completion": 0.008669840800575913,
+    "instruction_ratio": 0.7177427994400645,
+    "role": "completion_local"
+  },
+  {
+    "layer": 12,
+    "head": 4,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.019333073310554026,
+    "mean_attn_to_completion": 0.010478427889756859,
+    "instruction_ratio": 0.648510341547275,
+    "role": "completion_local"
+  },
+  {
+    "layer": 12,
+    "head": 5,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03199926503002644,
+    "mean_attn_to_completion": 0.0029181808698922397,
+    "instruction_ratio": 0.9164260168823171,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 12,
+    "head": 6,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02965028816834092,
+    "mean_attn_to_completion": 0.004388803371693939,
+    "instruction_ratio": 0.8710655342494259,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 12,
+    "head": 7,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.031420832592993976,
+    "mean_attn_to_completion": 0.0033056724700145424,
+    "instruction_ratio": 0.9048081137995954,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 12,
+    "head": 8,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.01986907282844186,
+    "mean_attn_to_completion": 0.01091659301891923,
+    "instruction_ratio": 0.6453999232290693,
+    "role": "completion_local"
+  },
+  {
+    "layer": 12,
+    "head": 9,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.019996410282328726,
+    "mean_attn_to_completion": 0.009748816746287048,
+    "instruction_ratio": 0.6722558728676998,
+    "role": "completion_local"
+  },
+  {
+    "layer": 12,
+    "head": 10,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.018061860091984273,
+    "mean_attn_to_completion": 0.011328125768341125,
+    "instruction_ratio": 0.6145581026218048,
+    "role": "completion_local"
+  },
+  {
+    "layer": 12,
+    "head": 11,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.022821192024275662,
+    "mean_attn_to_completion": 0.008820248302072287,
+    "instruction_ratio": 0.7212435520148194,
+    "role": "completion_local"
+  },
+  {
+    "layer": 12,
+    "head": 12,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02125805467367172,
+    "mean_attn_to_completion": 0.009681488550268114,
+    "instruction_ratio": 0.6870834404041444,
+    "role": "completion_local"
+  },
+  {
+    "layer": 12,
+    "head": 13,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.021777581190690398,
+    "mean_attn_to_completion": 0.009439176879823208,
+    "instruction_ratio": 0.6976244671292806,
+    "role": "completion_local"
+  },
+  {
+    "layer": 12,
+    "head": 14,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.024119349429383874,
+    "mean_attn_to_completion": 0.007621263631153852,
+    "instruction_ratio": 0.7598889720400863,
+    "role": "completion_local"
+  },
+  {
+    "layer": 12,
+    "head": 15,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02349524646997452,
+    "mean_attn_to_completion": 0.008080227603204548,
+    "instruction_ratio": 0.7440977441714635,
+    "role": "completion_local"
+  },
+  {
+    "layer": 12,
+    "head": 16,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02291140304878354,
+    "mean_attn_to_completion": 0.008926045149564743,
+    "instruction_ratio": 0.7196366904055228,
+    "role": "completion_local"
+  },
+  {
+    "layer": 12,
+    "head": 17,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.026405062526464462,
+    "mean_attn_to_completion": 0.00644607279682532,
+    "instruction_ratio": 0.803779054477733,
+    "role": "completion_local"
+  },
+  {
+    "layer": 12,
+    "head": 18,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.029723076708614828,
+    "mean_attn_to_completion": 0.004680177889531479,
+    "instruction_ratio": 0.8639609367250672,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 12,
+    "head": 19,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.024744406435638668,
+    "mean_attn_to_completion": 0.0078528409358114,
+    "instruction_ratio": 0.7590947346788374,
+    "role": "completion_local"
+  },
+  {
+    "layer": 12,
+    "head": 20,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.030591721832752227,
+    "mean_attn_to_completion": 0.004187877709046006,
+    "instruction_ratio": 0.8795878457458531,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 12,
+    "head": 21,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.025016690883785487,
+    "mean_attn_to_completion": 0.007342671323567629,
+    "instruction_ratio": 0.773089500114,
+    "role": "completion_local"
+  },
+  {
+    "layer": 12,
+    "head": 22,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02638311479240656,
+    "mean_attn_to_completion": 0.007128185383044184,
+    "instruction_ratio": 0.7872898628634919,
+    "role": "completion_local"
+  },
+  {
+    "layer": 12,
+    "head": 23,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.024250066373497248,
+    "mean_attn_to_completion": 0.008198129641823471,
+    "instruction_ratio": 0.7473469060831085,
+    "role": "completion_local"
+  },
+  {
+    "layer": 12,
+    "head": 24,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02342498265206814,
+    "mean_attn_to_completion": 0.008164963801391423,
+    "instruction_ratio": 0.7415326034582982,
+    "role": "completion_local"
+  },
+  {
+    "layer": 12,
+    "head": 25,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02958365175873041,
+    "mean_attn_to_completion": 0.004316713230218738,
+    "instruction_ratio": 0.8726644400946626,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 12,
+    "head": 26,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03121035248041153,
+    "mean_attn_to_completion": 0.0033061236143112184,
+    "instruction_ratio": 0.904215811388266,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 12,
+    "head": 27,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02615772746503353,
+    "mean_attn_to_completion": 0.006481774104759097,
+    "instruction_ratio": 0.8014129564745726,
+    "role": "completion_local"
+  },
+  {
+    "layer": 12,
+    "head": 28,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.029228977952152492,
+    "mean_attn_to_completion": 0.004705165734048933,
+    "instruction_ratio": 0.8613439492978371,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 12,
+    "head": 29,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02219834653660655,
+    "mean_attn_to_completion": 0.008800740377046168,
+    "instruction_ratio": 0.7160965559235336,
+    "role": "completion_local"
+  },
+  {
+    "layer": 12,
+    "head": 30,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.026467482652515174,
+    "mean_attn_to_completion": 0.006522892531938851,
+    "instruction_ratio": 0.8022786792130993,
+    "role": "completion_local"
+  },
+  {
+    "layer": 12,
+    "head": 31,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02687212834134698,
+    "mean_attn_to_completion": 0.006243840698152781,
+    "instruction_ratio": 0.8114550474045988,
+    "role": "completion_local"
+  },
+  {
+    "layer": 13,
+    "head": 0,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.025266467314213514,
+    "mean_attn_to_completion": 0.007574505731463432,
+    "instruction_ratio": 0.7693578258321804,
+    "role": "completion_local"
+  },
+  {
+    "layer": 13,
+    "head": 1,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.021356674004346134,
+    "mean_attn_to_completion": 0.009947516769170762,
+    "instruction_ratio": 0.6822302910353714,
+    "role": "completion_local"
+  },
+  {
+    "layer": 13,
+    "head": 2,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.026819974277168514,
+    "mean_attn_to_completion": 0.006283539510332048,
+    "instruction_ratio": 0.8101848748590134,
+    "role": "completion_local"
+  },
+  {
+    "layer": 13,
+    "head": 3,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.029546062368899582,
+    "mean_attn_to_completion": 0.0048609078396111725,
+    "instruction_ratio": 0.8587229158108797,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 13,
+    "head": 4,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.023010673141106962,
+    "mean_attn_to_completion": 0.008695387188345194,
+    "instruction_ratio": 0.7257497665906603,
+    "role": "completion_local"
+  },
+  {
+    "layer": 13,
+    "head": 5,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.028445591032505036,
+    "mean_attn_to_completion": 0.005341451591812074,
+    "instruction_ratio": 0.8419080334942346,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 13,
+    "head": 6,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.021344932075589896,
+    "mean_attn_to_completion": 0.009926387178711592,
+    "instruction_ratio": 0.6825719463989149,
+    "role": "completion_local"
+  },
+  {
+    "layer": 13,
+    "head": 7,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02607482299208641,
+    "mean_attn_to_completion": 0.007381523377262056,
+    "instruction_ratio": 0.779368282195106,
+    "role": "completion_local"
+  },
+  {
+    "layer": 13,
+    "head": 8,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.021749801374971865,
+    "mean_attn_to_completion": 0.009301148750819267,
+    "instruction_ratio": 0.7004550354275949,
+    "role": "completion_local"
+  },
+  {
+    "layer": 13,
+    "head": 9,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02916312972083688,
+    "mean_attn_to_completion": 0.004939320217818022,
+    "instruction_ratio": 0.8551620549748281,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 13,
+    "head": 10,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.027856852672994138,
+    "mean_attn_to_completion": 0.005282141943462193,
+    "instruction_ratio": 0.8406061979049559,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 13,
+    "head": 11,
+    "cluster": 3,
+    "mean_attn_to_instruction": 0.01675043641589582,
+    "mean_attn_to_completion": 0.011960739269852638,
+    "instruction_ratio": 0.5834115177002367,
+    "role": "completion_local"
+  },
+  {
+    "layer": 13,
+    "head": 12,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.032758282776921985,
+    "mean_attn_to_completion": 0.0024618421331979333,
+    "instruction_ratio": 0.9301010021829712,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 13,
+    "head": 13,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02609902424737811,
+    "mean_attn_to_completion": 0.0065452224225737154,
+    "instruction_ratio": 0.7994981938553856,
+    "role": "completion_local"
+  },
+  {
+    "layer": 13,
+    "head": 14,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.023994220327585934,
+    "mean_attn_to_completion": 0.0079731805017218,
+    "instruction_ratio": 0.7505837884620928,
+    "role": "completion_local"
+  },
+  {
+    "layer": 13,
+    "head": 15,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02721837367862463,
+    "mean_attn_to_completion": 0.0056940641487017276,
+    "instruction_ratio": 0.8269932951029524,
+    "role": "completion_local"
+  },
+  {
+    "layer": 13,
+    "head": 16,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.023402700386941432,
+    "mean_attn_to_completion": 0.008103177580051125,
+    "instruction_ratio": 0.7428040248051251,
+    "role": "completion_local"
+  },
+  {
+    "layer": 13,
+    "head": 17,
+    "cluster": 6,
+    "mean_attn_to_instruction": 0.014618424559012055,
+    "mean_attn_to_completion": 0.013163122488185764,
+    "instruction_ratio": 0.5261916937980458,
+    "role": "completion_local"
+  },
+  {
+    "layer": 13,
+    "head": 18,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02221419312991202,
+    "mean_attn_to_completion": 0.00868489455897361,
+    "instruction_ratio": 0.7189269199243459,
+    "role": "completion_local"
+  },
+  {
+    "layer": 13,
+    "head": 19,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.026174516789615153,
+    "mean_attn_to_completion": 0.006273216841509566,
+    "instruction_ratio": 0.8066667774244823,
+    "role": "completion_local"
+  },
+  {
+    "layer": 13,
+    "head": 20,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.013865669257938862,
+    "mean_attn_to_completion": 0.014363175304606558,
+    "instruction_ratio": 0.491187810232162,
+    "role": "completion_local"
+  },
+  {
+    "layer": 13,
+    "head": 21,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.026541803497821093,
+    "mean_attn_to_completion": 0.006113971187733114,
+    "instruction_ratio": 0.8127749418179582,
+    "role": "completion_local"
+  },
+  {
+    "layer": 13,
+    "head": 22,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02937098713591695,
+    "mean_attn_to_completion": 0.0044530917541123925,
+    "instruction_ratio": 0.8683452562878914,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 13,
+    "head": 23,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03241408225148916,
+    "mean_attn_to_completion": 0.002633838215842843,
+    "instruction_ratio": 0.9248501072467648,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 13,
+    "head": 24,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.030388601962476967,
+    "mean_attn_to_completion": 0.0038175885565578938,
+    "instruction_ratio": 0.8883945454733126,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 13,
+    "head": 25,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.019393393024802207,
+    "mean_attn_to_completion": 0.011173596326261758,
+    "instruction_ratio": 0.6344552437767225,
+    "role": "completion_local"
+  },
+  {
+    "layer": 13,
+    "head": 26,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.026532435230910777,
+    "mean_attn_to_completion": 0.0060936974943615494,
+    "instruction_ratio": 0.8132262356088652,
+    "role": "completion_local"
+  },
+  {
+    "layer": 13,
+    "head": 27,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.01827745051123202,
+    "mean_attn_to_completion": 0.01092276000417769,
+    "instruction_ratio": 0.6259353590013657,
+    "role": "completion_local"
+  },
+  {
+    "layer": 13,
+    "head": 28,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02502380795776844,
+    "mean_attn_to_completion": 0.006861777056474239,
+    "instruction_ratio": 0.7847997801700357,
+    "role": "completion_local"
+  },
+  {
+    "layer": 13,
+    "head": 29,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.028832105733454228,
+    "mean_attn_to_completion": 0.004646099254023284,
+    "instruction_ratio": 0.8612199229928729,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 13,
+    "head": 30,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02729444494470954,
+    "mean_attn_to_completion": 0.005612502619624138,
+    "instruction_ratio": 0.8294429799943803,
+    "role": "completion_local"
+  },
+  {
+    "layer": 13,
+    "head": 31,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.021133632864803076,
+    "mean_attn_to_completion": 0.009665847825817763,
+    "instruction_ratio": 0.6861682576861168,
+    "role": "completion_local"
+  },
+  {
+    "layer": 14,
+    "head": 0,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02553030326962471,
+    "mean_attn_to_completion": 0.006627423351164907,
+    "instruction_ratio": 0.7939085878674574,
+    "role": "completion_local"
+  },
+  {
+    "layer": 14,
+    "head": 1,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.023151850420981647,
+    "mean_attn_to_completion": 0.008011810365132987,
+    "instruction_ratio": 0.7429115324661062,
+    "role": "completion_local"
+  },
+  {
+    "layer": 14,
+    "head": 2,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.01756431325338781,
+    "mean_attn_to_completion": 0.0113476904341951,
+    "instruction_ratio": 0.6075091636018181,
+    "role": "completion_local"
+  },
+  {
+    "layer": 14,
+    "head": 3,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.01859994395636022,
+    "mean_attn_to_completion": 0.0120197634678334,
+    "instruction_ratio": 0.6074498891901533,
+    "role": "completion_local"
+  },
+  {
+    "layer": 14,
+    "head": 4,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02414886122569442,
+    "mean_attn_to_completion": 0.00759175366256386,
+    "instruction_ratio": 0.760818708223597,
+    "role": "completion_local"
+  },
+  {
+    "layer": 14,
+    "head": 5,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.023742871498689054,
+    "mean_attn_to_completion": 0.007772104721516371,
+    "instruction_ratio": 0.7533835278489387,
+    "role": "completion_local"
+  },
+  {
+    "layer": 14,
+    "head": 6,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.022661567013710738,
+    "mean_attn_to_completion": 0.008267264580354095,
+    "instruction_ratio": 0.7327001544752143,
+    "role": "completion_local"
+  },
+  {
+    "layer": 14,
+    "head": 7,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.023159020161256195,
+    "mean_attn_to_completion": 0.008084986277390271,
+    "instruction_ratio": 0.7412305715154551,
+    "role": "completion_local"
+  },
+  {
+    "layer": 14,
+    "head": 8,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.023810141999274493,
+    "mean_attn_to_completion": 0.007571728969924152,
+    "instruction_ratio": 0.7587225897212527,
+    "role": "completion_local"
+  },
+  {
+    "layer": 14,
+    "head": 9,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02961769038811326,
+    "mean_attn_to_completion": 0.004224330116994679,
+    "instruction_ratio": 0.8751747441289884,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 14,
+    "head": 10,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.026791730150580405,
+    "mean_attn_to_completion": 0.005978286219760776,
+    "instruction_ratio": 0.8175681596285962,
+    "role": "completion_local"
+  },
+  {
+    "layer": 14,
+    "head": 11,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.026149939093738795,
+    "mean_attn_to_completion": 0.006419461301993579,
+    "instruction_ratio": 0.8028987561029126,
+    "role": "completion_local"
+  },
+  {
+    "layer": 14,
+    "head": 12,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.023955095559358597,
+    "mean_attn_to_completion": 0.0075077715911902486,
+    "instruction_ratio": 0.761376508725958,
+    "role": "completion_local"
+  },
+  {
+    "layer": 14,
+    "head": 13,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03615019703283906,
+    "mean_attn_to_completion": 0.0004817794775590301,
+    "instruction_ratio": 0.9868478473745268,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 14,
+    "head": 14,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.028353164438158274,
+    "mean_attn_to_completion": 0.005000913143157959,
+    "instruction_ratio": 0.8500656589401264,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 14,
+    "head": 15,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.032971170544624326,
+    "mean_attn_to_completion": 0.0023407756438245998,
+    "instruction_ratio": 0.9337112441085802,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 14,
+    "head": 16,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.027580485958606005,
+    "mean_attn_to_completion": 0.005391855479683727,
+    "instruction_ratio": 0.8364731284095702,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 14,
+    "head": 17,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.020964182587340473,
+    "mean_attn_to_completion": 0.009917761362157763,
+    "instruction_ratio": 0.6788489686120102,
+    "role": "completion_local"
+  },
+  {
+    "layer": 14,
+    "head": 18,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.023837711103260516,
+    "mean_attn_to_completion": 0.008452202193439007,
+    "instruction_ratio": 0.7382399420470924,
+    "role": "completion_local"
+  },
+  {
+    "layer": 14,
+    "head": 19,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.023381928633898496,
+    "mean_attn_to_completion": 0.008412881451658905,
+    "instruction_ratio": 0.735400564336566,
+    "role": "completion_local"
+  },
+  {
+    "layer": 14,
+    "head": 20,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02115296870470047,
+    "mean_attn_to_completion": 0.009396768547594548,
+    "instruction_ratio": 0.692410596068397,
+    "role": "completion_local"
+  },
+  {
+    "layer": 14,
+    "head": 21,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.019910238264128566,
+    "mean_attn_to_completion": 0.01073152250610292,
+    "instruction_ratio": 0.6497744015326746,
+    "role": "completion_local"
+  },
+  {
+    "layer": 14,
+    "head": 22,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.032655793335288764,
+    "mean_attn_to_completion": 0.0025028278469108045,
+    "instruction_ratio": 0.928812989506316,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 14,
+    "head": 23,
+    "cluster": 7,
+    "mean_attn_to_instruction": 0.006909858190920204,
+    "mean_attn_to_completion": 0.01995701976120472,
+    "instruction_ratio": 0.2571886332065377,
+    "role": "completion_local"
+  },
+  {
+    "layer": 14,
+    "head": 24,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.027992307674139738,
+    "mean_attn_to_completion": 0.0057377004064619545,
+    "instruction_ratio": 0.8298930527475246,
+    "role": "completion_local"
+  },
+  {
+    "layer": 14,
+    "head": 25,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.018624808313325046,
+    "mean_attn_to_completion": 0.01150367921218276,
+    "instruction_ratio": 0.6181791275040068,
+    "role": "completion_local"
+  },
+  {
+    "layer": 14,
+    "head": 26,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.026825591269880534,
+    "mean_attn_to_completion": 0.006177285045851022,
+    "instruction_ratio": 0.812825612076648,
+    "role": "completion_local"
+  },
+  {
+    "layer": 14,
+    "head": 27,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02985235517844558,
+    "mean_attn_to_completion": 0.004467381897848099,
+    "instruction_ratio": 0.869830279112577,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 14,
+    "head": 28,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02327357344329357,
+    "mean_attn_to_completion": 0.008734012790955602,
+    "instruction_ratio": 0.7271265631122305,
+    "role": "completion_local"
+  },
+  {
+    "layer": 14,
+    "head": 29,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.026784095913171768,
+    "mean_attn_to_completion": 0.006981538888067007,
+    "instruction_ratio": 0.7932351379882172,
+    "role": "completion_local"
+  },
+  {
+    "layer": 14,
+    "head": 30,
+    "cluster": 0,
+    "mean_attn_to_instruction": 0.006943547772243619,
+    "mean_attn_to_completion": 0.01992994430474937,
+    "instruction_ratio": 0.2583789694528927,
+    "role": "completion_local"
+  },
+  {
+    "layer": 14,
+    "head": 31,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.027147980220615864,
+    "mean_attn_to_completion": 0.006487600691616535,
+    "instruction_ratio": 0.8071206565526055,
+    "role": "completion_local"
+  },
+  {
+    "layer": 15,
+    "head": 0,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.023128304909914733,
+    "mean_attn_to_completion": 0.009006779361516237,
+    "instruction_ratio": 0.7197210848227218,
+    "role": "completion_local"
+  },
+  {
+    "layer": 15,
+    "head": 1,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.027346628624945878,
+    "mean_attn_to_completion": 0.006267755292356014,
+    "instruction_ratio": 0.8135392442958821,
+    "role": "completion_local"
+  },
+  {
+    "layer": 15,
+    "head": 2,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02232594657689333,
+    "mean_attn_to_completion": 0.009564608824439347,
+    "instruction_ratio": 0.7000799859120826,
+    "role": "completion_local"
+  },
+  {
+    "layer": 15,
+    "head": 3,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.029455372132360935,
+    "mean_attn_to_completion": 0.004317378648556769,
+    "instruction_ratio": 0.8721635854242576,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 15,
+    "head": 4,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02027504602447152,
+    "mean_attn_to_completion": 0.010248085763305426,
+    "instruction_ratio": 0.6642516083514935,
+    "role": "completion_local"
+  },
+  {
+    "layer": 15,
+    "head": 5,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.0234109478071332,
+    "mean_attn_to_completion": 0.008790886076167227,
+    "instruction_ratio": 0.7270064376429667,
+    "role": "completion_local"
+  },
+  {
+    "layer": 15,
+    "head": 6,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02484163185581565,
+    "mean_attn_to_completion": 0.007866987586021423,
+    "instruction_ratio": 0.7594825059848311,
+    "role": "completion_local"
+  },
+  {
+    "layer": 15,
+    "head": 7,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02193386941216886,
+    "mean_attn_to_completion": 0.009647938143461942,
+    "instruction_ratio": 0.6945094079380563,
+    "role": "completion_local"
+  },
+  {
+    "layer": 15,
+    "head": 8,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.035991035681217906,
+    "mean_attn_to_completion": 0.0005423091439297423,
+    "instruction_ratio": 0.9851555066178472,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 15,
+    "head": 9,
+    "cluster": 3,
+    "mean_attn_to_instruction": 0.023086127266287802,
+    "mean_attn_to_completion": 0.009187734383158386,
+    "instruction_ratio": 0.7153194236206225,
+    "role": "completion_local"
+  },
+  {
+    "layer": 15,
+    "head": 10,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.0327191399410367,
+    "mean_attn_to_completion": 0.0028830942639615385,
+    "instruction_ratio": 0.9190190301667338,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 15,
+    "head": 11,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.0315765954554081,
+    "mean_attn_to_completion": 0.0034766817232593896,
+    "instruction_ratio": 0.9008169560378572,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 15,
+    "head": 12,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02064057937823236,
+    "mean_attn_to_completion": 0.010289407195523381,
+    "instruction_ratio": 0.6673320939112549,
+    "role": "completion_local"
+  },
+  {
+    "layer": 15,
+    "head": 13,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.029918077308684586,
+    "mean_attn_to_completion": 0.0046564230229705576,
+    "instruction_ratio": 0.865321794052791,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 15,
+    "head": 14,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02517555863596499,
+    "mean_attn_to_completion": 0.006717833015136421,
+    "instruction_ratio": 0.7893657412706736,
+    "role": "completion_local"
+  },
+  {
+    "layer": 15,
+    "head": 15,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03343343688175082,
+    "mean_attn_to_completion": 0.002090638616937213,
+    "instruction_ratio": 0.9411484183874508,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 15,
+    "head": 16,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03691190117970109,
+    "mean_attn_to_completion": 1.0813181393132255e-05,
+    "instruction_ratio": 0.999706869371629,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 15,
+    "head": 17,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.034200390614569184,
+    "mean_attn_to_completion": 0.0016427668539108708,
+    "instruction_ratio": 0.9541676428190811,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 15,
+    "head": 18,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.033969844691455364,
+    "mean_attn_to_completion": 0.0017330024871625937,
+    "instruction_ratio": 0.9514601176456972,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 15,
+    "head": 19,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.0348573662340641,
+    "mean_attn_to_completion": 0.0012076899583917111,
+    "instruction_ratio": 0.9665133025973943,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 15,
+    "head": 20,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03688800698146224,
+    "mean_attn_to_completion": 2.5607519592085737e-05,
+    "instruction_ratio": 0.9993060145152812,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 15,
+    "head": 21,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.0359716147184372,
+    "mean_attn_to_completion": 0.000604629426379688,
+    "instruction_ratio": 0.9834690719288603,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 15,
+    "head": 22,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03205768382176757,
+    "mean_attn_to_completion": 0.0028546499408548696,
+    "instruction_ratio": 0.9182335061700698,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 15,
+    "head": 23,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03138024611398578,
+    "mean_attn_to_completion": 0.0033095183141995223,
+    "instruction_ratio": 0.9045964302520645,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 15,
+    "head": 24,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.025177896209061145,
+    "mean_attn_to_completion": 0.006733541470021009,
+    "instruction_ratio": 0.7889926042297721,
+    "role": "completion_local"
+  },
+  {
+    "layer": 15,
+    "head": 25,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02739676060155034,
+    "mean_attn_to_completion": 0.005804711976088584,
+    "instruction_ratio": 0.8251667839677121,
+    "role": "completion_local"
+  },
+  {
+    "layer": 15,
+    "head": 26,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.027836271934211253,
+    "mean_attn_to_completion": 0.005248074175324291,
+    "instruction_ratio": 0.8413726367244702,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 15,
+    "head": 27,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.015780779626220466,
+    "mean_attn_to_completion": 0.012488485756330192,
+    "instruction_ratio": 0.5582307792707423,
+    "role": "completion_local"
+  },
+  {
+    "layer": 15,
+    "head": 28,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.024995305901393296,
+    "mean_attn_to_completion": 0.007201228535268456,
+    "instruction_ratio": 0.776335048954244,
+    "role": "completion_local"
+  },
+  {
+    "layer": 15,
+    "head": 29,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.023998643457889556,
+    "mean_attn_to_completion": 0.008085961453616619,
+    "instruction_ratio": 0.7479797879476237,
+    "role": "completion_local"
+  },
+  {
+    "layer": 15,
+    "head": 30,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.021141085121780635,
+    "mean_attn_to_completion": 0.01053322448860854,
+    "instruction_ratio": 0.6674519099960827,
+    "role": "completion_local"
+  },
+  {
+    "layer": 15,
+    "head": 31,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02295625600963831,
+    "mean_attn_to_completion": 0.008619986078701913,
+    "instruction_ratio": 0.7270101576784372,
+    "role": "completion_local"
+  },
+  {
+    "layer": 16,
+    "head": 0,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.026562706101685762,
+    "mean_attn_to_completion": 0.006650621694279835,
+    "instruction_ratio": 0.7997602127453843,
+    "role": "completion_local"
+  },
+  {
+    "layer": 16,
+    "head": 1,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.023154358752071856,
+    "mean_attn_to_completion": 0.008256619283929467,
+    "instruction_ratio": 0.7371420066612923,
+    "role": "completion_local"
+  },
+  {
+    "layer": 16,
+    "head": 2,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02196420533582568,
+    "mean_attn_to_completion": 0.009287939756177366,
+    "instruction_ratio": 0.7028061031684175,
+    "role": "completion_local"
+  },
+  {
+    "layer": 16,
+    "head": 3,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.020508004631847144,
+    "mean_attn_to_completion": 0.010466089705005288,
+    "instruction_ratio": 0.6621016191079039,
+    "role": "completion_local"
+  },
+  {
+    "layer": 16,
+    "head": 4,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.027885360922664405,
+    "mean_attn_to_completion": 0.005603456823155284,
+    "instruction_ratio": 0.8326765312394445,
+    "role": "completion_local"
+  },
+  {
+    "layer": 16,
+    "head": 5,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.021311339689418674,
+    "mean_attn_to_completion": 0.009658450097776949,
+    "instruction_ratio": 0.6881329500305581,
+    "role": "completion_local"
+  },
+  {
+    "layer": 16,
+    "head": 6,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.018187993252649904,
+    "mean_attn_to_completion": 0.011630525905638933,
+    "instruction_ratio": 0.6099560832159314,
+    "role": "completion_local"
+  },
+  {
+    "layer": 16,
+    "head": 7,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.018814078206196426,
+    "mean_attn_to_completion": 0.010963907919358463,
+    "instruction_ratio": 0.6318114263588931,
+    "role": "completion_local"
+  },
+  {
+    "layer": 16,
+    "head": 8,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.021243458660319448,
+    "mean_attn_to_completion": 0.008971036726143211,
+    "instruction_ratio": 0.703088082647793,
+    "role": "completion_local"
+  },
+  {
+    "layer": 16,
+    "head": 9,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.015543349366635085,
+    "mean_attn_to_completion": 0.01350719085894525,
+    "instruction_ratio": 0.5350449215570607,
+    "role": "completion_local"
+  },
+  {
+    "layer": 16,
+    "head": 10,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02616571020334959,
+    "mean_attn_to_completion": 0.006221098738024011,
+    "instruction_ratio": 0.8079123254035717,
+    "role": "completion_local"
+  },
+  {
+    "layer": 16,
+    "head": 11,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.0303250003606081,
+    "mean_attn_to_completion": 0.003684963505656924,
+    "instruction_ratio": 0.8916502106074212,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 16,
+    "head": 12,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.020964353578165174,
+    "mean_attn_to_completion": 0.009300552308559418,
+    "instruction_ratio": 0.6926949229474311,
+    "role": "completion_local"
+  },
+  {
+    "layer": 16,
+    "head": 13,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03024483611807227,
+    "mean_attn_to_completion": 0.003929788057575934,
+    "instruction_ratio": 0.885008335791457,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 16,
+    "head": 14,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.028010549396276473,
+    "mean_attn_to_completion": 0.005143817979842424,
+    "instruction_ratio": 0.8448522220312444,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 16,
+    "head": 15,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.025159926526248454,
+    "mean_attn_to_completion": 0.006662950105965138,
+    "instruction_ratio": 0.7906236419413827,
+    "role": "completion_local"
+  },
+  {
+    "layer": 16,
+    "head": 16,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02024140884168446,
+    "mean_attn_to_completion": 0.010186785121914,
+    "instruction_ratio": 0.6652186525993924,
+    "role": "completion_local"
+  },
+  {
+    "layer": 16,
+    "head": 17,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.029183070641011,
+    "mean_attn_to_completion": 0.005712672183290124,
+    "instruction_ratio": 0.8362929089951641,
+    "role": "completion_local"
+  },
+  {
+    "layer": 16,
+    "head": 18,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.024157073628157378,
+    "mean_attn_to_completion": 0.007830073509830981,
+    "instruction_ratio": 0.7552116470978325,
+    "role": "completion_local"
+  },
+  {
+    "layer": 16,
+    "head": 19,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.028354584984481335,
+    "mean_attn_to_completion": 0.004909211525227874,
+    "instruction_ratio": 0.8524155218436907,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 16,
+    "head": 20,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.031166653614491224,
+    "mean_attn_to_completion": 0.003349046059884131,
+    "instruction_ratio": 0.9029700941548221,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 16,
+    "head": 21,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02378298589028418,
+    "mean_attn_to_completion": 0.0077959657181054355,
+    "instruction_ratio": 0.7531275469161002,
+    "role": "completion_local"
+  },
+  {
+    "layer": 16,
+    "head": 22,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02495546480640769,
+    "mean_attn_to_completion": 0.006917693139985204,
+    "instruction_ratio": 0.7829615445938726,
+    "role": "completion_local"
+  },
+  {
+    "layer": 16,
+    "head": 23,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02904261238873005,
+    "mean_attn_to_completion": 0.005229676386807114,
+    "instruction_ratio": 0.8474077732264649,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 16,
+    "head": 24,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.030833518784493207,
+    "mean_attn_to_completion": 0.0036274756042985246,
+    "instruction_ratio": 0.8947365096103135,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 16,
+    "head": 25,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.0331402100622654,
+    "mean_attn_to_completion": 0.002202996943378821,
+    "instruction_ratio": 0.9376681827512474,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 16,
+    "head": 26,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.0313754640519619,
+    "mean_attn_to_completion": 0.003230540646472946,
+    "instruction_ratio": 0.906647712121007,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 16,
+    "head": 27,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.029154584277421236,
+    "mean_attn_to_completion": 0.0045570737915113565,
+    "instruction_ratio": 0.8648217649096102,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 16,
+    "head": 28,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03657768005505204,
+    "mean_attn_to_completion": 0.0002127087847838993,
+    "instruction_ratio": 0.9942180897328688,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 16,
+    "head": 29,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.022902214806526898,
+    "mean_attn_to_completion": 0.00913886281196028,
+    "instruction_ratio": 0.7147764482661536,
+    "role": "completion_local"
+  },
+  {
+    "layer": 16,
+    "head": 30,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03360420651733875,
+    "mean_attn_to_completion": 0.0019938704004744067,
+    "instruction_ratio": 0.9439891136544004,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 16,
+    "head": 31,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03125234926119447,
+    "mean_attn_to_completion": 0.003318748640595004,
+    "instruction_ratio": 0.9040019588026215,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 17,
+    "head": 0,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03475764486938715,
+    "mean_attn_to_completion": 0.0013182081849663519,
+    "instruction_ratio": 0.9634598295547284,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 17,
+    "head": 1,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03445005863904953,
+    "mean_attn_to_completion": 0.001522891603235621,
+    "instruction_ratio": 0.9576653799693278,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 17,
+    "head": 2,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.034164759516716006,
+    "mean_attn_to_completion": 0.0016384112459491007,
+    "instruction_ratio": 0.9542381092671627,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 17,
+    "head": 3,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.034682894591242075,
+    "mean_attn_to_completion": 0.0013642930542118847,
+    "instruction_ratio": 0.9621523129861401,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 17,
+    "head": 4,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.034698463045060635,
+    "mean_attn_to_completion": 0.0014233204972697421,
+    "instruction_ratio": 0.9605963503555887,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 17,
+    "head": 5,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02482892507687211,
+    "mean_attn_to_completion": 0.007005698513239622,
+    "instruction_ratio": 0.7799343757669104,
+    "role": "completion_local"
+  },
+  {
+    "layer": 17,
+    "head": 6,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02898595677688718,
+    "mean_attn_to_completion": 0.004611909273080528,
+    "instruction_ratio": 0.862731820719216,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 17,
+    "head": 7,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03267400357872248,
+    "mean_attn_to_completion": 0.0027243324962910264,
+    "instruction_ratio": 0.9230375766563272,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 17,
+    "head": 8,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02229558606632054,
+    "mean_attn_to_completion": 0.008867462573107332,
+    "instruction_ratio": 0.7154492222439263,
+    "role": "completion_local"
+  },
+  {
+    "layer": 17,
+    "head": 9,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02026800997555256,
+    "mean_attn_to_completion": 0.010165086202323436,
+    "instruction_ratio": 0.6659855834987631,
+    "role": "completion_local"
+  },
+  {
+    "layer": 17,
+    "head": 10,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02640940621495247,
+    "mean_attn_to_completion": 0.007176402164623142,
+    "instruction_ratio": 0.7863261188541619,
+    "role": "completion_local"
+  },
+  {
+    "layer": 17,
+    "head": 11,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.020508399652317166,
+    "mean_attn_to_completion": 0.009856538311578334,
+    "instruction_ratio": 0.6753971611182091,
+    "role": "completion_local"
+  },
+  {
+    "layer": 17,
+    "head": 12,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.032897392846643926,
+    "mean_attn_to_completion": 0.002360219566617161,
+    "instruction_ratio": 0.9330576083959242,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 17,
+    "head": 13,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02208187971264124,
+    "mean_attn_to_completion": 0.009417826239950956,
+    "instruction_ratio": 0.7010183757172598,
+    "role": "completion_local"
+  },
+  {
+    "layer": 17,
+    "head": 14,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.025955482479184867,
+    "mean_attn_to_completion": 0.006438515556510538,
+    "instruction_ratio": 0.8012433179180595,
+    "role": "completion_local"
+  },
+  {
+    "layer": 17,
+    "head": 15,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.031652577593922614,
+    "mean_attn_to_completion": 0.0031402901688124983,
+    "instruction_ratio": 0.9097430172282008,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 17,
+    "head": 16,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.021310388529673218,
+    "mean_attn_to_completion": 0.008952944853808731,
+    "instruction_ratio": 0.7041650441472587,
+    "role": "completion_local"
+  },
+  {
+    "layer": 17,
+    "head": 17,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.029764011688530444,
+    "mean_attn_to_completion": 0.004203616228187457,
+    "instruction_ratio": 0.8762461423283555,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 17,
+    "head": 18,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.023978133965283633,
+    "mean_attn_to_completion": 0.007412012643180787,
+    "instruction_ratio": 0.7638743018828354,
+    "role": "completion_local"
+  },
+  {
+    "layer": 17,
+    "head": 19,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.033390266634523866,
+    "mean_attn_to_completion": 0.0022765756148146465,
+    "instruction_ratio": 0.9361708289001907,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 17,
+    "head": 20,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02714831745252013,
+    "mean_attn_to_completion": 0.005578142451122403,
+    "instruction_ratio": 0.8295522716765261,
+    "role": "completion_local"
+  },
+  {
+    "layer": 17,
+    "head": 21,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.032229849975556134,
+    "mean_attn_to_completion": 0.0033739338861778377,
+    "instruction_ratio": 0.9052363942089873,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 17,
+    "head": 22,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03160379752516747,
+    "mean_attn_to_completion": 0.003053979895776138,
+    "instruction_ratio": 0.9118815676637619,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 17,
+    "head": 23,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.024611492361873388,
+    "mean_attn_to_completion": 0.007949725957587361,
+    "instruction_ratio": 0.7558527006539223,
+    "role": "completion_local"
+  },
+  {
+    "layer": 17,
+    "head": 24,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.029935489501804115,
+    "mean_attn_to_completion": 0.004429665021598339,
+    "instruction_ratio": 0.871099845351191,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 17,
+    "head": 25,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.0248169063590467,
+    "mean_attn_to_completion": 0.007900628820061683,
+    "instruction_ratio": 0.7585198163000751,
+    "role": "completion_local"
+  },
+  {
+    "layer": 17,
+    "head": 26,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.028224812634289265,
+    "mean_attn_to_completion": 0.005382436886429786,
+    "instruction_ratio": 0.8398427315053321,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 17,
+    "head": 27,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02088812943547964,
+    "mean_attn_to_completion": 0.010203389497473837,
+    "instruction_ratio": 0.6718270266001812,
+    "role": "completion_local"
+  },
+  {
+    "layer": 17,
+    "head": 28,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.029601339250802994,
+    "mean_attn_to_completion": 0.00442973809549585,
+    "instruction_ratio": 0.8698323080182855,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 17,
+    "head": 29,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02842940976843238,
+    "mean_attn_to_completion": 0.00513401742791757,
+    "instruction_ratio": 0.8470351115148629,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 17,
+    "head": 30,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.026827648654580115,
+    "mean_attn_to_completion": 0.006601448706351221,
+    "instruction_ratio": 0.8025236320229608,
+    "role": "completion_local"
+  },
+  {
+    "layer": 17,
+    "head": 31,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02625667117536068,
+    "mean_attn_to_completion": 0.006648998451419174,
+    "instruction_ratio": 0.7979373613663956,
+    "role": "completion_local"
+  },
+  {
+    "layer": 18,
+    "head": 0,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.023298784624785185,
+    "mean_attn_to_completion": 0.007922348380088807,
+    "instruction_ratio": 0.7462502132336399,
+    "role": "completion_local"
+  },
+  {
+    "layer": 18,
+    "head": 1,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03403074247762561,
+    "mean_attn_to_completion": 0.001753127612755634,
+    "instruction_ratio": 0.9510076154869835,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 18,
+    "head": 2,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.030603749491274358,
+    "mean_attn_to_completion": 0.0035754011536482722,
+    "instruction_ratio": 0.8953920726494082,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 18,
+    "head": 3,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02697722613811493,
+    "mean_attn_to_completion": 0.00580657284008339,
+    "instruction_ratio": 0.82288260513155,
+    "role": "completion_local"
+  },
+  {
+    "layer": 18,
+    "head": 4,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03300064476206899,
+    "mean_attn_to_completion": 0.0023132661997806283,
+    "instruction_ratio": 0.9344939293974261,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 18,
+    "head": 5,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.034951619897037746,
+    "mean_attn_to_completion": 0.0012167429376859218,
+    "instruction_ratio": 0.966358648666722,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 18,
+    "head": 6,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03023639917373657,
+    "mean_attn_to_completion": 0.004012323293136433,
+    "instruction_ratio": 0.8828472470618481,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 18,
+    "head": 7,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03471374036744237,
+    "mean_attn_to_completion": 0.001347324307425879,
+    "instruction_ratio": 0.9626374333107475,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 18,
+    "head": 8,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.028519536834210157,
+    "mean_attn_to_completion": 0.004986053518950939,
+    "instruction_ratio": 0.8511871607613044,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 18,
+    "head": 9,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.030314733181148766,
+    "mean_attn_to_completion": 0.003895277087576687,
+    "instruction_ratio": 0.8861360777638086,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 18,
+    "head": 10,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.026887048967182636,
+    "mean_attn_to_completion": 0.006119403138291091,
+    "instruction_ratio": 0.8145995436064546,
+    "role": "completion_local"
+  },
+  {
+    "layer": 18,
+    "head": 11,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.024829769879579543,
+    "mean_attn_to_completion": 0.007529514085035771,
+    "instruction_ratio": 0.7673149453362839,
+    "role": "completion_local"
+  },
+  {
+    "layer": 18,
+    "head": 12,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02796344058588147,
+    "mean_attn_to_completion": 0.005466739973053336,
+    "instruction_ratio": 0.8364726649279524,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 18,
+    "head": 13,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.026267332956194878,
+    "mean_attn_to_completion": 0.00664343397365883,
+    "instruction_ratio": 0.7981377350094554,
+    "role": "completion_local"
+  },
+  {
+    "layer": 18,
+    "head": 14,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.023245199117809534,
+    "mean_attn_to_completion": 0.008344981842674315,
+    "instruction_ratio": 0.7358359798105348,
+    "role": "completion_local"
+  },
+  {
+    "layer": 18,
+    "head": 15,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.030430170986801387,
+    "mean_attn_to_completion": 0.003975476132472977,
+    "instruction_ratio": 0.8844525445716345,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 18,
+    "head": 16,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.01948222778737545,
+    "mean_attn_to_completion": 0.010376797744538636,
+    "instruction_ratio": 0.6524734453178287,
+    "role": "completion_local"
+  },
+  {
+    "layer": 18,
+    "head": 17,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.030587923619896172,
+    "mean_attn_to_completion": 0.0036235466512152927,
+    "instruction_ratio": 0.8940836051962632,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 18,
+    "head": 18,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03268421748653054,
+    "mean_attn_to_completion": 0.0024708835582714526,
+    "instruction_ratio": 0.9297145284188543,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 18,
+    "head": 19,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03441043337807059,
+    "mean_attn_to_completion": 0.0016149231189046987,
+    "instruction_ratio": 0.9551723333879119,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 18,
+    "head": 20,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02941184602677822,
+    "mean_attn_to_completion": 0.004497732082381844,
+    "instruction_ratio": 0.8673607574381931,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 18,
+    "head": 21,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.035012054815888406,
+    "mean_attn_to_completion": 0.0011624481725448278,
+    "instruction_ratio": 0.9678652709736126,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 18,
+    "head": 22,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02888339227065444,
+    "mean_attn_to_completion": 0.005054676614236087,
+    "instruction_ratio": 0.851061498460761,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 18,
+    "head": 23,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03335650479421019,
+    "mean_attn_to_completion": 0.0020857821000390686,
+    "instruction_ratio": 0.9411496352433777,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 18,
+    "head": 24,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.023789303936064245,
+    "mean_attn_to_completion": 0.007669710228219629,
+    "instruction_ratio": 0.7561996777723566,
+    "role": "completion_local"
+  },
+  {
+    "layer": 18,
+    "head": 25,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02392054842785001,
+    "mean_attn_to_completion": 0.00778251588344574,
+    "instruction_ratio": 0.7545182587963452,
+    "role": "completion_local"
+  },
+  {
+    "layer": 18,
+    "head": 26,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.020773947797715665,
+    "mean_attn_to_completion": 0.00941312147770077,
+    "instruction_ratio": 0.688173493307563,
+    "role": "completion_local"
+  },
+  {
+    "layer": 18,
+    "head": 27,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.0263957055285573,
+    "mean_attn_to_completion": 0.0059926158341113474,
+    "instruction_ratio": 0.8149757773252081,
+    "role": "completion_local"
+  },
+  {
+    "layer": 18,
+    "head": 28,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.023457064107060433,
+    "mean_attn_to_completion": 0.007783030834980309,
+    "instruction_ratio": 0.7508638063341958,
+    "role": "completion_local"
+  },
+  {
+    "layer": 18,
+    "head": 29,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02100959843955934,
+    "mean_attn_to_completion": 0.010568677727133036,
+    "instruction_ratio": 0.6653178810482596,
+    "role": "completion_local"
+  },
+  {
+    "layer": 18,
+    "head": 30,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03458111714571714,
+    "mean_attn_to_completion": 0.0014610650527174585,
+    "instruction_ratio": 0.9594620925199738,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 18,
+    "head": 31,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.0245862758718431,
+    "mean_attn_to_completion": 0.00701917459955439,
+    "instruction_ratio": 0.7779122817746428,
+    "role": "completion_local"
+  },
+  {
+    "layer": 19,
+    "head": 0,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.028617995046079158,
+    "mean_attn_to_completion": 0.005961974535603076,
+    "instruction_ratio": 0.827588546675682,
+    "role": "completion_local"
+  },
+  {
+    "layer": 19,
+    "head": 1,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02616401156410575,
+    "mean_attn_to_completion": 0.006716573715675622,
+    "instruction_ratio": 0.7957280378130587,
+    "role": "completion_local"
+  },
+  {
+    "layer": 19,
+    "head": 2,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02904034797102213,
+    "mean_attn_to_completion": 0.005514234420843422,
+    "instruction_ratio": 0.8404193469189488,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 19,
+    "head": 3,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.021262092422693966,
+    "mean_attn_to_completion": 0.009284501383081078,
+    "instruction_ratio": 0.6960542179381074,
+    "role": "completion_local"
+  },
+  {
+    "layer": 19,
+    "head": 4,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.029502930771559476,
+    "mean_attn_to_completion": 0.004853608197299764,
+    "instruction_ratio": 0.8587280054903336,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 19,
+    "head": 5,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03279432682320475,
+    "mean_attn_to_completion": 0.0023863337250077167,
+    "instruction_ratio": 0.9321688959356982,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 19,
+    "head": 6,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03416282646358013,
+    "mean_attn_to_completion": 0.001597563729592366,
+    "instruction_ratio": 0.955325619373315,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 19,
+    "head": 7,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.0310714608989656,
+    "mean_attn_to_completion": 0.0036614266689866783,
+    "instruction_ratio": 0.8945830343747349,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 19,
+    "head": 8,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.032783486600965264,
+    "mean_attn_to_completion": 0.0024250369780929757,
+    "instruction_ratio": 0.9311233177988596,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 19,
+    "head": 9,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.034098534006625415,
+    "mean_attn_to_completion": 0.0017205545009346679,
+    "instruction_ratio": 0.951965164601462,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 19,
+    "head": 10,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.0239946810528636,
+    "mean_attn_to_completion": 0.0074179841671139,
+    "instruction_ratio": 0.7638534726772878,
+    "role": "completion_local"
+  },
+  {
+    "layer": 19,
+    "head": 11,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.033796659857034686,
+    "mean_attn_to_completion": 0.0018438765269820578,
+    "instruction_ratio": 0.9482643586011644,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 19,
+    "head": 12,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03393380716443062,
+    "mean_attn_to_completion": 0.0017850134710897692,
+    "instruction_ratio": 0.9500257024283807,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 19,
+    "head": 13,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03443376263603568,
+    "mean_attn_to_completion": 0.0015752046456327662,
+    "instruction_ratio": 0.9562549462787803,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 19,
+    "head": 14,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.026521296147257088,
+    "mean_attn_to_completion": 0.0061837068409658965,
+    "instruction_ratio": 0.8109244951777684,
+    "role": "completion_local"
+  },
+  {
+    "layer": 19,
+    "head": 15,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03378450023010373,
+    "mean_attn_to_completion": 0.0019168311293469742,
+    "instruction_ratio": 0.9463089885041657,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 19,
+    "head": 16,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03129449626430869,
+    "mean_attn_to_completion": 0.0032995670306263493,
+    "instruction_ratio": 0.9046201641970433,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 19,
+    "head": 17,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.0335828946903348,
+    "mean_attn_to_completion": 0.002032405963836936,
+    "instruction_ratio": 0.9429342064829392,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 19,
+    "head": 18,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02126856758259237,
+    "mean_attn_to_completion": 0.010058698570355773,
+    "instruction_ratio": 0.678915315801908,
+    "role": "completion_local"
+  },
+  {
+    "layer": 19,
+    "head": 19,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.027709187660366296,
+    "mean_attn_to_completion": 0.005355196975870058,
+    "instruction_ratio": 0.8380370475616961,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 19,
+    "head": 20,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03170797666534782,
+    "mean_attn_to_completion": 0.0032532791461562737,
+    "instruction_ratio": 0.9069458993934433,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 19,
+    "head": 21,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02340134056285024,
+    "mean_attn_to_completion": 0.008588493487332016,
+    "instruction_ratio": 0.7315240588900874,
+    "role": "completion_local"
+  },
+  {
+    "layer": 19,
+    "head": 22,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.026890251133590937,
+    "mean_attn_to_completion": 0.006315827107755467,
+    "instruction_ratio": 0.8097988217747573,
+    "role": "completion_local"
+  },
+  {
+    "layer": 19,
+    "head": 23,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02956641195341945,
+    "mean_attn_to_completion": 0.004321683384478092,
+    "instruction_ratio": 0.8724716728366314,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 19,
+    "head": 24,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02632890027016401,
+    "mean_attn_to_completion": 0.007042624428868294,
+    "instruction_ratio": 0.7889628243836052,
+    "role": "completion_local"
+  },
+  {
+    "layer": 19,
+    "head": 25,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03475486673414707,
+    "mean_attn_to_completion": 0.0012919624263304287,
+    "instruction_ratio": 0.9641585099714658,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 19,
+    "head": 26,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.030394675210118294,
+    "mean_attn_to_completion": 0.0038970082416199146,
+    "instruction_ratio": 0.8863567864589558,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 19,
+    "head": 27,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03154365792870521,
+    "mean_attn_to_completion": 0.00330701302154921,
+    "instruction_ratio": 0.9051087975506238,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 19,
+    "head": 28,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.018868434149771927,
+    "mean_attn_to_completion": 0.011722414125688373,
+    "instruction_ratio": 0.6167997635067338,
+    "role": "completion_local"
+  },
+  {
+    "layer": 19,
+    "head": 29,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02934499541297555,
+    "mean_attn_to_completion": 0.0053794194129295645,
+    "instruction_ratio": 0.8450822601122999,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 19,
+    "head": 30,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.025918299052864312,
+    "mean_attn_to_completion": 0.007925474341027439,
+    "instruction_ratio": 0.7658215617093843,
+    "role": "completion_local"
+  },
+  {
+    "layer": 19,
+    "head": 31,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.028486616816371678,
+    "mean_attn_to_completion": 0.004978181270416826,
+    "instruction_ratio": 0.8512410034593278,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 20,
+    "head": 0,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02902856981381774,
+    "mean_attn_to_completion": 0.005188636446837336,
+    "instruction_ratio": 0.8483615263348135,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 20,
+    "head": 1,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.027860807534307242,
+    "mean_attn_to_completion": 0.005415133794303984,
+    "instruction_ratio": 0.8372655452934278,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 20,
+    "head": 2,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.029740296956151723,
+    "mean_attn_to_completion": 0.004401167208561674,
+    "instruction_ratio": 0.8710900066198526,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 20,
+    "head": 3,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.014970329869538546,
+    "mean_attn_to_completion": 0.013761993730440736,
+    "instruction_ratio": 0.5210272885579103,
+    "role": "completion_local"
+  },
+  {
+    "layer": 20,
+    "head": 4,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02077752035111189,
+    "mean_attn_to_completion": 0.010496764350682497,
+    "instruction_ratio": 0.6643641543072037,
+    "role": "completion_local"
+  },
+  {
+    "layer": 20,
+    "head": 5,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.029570643790066242,
+    "mean_attn_to_completion": 0.00471973760286346,
+    "instruction_ratio": 0.8623594712355304,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 20,
+    "head": 6,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02353543909266591,
+    "mean_attn_to_completion": 0.00863336909096688,
+    "instruction_ratio": 0.7316227459248265,
+    "role": "completion_local"
+  },
+  {
+    "layer": 20,
+    "head": 7,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03036121465265751,
+    "mean_attn_to_completion": 0.0039639862137846645,
+    "instruction_ratio": 0.8845164788875327,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 20,
+    "head": 8,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.033837373834103346,
+    "mean_attn_to_completion": 0.001813529880018905,
+    "instruction_ratio": 0.949130619917309,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 20,
+    "head": 9,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.024467646051198243,
+    "mean_attn_to_completion": 0.007835334516130388,
+    "instruction_ratio": 0.757442132182799,
+    "role": "completion_local"
+  },
+  {
+    "layer": 20,
+    "head": 10,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.033311342168599364,
+    "mean_attn_to_completion": 0.002108927497465629,
+    "instruction_ratio": 0.940459603443331,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 20,
+    "head": 11,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.021844415366649626,
+    "mean_attn_to_completion": 0.008848914550617338,
+    "instruction_ratio": 0.7116988710101486,
+    "role": "completion_local"
+  },
+  {
+    "layer": 20,
+    "head": 12,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03232618197798729,
+    "mean_attn_to_completion": 0.002664155064849183,
+    "instruction_ratio": 0.9238599988280306,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 20,
+    "head": 13,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03441031202673912,
+    "mean_attn_to_completion": 0.001468110820860602,
+    "instruction_ratio": 0.9590806870774786,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 20,
+    "head": 14,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.025223240442574024,
+    "mean_attn_to_completion": 0.00727017413591966,
+    "instruction_ratio": 0.7762567587064506,
+    "role": "completion_local"
+  },
+  {
+    "layer": 20,
+    "head": 15,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02836049795150757,
+    "mean_attn_to_completion": 0.004923478490673006,
+    "instruction_ratio": 0.8520763581241727,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 20,
+    "head": 16,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03379398360848427,
+    "mean_attn_to_completion": 0.0018951932157506234,
+    "instruction_ratio": 0.946896990814493,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 20,
+    "head": 17,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03189918426796794,
+    "mean_attn_to_completion": 0.004644371446920559,
+    "instruction_ratio": 0.8729083668748735,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 20,
+    "head": 18,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.024615079630166292,
+    "mean_attn_to_completion": 0.007832399941980839,
+    "instruction_ratio": 0.7586127603318759,
+    "role": "completion_local"
+  },
+  {
+    "layer": 20,
+    "head": 19,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02756611108779907,
+    "mean_attn_to_completion": 0.005808440502732992,
+    "instruction_ratio": 0.8259617437377581,
+    "role": "completion_local"
+  },
+  {
+    "layer": 20,
+    "head": 20,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.024482158944010735,
+    "mean_attn_to_completion": 0.007308643870055675,
+    "instruction_ratio": 0.770101698474918,
+    "role": "completion_local"
+  },
+  {
+    "layer": 20,
+    "head": 21,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.031242645904421808,
+    "mean_attn_to_completion": 0.0036266801762394607,
+    "instruction_ratio": 0.8959919922808383,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 20,
+    "head": 22,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.030401035118848084,
+    "mean_attn_to_completion": 0.004551791155245155,
+    "instruction_ratio": 0.8697730530492338,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 20,
+    "head": 23,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.0295048370026052,
+    "mean_attn_to_completion": 0.004937760485336185,
+    "instruction_ratio": 0.8566377273536872,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 20,
+    "head": 24,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.028245013579726218,
+    "mean_attn_to_completion": 0.00543097835034132,
+    "instruction_ratio": 0.8387282325966291,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 20,
+    "head": 25,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03130447259172797,
+    "mean_attn_to_completion": 0.0037208781111985447,
+    "instruction_ratio": 0.893765887444875,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 20,
+    "head": 26,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.0320655707269907,
+    "mean_attn_to_completion": 0.002995571820065379,
+    "instruction_ratio": 0.91456122795607,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 20,
+    "head": 27,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02234000712633133,
+    "mean_attn_to_completion": 0.00936330684926361,
+    "instruction_ratio": 0.7046581974662517,
+    "role": "completion_local"
+  },
+  {
+    "layer": 20,
+    "head": 28,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.01926188780926168,
+    "mean_attn_to_completion": 0.01102326784748584,
+    "instruction_ratio": 0.6360172510719003,
+    "role": "completion_local"
+  },
+  {
+    "layer": 20,
+    "head": 29,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03510579196736217,
+    "mean_attn_to_completion": 0.0010636330815032124,
+    "instruction_ratio": 0.9705927648561217,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 20,
+    "head": 30,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.027165466733276845,
+    "mean_attn_to_completion": 0.006633382104337215,
+    "instruction_ratio": 0.8037391695321071,
+    "role": "completion_local"
+  },
+  {
+    "layer": 20,
+    "head": 31,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.025301474425941706,
+    "mean_attn_to_completion": 0.007126703939866275,
+    "instruction_ratio": 0.7802308948167876,
+    "role": "completion_local"
+  },
+  {
+    "layer": 21,
+    "head": 0,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.029259977489709856,
+    "mean_attn_to_completion": 0.004822990705724806,
+    "instruction_ratio": 0.8584923923587512,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 21,
+    "head": 1,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03453448954969644,
+    "mean_attn_to_completion": 0.0014254756999434904,
+    "instruction_ratio": 0.960359102306174,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 21,
+    "head": 2,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.01747594876214862,
+    "mean_attn_to_completion": 0.012599702505394817,
+    "instruction_ratio": 0.5810661520186766,
+    "role": "completion_local"
+  },
+  {
+    "layer": 21,
+    "head": 3,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.027998832613229753,
+    "mean_attn_to_completion": 0.005911703070160002,
+    "instruction_ratio": 0.8256674155185976,
+    "role": "completion_local"
+  },
+  {
+    "layer": 21,
+    "head": 4,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.025443118810653687,
+    "mean_attn_to_completion": 0.007150441338308155,
+    "instruction_ratio": 0.7806177320978165,
+    "role": "completion_local"
+  },
+  {
+    "layer": 21,
+    "head": 5,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.017644007271155716,
+    "mean_attn_to_completion": 0.011907627945765853,
+    "instruction_ratio": 0.5970566830253017,
+    "role": "completion_local"
+  },
+  {
+    "layer": 21,
+    "head": 6,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03425750993192196,
+    "mean_attn_to_completion": 0.001594840391771868,
+    "instruction_ratio": 0.9555161674887588,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 21,
+    "head": 7,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.021537211304530502,
+    "mean_attn_to_completion": 0.01010034375358373,
+    "instruction_ratio": 0.6807480684739596,
+    "role": "completion_local"
+  },
+  {
+    "layer": 21,
+    "head": 8,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.027980996295809746,
+    "mean_attn_to_completion": 0.00580013842554763,
+    "instruction_ratio": 0.828302194215443,
+    "role": "completion_local"
+  },
+  {
+    "layer": 21,
+    "head": 9,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.025383800640702246,
+    "mean_attn_to_completion": 0.008171353628858924,
+    "instruction_ratio": 0.7564797012103619,
+    "role": "completion_local"
+  },
+  {
+    "layer": 21,
+    "head": 10,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.024913049954921006,
+    "mean_attn_to_completion": 0.0072315137833356856,
+    "instruction_ratio": 0.7750312745715733,
+    "role": "completion_local"
+  },
+  {
+    "layer": 21,
+    "head": 11,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.014959210576489568,
+    "mean_attn_to_completion": 0.013828719477169215,
+    "instruction_ratio": 0.5196346299390163,
+    "role": "completion_local"
+  },
+  {
+    "layer": 21,
+    "head": 12,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.023516016826033593,
+    "mean_attn_to_completion": 0.008997639711014926,
+    "instruction_ratio": 0.7232656089167203,
+    "role": "completion_local"
+  },
+  {
+    "layer": 21,
+    "head": 13,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.026547399070113897,
+    "mean_attn_to_completion": 0.006856476003304124,
+    "instruction_ratio": 0.7947398636944675,
+    "role": "completion_local"
+  },
+  {
+    "layer": 21,
+    "head": 14,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.020857557374984025,
+    "mean_attn_to_completion": 0.01029121142346412,
+    "instruction_ratio": 0.6696107577746567,
+    "role": "completion_local"
+  },
+  {
+    "layer": 21,
+    "head": 15,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.01693877945654094,
+    "mean_attn_to_completion": 0.012946152966469527,
+    "instruction_ratio": 0.5667998022809845,
+    "role": "completion_local"
+  },
+  {
+    "layer": 21,
+    "head": 16,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.023944636434316637,
+    "mean_attn_to_completion": 0.0076628580573014915,
+    "instruction_ratio": 0.7575617505857326,
+    "role": "completion_local"
+  },
+  {
+    "layer": 21,
+    "head": 17,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02380966334603727,
+    "mean_attn_to_completion": 0.007648926274850964,
+    "instruction_ratio": 0.7568570639815723,
+    "role": "completion_local"
+  },
+  {
+    "layer": 21,
+    "head": 18,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.031159758288413286,
+    "mean_attn_to_completion": 0.003781235555652529,
+    "instruction_ratio": 0.8917819999526225,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 21,
+    "head": 19,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.026727011799812316,
+    "mean_attn_to_completion": 0.007423752592876554,
+    "instruction_ratio": 0.7826180306334177,
+    "role": "completion_local"
+  },
+  {
+    "layer": 21,
+    "head": 20,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.018261256022378804,
+    "mean_attn_to_completion": 0.010972358239814638,
+    "instruction_ratio": 0.6246661672393211,
+    "role": "completion_local"
+  },
+  {
+    "layer": 21,
+    "head": 21,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02826172849163413,
+    "mean_attn_to_completion": 0.005482780188322068,
+    "instruction_ratio": 0.8375205691827285,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 21,
+    "head": 22,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.022923817997798322,
+    "mean_attn_to_completion": 0.008528408058919013,
+    "instruction_ratio": 0.7288454136125695,
+    "role": "completion_local"
+  },
+  {
+    "layer": 21,
+    "head": 23,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02746999408118427,
+    "mean_attn_to_completion": 0.00817335124593228,
+    "instruction_ratio": 0.7706904647185615,
+    "role": "completion_local"
+  },
+  {
+    "layer": 21,
+    "head": 24,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02732985047623515,
+    "mean_attn_to_completion": 0.006135223398450762,
+    "instruction_ratio": 0.8166676222469696,
+    "role": "completion_local"
+  },
+  {
+    "layer": 21,
+    "head": 25,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03461897149682045,
+    "mean_attn_to_completion": 0.0013813361234497278,
+    "instruction_ratio": 0.9616296128823054,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 21,
+    "head": 26,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02582031199708581,
+    "mean_attn_to_completion": 0.006992923398502171,
+    "instruction_ratio": 0.7868868710120812,
+    "role": "completion_local"
+  },
+  {
+    "layer": 21,
+    "head": 27,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.033252166397869584,
+    "mean_attn_to_completion": 0.0023651715484447776,
+    "instruction_ratio": 0.9335946754932515,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 21,
+    "head": 28,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.019415594823658466,
+    "mean_attn_to_completion": 0.010916176019236445,
+    "instruction_ratio": 0.640107315960859,
+    "role": "completion_local"
+  },
+  {
+    "layer": 21,
+    "head": 29,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03274030731990933,
+    "mean_attn_to_completion": 0.002499641332542524,
+    "instruction_ratio": 0.9290676996192045,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 21,
+    "head": 30,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.02803934281691909,
+    "mean_attn_to_completion": 0.005391521041747183,
+    "instruction_ratio": 0.8387259912935378,
+    "role": "instruction_following"
+  },
+  {
+    "layer": 21,
+    "head": 31,
+    "cluster": 2,
+    "mean_attn_to_instruction": 0.03258339865133166,
+    "mean_attn_to_completion": 0.002605050941929221,
+    "instruction_ratio": 0.9259683154067895,
+    "role": "instruction_following"
+  }
+]

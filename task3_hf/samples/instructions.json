@@ -1,0 +1,22 @@
+[
+  "Explain what a REST API is in two sentences.",
+  "Write a Python function that returns the factorial of n.",
+  "Summarize the causes of the French Revolution in one paragraph.",
+  "What is the difference between supervised and unsupervised learning?",
+  "Translate to French: The weather is nice today.",
+  "List three benefits of regular exercise.",
+  "How does photosynthesis work? Give a short answer.",
+  "Debug this idea: why might a neural network overfit?",
+  "Describe the water cycle for a middle school student.",
+  "What are HTTP status codes 200, 404, and 500?",
+  "Write a haiku about programming.",
+  "Compare recursion and iteration with one example each.",
+  "What is gradient descent in machine learning?",
+  "Give a recipe for tomato soup in bullet points.",
+  "Explain big-O notation in simple terms.",
+  "What is the capital of Japan and one fact about it?",
+  "How do you reverse a string in Python without using [::-1]?",
+  "What is the purpose of a database index?",
+  "Describe the structure of an atom.",
+  "Why might you use a validation set when training a model?"
+]

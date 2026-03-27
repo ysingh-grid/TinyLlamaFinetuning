@@ -1,0 +1,7 @@
+{
+  "n_instructions": 20,
+  "mean_cosine_base_vs_lora_per_sample": 0.9919855105423083,
+  "std_cosine_base_vs_lora_per_sample": 0.0008681493599020669,
+  "instruction_following_heads": 352,
+  "completion_local_heads": 352
+}

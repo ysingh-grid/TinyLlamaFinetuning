@@ -1,0 +1,54 @@
+{
+  "artifacts": {
+    "model.gguf": "<local>/model.gguf",
+    "model-Q4_K_M.gguf": "<local>/model-Q4_K_M.gguf",
+    "model-Q5_K_M.gguf": "<local>/model-Q5_K_M.gguf",
+    "model-Q8_0.gguf": "<local>/model-Q8_0.gguf",
+    "perplexity_results.json": "<local>/perplexity_results.json",
+    "latency_benchmarks.json": "<local>/latency_benchmarks.json",
+    "batched_inference_results.json": "<local>/batched_inference_results.json",
+    "deployment_comparison.md": "<local>/deployment_comparison.md",
+    "deployment_comparison.csv": "<local>/deployment_comparison.csv",
+    "quantization_analysis.md": "<local>/quantization_analysis.md",
+    "conversion_logs.txt": "<local>/conversion_logs.txt",
+    "server_package": "<local>/server_package"
+  },
+  "comparison_rows": [
+    {
+      "quantization": "Q4_K_M",
+      "file_size_mb": 636.88,
+      "tokens_per_second": 214.529,
+      "mean_latency_sec": 0.4661,
+      "peak_rss_mb": 748.64,
+      "perplexity": 4.3399,
+      "perplexity_loss": 0.0677,
+      "batch_1_tps": 197.074,
+      "batch_4_tps": 198.918,
+      "batch_8_tps": 193.096
+    },
+    {
+      "quantization": "Q5_K_M",
+      "file_size_mb": 745.82,
+      "tokens_per_second": 166.378,
+      "mean_latency_sec": 0.601,
+      "peak_rss_mb": 862.18,
+      "perplexity": 4.2859,
+      "perplexity_loss": 0.0137,
+      "batch_1_tps": 144.095,
+      "batch_4_tps": 139.196,
+      "batch_8_tps": 116.52
+    },
+    {
+      "quantization": "Q8_0",
+      "file_size_mb": 1115.62,
+      "tokens_per_second": 157.148,
+      "mean_latency_sec": 0.6363,
+      "peak_rss_mb": 1224.17,
+      "perplexity": 4.2725,
+      "perplexity_loss": 0.0003,
+      "batch_1_tps": 95.942,
+      "batch_4_tps": 80.914,
+      "batch_8_tps": 80.567
+    }
+  ]
+}

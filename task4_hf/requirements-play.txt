@@ -1,0 +1,3 @@
+# Enable the "Try a quant" tab (GGUF chat in-process).
+# requirements.txt now includes llama-cpp-python via pre-built CPU wheels.
+-r requirements.txt

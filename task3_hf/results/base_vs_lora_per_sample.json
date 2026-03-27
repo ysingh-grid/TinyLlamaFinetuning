@@ -1,0 +1,82 @@
+[
+  {
+    "instruction": "Explain what a REST API is in two sentences.",
+    "mean_head_cosine_sim": 0.9922501864377357
+  },
+  {
+    "instruction": "Write a Python function that returns the factorial of n.",
+    "mean_head_cosine_sim": 0.992067719574979
+  },
+  {
+    "instruction": "Summarize the causes of the French Revolution in one paragraph.",
+    "mean_head_cosine_sim": 0.992216496033159
+  },
+  {
+    "instruction": "What is the difference between supervised and unsupervised learning?",
+    "mean_head_cosine_sim": 0.9925961578942936
+  },
+  {
+    "instruction": "Translate to French: The weather is nice today.",
+    "mean_head_cosine_sim": 0.9894691693490671
+  },
+  {
+    "instruction": "List three benefits of regular exercise.",
+    "mean_head_cosine_sim": 0.9916931098605133
+  },
+  {
+    "instruction": "How does photosynthesis work? Give a short answer.",
+    "mean_head_cosine_sim": 0.9931039494929397
+  },
+  {
+    "instruction": "Debug this idea: why might a neural network overfit?",
+    "mean_head_cosine_sim": 0.9923794604220896
+  },
+  {
+    "instruction": "Describe the water cycle for a middle school student.",
+    "mean_head_cosine_sim": 0.992200206025768
+  },
+  {
+    "instruction": "What are HTTP status codes 200, 404, and 500?",
+    "mean_head_cosine_sim": 0.9927443061903922
+  },
+  {
+    "instruction": "Write a haiku about programming.",
+    "mean_head_cosine_sim": 0.9897438065031753
+  },
+  {
+    "instruction": "Compare recursion and iteration with one example each.",
+    "mean_head_cosine_sim": 0.9918386409444154
+  },
+  {
+    "instruction": "What is gradient descent in machine learning?",
+    "mean_head_cosine_sim": 0.9922323206792076
+  },
+  {
+    "instruction": "Give a recipe for tomato soup in bullet points.",
+    "mean_head_cosine_sim": 0.9925810092970712
+  },
+  {
+    "instruction": "Explain big-O notation in simple terms.",
+    "mean_head_cosine_sim": 0.9917652777578296
+  },
+  {
+    "instruction": "What is the capital of Japan and one fact about it?",
+    "mean_head_cosine_sim": 0.9924780119879028
+  },
+  {
+    "instruction": "How do you reverse a string in Python without using [::-1]?",
+    "mean_head_cosine_sim": 0.991781748023055
+  },
+  {
+    "instruction": "What is the purpose of a database index?",
+    "mean_head_cosine_sim": 0.9921189780933927
+  },
+  {
+    "instruction": "Describe the structure of an atom.",
+    "mean_head_cosine_sim": 0.9925393844335695
+  },
+  {
+    "instruction": "Why might you use a validation set when training a model?",
+    "mean_head_cosine_sim": 0.991910271845608
+  }
+]
